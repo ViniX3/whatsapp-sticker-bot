@@ -1,0 +1,14 @@
+services:
+
+  sticker-bot:
+
+    build:
+      context: .
+
+    container_name: whatsapp-sticker-bot
+
+    restart: always
+
+    volumes:
+      - ./sessions:/app/storage/sessions
+      - ./temp:/app/temp

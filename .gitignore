@@ -1,0 +1,36 @@
+# Binários
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Build
+bin/
+dist/
+
+# Arquivos temporários
+tmp/
+temp/
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Logs
+*.log
+
+# SQLite
+*.db
+
+# Variáveis de ambiente
+.env
+
+# Cache Go
+*.test
+coverage.out
+
+# Sistema
+.DS_Store
+Thumbs.db
