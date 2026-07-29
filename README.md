@@ -177,7 +177,7 @@ git push origin main --tags
 
 **Vinícius Barbosa**
 
-* LinkedIn: https://www.linkedin.com/in/vinix3
+* LinkedIn: https://www.linkedin.com/in/viniciusbarbosa2003
 * GitHub: https://github.com/ViniX3
 
 ---
