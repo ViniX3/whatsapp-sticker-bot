@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"context"
 	"strings"
 	"time"
 
@@ -20,58 +21,54 @@ func ProcessMessage(
 
 	// Ignora mensagens antigas
 	if msgEvent.Info.Timestamp.Before(botStartedAt) {
-
-		logger.Debug(
-			"Mensagem antiga ignorada",
-		)
-
+		logger.Debug("Mensagem antiga ignorada")
 		return
 	}
-
 
 	logger.Info("==============================")
 	logger.Info("Mensagem recebida")
 
+	// Descobrir grupos
+	if msgEvent.Info.IsGroup {
+		groupInfo, err := client.GetGroupInfo( 
+			context.Background(),
+			msgEvent.Info.Chat,
+		)
+
+		if err == nil {
+			logger.Info(
+				"Grupo detectado:",
+				groupInfo.Name,
+				"| ID:",
+				msgEvent.Info.Chat.String(),
+			)
+		} else {
+			logger.Info(
+				"Grupo detectado ID:",
+				msgEvent.Info.Chat.String(),
+			)
+		}
+	}
 
 	text := extractText(msgEvent)
 
-	logger.Info(
-		"Texto recebido:",
-		text,
-	)
-
+	logger.Info("Texto recebido:", text)
 
 	if !IsStickerCommand(text) {
-
-		logger.Debug(
-			"Sem comando !f, ignorando",
-		)
-
+		logger.Debug("Sem comando !f, ignorando")
 		logger.Info("==============================")
-
 		return
 	}
 
-
-	logger.Info(
-		"Comando !f recebido",
-	)
-
+	logger.Info("Comando !f recebido")
 
 	mediaMessage := getMedia(msgEvent)
 
-
 	if mediaMessage == nil {
-
-		logger.Warn(
-			"Nenhuma mídia encontrada",
-		)
-
+		logger.Warn("Nenhuma mídia encontrada")
 		logger.Info("==============================")
-
 		return
 	}
-
 
 	processStickerCommand(
 		client,
@@ -79,103 +76,84 @@ func ProcessMessage(
 		mediaMessage,
 	)
 
-
 	logger.Info("==============================")
 }
-
 
 func extractText(
 	msg *events.Message,
 ) string {
 
-
+	// Texto simples
 	if msg.Message.GetConversation() != "" {
-
-		return strings.TrimSpace(
+		return strings.TrimSpace( 
 			msg.Message.GetConversation(),
 		)
 	}
 
-
+	// Texto expandido
 	if msg.Message.ExtendedTextMessage != nil {
-
-		return strings.TrimSpace(
+		return strings.TrimSpace( 
 			msg.Message.GetExtendedTextMessage().GetText(),
 		)
 	}
 
-
+	// Legenda de imagem
 	if msg.Message.ImageMessage != nil {
-
-		return strings.TrimSpace(
+		return strings.TrimSpace( 
 			msg.Message.GetImageMessage().GetCaption(),
 		)
 	}
 
-
+	// Legenda de vídeo
 	if msg.Message.VideoMessage != nil {
-
-		return strings.TrimSpace(
+		return strings.TrimSpace( 
 			msg.Message.GetVideoMessage().GetCaption(),
 		)
 	}
 
-
 	return ""
 }
-
 
 func getMedia(
 	msg *events.Message,
 ) *media.Media {
 
-
 	// Imagem enviada diretamente
 	if msg.Message.ImageMessage != nil {
-
 		return &media.Media{
 			Type: media.Image,
 			Image: msg.Message.ImageMessage,
 		}
 	}
 
-
 	// Vídeo enviado diretamente
 	if msg.Message.VideoMessage != nil {
-
 		return &media.Media{
 			Type: media.Video,
 			Video: msg.Message.VideoMessage,
 		}
 	}
 
-
 	// Mensagem respondida
 	if msg.Message.ExtendedTextMessage != nil {
-
 		contextInfo :=
 			msg.Message.
 				ExtendedTextMessage.
 				ContextInfo
 
-
 		if contextInfo != nil &&
 			contextInfo.QuotedMessage != nil {
 
-
 			// Imagem respondida
 			if contextInfo.QuotedMessage.ImageMessage != nil {
-
 				return &media.Media{
 					Type: media.Image,
 					Image: contextInfo.QuotedMessage.ImageMessage,
 				}
 			}
 
-
 			// Vídeo respondido
 			if contextInfo.QuotedMessage.VideoMessage != nil {
-
 				return &media.Media{
 					Type: media.Video,
 					Video: contextInfo.QuotedMessage.VideoMessage,
@@ -184,10 +162,8 @@ func getMedia(
 		}
 	}
 
-
 	return nil
 }
-
 
 func processStickerCommand(
 	client *whatsmeow.Client,
@@ -195,26 +171,19 @@ func processStickerCommand(
 	mediaMessage *media.Media,
 ) {
 
-
 	err := processor.ProcessSticker(
 		client,
 		msg.Info.Chat,
 		mediaMessage,
 	)
 
-
 	if err != nil {
-
 		logger.Error(
 			"Erro ao processar figurinha:",
 			err,
 		)
-
 		return
 	}
 
-
-	logger.Success(
-		"Processamento concluído",
-	)
+	logger.Success("Processamento concluído")
 }
