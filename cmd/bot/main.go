@@ -5,6 +5,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	"whatsapp-sticker-bot/internal/auth"
 	"whatsapp-sticker-bot/internal/handler"
 	"whatsapp-sticker-bot/internal/logger"
 	"whatsapp-sticker-bot/internal/whatsapp"
@@ -19,16 +20,19 @@ type BotState struct {
 
 func main() {
 
-	client := whatsapp.NewClient()
+	// Carrega a whitelist de grupos
+	if err := auth.LoadGroups("groups.json"); err != nil {
+		logger.Error("Erro ao carregar groups.json:", err)
+		return
+	}
 
+	client := whatsapp.NewClient()
 
 	state := &BotState{
 		StartedAt: time.Now(),
 	}
 
-
 	state.Ready.Store(false)
-
 
 	go func() {
 
@@ -36,58 +40,41 @@ func main() {
 			"Aguardando sincronização inicial do WhatsApp...",
 		)
 
-
-		time.Sleep(
-			5 * time.Second,
-		)
-
+		time.Sleep(5 * time.Second)
 
 		state.Ready.Store(true)
-
 
 		logger.Success(
 			"Sincronização concluída. Bot pronto.",
 		)
-
 	}()
 
-
 	client.AddEventHandler(func(evt interface{}) {
-
 
 		if !state.Ready.Load() {
 			return
 		}
 
-
 		msg, ok := evt.(*events.Message)
-
 		if !ok {
 			return
 		}
 
-
-		logger.Debug(
-			fmt.Sprintf(
+		logger.Debug( 
+			fmt.Sprintf( 
 				"Mensagem recebida de %s",
 				msg.Info.Sender.User,
 			),
 		)
-
 
 		handler.ProcessMessage(
 			client,
 			msg,
 			state.StartedAt,
 		)
-
 	})
 
-
-	logger.Success(
-		"Bot iniciado!",
-	)
-
+	logger.Success("Bot iniciado!")
 
 	select {}
 }

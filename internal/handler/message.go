@@ -1,10 +1,10 @@
 package handler
 
 import (
-	"context"
 	"strings"
 	"time"
 
+	"whatsapp-sticker-bot/internal/auth"
 	"whatsapp-sticker-bot/internal/logger"
 	"whatsapp-sticker-bot/internal/media"
 	"whatsapp-sticker-bot/internal/processor"
@@ -28,26 +28,24 @@ func ProcessMessage(
 	logger.Info("==============================")
 	logger.Info("Mensagem recebida")
 
-	// Descobrir grupos
+	// Aplica whitelist apenas para grupos
 	if msgEvent.Info.IsGroup {
-		groupInfo, err := client.GetGroupInfo( 
-			context.Background(),
-			msgEvent.Info.Chat,
-		)
+		groupID := msgEvent.Info.Chat.String()
 
-		if err == nil {
-			logger.Info(
-				"Grupo detectado:",
-				groupInfo.Name,
-				"| ID:",
-				msgEvent.Info.Chat.String(),
+		if !auth.IsGroupAllowed(groupID) {
+			logger.Debug(
+				"Grupo não autorizado:",
+				groupID,
 			)
-		} else {
-			logger.Info(
-				"Grupo detectado ID:",
-				msgEvent.Info.Chat.String(),
-			)
+
+			logger.Info("==============================")
+			return
 		}
+
+		logger.Info(
+			"Grupo autorizado:",
+			groupID,
+		)
 	}
 
 	text := extractText(msgEvent)
@@ -79,9 +77,7 @@ func ProcessMessage(
 	logger.Info("==============================")
 }
 
-func extractText(
-	msg *events.Message,
-) string {
+func extractText(msg *events.Message) string {
 
 	// Texto simples
 	if msg.Message.GetConversation() != "" {
@@ -114,14 +110,12 @@ func extractText(
 	return ""
 }
 
-func getMedia(
-	msg *events.Message,
-) *media.Media {
+func getMedia(msg *events.Message) *media.Media {
 
 	// Imagem enviada diretamente
 	if msg.Message.ImageMessage != nil {
 		return &media.Media{
-			Type: media.Image,
+			Type:  media.Image,
 			Image: msg.Message.ImageMessage,
 		}
 	}
@@ -129,7 +123,7 @@ func getMedia(
 	// Vídeo enviado diretamente
 	if msg.Message.VideoMessage != nil {
 		return &media.Media{
-			Type: media.Video,
+			Type:  media.Video,
 			Video: msg.Message.VideoMessage,
 		}
 	}
@@ -147,7 +141,7 @@ func getMedia(
 			// Imagem respondida
 			if contextInfo.QuotedMessage.ImageMessage != nil {
 				return &media.Media{
-					Type: media.Image,
+					Type:  media.Image,
 					Image: contextInfo.QuotedMessage.ImageMessage,
 				}
 			}
@@ -155,7 +149,7 @@ func getMedia(
 			// Vídeo respondido
 			if contextInfo.QuotedMessage.VideoMessage != nil {
 				return &media.Media{
-					Type: media.Video,
+					Type:  media.Video,
 					Video: contextInfo.QuotedMessage.VideoMessage,
 				}
 			}
