@@ -116,3 +116,20 @@ func SendSticker(
 
 	return nil
 }
+
+func SendText(
+        client *whatsmeow.Client,
+        chat types.JID,
+        text string,
+) error {
+
+        _, err := client.SendMessage(
+                context.Background(),
+                chat,
+                &waProto.Message{
+                        Conversation: &text,
+                },
+        )
+
+        return err
+}

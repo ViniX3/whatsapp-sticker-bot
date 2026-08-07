@@ -1,80 +1,93 @@
 package main
 
 import (
-	"fmt"
-	"sync/atomic"
-	"time"
+        "fmt"
+        "sync/atomic"
+        "time"
 
-	"whatsapp-sticker-bot/internal/auth"
-	"whatsapp-sticker-bot/internal/handler"
-	"whatsapp-sticker-bot/internal/logger"
-	"whatsapp-sticker-bot/internal/whatsapp"
+        "whatsapp-sticker-bot/internal/auth"
+        "whatsapp-sticker-bot/internal/database"
+        "whatsapp-sticker-bot/internal/handler"
+        "whatsapp-sticker-bot/internal/logger"
+        "whatsapp-sticker-bot/internal/whatsapp"
 
-	"go.mau.fi/whatsmeow/types/events"
+        "go.mau.fi/whatsmeow/types/events"
 )
 
 type BotState struct {
-	Ready     atomic.Bool
-	StartedAt time.Time
+        Ready     atomic.Bool
+        StartedAt time.Time
 }
 
 func main() {
 
-	// Carrega a whitelist de grupos
-	if err := auth.LoadGroups("groups.json"); err != nil {
-		logger.Error("Erro ao carregar groups.json:", err)
-		return
-	}
+        // Inicializa o banco SQLite
+        if err := database.Init(); err != nil {
+                logger.Error("Erro ao inicializar banco SQLite:", err)
+                return
+        }
 
-	client := whatsapp.NewClient()
+        logger.Success("Banco SQLite inicializado com sucesso")
 
-	state := &BotState{
-		StartedAt: time.Now(),
-	}
+        // Carrega a whitelist de grupos
+        if err := auth.LoadGroups("groups.json"); err != nil {
+                logger.Error("Erro ao carregar groups.json:", err)
+                return
+        }
 
-	state.Ready.Store(false)
+        logger.Success("Whitelist de grupos carregada")
 
-	go func() {
+        client := whatsapp.NewClient()
 
-		logger.Info(
-			"Aguardando sincronização inicial do WhatsApp...",
-		)
+        state := &BotState{
+                StartedAt: time.Now(),
+        }
 
-		time.Sleep(5 * time.Second)
+        state.Ready.Store(false)
 
-		state.Ready.Store(true)
+        // Aguarda sincronização inicial do WhatsApp
+        go func() {
 
-		logger.Success(
-			"Sincronização concluída. Bot pronto.",
-		)
-	}()
+                logger.Info(
+                        "Aguardando sincronização inicial do WhatsApp...",
+                )
 
-	client.AddEventHandler(func(evt interface{}) {
+                time.Sleep(5 * time.Second)
 
-		if !state.Ready.Load() {
-			return
-		}
+                state.Ready.Store(true)
 
-		msg, ok := evt.(*events.Message)
-		if !ok {
-			return
-		}
+                logger.Success(
+                        "Sincronização concluída. Bot pronto.",
+                )
+        }()
 
-		logger.Debug( 
-			fmt.Sprintf( 
-				"Mensagem recebida de %s",
-				msg.Info.Sender.User,
-			),
-		)
+        client.AddEventHandler(func(evt interface{}) {
 
-		handler.ProcessMessage(
-			client,
-			msg,
-			state.StartedAt,
-		)
-	})
+                if !state.Ready.Load() {
+                        return
+                }
 
-	logger.Success("Bot iniciado!")
+                msg, ok := evt.(*events.Message)
+                if !ok {
+                        return
+                }
 
-	select {}
+                logger.Debug(
+                        fmt.Sprintf(
+                                "Mensagem recebida de %s",
+                                msg.Info.Sender.User,
+                        ),
+                )
+
+                handler.ProcessMessage(
+                        client,
+                        msg,
+                        state.StartedAt,
+                )
+        })
+
+        logger.Success("Bot iniciado com sistema Gold habilitado!")
+
+        select {}
 }
+

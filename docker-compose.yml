@@ -13,3 +13,4 @@ services:
       - ./sessions:/app/storage/sessions
       - ./temp:/app/temp
       - ./groups.json:/app/groups.json:ro
+      - ./storage:/app/storage
