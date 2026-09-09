@@ -1,8 +1,9 @@
 module whatsapp-sticker-bot
 
-go 1.25.0
+go 1.25.4
 
 require (
+	github.com/agusira/webpexif v0.0.0-20260713080900-3a039711955a
 	github.com/mattn/go-sqlite3 v1.14.48
 	github.com/mdp/qrterminal/v3 v3.2.1
 	go.mau.fi/whatsmeow v0.0.0-20260713112832-d8960d9575d2

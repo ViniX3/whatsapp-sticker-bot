@@ -29,6 +29,15 @@ func SendSticker(
 		)
 	}
 
+	data, err = AddStickerMetadata(data)
+
+	if err != nil {
+		return fmt.Errorf(
+			"erro adicionando metadata da figurinha: %w",
+			err,
+		)
+	}
+
 	logger.Debug(
 		"Arquivo sticker carregado:",
 		stickerPath,
@@ -118,18 +127,47 @@ func SendSticker(
 }
 
 func SendText(
-        client *whatsmeow.Client,
-        chat types.JID,
-        text string,
+	client *whatsmeow.Client,
+	chat types.JID,
+	text string,
 ) error {
 
-        _, err := client.SendMessage(
-                context.Background(),
-                chat,
-                &waProto.Message{
-                        Conversation: &text,
-                },
-        )
+	_, err := client.SendMessage(
+		context.Background(),
+		chat,
+		&waProto.Message{
+			Conversation: &text,
+		},
+	)
 
-        return err
+	return err
+}
+
+func SendMentionedText(
+	client *whatsmeow.Client,
+	chat types.JID,
+	text string,
+	mentionedJIDs []types.JID,
+) error {
+
+	mentioned := make([]string, 0, len(mentionedJIDs))
+
+	for _, jid := range mentionedJIDs {
+		mentioned = append(mentioned, jid.String())
+	}
+
+	_, err := client.SendMessage(
+		context.Background(),
+		chat,
+		&waProto.Message{
+			ExtendedTextMessage: &waProto.ExtendedTextMessage{
+				Text: &text,
+				ContextInfo: &waProto.ContextInfo{
+					MentionedJID: mentioned,
+				},
+			},
+		},
+	)
+
+	return err
 }
