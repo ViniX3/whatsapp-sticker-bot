@@ -26,7 +26,6 @@ func ProcessMessage(
 	msgEvent *events.Message,
 	botStartedAt time.Time,
 ) {
-	// Ignora mensagens recebidas antes da inicialização atual do bot.
 	if msgEvent.Info.Timestamp.Before(botStartedAt) {
 		logger.Debug("Mensagem antiga ignorada")
 		return
@@ -35,35 +34,62 @@ func ProcessMessage(
 	logger.Info("==============================")
 	logger.Info("Mensagem recebida")
 
-	// Validação de whitelist para grupos.
+	// ==========================================================
+	// WHITELIST DE GRUPOS
+	// ==========================================================
+
 	if msgEvent.Info.IsGroup {
 		groupID := msgEvent.Info.Chat.String()
 
 		if !auth.IsGroupAllowed(groupID) {
-			logger.Debug("Grupo não autorizado:", groupID)
+			logger.Debug(
+				"Grupo não autorizado:",
+				groupID,
+			)
+
 			logger.Info("==============================")
 			return
 		}
 
-		logger.Info("Grupo autorizado:", groupID)
+		logger.Info(
+			"Grupo autorizado:",
+			groupID,
+		)
 	}
 
 	text := extractText(msgEvent)
-	logger.Info("Texto recebido:", text)
+
+	logger.Info(
+		"Texto recebido:",
+		text,
+	)
 
 	parts := strings.Fields(text)
 
 	if len(parts) == 0 {
-		logger.Debug("Mensagem sem texto, ignorando")
+		logger.Debug(
+			"Mensagem sem texto, ignorando",
+		)
+
 		logger.Info("==============================")
 		return
 	}
+
+	command := strings.ToLower(parts[0])
 
 	// ==========================================================
 	// !gold
 	// ==========================================================
 
-	if strings.EqualFold(parts[0], "!gold") {
+	if command == "!gold" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!gold",
+		) {
+			return
+		}
+
 		if len(parts) != 1 {
 			_ = whatsapp.SendText(
 				client,
@@ -75,15 +101,26 @@ func ProcessMessage(
 			return
 		}
 
-		jid := msgEvent.Info.Sender.String()
-		name := msgEvent.Info.PushName
+		groupJID :=
+			msgEvent.Info.Chat.String()
 
-		logger.Info("Comando !gold recebido de:", jid)
+		jid :=
+			canonicalSenderJID(msgEvent)
 
-		// Toda a criação da carteira, concessão do Gold inicial
-		// e registro da transação ocorre atomicamente dentro
-		// de gold.ClaimInitialGold().
-		user, claimed, err := gold.ClaimInitialGold(jid, name)
+		name :=
+			msgEvent.Info.PushName
+
+		logger.Info(
+			"Comando !gold recebido de:",
+			jid,
+		)
+
+		wallet, claimed, err :=
+			gold.ClaimInitialGold(
+				groupJID,
+				jid,
+				name,
+			)
 
 		if err != nil {
 			logger.Error(
@@ -94,14 +131,14 @@ func ProcessMessage(
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
-				"❌ Erro ao acessar carteira Gold.",
+				"❌ Erro ao acessar sua carteira Gold.",
 			)
 
 			logger.Info("==============================")
 			return
 		}
 
-		if user == nil {
+		if wallet == nil {
 			logger.Error(
 				"Carteira Gold não encontrada após operação:",
 				jid,
@@ -110,31 +147,37 @@ func ProcessMessage(
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
-				"❌ Erro ao consultar carteira Gold.",
+				"❌ Erro ao consultar sua carteira Gold.",
 			)
 
 			logger.Info("==============================")
 			return
 		}
 
-		// Gold concedido nesta chamada.
+		senderMention :=
+			msgEvent.Info.Sender.ToNonAD()
+
 		if claimed {
 			response := fmt.Sprintf(
-				"🪙 *@%s*\n\n*Gold inicial recebido!*\n\nVocê recebeu *%d Gold* iniciais.\nSaldo atual: *%d Gold*",
+				"🪙 *@%s*\n\n*Carteira Gold ativada neste grupo!*\n\nVocê recebeu *%d Gold* iniciais.\n\n💰 Saldo atual: *%d Gold*",
 				name,
 				gold.InitialGold,
-				user.Gold,
+				wallet.Gold,
 			)
 
 			_ = whatsapp.SendMentionedText(
 				client,
 				msgEvent.Info.Chat,
 				response,
-				[]types.JID{msgEvent.Info.Sender},
+				[]types.JID{
+					senderMention,
+				},
 			)
 
 			logger.Success(
-				"Gold inicial concedido para:",
+				"Gold inicial concedido no grupo:",
+				groupJID,
+				"Usuário:",
 				jid,
 			)
 
@@ -142,18 +185,19 @@ func ProcessMessage(
 			return
 		}
 
-		// Carteira já existia e o Gold inicial já havia sido recebido.
 		response := fmt.Sprintf(
-			"🪙 *@%s*\n\n*Carteira Gold*\n\nSaldo atual: *%d Gold*",
+			"🪙 *@%s*\n\n*Carteira Gold deste grupo*\n\n💰 Saldo atual: *%d Gold*",
 			name,
-			user.Gold,
+			wallet.Gold,
 		)
 
 		_ = whatsapp.SendMentionedText(
 			client,
 			msgEvent.Info.Chat,
 			response,
-			[]types.JID{msgEvent.Info.Sender},
+			[]types.JID{
+				senderMention,
+			},
 		)
 
 		logger.Info(
@@ -169,7 +213,15 @@ func ProcessMessage(
 	// !saldo
 	// ==========================================================
 
-	if strings.EqualFold(parts[0], "!saldo") {
+	if command == "!saldo" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!saldo",
+		) {
+			return
+		}
+
 		if len(parts) != 1 {
 			_ = whatsapp.SendText(
 				client,
@@ -181,10 +233,20 @@ func ProcessMessage(
 			return
 		}
 
-		jid := msgEvent.Info.Sender.String()
-		name := msgEvent.Info.PushName
+		groupJID :=
+			msgEvent.Info.Chat.String()
 
-		user, err := database.GetUser(jid)
+		jid :=
+			canonicalSenderJID(msgEvent)
+
+		name :=
+			msgEvent.Info.PushName
+
+		wallet, err :=
+			database.GetWallet(
+				groupJID,
+				jid,
+			)
 
 		if err != nil {
 			logger.Error(
@@ -195,18 +257,21 @@ func ProcessMessage(
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
-				"❌ Erro ao consultar saldo.",
+				"❌ Erro ao consultar seu saldo.",
 			)
 
 			logger.Info("==============================")
 			return
 		}
 
-		if user == nil {
+		if wallet == nil {
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
-				"❌ Você ainda não possui uma carteira Gold.\n\nUse *!gold* para receber seus *1000 Gold* iniciais.",
+				fmt.Sprintf(
+					"❌ Você ainda não possui uma carteira Gold neste grupo.\n\nUse *!gold* para receber seus *%d Gold* iniciais.",
+					gold.InitialGold,
+				),
 			)
 
 			logger.Info("==============================")
@@ -214,16 +279,18 @@ func ProcessMessage(
 		}
 
 		response := fmt.Sprintf(
-			"💰 *@%s*\n\n*Seu saldo*\n\n*%d Gold*",
+			"💰 *@%s*\n\n*Seu saldo neste grupo*\n\n*%d Gold*",
 			name,
-			user.Gold,
+			wallet.Gold,
 		)
 
 		_ = whatsapp.SendMentionedText(
 			client,
 			msgEvent.Info.Chat,
 			response,
-			[]types.JID{msgEvent.Info.Sender},
+			[]types.JID{
+				msgEvent.Info.Sender.ToNonAD(),
+			},
 		)
 
 		logger.Info(
@@ -236,10 +303,358 @@ func ProcessMessage(
 	}
 
 	// ==========================================================
+	// !ranking
+	// ==========================================================
+
+	if command == "!ranking" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!ranking",
+		) {
+			return
+		}
+
+		if len(parts) != 1 {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"Uso correto: *!ranking*",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		groupJID :=
+			msgEvent.Info.Chat.String()
+
+		ranking, err :=
+			gold.GetRanking(
+				groupJID,
+				10,
+			)
+
+		if err != nil {
+			logger.Error(
+				"Erro ao consultar ranking:",
+				err,
+			)
+
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ Não foi possível consultar o ranking Gold.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		if len(ranking) == 0 {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"🏆 Ainda não existem carteiras Gold neste grupo.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		var builder strings.Builder
+
+		builder.WriteString(
+			"🏆 *RANKING GOLD DO GRUPO*\n\n",
+		)
+
+		for position, entry := range ranking {
+
+			var prefix string
+
+			switch position {
+			case 0:
+				prefix = "🥇"
+			case 1:
+				prefix = "🥈"
+			case 2:
+				prefix = "🥉"
+			default:
+				prefix = fmt.Sprintf(
+					"%d.",
+					position+1,
+				)
+			}
+
+			name :=
+				rankingDisplayName(
+					entry.Name,
+					entry.JID,
+				)
+
+			builder.WriteString(
+				fmt.Sprintf(
+					"%s *%s* — %d Gold\n",
+					prefix,
+					name,
+					entry.Gold,
+				),
+			)
+		}
+
+		_ = whatsapp.SendText(
+			client,
+			msgEvent.Info.Chat,
+			builder.String(),
+		)
+
+		logger.Info(
+			"Ranking consultado no grupo:",
+			groupJID,
+		)
+
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
+	// !pix
+	// ==========================================================
+
+	if command == "!pix" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!pix",
+		) {
+			return
+		}
+
+		if len(parts) < 3 {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"Uso correto: *!pix @pessoa <quantidade>*\n\nExemplo: *!pix @pessoa 500*",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		targetJID, ok :=
+			getSingleMention(msgEvent)
+
+		if !ok {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ Você precisa mencionar exatamente uma pessoa para enviar o PIX.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		amountText :=
+			parts[len(parts)-1]
+
+		amount, err :=
+			strconv.Atoi(amountText)
+
+		if err != nil ||
+			amount <= 0 {
+
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ A quantidade do PIX precisa ser um número inteiro maior que zero.\n\nExemplo: *!pix @pessoa 500*",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		groupJID :=
+			msgEvent.Info.Chat.String()
+
+		senderJID :=
+			canonicalSenderJID(msgEvent)
+
+		if targetJID == senderJID {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"😂 Você não pode fazer um PIX para si mesmo.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		groupInfo, err :=
+			client.GetGroupInfo(
+				context.Background(),
+				msgEvent.Info.Chat,
+			)
+
+		if err != nil {
+			logger.Error(
+				"Erro ao buscar informações do grupo para PIX:",
+				err,
+			)
+
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ Não foi possível verificar o destinatário do PIX.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		targetJID, ok =
+			resolveParticipantJID(
+				groupInfo.Participants,
+				targetJID,
+			)
+
+		if !ok {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ A pessoa mencionada não pertence a este grupo.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		targetName :=
+			pixTargetName(parts)
+
+		result, err :=
+			gold.Pix(
+				groupJID,
+				senderJID,
+				targetJID,
+				targetName,
+				amount,
+			)
+
+		if err != nil {
+			switch {
+			case errors.Is(
+				err,
+				gold.ErrWalletNotFound,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					fmt.Sprintf(
+						"❌ Você ainda não possui uma carteira Gold neste grupo.\n\nUse *!gold* para receber seus *%d Gold* iniciais.",
+						gold.InitialGold,
+					),
+				)
+
+			case errors.Is(
+				err,
+				gold.ErrInsufficientGold,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"💸 Você não possui Gold suficiente para realizar esse PIX.",
+				)
+
+			case errors.Is(
+				err,
+				gold.ErrPixSelfTransfer,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"😂 Você não pode fazer um PIX para si mesmo.",
+				)
+
+			default:
+				logger.Error(
+					"Erro ao realizar PIX:",
+					err,
+				)
+
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ Não foi possível realizar o PIX.",
+				)
+			}
+
+			logger.Info("==============================")
+			return
+		}
+
+		targetJIDParsed, err :=
+			types.ParseJID(targetJID)
+
+		if err != nil {
+			logger.Error(
+				"Erro ao converter JID do destinatário do PIX:",
+				err,
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		senderName :=
+			msgEvent.Info.PushName
+
+		response := fmt.Sprintf(
+			"💸 *PIX GOLD REALIZADO!*\n\n*@%s* enviou *%d Gold* para *@%s*.\n\n💰 Saldo de @%s: *%d Gold*",
+			senderName,
+			result.Amount,
+			targetName,
+			senderName,
+			result.SenderBalance,
+		)
+
+		_ = whatsapp.SendMentionedText(
+			client,
+			msgEvent.Info.Chat,
+			response,
+			[]types.JID{
+				msgEvent.Info.Sender.ToNonAD(),
+				targetJIDParsed.ToNonAD(),
+			},
+		)
+
+		logger.Success(
+			"PIX Gold realizado:",
+			senderJID,
+			"->",
+			targetJID,
+			"Valor:",
+			result.Amount,
+		)
+
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
 	// !bet
 	// ==========================================================
 
-	if strings.EqualFold(parts[0], "!bet") {
+	if command == "!bet" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!bet",
+		) {
+			return
+		}
+
 		if len(parts) != 2 {
 			_ = whatsapp.SendText(
 				client,
@@ -251,7 +666,8 @@ func ProcessMessage(
 			return
 		}
 
-		betAmount, err := strconv.Atoi(parts[1])
+		betAmount, err :=
+			strconv.Atoi(parts[1])
 
 		if err != nil {
 			_ = whatsapp.SendText(
@@ -275,53 +691,59 @@ func ProcessMessage(
 			return
 		}
 
-		jid := msgEvent.Info.Sender.String()
-		name := msgEvent.Info.PushName
+		groupJID :=
+			msgEvent.Info.Chat.String()
 
-		result, err := gold.Bet(
-			jid,
-			betAmount,
-		)
+		jid :=
+			canonicalSenderJID(msgEvent)
+
+		name :=
+			msgEvent.Info.PushName
+
+		result, err :=
+			gold.Bet(
+				groupJID,
+				jid,
+				betAmount,
+			)
 
 		if err != nil {
-			if errors.Is(
+			switch {
+			case errors.Is(
 				err,
 				gold.ErrWalletNotFound,
-			) {
+			):
 				_ = whatsapp.SendText(
 					client,
 					msgEvent.Info.Chat,
-					"❌ Você ainda não possui uma carteira Gold.\n\nUse *!gold* primeiro.",
+					fmt.Sprintf(
+						"❌ Você ainda não possui uma carteira Gold neste grupo.\n\nUse *!gold* para receber seus *%d Gold* iniciais.",
+						gold.InitialGold,
+					),
 				)
 
-				logger.Info("==============================")
-				return
-			}
-
-			if errors.Is(
+			case errors.Is(
 				err,
 				gold.ErrInsufficientGold,
-			) {
+			):
 				_ = whatsapp.SendText(
 					client,
 					msgEvent.Info.Chat,
 					"❌ Você não possui Gold suficiente para essa aposta.",
 				)
 
-				logger.Info("==============================")
-				return
+			default:
+				logger.Error(
+					"Erro ao realizar aposta:",
+					err,
+				)
+
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ Erro ao realizar aposta.",
+				)
 			}
-
-			logger.Error(
-				"Erro ao realizar aposta:",
-				err,
-			)
-
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ Erro ao realizar aposta.",
-			)
 
 			logger.Info("==============================")
 			return
@@ -401,7 +823,9 @@ func ProcessMessage(
 			client,
 			msgEvent.Info.Chat,
 			response,
-			[]types.JID{msgEvent.Info.Sender},
+			[]types.JID{
+				msgEvent.Info.Sender.ToNonAD(),
+			},
 		)
 
 		logger.Info(
@@ -417,22 +841,25 @@ func ProcessMessage(
 	// !roubar
 	// ==========================================================
 
-	if strings.EqualFold(parts[0], "!roubar") {
-		jid := msgEvent.Info.Sender.String()
-		robberName := msgEvent.Info.PushName
-
-		if !msgEvent.Info.IsGroup {
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ O comando *!roubar* só pode ser usado em grupos.",
-			)
-
-			logger.Info("==============================")
+	if command == "!roubar" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!roubar",
+		) {
 			return
 		}
 
-		if len(parts) != 2 {
+		groupJID :=
+			msgEvent.Info.Chat.String()
+
+		jid :=
+			canonicalSenderJID(msgEvent)
+
+		robberName :=
+			msgEvent.Info.PushName
+
+		if len(parts) < 2 {
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
@@ -443,77 +870,22 @@ func ProcessMessage(
 			return
 		}
 
-		if msgEvent.Message == nil ||
-			msgEvent.Message.ExtendedTextMessage == nil {
+		targetJID, ok :=
+			getSingleMention(msgEvent)
 
+		if !ok {
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
-				"❌ Você precisa mencionar alguém para roubar.",
+				"❌ Você precisa mencionar exatamente uma pessoa para roubar.",
 			)
 
 			logger.Info("==============================")
 			return
 		}
 
-		contextInfo :=
-			msgEvent.Message.
-				ExtendedTextMessage.
-				ContextInfo
-
-		if contextInfo == nil {
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ Você precisa mencionar alguém para roubar.",
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		mentionedJIDs :=
-			contextInfo.GetMentionedJID()
-
-		if len(mentionedJIDs) == 0 {
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ Você precisa mencionar alguém para roubar.",
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		if len(mentionedJIDs) > 1 {
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ Mencione apenas uma pessoa por vez.",
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		targetJID := mentionedJIDs[0]
 		targetName :=
-			strings.TrimPrefix(
-				parts[1],
-				"@",
-			)
-
-		if targetJID == jid {
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"😂 Você não pode roubar a si mesmo.",
-			)
-
-			logger.Info("==============================")
-			return
-		}
+			robTargetName(parts)
 
 		groupInfo, err :=
 			client.GetGroupInfo(
@@ -537,19 +909,13 @@ func ProcessMessage(
 			return
 		}
 
-		targetInGroup := false
+		targetJID, ok =
+			resolveParticipantJID(
+				groupInfo.Participants,
+				targetJID,
+			)
 
-		for _, participant := range groupInfo.Participants {
-
-			if participant.JID.String() ==
-				targetJID {
-
-				targetInGroup = true
-				break
-			}
-		}
-
-		if !targetInGroup {
+		if !ok {
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
@@ -560,14 +926,39 @@ func ProcessMessage(
 			return
 		}
 
-		// Consulta antecipada apenas para fornecer uma mensagem
-		// amigável ao usuário.
-		//
-		// A validação definitiva e atômica do cooldown acontece
-		// novamente dentro de gold.Rob().
-		if !gold.CanRob(jid) {
+		if targetJID == jid {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"😂 Você não pode roubar a si mesmo.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		targetJIDParsed, err :=
+			types.ParseJID(targetJID)
+
+		if err != nil {
+			logger.Error(
+				"Erro ao converter JID do alvo:",
+				err,
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		if !gold.CanRob(
+			groupJID,
+			jid,
+		) {
 			remaining :=
-				gold.GetRobCooldown(jid)
+				gold.GetRobCooldown(
+					groupJID,
+					jid,
+				)
 
 			seconds :=
 				int(remaining.Seconds())
@@ -591,45 +982,71 @@ func ProcessMessage(
 
 		result, err :=
 			gold.Rob(
+				groupJID,
 				jid,
 				targetJID,
 			)
 
 		if err != nil {
-			if errors.Is(
+			switch {
+			case errors.Is(
 				err,
 				gold.ErrWalletNotFound,
-			) {
+			):
 				_ = whatsapp.SendText(
 					client,
 					msgEvent.Info.Chat,
-					"❌ Você precisa criar sua carteira primeiro usando *!gold*.",
+					fmt.Sprintf(
+						"❌ Você ainda não possui uma carteira Gold neste grupo.\n\nUse *!gold* para receber seus *%d Gold* iniciais.",
+						gold.InitialGold,
+					),
 				)
 
-				logger.Info("==============================")
-				return
-			}
-
-			if errors.Is(
+			case errors.Is(
 				err,
-				gold.ErrInsufficientGold,
-			) {
-				_ = whatsapp.SendText(
-					client,
-					msgEvent.Info.Chat,
-					"❌ Você não possui Gold suficiente.",
+				gold.ErrTargetNoGold,
+			):
+				response := fmt.Sprintf(
+					"💸 *@%s* não possui Gold disponível para ser roubado.",
+					targetName,
 				)
 
-				logger.Info("==============================")
-				return
-			}
+				_ = whatsapp.SendMentionedText(
+					client,
+					msgEvent.Info.Chat,
+					response,
+					[]types.JID{
+						targetJIDParsed.ToNonAD(),
+					},
+				)
 
-			if errors.Is(
+			case errors.Is(
+				err,
+				gold.ErrTargetShielded,
+			):
+				response := fmt.Sprintf(
+					"🛡️ *@%s* está protegido por um escudo e não pode ser roubado agora!",
+					targetName,
+				)
+
+				_ = whatsapp.SendMentionedText(
+					client,
+					msgEvent.Info.Chat,
+					response,
+					[]types.JID{
+						targetJIDParsed.ToNonAD(),
+					},
+				)
+
+			case errors.Is(
 				err,
 				gold.ErrRobCooldown,
-			) {
+			):
 				remaining :=
-					gold.GetRobCooldown(jid)
+					gold.GetRobCooldown(
+						groupJID,
+						jid,
+					)
 
 				seconds :=
 					int(remaining.Seconds())
@@ -647,20 +1064,28 @@ func ProcessMessage(
 					),
 				)
 
-				logger.Info("==============================")
-				return
-			}
-
-			logger.Error(
-				"Erro ao executar roubo:",
+			case errors.Is(
 				err,
-			)
+				gold.ErrInsufficientGold,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"💸 Você não possui Gold suficiente para realizar essa tentativa.",
+				)
 
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ Ocorreu um erro ao tentar realizar o roubo.",
-			)
+			default:
+				logger.Error(
+					"Erro ao executar roubo:",
+					err,
+				)
+
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ Não foi possível concluir o roubo. Tente novamente.",
+				)
+			}
 
 			logger.Info("==============================")
 			return
@@ -688,26 +1113,13 @@ func ProcessMessage(
 			)
 		}
 
-		targetJIDParsed, err :=
-			types.ParseJID(targetJID)
-
-		if err != nil {
-			logger.Error(
-				"Erro ao converter JID do alvo:",
-				err,
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
 		_ = whatsapp.SendMentionedText(
 			client,
 			msgEvent.Info.Chat,
 			response,
 			[]types.JID{
-				msgEvent.Info.Sender,
-				targetJIDParsed,
+				msgEvent.Info.Sender.ToNonAD(),
+				targetJIDParsed.ToNonAD(),
 			},
 		)
 
@@ -756,7 +1168,250 @@ func ProcessMessage(
 	logger.Info("==============================")
 }
 
-// extractText obtém o texto ou legenda da mensagem.
+// ==========================================================
+// NORMALIZAÇÃO DE IDENTIDADE
+// ==========================================================
+
+// canonicalSenderJID remove agent/device do JID.
+//
+// Exemplo:
+//
+//	150495670853833:35@lid
+//
+// vira:
+//
+//	150495670853833@lid
+//
+// Isso impede que celulares/dispositivos diferentes do mesmo
+// usuário criem carteiras Gold diferentes.
+func canonicalSenderJID(
+	msg *events.Message,
+) string {
+
+	return msg.Info.
+		Sender.
+		ToNonAD().
+		String()
+}
+
+// normalizeJIDString converte um JID textual para sua
+// representação sem agent/device.
+func normalizeJIDString(
+	value string,
+) (string, bool) {
+
+	jid, err :=
+		types.ParseJID(value)
+
+	if err != nil {
+		return "", false
+	}
+
+	return jid.
+		ToNonAD().
+		String(), true
+}
+
+// resolveParticipantJID procura o participante mencionado
+// comparando JID, LID e PhoneNumber.
+//
+// O JID financeiro retornado é sempre sem agent/device.
+//
+// Por enquanto damos preferência ao mesmo tipo de identidade
+// usado pela menção, evitando misturar carteiras PN/LID.
+func resolveParticipantJID(
+	participants []types.GroupParticipant,
+	targetJID string,
+) (string, bool) {
+
+	target, ok :=
+		normalizeJIDString(targetJID)
+
+	if !ok {
+		return "", false
+	}
+
+	for _, participant := range participants {
+
+		candidates := []types.JID{
+			participant.JID,
+			participant.LID,
+			participant.PhoneNumber,
+		}
+
+		for _, candidate := range candidates {
+
+			if candidate.IsEmpty() {
+				continue
+			}
+
+			normalized :=
+				candidate.
+					ToNonAD().
+					String()
+
+			if normalized == target {
+				// Preferimos o JID principal do participante.
+				if !participant.JID.IsEmpty() {
+					return participant.
+						JID.
+						ToNonAD().
+						String(), true
+				}
+
+				return normalized, true
+			}
+		}
+	}
+
+	return "", false
+}
+
+// ==========================================================
+// HELPERS DOS COMANDOS GOLD
+// ==========================================================
+
+func requireGoldGroup(
+	client *whatsmeow.Client,
+	msg *events.Message,
+	command string,
+) bool {
+
+	if msg.Info.IsGroup {
+		return true
+	}
+
+	_ = whatsapp.SendText(
+		client,
+		msg.Info.Chat,
+		fmt.Sprintf(
+			"❌ O comando *%s* só pode ser usado em grupos autorizados.",
+			command,
+		),
+	)
+
+	logger.Info("==============================")
+
+	return false
+}
+
+func getSingleMention(
+	msg *events.Message,
+) (string, bool) {
+
+	if msg.Message == nil ||
+		msg.Message.ExtendedTextMessage == nil {
+
+		return "", false
+	}
+
+	contextInfo :=
+		msg.Message.
+			ExtendedTextMessage.
+			ContextInfo
+
+	if contextInfo == nil {
+		return "", false
+	}
+
+	mentioned :=
+		contextInfo.GetMentionedJID()
+
+	if len(mentioned) != 1 {
+		return "", false
+	}
+
+	return normalizeJIDString(
+		mentioned[0],
+	)
+}
+
+func pixTargetName(
+	parts []string,
+) string {
+
+	if len(parts) < 3 {
+		return "usuário"
+	}
+
+	name :=
+		strings.Join(
+			parts[1:len(parts)-1],
+			" ",
+		)
+
+	name =
+		strings.TrimSpace(
+			strings.TrimPrefix(
+				name,
+				"@",
+			),
+		)
+
+	if name == "" {
+		return "usuário"
+	}
+
+	return name
+}
+
+func robTargetName(
+	parts []string,
+) string {
+
+	if len(parts) < 2 {
+		return "usuário"
+	}
+
+	name :=
+		strings.Join(
+			parts[1:],
+			" ",
+		)
+
+	name =
+		strings.TrimSpace(
+			strings.TrimPrefix(
+				name,
+				"@",
+			),
+		)
+
+	if name == "" {
+		return "usuário"
+	}
+
+	return name
+}
+
+func rankingDisplayName(
+	name string,
+	jid string,
+) string {
+
+	name =
+		strings.TrimSpace(name)
+
+	if name != "" {
+		return name
+	}
+
+	if index :=
+		strings.Index(
+			jid,
+			"@",
+		); index > 0 {
+
+		return jid[:index]
+	}
+
+	return jid
+}
+
+// ==========================================================
+// TEXTO / MÍDIA
+// ==========================================================
+
 func extractText(
 	msg *events.Message,
 ) string {
@@ -794,8 +1449,6 @@ func extractText(
 	return ""
 }
 
-// getMedia identifica mídia enviada diretamente ou através
-// de uma mensagem respondida.
 func getMedia(
 	msg *events.Message,
 ) *media.Media {
@@ -852,13 +1505,12 @@ func getMedia(
 	return nil
 }
 
-// processStickerCommand executa o pipeline de geração e envio
-// da figurinha.
 func processStickerCommand(
 	client *whatsmeow.Client,
 	msg *events.Message,
 	mediaMessage *media.Media,
 ) {
+
 	err := processor.ProcessSticker(
 		client,
 		msg.Info.Chat,

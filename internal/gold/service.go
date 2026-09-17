@@ -12,7 +12,7 @@ import (
 	"whatsapp-sticker-bot/internal/database"
 )
 
-const InitialGold = 1000
+const InitialGold = 3000
 
 const (
 	RobSuccessChance  = 60
@@ -22,10 +22,41 @@ const (
 )
 
 var (
-	ErrInsufficientGold = errors.New("saldo insuficiente")
-	ErrWalletNotFound   = errors.New("usuário não possui carteira Gold")
-	ErrRobCooldown      = errors.New("roubo em cooldown")
+	// Carteira do próprio usuário não existe naquele grupo.
+	ErrWalletNotFound = errors.New(
+		"usuário não possui carteira Gold neste grupo",
+	)
+
+	// Saldo insuficiente para a operação solicitada.
+	ErrInsufficientGold = errors.New(
+		"saldo insuficiente",
+	)
+
+	// A vítima não possui carteira ou está sem Gold.
+	//
+	// Para quem está jogando, os dois casos representam
+	// a mesma situação: não há Gold disponível para roubo.
+	ErrTargetNoGold = errors.New(
+		"alvo não possui Gold disponível para ser roubado",
+	)
+
+	// Será utilizado quando implementarmos !escudo.
+	ErrTargetShielded = errors.New(
+		"alvo possui escudo ativo",
+	)
+
+	ErrRobCooldown = errors.New(
+		"roubo em cooldown",
+	)
+
+	ErrPixSelfTransfer = errors.New(
+		"não é possível enviar Gold para si mesmo",
+	)
 )
+
+// ==========================================================
+// RESULTADOS
+// ==========================================================
 
 // BetResult representa o resultado de uma aposta.
 type BetResult struct {
@@ -46,11 +77,17 @@ type RobResult struct {
 	TargetBalance int
 }
 
-// Controle de cooldown do !roubar.
-//
-// O mutex protege tanto a leitura quanto a gravação do mapa.
-// A reserva do cooldown é feita de maneira atômica para evitar
-// duas tentativas simultâneas do mesmo usuário.
+// PixResult representa uma transferência de Gold.
+type PixResult struct {
+	Amount           int
+	SenderBalance    int
+	RecipientBalance int
+}
+
+// ==========================================================
+// COOLDOWN DO !ROUBAR
+// ==========================================================
+
 var robCooldowns = struct {
 	sync.Mutex
 	lastAttempt map[string]time.Time
@@ -58,81 +95,290 @@ var robCooldowns = struct {
 	lastAttempt: make(map[string]time.Time),
 }
 
-// GetOrCreateWallet obtém a carteira existente ou cria uma nova.
+// cooldownKey separa o cooldown por grupo.
 //
-// IMPORTANTE:
-// Criar uma carteira NÃO concede Gold.
-// O Gold inicial só é concedido através de ClaimInitialGold.
+// Assim, uma tentativa de roubo no Grupo A não bloqueia
+// o mesmo usuário no Grupo B.
+func cooldownKey(
+	groupJID string,
+	jid string,
+) string {
+	return groupJID + "|" + jid
+}
+
+// CanRob verifica se o usuário pode realizar uma tentativa
+// de roubo naquele grupo.
+func CanRob(
+	groupJID string,
+	jid string,
+) bool {
+
+	key := cooldownKey(
+		groupJID,
+		jid,
+	)
+
+	robCooldowns.Lock()
+	defer robCooldowns.Unlock()
+
+	lastAttempt, exists :=
+		robCooldowns.lastAttempt[key]
+
+	if !exists {
+		return true
+	}
+
+	return time.Since(lastAttempt) >= RobCooldown
+}
+
+// GetRobCooldown retorna o tempo restante do cooldown
+// naquele grupo.
+func GetRobCooldown(
+	groupJID string,
+	jid string,
+) time.Duration {
+
+	key := cooldownKey(
+		groupJID,
+		jid,
+	)
+
+	robCooldowns.Lock()
+	defer robCooldowns.Unlock()
+
+	lastAttempt, exists :=
+		robCooldowns.lastAttempt[key]
+
+	if !exists {
+		return 0
+	}
+
+	remaining :=
+		RobCooldown - time.Since(lastAttempt)
+
+	if remaining < 0 {
+		return 0
+	}
+
+	return remaining
+}
+
+// reserveRobCooldown verifica e reserva o cooldown
+// atomicamente.
+func reserveRobCooldown(
+	groupJID string,
+	jid string,
+) bool {
+
+	key := cooldownKey(
+		groupJID,
+		jid,
+	)
+
+	robCooldowns.Lock()
+	defer robCooldowns.Unlock()
+
+	now := time.Now()
+
+	lastAttempt, exists :=
+		robCooldowns.lastAttempt[key]
+
+	if exists &&
+		now.Sub(lastAttempt) < RobCooldown {
+
+		return false
+	}
+
+	robCooldowns.lastAttempt[key] = now
+
+	return true
+}
+
+// clearRobCooldown remove uma reserva caso a tentativa
+// não tenha chegado a uma operação válida.
+func clearRobCooldown(
+	groupJID string,
+	jid string,
+) {
+
+	key := cooldownKey(
+		groupJID,
+		jid,
+	)
+
+	robCooldowns.Lock()
+	defer robCooldowns.Unlock()
+
+	delete(
+		robCooldowns.lastAttempt,
+		key,
+	)
+}
+
+// ==========================================================
+// HELPERS TRANSACIONAIS
+// ==========================================================
+
+// upsertUserTx garante que a identidade global exista.
 //
-// INSERT OR IGNORE torna a operação idempotente:
-// duas chamadas simultâneas para o mesmo JID não causam
-// erro de PRIMARY KEY.
-func GetOrCreateWallet(
+// Caso o nome esteja vazio, preserva o nome já existente.
+func upsertUserTx(
+	tx *sql.Tx,
 	jid string,
 	name string,
-) (*database.User, bool, error) {
+) error {
 
-	result, err := database.DB.Exec(`
-		INSERT OR IGNORE INTO users (
+	_, err := tx.Exec(`
+		INSERT INTO users (
 			jid,
-			name,
+			name
+		)
+		VALUES (?, ?)
+
+		ON CONFLICT(jid) DO UPDATE SET
+			name = CASE
+				WHEN excluded.name <> ''
+				THEN excluded.name
+				ELSE users.name
+			END,
+			updated_at = CURRENT_TIMESTAMP
+	`,
+		jid,
+		name,
+	)
+
+	if err != nil {
+		return fmt.Errorf(
+			"erro ao criar/atualizar usuário: %w",
+			err,
+		)
+	}
+
+	return nil
+}
+
+// ensureWalletTx garante que uma carteira exista.
+//
+// IMPORTANTE:
+//
+// criar a carteira NÃO concede os 3000 Gold iniciais.
+func ensureWalletTx(
+	tx *sql.Tx,
+	groupJID string,
+	jid string,
+) error {
+
+	_, err := tx.Exec(`
+		INSERT OR IGNORE INTO group_wallets (
+			group_jid,
+			jid,
 			gold,
 			gold_initialized
 		)
 		VALUES (?, ?, 0, 0)
-	`, jid, name)
+	`,
+		groupJID,
+		jid,
+	)
 
 	if err != nil {
-		return nil, false, fmt.Errorf(
-			"erro ao criar carteira Gold: %w",
+		return fmt.Errorf(
+			"erro ao garantir carteira Gold: %w",
 			err,
 		)
 	}
 
-	rows, err := result.RowsAffected()
-	if err != nil {
-		return nil, false, fmt.Errorf(
-			"erro ao verificar criação da carteira: %w",
-			err,
-		)
-	}
-
-	created := rows > 0
-
-	user, err := database.GetUser(jid)
-	if err != nil {
-		return nil, false, err
-	}
-
-	if user == nil {
-		return nil, false, fmt.Errorf(
-			"carteira não encontrada após criação: %s",
-			jid,
-		)
-	}
-
-	return user, created, nil
+	return nil
 }
 
-// ClaimInitialGold concede os 1000 Gold iniciais apenas uma vez.
+// recordTransactionTx registra uma movimentação
+// dentro da mesma transação financeira.
+func recordTransactionTx(
+	tx *sql.Tx,
+	groupJID string,
+	jid string,
+	relatedJID string,
+	amount int,
+	transactionType string,
+	description string,
+) error {
+
+	var related interface{}
+
+	if relatedJID == "" {
+		related = nil
+	} else {
+		related = relatedJID
+	}
+
+	_, err := tx.Exec(`
+		INSERT INTO gold_transactions (
+			group_jid,
+			jid,
+			related_jid,
+			amount,
+			type,
+			description
+		)
+		VALUES (?, ?, ?, ?, ?, ?)
+	`,
+		groupJID,
+		jid,
+		related,
+		amount,
+		transactionType,
+		description,
+	)
+
+	if err != nil {
+		return fmt.Errorf(
+			"erro ao registrar transação Gold: %w",
+			err,
+		)
+	}
+
+	return nil
+}
+
+// ==========================================================
+// CARTEIRA
+// ==========================================================
+
+// GetOrCreateWallet obtém ou cria uma carteira naquele grupo.
 //
-// Toda a operação acontece dentro de uma única transação:
+// Criar uma carteira não concede Gold.
 //
-//   - garante que a carteira exista;
-//   - concede os 1000 Gold somente se gold_initialized = 0;
-//   - marca gold_initialized = 1;
-//   - registra a transação;
-//   - confirma tudo em um único COMMIT.
-//
-// Se qualquer etapa falhar, o Rollback desfaz toda a operação.
-//
-// Retorna:
-//   - user: carteira atualizada;
-//   - claimed: true se os 1000 Gold foram concedidos nesta chamada.
-func ClaimInitialGold(
+// Isso permite, por exemplo, receber !pix antes de executar
+// o comando !gold.
+func GetOrCreateWallet(
+	groupJID string,
 	jid string,
 	name string,
-) (*database.User, bool, error) {
+) (*database.Wallet, bool, error) {
+
+	return database.EnsureWallet(
+		groupJID,
+		jid,
+		name,
+	)
+}
+
+// ClaimInitialGold concede os 3000 Gold iniciais
+// uma única vez POR GRUPO.
+//
+// Toda a operação acontece em uma única transação:
+//
+//   - garante identidade do usuário;
+//   - garante carteira no grupo;
+//   - verifica gold_initialized;
+//   - concede 3000 Gold;
+//   - registra histórico;
+//   - COMMIT.
+func ClaimInitialGold(
+	groupJID string,
+	jid string,
+	name string,
+) (*database.Wallet, bool, error) {
 
 	tx, err := database.DB.Begin()
 	if err != nil {
@@ -142,45 +388,40 @@ func ClaimInitialGold(
 		)
 	}
 
-	// É seguro chamar Rollback mesmo depois de Commit.
-	// Nesse caso o database/sql simplesmente retorna sql.ErrTxDone,
-	// que é ignorado pelo defer.
 	defer tx.Rollback()
 
-	// Garante que a carteira exista.
-	//
-	// INSERT OR IGNORE evita disputa de PRIMARY KEY caso duas
-	// chamadas tentem criar a mesma carteira simultaneamente.
-	_, err = tx.Exec(`
-		INSERT OR IGNORE INTO users (
-			jid,
-			name,
-			gold,
-			gold_initialized
-		)
-		VALUES (?, ?, 0, 0)
-	`, jid, name)
+	if err := upsertUserTx(
+		tx,
+		jid,
+		name,
+	); err != nil {
 
-	if err != nil {
-		return nil, false, fmt.Errorf(
-			"erro ao garantir existência da carteira: %w",
-			err,
-		)
+		return nil, false, err
 	}
 
-	// Concede o Gold somente se ainda não tiver sido inicializado.
-	//
-	// A condição gold_initialized = 0 é fundamental:
-	// ela garante que o bônus não possa ser recebido duas vezes.
+	if err := ensureWalletTx(
+		tx,
+		groupJID,
+		jid,
+	); err != nil {
+
+		return nil, false, err
+	}
+
 	result, err := tx.Exec(`
-		UPDATE users
+		UPDATE group_wallets
 		SET
 			gold = gold + ?,
 			gold_initialized = 1,
 			updated_at = CURRENT_TIMESTAMP
-		WHERE jid = ?
+		WHERE group_jid = ?
+		  AND jid = ?
 		  AND gold_initialized = 0
-	`, InitialGold, jid)
+	`,
+		InitialGold,
+		groupJID,
+		jid,
+	)
 
 	if err != nil {
 		return nil, false, fmt.Errorf(
@@ -192,78 +433,92 @@ func ClaimInitialGold(
 	rows, err := result.RowsAffected()
 	if err != nil {
 		return nil, false, fmt.Errorf(
-			"erro ao verificar concessão do Gold inicial: %w",
+			"erro ao verificar Gold inicial: %w",
 			err,
 		)
 	}
 
 	claimed := rows > 0
 
-	// Só registra a transação financeira quando houve
-	// efetivamente uma concessão de Gold.
 	if claimed {
-		_, err = tx.Exec(`
-			INSERT INTO gold_transactions (
-				jid,
-				amount,
-				type,
-				description
-			)
-			VALUES (?, ?, ?, ?)
-		`,
+		if err := recordTransactionTx(
+			tx,
+			groupJID,
 			jid,
+			"",
 			InitialGold,
 			"INITIAL_GOLD",
 			"Gold inicial da carteira",
-		)
+		); err != nil {
 
-		if err != nil {
-			return nil, false, fmt.Errorf(
-				"erro ao registrar Gold inicial: %w",
-				err,
-			)
+			return nil, false, err
 		}
 	}
 
-	if err = tx.Commit(); err != nil {
+	if err := tx.Commit(); err != nil {
 		return nil, false, fmt.Errorf(
-			"erro ao confirmar operação Gold: %w",
+			"erro ao confirmar Gold inicial: %w",
 			err,
 		)
 	}
 
-	// A transação já terminou, então podemos consultar o usuário
-	// normalmente usando database.GetUser.
-	user, err := database.GetUser(jid)
+	wallet, err := database.GetWallet(
+		groupJID,
+		jid,
+	)
 	if err != nil {
 		return nil, false, err
 	}
 
-	if user == nil {
+	if wallet == nil {
 		return nil, false, fmt.Errorf(
-			"carteira não encontrada após concessão: %s",
-			jid,
+			"carteira não encontrada após operação Gold",
 		)
 	}
 
-	return user, claimed, nil
+	return wallet, claimed, nil
 }
 
-// GetBalance retorna o saldo atual do usuário.
-func GetBalance(jid string) (int, error) {
-	user, err := database.GetUser(jid)
+// GetBalance retorna o saldo do usuário naquele grupo.
+func GetBalance(
+	groupJID string,
+	jid string,
+) (int, error) {
+
+	balance, exists, err :=
+		database.GetBalance(
+			groupJID,
+			jid,
+		)
+
 	if err != nil {
 		return 0, err
 	}
 
-	if user == nil {
+	if !exists {
 		return 0, nil
 	}
 
-	return user.Gold, nil
+	return balance, nil
 }
 
-// Bet realiza uma aposta utilizando o sistema de multiplicadores.
+// GetRanking retorna o ranking Gold daquele grupo.
+func GetRanking(
+	groupJID string,
+	limit int,
+) ([]database.RankingEntry, error) {
+
+	return database.GetRanking(
+		groupJID,
+		limit,
+	)
+}
+
+// ==========================================================
+// !BET
+// ==========================================================
+
+// Bet realiza uma aposta dentro do grupo atual.
 //
 // Probabilidades:
 //
@@ -273,14 +528,20 @@ func GetBalance(jid string) (int, error) {
 //	💰 Grande prêmio     5%
 //	🔥 Jackpot           0,9%
 //	👑 Mega Jackpot      0,1%
-func Bet(jid string, amount int) (*BetResult, error) {
+func Bet(
+	groupJID string,
+	jid string,
+	amount int,
+) (*BetResult, error) {
+
 	if amount <= 0 {
 		return nil, fmt.Errorf(
 			"valor da aposta deve ser maior que zero",
 		)
 	}
 
-	// Sorteio criptograficamente seguro entre 0 e 9999.
+	// Fazemos o sorteio antes de abrir a transação para
+	// manter o lock financeiro pelo menor tempo possível.
 	n, err := rand.Int(
 		rand.Reader,
 		big.NewInt(10000),
@@ -337,9 +598,15 @@ func Bet(jid string, amount int) (*BetResult, error) {
 
 	err = tx.QueryRow(`
 		SELECT gold
-		FROM users
-		WHERE jid = ?
-	`, jid).Scan(&balance)
+		FROM group_wallets
+		WHERE group_jid = ?
+		  AND jid = ?
+	`,
+		groupJID,
+		jid,
+	).Scan(
+		&balance,
+	)
 
 	if err == sql.ErrNoRows {
 		return nil, ErrWalletNotFound
@@ -356,21 +623,29 @@ func Bet(jid string, amount int) (*BetResult, error) {
 		return nil, ErrInsufficientGold
 	}
 
-	prize := amount * multiplier
-	netResult := prize - amount
-	newBalance := balance + netResult
+	prize :=
+		amount * multiplier
 
-	// Atualiza o saldo relativamente.
-	//
-	// Isso é mais seguro que gravar diretamente um saldo absoluto
-	// previamente calculado.
+	netResult :=
+		prize - amount
+
+	newBalance :=
+		balance + netResult
+
 	updateResult, err := tx.Exec(`
-		UPDATE users
+		UPDATE group_wallets
 		SET
 			gold = gold + ?,
 			updated_at = CURRENT_TIMESTAMP
-		WHERE jid = ?
-	`, netResult, jid)
+		WHERE group_jid = ?
+		  AND jid = ?
+		  AND gold + ? >= 0
+	`,
+		netResult,
+		groupJID,
+		jid,
+		netResult,
+	)
 
 	if err != nil {
 		return nil, fmt.Errorf(
@@ -379,16 +654,18 @@ func Bet(jid string, amount int) (*BetResult, error) {
 		)
 	}
 
-	rows, err := updateResult.RowsAffected()
+	rows, err :=
+		updateResult.RowsAffected()
+
 	if err != nil {
 		return nil, fmt.Errorf(
-			"erro ao verificar atualização da aposta: %w",
+			"erro ao verificar aposta: %w",
 			err,
 		)
 	}
 
 	if rows == 0 {
-		return nil, ErrWalletNotFound
+		return nil, ErrInsufficientGold
 	}
 
 	transactionType := "BET_LOSS"
@@ -404,29 +681,20 @@ func Bet(jid string, amount int) (*BetResult, error) {
 		multiplier,
 	)
 
-	_, err = tx.Exec(`
-		INSERT INTO gold_transactions (
-			jid,
-			amount,
-			type,
-			description
-		)
-		VALUES (?, ?, ?, ?)
-	`,
+	if err := recordTransactionTx(
+		tx,
+		groupJID,
 		jid,
+		"",
 		netResult,
 		transactionType,
 		description,
-	)
+	); err != nil {
 
-	if err != nil {
-		return nil, fmt.Errorf(
-			"erro ao registrar aposta: %w",
-			err,
-		)
+		return nil, err
 	}
 
-	if err = tx.Commit(); err != nil {
+	if err := tx.Commit(); err != nil {
 		return nil, fmt.Errorf(
 			"erro ao confirmar aposta: %w",
 			err,
@@ -443,86 +711,275 @@ func Bet(jid string, amount int) (*BetResult, error) {
 	}, nil
 }
 
-// CanRob verifica se o usuário pode realizar uma tentativa de roubo.
+// ==========================================================
+// !PIX
+// ==========================================================
+
+// Pix transfere Gold entre dois usuários dentro
+// do MESMO grupo.
 //
-// Essa função apenas consulta o cooldown.
-// A reserva atômica definitiva acontece dentro de Rob().
-func CanRob(jid string) bool {
-	robCooldowns.Lock()
-	defer robCooldowns.Unlock()
-
-	lastAttempt, exists := robCooldowns.lastAttempt[jid]
-
-	if !exists {
-		return true
-	}
-
-	return time.Since(lastAttempt) >= RobCooldown
-}
-
-// GetRobCooldown retorna o tempo restante do cooldown.
-func GetRobCooldown(jid string) time.Duration {
-	robCooldowns.Lock()
-	defer robCooldowns.Unlock()
-
-	lastAttempt, exists := robCooldowns.lastAttempt[jid]
-
-	if !exists {
-		return 0
-	}
-
-	remaining := RobCooldown - time.Since(lastAttempt)
-
-	if remaining < 0 {
-		return 0
-	}
-
-	return remaining
-}
-
-// reserveRobCooldown verifica e reserva atomicamente uma tentativa.
+// O destinatário não precisa ter utilizado !gold antes.
 //
-// Isso impede que duas goroutines consigam passar pelo cooldown
-// simultaneamente para o mesmo usuário.
-func reserveRobCooldown(jid string) bool {
-	robCooldowns.Lock()
-	defer robCooldowns.Unlock()
+// Nesse caso sua carteira é criada com:
+//
+//	gold_initialized = 0
+//
+// Portanto ele ainda poderá receber seus 3000 Gold
+// iniciais posteriormente.
+func Pix(
+	groupJID string,
+	senderJID string,
+	targetJID string,
+	targetName string,
+	amount int,
+) (*PixResult, error) {
 
-	now := time.Now()
-
-	lastAttempt, exists := robCooldowns.lastAttempt[jid]
-
-	if exists &&
-		now.Sub(lastAttempt) < RobCooldown {
-		return false
+	if amount <= 0 {
+		return nil, fmt.Errorf(
+			"valor do PIX deve ser maior que zero",
+		)
 	}
 
-	robCooldowns.lastAttempt[jid] = now
+	if senderJID == targetJID {
+		return nil, ErrPixSelfTransfer
+	}
 
-	return true
+	tx, err := database.DB.Begin()
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao iniciar PIX: %w",
+			err,
+		)
+	}
+
+	defer tx.Rollback()
+
+	// Remetente precisa possuir carteira neste grupo.
+	var senderBalance int
+
+	err = tx.QueryRow(`
+		SELECT gold
+		FROM group_wallets
+		WHERE group_jid = ?
+		  AND jid = ?
+	`,
+		groupJID,
+		senderJID,
+	).Scan(
+		&senderBalance,
+	)
+
+	if err == sql.ErrNoRows {
+		return nil, ErrWalletNotFound
+	}
+
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao consultar saldo do remetente: %w",
+			err,
+		)
+	}
+
+	if senderBalance < amount {
+		return nil, ErrInsufficientGold
+	}
+
+	// Garante a identidade global do destinatário.
+	if err := upsertUserTx(
+		tx,
+		targetJID,
+		targetName,
+	); err != nil {
+
+		return nil, err
+	}
+
+	// Garante a carteira do destinatário sem conceder
+	// Gold inicial.
+	if err := ensureWalletTx(
+		tx,
+		groupJID,
+		targetJID,
+	); err != nil {
+
+		return nil, err
+	}
+
+	var targetBalance int
+
+	err = tx.QueryRow(`
+		SELECT gold
+		FROM group_wallets
+		WHERE group_jid = ?
+		  AND jid = ?
+	`,
+		groupJID,
+		targetJID,
+	).Scan(
+		&targetBalance,
+	)
+
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao consultar saldo do destinatário: %w",
+			err,
+		)
+	}
+
+	// Remove do remetente.
+	result, err := tx.Exec(`
+		UPDATE group_wallets
+		SET
+			gold = gold - ?,
+			updated_at = CURRENT_TIMESTAMP
+		WHERE group_jid = ?
+		  AND jid = ?
+		  AND gold >= ?
+	`,
+		amount,
+		groupJID,
+		senderJID,
+		amount,
+	)
+
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao remover Gold do remetente: %w",
+			err,
+		)
+	}
+
+	rows, err := result.RowsAffected()
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao verificar PIX do remetente: %w",
+			err,
+		)
+	}
+
+	if rows == 0 {
+		return nil, ErrInsufficientGold
+	}
+
+	// Adiciona ao destinatário.
+	result, err = tx.Exec(`
+		UPDATE group_wallets
+		SET
+			gold = gold + ?,
+			updated_at = CURRENT_TIMESTAMP
+		WHERE group_jid = ?
+		  AND jid = ?
+	`,
+		amount,
+		groupJID,
+		targetJID,
+	)
+
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao adicionar Gold ao destinatário: %w",
+			err,
+		)
+	}
+
+	rows, err = result.RowsAffected()
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao verificar PIX do destinatário: %w",
+			err,
+		)
+	}
+
+	if rows == 0 {
+		return nil, fmt.Errorf(
+			"carteira do destinatário não encontrada",
+		)
+	}
+
+	// Histórico do remetente.
+	if err := recordTransactionTx(
+		tx,
+		groupJID,
+		senderJID,
+		targetJID,
+		-amount,
+		"PIX_SENT",
+		fmt.Sprintf(
+			"PIX enviado para %s - %d Gold",
+			targetJID,
+			amount,
+		),
+	); err != nil {
+
+		return nil, err
+	}
+
+	// Histórico do destinatário.
+	if err := recordTransactionTx(
+		tx,
+		groupJID,
+		targetJID,
+		senderJID,
+		amount,
+		"PIX_RECEIVED",
+		fmt.Sprintf(
+			"PIX recebido de %s - +%d Gold",
+			senderJID,
+			amount,
+		),
+	); err != nil {
+
+		return nil, err
+	}
+
+	if err := tx.Commit(); err != nil {
+		return nil, fmt.Errorf(
+			"erro ao confirmar PIX: %w",
+			err,
+		)
+	}
+
+	return &PixResult{
+		Amount:           amount,
+		SenderBalance:    senderBalance - amount,
+		RecipientBalance: targetBalance + amount,
+	}, nil
 }
 
-// clearRobCooldown remove uma reserva realizada por uma tentativa
-// que não chegou a executar uma operação financeira válida.
-func clearRobCooldown(jid string) {
-	robCooldowns.Lock()
-	defer robCooldowns.Unlock()
+// ==========================================================
+// !ROUBAR
+// ==========================================================
 
-	delete(robCooldowns.lastAttempt, jid)
-}
-
-// Rob realiza uma tentativa de roubo.
+// Rob realiza uma tentativa de roubo dentro do grupo.
 //
 // Sucesso:
 //   - 60% de chance;
 //   - rouba 20% do saldo da vítima.
 //
 // Falha:
-//   - paga 10% do próprio saldo.
+//   - perde 10% do próprio saldo;
+//   - caso esteja com 0 Gold, perde 0 Gold.
 //
-// Toda a operação financeira é realizada dentro de uma única
-// transação SQLite.
+// IMPORTANTE:
+//
+// Um usuário com carteira e saldo 0 pode continuar tentando
+// roubar normalmente.
+//
+// Retornos importantes:
+//
+//	ErrWalletNotFound
+//	    ladrão ainda não criou carteira.
+//
+//	ErrTargetNoGold
+//	    vítima não possui Gold disponível.
+//
+//	ErrTargetShielded
+//	    reservado para implementação do !escudo.
+//
+//	ErrRobCooldown
+//	    ladrão ainda está em cooldown.
 func Rob(
+	groupJID string,
 	robberJID string,
 	targetJID string,
 ) (*RobResult, error) {
@@ -533,25 +990,24 @@ func Rob(
 		)
 	}
 
-	// Reserva o cooldown atomicamente.
-	//
-	// Mesmo que duas mensagens !roubar sejam processadas
-	// simultaneamente, apenas uma consegue continuar.
-	if !reserveRobCooldown(robberJID) {
+	if !reserveRobCooldown(
+		groupJID,
+		robberJID,
+	) {
 		return nil, ErrRobCooldown
 	}
 
-	// Só mantemos o cooldown se a tentativa financeira for
-	// efetivamente concluída.
 	robCompleted := false
 
 	defer func() {
 		if !robCompleted {
-			clearRobCooldown(robberJID)
+			clearRobCooldown(
+				groupJID,
+				robberJID,
+			)
 		}
 	}()
 
-	// Sorteio de 0 a 99.
 	n, err := rand.Int(
 		rand.Reader,
 		big.NewInt(100),
@@ -563,7 +1019,8 @@ func Rob(
 		)
 	}
 
-	success := n.Int64() < RobSuccessChance
+	success :=
+		n.Int64() < RobSuccessChance
 
 	tx, err := database.DB.Begin()
 	if err != nil {
@@ -578,11 +1035,21 @@ func Rob(
 	var robberBalance int
 	var targetBalance int
 
+	// ======================================================
+	// LADRÃO
+	// ======================================================
+
 	err = tx.QueryRow(`
 		SELECT gold
-		FROM users
-		WHERE jid = ?
-	`, robberJID).Scan(&robberBalance)
+		FROM group_wallets
+		WHERE group_jid = ?
+		  AND jid = ?
+	`,
+		groupJID,
+		robberJID,
+	).Scan(
+		&robberBalance,
+	)
 
 	if err == sql.ErrNoRows {
 		return nil, ErrWalletNotFound
@@ -595,16 +1062,31 @@ func Rob(
 		)
 	}
 
+	// Não existe mais saldo mínimo para roubar.
+	//
+	// Quem possui carteira pode tentar o roubo mesmo
+	// estando com 0 Gold.
+
+	// ======================================================
+	// VÍTIMA
+	// ======================================================
+
 	err = tx.QueryRow(`
 		SELECT gold
-		FROM users
-		WHERE jid = ?
-	`, targetJID).Scan(&targetBalance)
+		FROM group_wallets
+		WHERE group_jid = ?
+		  AND jid = ?
+	`,
+		groupJID,
+		targetJID,
+	).Scan(
+		&targetBalance,
+	)
 
+	// Carteira inexistente e carteira zerada são tratadas
+	// da mesma forma para quem está jogando.
 	if err == sql.ErrNoRows {
-		return nil, fmt.Errorf(
-			"vítima não possui carteira Gold",
-		)
+		return nil, ErrTargetNoGold
 	}
 
 	if err != nil {
@@ -615,37 +1097,56 @@ func Rob(
 	}
 
 	if targetBalance <= 0 {
-		return nil, fmt.Errorf(
-			"vítima não possui Gold para ser roubado",
-		)
+		return nil, ErrTargetNoGold
 	}
 
-	// ==========================================================
+	// ======================================================
+	// FUTURO !ESCUDO
+	// ======================================================
+	//
+	// A verificação de escudo entrará exatamente aqui,
+	// antes de qualquer movimentação financeira.
+	//
+	// Exemplo futuro:
+	//
+	// shielded, broken, err := CheckShield(...)
+	//
+	// if shielded {
+	//     return nil, ErrTargetShielded
+	// }
+	//
+	// Se o ataque quebrar o escudo, essa tentativa não
+	// roubará Gold. O próximo ataque poderá prosseguir.
+
+	// ======================================================
 	// ROUBO BEM-SUCEDIDO
-	// ==========================================================
+	// ======================================================
 
 	if success {
-		amount := targetBalance * RobStealPercent / 100
+		amount :=
+			targetBalance *
+				RobStealPercent /
+				100
 
-		// Garante roubo mínimo de 1 Gold.
 		if amount < 1 {
 			amount = 1
 		}
 
-		// Nunca permite remover mais Gold do que a vítima possui.
 		if amount > targetBalance {
 			amount = targetBalance
 		}
 
 		result, err := tx.Exec(`
-			UPDATE users
+			UPDATE group_wallets
 			SET
 				gold = gold - ?,
 				updated_at = CURRENT_TIMESTAMP
-			WHERE jid = ?
+			WHERE group_jid = ?
+			  AND jid = ?
 			  AND gold >= ?
 		`,
 			amount,
+			groupJID,
 			targetJID,
 			amount,
 		)
@@ -657,28 +1158,30 @@ func Rob(
 			)
 		}
 
-		rows, err := result.RowsAffected()
+		rows, err :=
+			result.RowsAffected()
+
 		if err != nil {
 			return nil, fmt.Errorf(
-				"erro ao verificar remoção do Gold da vítima: %w",
+				"erro ao verificar saldo da vítima: %w",
 				err,
 			)
 		}
 
 		if rows == 0 {
-			return nil, fmt.Errorf(
-				"saldo da vítima mudou durante a operação",
-			)
+			return nil, ErrTargetNoGold
 		}
 
 		result, err = tx.Exec(`
-			UPDATE users
+			UPDATE group_wallets
 			SET
 				gold = gold + ?,
 				updated_at = CURRENT_TIMESTAMP
-			WHERE jid = ?
+			WHERE group_jid = ?
+			  AND jid = ?
 		`,
 			amount,
+			groupJID,
 			robberJID,
 		)
 
@@ -689,7 +1192,9 @@ func Rob(
 			)
 		}
 
-		rows, err = result.RowsAffected()
+		rows, err =
+			result.RowsAffected()
+
 		if err != nil {
 			return nil, fmt.Errorf(
 				"erro ao verificar saldo do ladrão: %w",
@@ -701,47 +1206,34 @@ func Rob(
 			return nil, ErrWalletNotFound
 		}
 
-		newRobberBalance := robberBalance + amount
-		newTargetBalance := targetBalance - amount
+		newRobberBalance :=
+			robberBalance + amount
 
-		// Registra a perda da vítima.
-		_, err = tx.Exec(`
-			INSERT INTO gold_transactions (
-				jid,
-				amount,
-				type,
-				description
-			)
-			VALUES (?, ?, ?, ?)
-		`,
+		newTargetBalance :=
+			targetBalance - amount
+
+		if err := recordTransactionTx(
+			tx,
+			groupJID,
 			targetJID,
+			robberJID,
 			-amount,
 			"ROB_LOSS",
 			fmt.Sprintf(
-				"Perdeu %d Gold em um roubo realizado por %s",
+				"Perdeu %d Gold em roubo realizado por %s",
 				amount,
 				robberJID,
 			),
-		)
+		); err != nil {
 
-		if err != nil {
-			return nil, fmt.Errorf(
-				"erro ao registrar perda da vítima: %w",
-				err,
-			)
+			return nil, err
 		}
 
-		// Registra o ganho do ladrão.
-		_, err = tx.Exec(`
-			INSERT INTO gold_transactions (
-				jid,
-				amount,
-				type,
-				description
-			)
-			VALUES (?, ?, ?, ?)
-		`,
+		if err := recordTransactionTx(
+			tx,
+			groupJID,
 			robberJID,
+			targetJID,
 			amount,
 			"ROB_SUCCESS",
 			fmt.Sprintf(
@@ -749,16 +1241,12 @@ func Rob(
 				targetJID,
 				amount,
 			),
-		)
+		); err != nil {
 
-		if err != nil {
-			return nil, fmt.Errorf(
-				"erro ao registrar ganho do ladrão: %w",
-				err,
-			)
+			return nil, err
 		}
 
-		if err = tx.Commit(); err != nil {
+		if err := tx.Commit(); err != nil {
 			return nil, fmt.Errorf(
 				"erro ao confirmar roubo: %w",
 				err,
@@ -776,70 +1264,79 @@ func Rob(
 		}, nil
 	}
 
-	// ==========================================================
+	// ======================================================
 	// ROUBO MAL-SUCEDIDO
-	// ==========================================================
+	// ======================================================
 
-	if robberBalance <= 0 {
-		return nil, ErrInsufficientGold
-	}
+	penalty :=
+		robberBalance *
+			RobFailurePenalty /
+			100
 
-	penalty := robberBalance * RobFailurePenalty / 100
+	// Quem possui Gold sempre perde no mínimo 1 Gold
+	// em um roubo fracassado.
+	//
+	// Quem está com saldo zerado pode tentar roubar,
+	// mas naturalmente não possui Gold para perder.
+	if robberBalance > 0 &&
+		penalty < 1 {
 
-	// Garante penalidade mínima de 1 Gold.
-	if penalty < 1 {
 		penalty = 1
 	}
 
-	// Nunca permite saldo negativo.
 	if penalty > robberBalance {
 		penalty = robberBalance
 	}
 
-	result, err := tx.Exec(`
-		UPDATE users
-		SET
-			gold = gold - ?,
-			updated_at = CURRENT_TIMESTAMP
-		WHERE jid = ?
-		  AND gold >= ?
-	`,
-		penalty,
+	// Se o usuário possui Gold, aplicamos a penalidade.
+	if penalty > 0 {
+		result, err := tx.Exec(`
+			UPDATE group_wallets
+			SET
+				gold = gold - ?,
+				updated_at = CURRENT_TIMESTAMP
+			WHERE group_jid = ?
+			  AND jid = ?
+			  AND gold >= ?
+		`,
+			penalty,
+			groupJID,
+			robberJID,
+			penalty,
+		)
+
+		if err != nil {
+			return nil, fmt.Errorf(
+				"erro ao aplicar penalidade do roubo: %w",
+				err,
+			)
+		}
+
+		rows, err :=
+			result.RowsAffected()
+
+		if err != nil {
+			return nil, fmt.Errorf(
+				"erro ao verificar penalidade do roubo: %w",
+				err,
+			)
+		}
+
+		if rows == 0 {
+			return nil, fmt.Errorf(
+				"não foi possível aplicar penalidade do roubo",
+			)
+		}
+	}
+
+	newRobberBalance :=
+		robberBalance - penalty
+
+	if err := recordTransactionTx(
+		tx,
+		groupJID,
 		robberJID,
-		penalty,
-	)
-
-	if err != nil {
-		return nil, fmt.Errorf(
-			"erro ao aplicar penalidade do roubo: %w",
-			err,
-		)
-	}
-
-	rows, err := result.RowsAffected()
-	if err != nil {
-		return nil, fmt.Errorf(
-			"erro ao verificar penalidade do roubo: %w",
-			err,
-		)
-	}
-
-	if rows == 0 {
-		return nil, ErrInsufficientGold
-	}
-
-	newRobberBalance := robberBalance - penalty
-
-	_, err = tx.Exec(`
-		INSERT INTO gold_transactions (
-			jid,
-			amount,
-			type,
-			description
-		)
-		VALUES (?, ?, ?, ?)
-	`,
-		robberJID,
+		targetJID,
 		-penalty,
 		"ROB_FAIL",
 		fmt.Sprintf(
@@ -847,16 +1344,12 @@ func Rob(
 			targetJID,
 			penalty,
 		),
-	)
+	); err != nil {
 
-	if err != nil {
-		return nil, fmt.Errorf(
-			"erro ao registrar penalidade do roubo: %w",
-			err,
-		)
+		return nil, err
 	}
 
-	if err = tx.Commit(); err != nil {
+	if err := tx.Commit(); err != nil {
 		return nil, fmt.Errorf(
 			"erro ao confirmar penalidade do roubo: %w",
 			err,
