@@ -43,3 +43,8 @@ groups.json
 *.disabled
 
 *-backup
+
+# SQLite runtime files
+storage/*.db-wal
+storage/*.db-shm
+storage/*.db-journal
