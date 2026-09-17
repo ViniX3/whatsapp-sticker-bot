@@ -1,1 +1,0 @@
-logger.Info("Imagem baixada")

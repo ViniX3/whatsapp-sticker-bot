@@ -37,3 +37,7 @@ Thumbs.db
 
 #Grupos
 groups.json
+
+# Arquivos locais de backup
+*.backup
+*.disabled
