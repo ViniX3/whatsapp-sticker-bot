@@ -303,6 +303,320 @@ func ProcessMessage(
 	}
 
 	// ==========================================================
+	// !escudo
+	// ==========================================================
+
+	if command == "!escudo" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!escudo",
+		) {
+			return
+		}
+
+		if len(parts) != 1 {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"Uso correto: *!escudo*",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		groupJID :=
+			msgEvent.Info.Chat.String()
+
+		jid :=
+			canonicalSenderJID(msgEvent)
+
+		name :=
+			msgEvent.Info.PushName
+
+		result, err :=
+			gold.BuyShield(
+				groupJID,
+				jid,
+			)
+
+		if err != nil {
+			switch {
+			case errors.Is(
+				err,
+				gold.ErrWalletNotFound,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					fmt.Sprintf(
+						"❌ Você ainda não possui uma carteira Gold neste grupo.\n\nUse *!gold* para receber seus *%d Gold* iniciais.",
+						gold.InitialGold,
+					),
+				)
+
+			case errors.Is(
+				err,
+				gold.ErrInsufficientGold,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					fmt.Sprintf(
+						"💸 Você precisa de *%d Gold* para comprar um escudo.",
+						gold.ShieldPrice,
+					),
+				)
+
+			case errors.Is(
+				err,
+				gold.ErrShieldAlreadyActive,
+			):
+				status, statusErr :=
+					gold.GetShieldStatus(
+						groupJID,
+						jid,
+					)
+
+				if statusErr != nil {
+					logger.Error(
+						"Erro ao consultar escudo ativo:",
+						statusErr,
+					)
+
+					_ = whatsapp.SendText(
+						client,
+						msgEvent.Info.Chat,
+						"🛡️ Você já possui um escudo ativo neste grupo.",
+					)
+
+					logger.Info("==============================")
+					return
+				}
+
+				if status != nil &&
+					status.Active {
+
+					response := fmt.Sprintf(
+						"🛡️ @%s, você já possui um escudo ativo!\n\n⏳ Tempo restante: *%s*\n⚔️ Ataques recebidos: *%d*\n\nUm novo escudo só poderá ser comprado quando este quebrar ou expirar.",
+						name,
+						formatDuration(
+							status.Remaining,
+						),
+						status.AttacksReceived,
+					)
+
+					_ = whatsapp.SendMentionedText(
+						client,
+						msgEvent.Info.Chat,
+						response,
+						[]types.JID{
+							msgEvent.Info.Sender.ToNonAD(),
+						},
+					)
+
+					logger.Info("==============================")
+					return
+				}
+
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"🛡️ Você já possui um escudo ativo neste grupo.",
+				)
+
+			default:
+				logger.Error(
+					"Erro ao comprar escudo:",
+					err,
+				)
+
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ Não foi possível comprar o escudo.",
+				)
+			}
+
+			logger.Info("==============================")
+			return
+		}
+
+		response := fmt.Sprintf(
+			"🛡️ *ESCUDO ATIVADO!*\n\n*@%s* agora está protegido contra roubos.\n\n💰 Custo: *%d Gold*\n⏳ Duração máxima: *12 horas*\n💰 Saldo atual: *%d Gold*\n\n⚔️ Cada tentativa de roubo desgasta o escudo e existe uma pequena chance de ele quebrar.",
+			name,
+			result.Price,
+			result.Balance,
+		)
+
+		_ = whatsapp.SendMentionedText(
+			client,
+			msgEvent.Info.Chat,
+			response,
+			[]types.JID{
+				msgEvent.Info.Sender.ToNonAD(),
+			},
+		)
+
+		logger.Success(
+			"Escudo comprado:",
+			jid,
+			"Grupo:",
+			groupJID,
+			"Expira:",
+			result.ExpiresAt,
+		)
+
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
+	// !sorte
+	// ==========================================================
+
+	if command == "!sorte" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!sorte",
+		) {
+			return
+		}
+
+		if len(parts) != 1 {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"Uso correto: *!sorte*",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		groupJID :=
+			msgEvent.Info.Chat.String()
+
+		jid :=
+			canonicalSenderJID(msgEvent)
+
+		name :=
+			msgEvent.Info.PushName
+
+		result, err :=
+			gold.ClaimDailyLuck(
+				groupJID,
+				jid,
+			)
+
+		if err != nil {
+			switch {
+			case errors.Is(
+				err,
+				gold.ErrWalletNotFound,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					fmt.Sprintf(
+						"❌ Você ainda não possui uma carteira Gold neste grupo.\n\nUse *!gold* para receber seus *%d Gold* iniciais.",
+						gold.InitialGold,
+					),
+				)
+
+			case errors.Is(
+				err,
+				gold.ErrLuckCooldown,
+			):
+				var cooldownErr *gold.LuckCooldownError
+
+				if errors.As(
+					err,
+					&cooldownErr,
+				) {
+					response := fmt.Sprintf(
+						"🍀 @%s, você já tentou sua sorte hoje!*\n\n⏳ Próxima tentativa em: *%s*",
+						name,
+						formatDuration(
+							cooldownErr.Remaining,
+						),
+					)
+
+					_ = whatsapp.SendMentionedText(
+						client,
+						msgEvent.Info.Chat,
+						response,
+						[]types.JID{
+							msgEvent.Info.Sender.ToNonAD(),
+						},
+					)
+				} else {
+					_ = whatsapp.SendText(
+						client,
+						msgEvent.Info.Chat,
+						"🍀 Você já tentou sua sorte hoje. Tente novamente mais tarde.",
+					)
+				}
+
+			default:
+				logger.Error(
+					"Erro ao executar sorte diária:",
+					err,
+				)
+
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ Não foi possível tentar sua sorte agora.",
+				)
+			}
+
+			logger.Info("==============================")
+			return
+		}
+
+		headline :=
+			luckHeadline(
+				result.Tier,
+			)
+
+		response := fmt.Sprintf(
+			"%s\n\n🍀 *@%s* tirou:\n\n%s *%s*\n\n💰 Prêmio: *+%d Gold*\n💰 Saldo atual: *%d Gold*\n\n⏳ Você poderá tentar novamente em *24 horas*.",
+			headline,
+			name,
+			result.Emoji,
+			result.Tier,
+			result.Amount,
+			result.Balance,
+		)
+
+		_ = whatsapp.SendMentionedText(
+			client,
+			msgEvent.Info.Chat,
+			response,
+			[]types.JID{
+				msgEvent.Info.Sender.ToNonAD(),
+			},
+		)
+
+		logger.Success(
+			"Sorte diária realizada:",
+			jid,
+			"Grupo:",
+			groupJID,
+			"Raridade:",
+			result.Tier,
+			"Prêmio:",
+			result.Amount,
+		)
+
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
 	// !ranking
 	// ==========================================================
 
@@ -1022,24 +1336,6 @@ func ProcessMessage(
 
 			case errors.Is(
 				err,
-				gold.ErrTargetShielded,
-			):
-				response := fmt.Sprintf(
-					"🛡️ *@%s* está protegido por um escudo e não pode ser roubado agora!",
-					targetName,
-				)
-
-				_ = whatsapp.SendMentionedText(
-					client,
-					msgEvent.Info.Chat,
-					response,
-					[]types.JID{
-						targetJIDParsed.ToNonAD(),
-					},
-				)
-
-			case errors.Is(
-				err,
 				gold.ErrRobCooldown,
 			):
 				remaining :=
@@ -1064,16 +1360,6 @@ func ProcessMessage(
 					),
 				)
 
-			case errors.Is(
-				err,
-				gold.ErrInsufficientGold,
-			):
-				_ = whatsapp.SendText(
-					client,
-					msgEvent.Info.Chat,
-					"💸 Você não possui Gold suficiente para realizar essa tentativa.",
-				)
-
 			default:
 				logger.Error(
 					"Erro ao executar roubo:",
@@ -1090,6 +1376,81 @@ func ProcessMessage(
 			logger.Info("==============================")
 			return
 		}
+
+		// ======================================================
+		// ESCUDO BLOQUEOU O ROUBO
+		// ======================================================
+
+		if result.ShieldBlocked {
+			if result.ShieldBroken {
+				response := fmt.Sprintf(
+					"💥 *ESCUDO QUEBRADO!*\n\nO ataque de *@%s* destruiu o escudo de *@%s*!\n\n⚔️ O escudo quebrou no ataque nº *%d*.\n\n💰 Nenhum Gold foi roubado nesta tentativa.\n\n🛡️ @%s pode comprar outro escudo imediatamente usando *!escudo*.",
+					robberName,
+					targetName,
+					result.ShieldAttackNumber,
+					targetName,
+				)
+
+				_ = whatsapp.SendMentionedText(
+					client,
+					msgEvent.Info.Chat,
+					response,
+					[]types.JID{
+						msgEvent.Info.Sender.ToNonAD(),
+						targetJIDParsed.ToNonAD(),
+					},
+				)
+
+				logger.Warn(
+					"Escudo quebrado:",
+					"Alvo:",
+					targetJID,
+					"Ataque:",
+					result.ShieldAttackNumber,
+					"Chance:",
+					result.ShieldBreakChance,
+					"%",
+				)
+
+				logger.Info("==============================")
+				return
+			}
+
+			response := fmt.Sprintf(
+				"🛡️ *ATAQUE BLOQUEADO!*\n\nO escudo de *@%s* resistiu ao ataque de *@%s*.\n\n⚔️ Ataques recebidos por este escudo: *%d*\n💰 Nenhum Gold foi roubado.",
+				targetName,
+				robberName,
+				result.ShieldAttackNumber,
+			)
+
+			_ = whatsapp.SendMentionedText(
+				client,
+				msgEvent.Info.Chat,
+				response,
+				[]types.JID{
+					msgEvent.Info.Sender.ToNonAD(),
+					targetJIDParsed.ToNonAD(),
+				},
+			)
+
+			logger.Info(
+				"Escudo bloqueou roubo:",
+				"Alvo:",
+				targetJID,
+				"Ataque:",
+				result.ShieldAttackNumber,
+				"Chance quebra:",
+				result.ShieldBreakChance,
+				"%",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		// ======================================================
+		// ROUBO NORMAL
+		// ======================================================
 
 		var response string
 
@@ -1172,18 +1533,6 @@ func ProcessMessage(
 // NORMALIZAÇÃO DE IDENTIDADE
 // ==========================================================
 
-// canonicalSenderJID remove agent/device do JID.
-//
-// Exemplo:
-//
-//	150495670853833:35@lid
-//
-// vira:
-//
-//	150495670853833@lid
-//
-// Isso impede que celulares/dispositivos diferentes do mesmo
-// usuário criem carteiras Gold diferentes.
 func canonicalSenderJID(
 	msg *events.Message,
 ) string {
@@ -1194,8 +1543,6 @@ func canonicalSenderJID(
 		String()
 }
 
-// normalizeJIDString converte um JID textual para sua
-// representação sem agent/device.
 func normalizeJIDString(
 	value string,
 ) (string, bool) {
@@ -1212,13 +1559,6 @@ func normalizeJIDString(
 		String(), true
 }
 
-// resolveParticipantJID procura o participante mencionado
-// comparando JID, LID e PhoneNumber.
-//
-// O JID financeiro retornado é sempre sem agent/device.
-//
-// Por enquanto damos preferência ao mesmo tipo de identidade
-// usado pela menção, evitando misturar carteiras PN/LID.
 func resolveParticipantJID(
 	participants []types.GroupParticipant,
 	targetJID string,
@@ -1251,7 +1591,6 @@ func resolveParticipantJID(
 					String()
 
 			if normalized == target {
-				// Preferimos o JID principal do participante.
 				if !participant.JID.IsEmpty() {
 					return participant.
 						JID.
@@ -1406,6 +1745,95 @@ func rankingDisplayName(
 	}
 
 	return jid
+}
+
+// ==========================================================
+// FORMATAÇÃO DE TEMPO
+// ==========================================================
+
+// formatDuration é utilizada tanto pelo !escudo quanto
+// pelo cooldown do !sorte.
+//
+// Exemplos:
+//
+//	23h 41m
+//	11h 05m
+//	53m
+//	menos de 1 minuto
+func formatDuration(
+	duration time.Duration,
+) string {
+
+	if duration <= 0 {
+		return "disponível agora"
+	}
+
+	totalMinutes :=
+		int(duration.Minutes())
+
+	if totalMinutes < 1 {
+		return "menos de 1 minuto"
+	}
+
+	hours :=
+		totalMinutes / 60
+
+	minutes :=
+		totalMinutes % 60
+
+	if hours > 0 &&
+		minutes > 0 {
+
+		return fmt.Sprintf(
+			"%dh %02dm",
+			hours,
+			minutes,
+		)
+	}
+
+	if hours > 0 {
+		return fmt.Sprintf(
+			"%dh",
+			hours,
+		)
+	}
+
+	return fmt.Sprintf(
+		"%dm",
+		minutes,
+	)
+}
+
+// ==========================================================
+// FORMATAÇÃO DO !SORTE
+// ==========================================================
+
+func luckHeadline(
+	tier string,
+) string {
+
+	switch tier {
+	case "COMUM":
+		return "🍀 *SORTE DO DIA!*"
+
+	case "ESPECIAL":
+		return "✨ *UMA BOA SORTE!*"
+
+	case "RARO":
+		return "💎 *QUE SORTE!*"
+
+	case "SUPER RARO":
+		return "🔥 *SUPER SORTE!*"
+
+	case "LENDÁRIO":
+		return "🌟 *SORTE LENDÁRIA!!!*"
+
+	case "MÍTICO":
+		return "👑 *SORTE MÍTICA!!!* 👑"
+
+	default:
+		return "🍀 *SORTE DO DIA!*"
+	}
 }
 
 // ==========================================================

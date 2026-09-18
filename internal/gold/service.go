@@ -22,25 +22,22 @@ const (
 )
 
 var (
-	// Carteira do próprio usuário não existe naquele grupo.
 	ErrWalletNotFound = errors.New(
 		"usuário não possui carteira Gold neste grupo",
 	)
 
-	// Saldo insuficiente para a operação solicitada.
 	ErrInsufficientGold = errors.New(
 		"saldo insuficiente",
 	)
 
-	// A vítima não possui carteira ou está sem Gold.
-	//
-	// Para quem está jogando, os dois casos representam
-	// a mesma situação: não há Gold disponível para roubo.
 	ErrTargetNoGold = errors.New(
 		"alvo não possui Gold disponível para ser roubado",
 	)
 
-	// Será utilizado quando implementarmos !escudo.
+	// Mantemos declarado por compatibilidade com o handler.
+	//
+	// A lógica nova do escudo utiliza RobResult para informar
+	// se ele resistiu ou quebrou.
 	ErrTargetShielded = errors.New(
 		"alvo possui escudo ativo",
 	)
@@ -58,7 +55,6 @@ var (
 // RESULTADOS
 // ==========================================================
 
-// BetResult representa o resultado de uma aposta.
 type BetResult struct {
 	Result     string
 	Multiplier int
@@ -68,16 +64,33 @@ type BetResult struct {
 	Balance    int
 }
 
-// RobResult representa o resultado de uma tentativa de roubo.
 type RobResult struct {
-	Success       bool
-	Amount        int
-	Penalty       int
+	Success bool
+
+	Amount  int
+	Penalty int
+
 	RobberBalance int
 	TargetBalance int
+
+	// ShieldBlocked informa que havia um escudo ativo
+	// e esta tentativa não chegou ao roubo financeiro.
+	ShieldBlocked bool
+
+	// ShieldBroken informa que ESTE ataque conseguiu
+	// destruir o escudo.
+	//
+	// Mesmo assim, nenhum Gold é roubado nesta tentativa.
+	ShieldBroken bool
+
+	// Número do ataque recebido pelo escudo atual.
+	ShieldAttackNumber int
+
+	// Probabilidade percentual de quebra usada
+	// nesta tentativa.
+	ShieldBreakChance int
 }
 
-// PixResult representa uma transferência de Gold.
 type PixResult struct {
 	Amount           int
 	SenderBalance    int
@@ -95,10 +108,6 @@ var robCooldowns = struct {
 	lastAttempt: make(map[string]time.Time),
 }
 
-// cooldownKey separa o cooldown por grupo.
-//
-// Assim, uma tentativa de roubo no Grupo A não bloqueia
-// o mesmo usuário no Grupo B.
 func cooldownKey(
 	groupJID string,
 	jid string,
@@ -106,8 +115,6 @@ func cooldownKey(
 	return groupJID + "|" + jid
 }
 
-// CanRob verifica se o usuário pode realizar uma tentativa
-// de roubo naquele grupo.
 func CanRob(
 	groupJID string,
 	jid string,
@@ -131,8 +138,6 @@ func CanRob(
 	return time.Since(lastAttempt) >= RobCooldown
 }
 
-// GetRobCooldown retorna o tempo restante do cooldown
-// naquele grupo.
 func GetRobCooldown(
 	groupJID string,
 	jid string,
@@ -163,8 +168,6 @@ func GetRobCooldown(
 	return remaining
 }
 
-// reserveRobCooldown verifica e reserva o cooldown
-// atomicamente.
 func reserveRobCooldown(
 	groupJID string,
 	jid string,
@@ -194,8 +197,6 @@ func reserveRobCooldown(
 	return true
 }
 
-// clearRobCooldown remove uma reserva caso a tentativa
-// não tenha chegado a uma operação válida.
 func clearRobCooldown(
 	groupJID string,
 	jid string,
@@ -219,9 +220,6 @@ func clearRobCooldown(
 // HELPERS TRANSACIONAIS
 // ==========================================================
 
-// upsertUserTx garante que a identidade global exista.
-//
-// Caso o nome esteja vazio, preserva o nome já existente.
 func upsertUserTx(
 	tx *sql.Tx,
 	jid string,
@@ -257,11 +255,6 @@ func upsertUserTx(
 	return nil
 }
 
-// ensureWalletTx garante que uma carteira exista.
-//
-// IMPORTANTE:
-//
-// criar a carteira NÃO concede os 3000 Gold iniciais.
 func ensureWalletTx(
 	tx *sql.Tx,
 	groupJID string,
@@ -291,8 +284,6 @@ func ensureWalletTx(
 	return nil
 }
 
-// recordTransactionTx registra uma movimentação
-// dentro da mesma transação financeira.
 func recordTransactionTx(
 	tx *sql.Tx,
 	groupJID string,
@@ -344,12 +335,6 @@ func recordTransactionTx(
 // CARTEIRA
 // ==========================================================
 
-// GetOrCreateWallet obtém ou cria uma carteira naquele grupo.
-//
-// Criar uma carteira não concede Gold.
-//
-// Isso permite, por exemplo, receber !pix antes de executar
-// o comando !gold.
 func GetOrCreateWallet(
 	groupJID string,
 	jid string,
@@ -363,17 +348,6 @@ func GetOrCreateWallet(
 	)
 }
 
-// ClaimInitialGold concede os 3000 Gold iniciais
-// uma única vez POR GRUPO.
-//
-// Toda a operação acontece em uma única transação:
-//
-//   - garante identidade do usuário;
-//   - garante carteira no grupo;
-//   - verifica gold_initialized;
-//   - concede 3000 Gold;
-//   - registra histórico;
-//   - COMMIT.
 func ClaimInitialGold(
 	groupJID string,
 	jid string,
@@ -479,7 +453,6 @@ func ClaimInitialGold(
 	return wallet, claimed, nil
 }
 
-// GetBalance retorna o saldo do usuário naquele grupo.
 func GetBalance(
 	groupJID string,
 	jid string,
@@ -502,7 +475,6 @@ func GetBalance(
 	return balance, nil
 }
 
-// GetRanking retorna o ranking Gold daquele grupo.
 func GetRanking(
 	groupJID string,
 	limit int,
@@ -518,16 +490,6 @@ func GetRanking(
 // !BET
 // ==========================================================
 
-// Bet realiza uma aposta dentro do grupo atual.
-//
-// Probabilidades:
-//
-//	💀 Perdeu           55%
-//	😐 Recuperou        25%
-//	🍀 Pequeno prêmio   14%
-//	💰 Grande prêmio     5%
-//	🔥 Jackpot           0,9%
-//	👑 Mega Jackpot      0,1%
 func Bet(
 	groupJID string,
 	jid string,
@@ -540,8 +502,6 @@ func Bet(
 		)
 	}
 
-	// Fazemos o sorteio antes de abrir a transação para
-	// manter o lock financeiro pelo menor tempo possível.
 	n, err := rand.Int(
 		rand.Reader,
 		big.NewInt(10000),
@@ -715,17 +675,6 @@ func Bet(
 // !PIX
 // ==========================================================
 
-// Pix transfere Gold entre dois usuários dentro
-// do MESMO grupo.
-//
-// O destinatário não precisa ter utilizado !gold antes.
-//
-// Nesse caso sua carteira é criada com:
-//
-//	gold_initialized = 0
-//
-// Portanto ele ainda poderá receber seus 3000 Gold
-// iniciais posteriormente.
 func Pix(
 	groupJID string,
 	senderJID string,
@@ -754,7 +703,6 @@ func Pix(
 
 	defer tx.Rollback()
 
-	// Remetente precisa possuir carteira neste grupo.
 	var senderBalance int
 
 	err = tx.QueryRow(`
@@ -784,7 +732,6 @@ func Pix(
 		return nil, ErrInsufficientGold
 	}
 
-	// Garante a identidade global do destinatário.
 	if err := upsertUserTx(
 		tx,
 		targetJID,
@@ -794,8 +741,6 @@ func Pix(
 		return nil, err
 	}
 
-	// Garante a carteira do destinatário sem conceder
-	// Gold inicial.
 	if err := ensureWalletTx(
 		tx,
 		groupJID,
@@ -826,7 +771,6 @@ func Pix(
 		)
 	}
 
-	// Remove do remetente.
 	result, err := tx.Exec(`
 		UPDATE group_wallets
 		SET
@@ -861,7 +805,6 @@ func Pix(
 		return nil, ErrInsufficientGold
 	}
 
-	// Adiciona ao destinatário.
 	result, err = tx.Exec(`
 		UPDATE group_wallets
 		SET
@@ -896,7 +839,6 @@ func Pix(
 		)
 	}
 
-	// Histórico do remetente.
 	if err := recordTransactionTx(
 		tx,
 		groupJID,
@@ -914,7 +856,6 @@ func Pix(
 		return nil, err
 	}
 
-	// Histórico do destinatário.
 	if err := recordTransactionTx(
 		tx,
 		groupJID,
@@ -952,32 +893,22 @@ func Pix(
 
 // Rob realiza uma tentativa de roubo dentro do grupo.
 //
-// Sucesso:
-//   - 60% de chance;
-//   - rouba 20% do saldo da vítima.
+// ORDEM:
 //
-// Falha:
-//   - perde 10% do próprio saldo;
-//   - caso esteja com 0 Gold, perde 0 Gold.
+//  1. valida carteira do ladrão;
+//  2. valida carteira da vítima;
+//  3. verifica escudo;
+//  4. se houver escudo, processa desgaste/quebra;
+//  5. somente sem escudo ocorre o sorteio do roubo.
 //
-// IMPORTANTE:
+// Se o escudo quebrar:
 //
-// Um usuário com carteira e saldo 0 pode continuar tentando
-// roubar normalmente.
+//   - nenhum Gold é roubado;
+//   - o ataque é considerado concluído;
+//   - o ladrão entra em cooldown;
+//   - o próximo ataque poderá roubar normalmente.
 //
-// Retornos importantes:
-//
-//	ErrWalletNotFound
-//	    ladrão ainda não criou carteira.
-//
-//	ErrTargetNoGold
-//	    vítima não possui Gold disponível.
-//
-//	ErrTargetShielded
-//	    reservado para implementação do !escudo.
-//
-//	ErrRobCooldown
-//	    ladrão ainda está em cooldown.
+// Usuários com saldo 0 podem tentar roubar.
 func Rob(
 	groupJID string,
 	robberJID string,
@@ -1007,20 +938,6 @@ func Rob(
 			)
 		}
 	}()
-
-	n, err := rand.Int(
-		rand.Reader,
-		big.NewInt(100),
-	)
-	if err != nil {
-		return nil, fmt.Errorf(
-			"erro ao realizar sorteio do roubo: %w",
-			err,
-		)
-	}
-
-	success :=
-		n.Int64() < RobSuccessChance
 
 	tx, err := database.DB.Begin()
 	if err != nil {
@@ -1062,11 +979,6 @@ func Rob(
 		)
 	}
 
-	// Não existe mais saldo mínimo para roubar.
-	//
-	// Quem possui carteira pode tentar o roubo mesmo
-	// estando com 0 Gold.
-
 	// ======================================================
 	// VÍTIMA
 	// ======================================================
@@ -1083,8 +995,6 @@ func Rob(
 		&targetBalance,
 	)
 
-	// Carteira inexistente e carteira zerada são tratadas
-	// da mesma forma para quem está jogando.
 	if err == sql.ErrNoRows {
 		return nil, ErrTargetNoGold
 	}
@@ -1096,27 +1006,82 @@ func Rob(
 		)
 	}
 
+	// ======================================================
+	// ESCUDO
+	// ======================================================
+	//
+	// O escudo é verificado antes da validação de saldo 0.
+	//
+	// Portanto, uma pessoa com escudo ativo continua
+	// protegida e o ataque desgasta o escudo mesmo que
+	// naquele momento esteja sem Gold.
+	//
+	shieldResult, err :=
+		processShieldAttackTx(
+			tx,
+			groupJID,
+			targetJID,
+		)
+
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao processar escudo: %w",
+			err,
+		)
+	}
+
+	if shieldResult.Protected {
+		if err := tx.Commit(); err != nil {
+			return nil, fmt.Errorf(
+				"erro ao confirmar ataque contra escudo: %w",
+				err,
+			)
+		}
+
+		robCompleted = true
+
+		return &RobResult{
+			Success: false,
+
+			Amount:  0,
+			Penalty: 0,
+
+			RobberBalance: robberBalance,
+			TargetBalance: targetBalance,
+
+			ShieldBlocked: true,
+			ShieldBroken:  shieldResult.Broken,
+
+			ShieldAttackNumber: shieldResult.AttackNumber,
+			ShieldBreakChance:  shieldResult.BreakChance,
+		}, nil
+	}
+
+	// Não havia escudo ativo.
+	//
+	// Agora verificamos se existe Gold para ser roubado.
 	if targetBalance <= 0 {
 		return nil, ErrTargetNoGold
 	}
 
 	// ======================================================
-	// FUTURO !ESCUDO
+	// SORTEIO DO ROUBO
 	// ======================================================
-	//
-	// A verificação de escudo entrará exatamente aqui,
-	// antes de qualquer movimentação financeira.
-	//
-	// Exemplo futuro:
-	//
-	// shielded, broken, err := CheckShield(...)
-	//
-	// if shielded {
-	//     return nil, ErrTargetShielded
-	// }
-	//
-	// Se o ataque quebrar o escudo, essa tentativa não
-	// roubará Gold. O próximo ataque poderá prosseguir.
+
+	n, err := rand.Int(
+		rand.Reader,
+		big.NewInt(100),
+	)
+
+	if err != nil {
+		return nil, fmt.Errorf(
+			"erro ao realizar sorteio do roubo: %w",
+			err,
+		)
+	}
+
+	success :=
+		n.Int64() < RobSuccessChance
 
 	// ======================================================
 	// ROUBO BEM-SUCEDIDO
@@ -1261,6 +1226,9 @@ func Rob(
 			Penalty:       0,
 			RobberBalance: newRobberBalance,
 			TargetBalance: newTargetBalance,
+
+			ShieldBlocked: false,
+			ShieldBroken:  false,
 		}, nil
 	}
 
@@ -1273,11 +1241,10 @@ func Rob(
 			RobFailurePenalty /
 			100
 
-	// Quem possui Gold sempre perde no mínimo 1 Gold
-	// em um roubo fracassado.
+	// Quem possui algum Gold perde no mínimo 1.
 	//
-	// Quem está com saldo zerado pode tentar roubar,
-	// mas naturalmente não possui Gold para perder.
+	// Quem está com saldo 0 continua podendo roubar
+	// e simplesmente não perde Gold caso falhe.
 	if robberBalance > 0 &&
 		penalty < 1 {
 
@@ -1288,7 +1255,6 @@ func Rob(
 		penalty = robberBalance
 	}
 
-	// Se o usuário possui Gold, aplicamos a penalidade.
 	if penalty > 0 {
 		result, err := tx.Exec(`
 			UPDATE group_wallets
@@ -1364,5 +1330,8 @@ func Rob(
 		Penalty:       penalty,
 		RobberBalance: newRobberBalance,
 		TargetBalance: targetBalance,
+
+		ShieldBlocked: false,
+		ShieldBroken:  false,
 	}, nil
 }

@@ -12,22 +12,6 @@ var DB *sql.DB
 func Init() error {
 	var err error
 
-	// ==========================================================
-	// SQLITE
-	// ==========================================================
-	//
-	// _busy_timeout=5000
-	//   Aguarda até 5 segundos caso o banco esteja ocupado.
-	//
-	// _journal_mode=WAL
-	//   Melhora a convivência entre leituras e escritas.
-	//
-	// _synchronous=NORMAL
-	//   Reduz I/O mantendo boa segurança com WAL.
-	//
-	// _foreign_keys=ON
-	//   Ativa validação de chaves estrangeiras no SQLite.
-	//
 	dsn := "file:storage/gold.db?_busy_timeout=5000&_journal_mode=WAL&_synchronous=NORMAL&_foreign_keys=ON"
 
 	DB, err = sql.Open(
@@ -41,10 +25,6 @@ func Init() error {
 		)
 	}
 
-	// O bot utiliza um único banco SQLite local.
-	//
-	// Mantemos uma conexão para serializar operações financeiras
-	// e evitar múltiplos writers disputando locks.
 	DB.SetMaxOpenConns(1)
 	DB.SetMaxIdleConns(1)
 
@@ -71,14 +51,7 @@ func createTables() error {
 	// ==========================================================
 	// USERS
 	// ==========================================================
-	//
-	// Guarda somente a identidade global do usuário.
-	//
-	// O saldo NÃO fica mais nesta tabela.
-	//
-	// Um mesmo usuário pode possuir carteiras independentes
-	// em diversos grupos.
-	//
+
 	_, err := DB.Exec(`
 		CREATE TABLE IF NOT EXISTS users (
 			jid TEXT PRIMARY KEY,
@@ -97,21 +70,7 @@ func createTables() error {
 	// ==========================================================
 	// GROUP WALLETS
 	// ==========================================================
-	//
-	// Cada combinação:
-	//
-	//   group_jid + jid
-	//
-	// representa uma carteira completamente independente.
-	//
-	// Exemplo:
-	//
-	// Grupo A + Vinícius -> 5000 Gold
-	// Grupo B + Vinícius -> 3000 Gold
-	//
-	// gold_initialized controla se os 3000 Gold iniciais
-	// daquele grupo já foram recebidos.
-	//
+
 	_, err = DB.Exec(`
 		CREATE TABLE IF NOT EXISTS group_wallets (
 			group_jid TEXT NOT NULL,
@@ -146,32 +105,7 @@ func createTables() error {
 	// ==========================================================
 	// GOLD TRANSACTIONS
 	// ==========================================================
-	//
-	// Guarda o histórico financeiro de todas as carteiras.
-	//
-	// group_jid
-	//   identifica em qual grupo ocorreu a movimentação.
-	//
-	// jid
-	//   usuário dono da movimentação.
-	//
-	// related_jid
-	//   usuário relacionado à operação.
-	//
-	// Exemplos:
-	//
-	// PIX_SENT
-	//   jid         = remetente
-	//   related_jid = destinatário
-	//
-	// PIX_RECEIVED
-	//   jid         = destinatário
-	//   related_jid = remetente
-	//
-	// ROB_SUCCESS
-	//   jid         = ladrão
-	//   related_jid = vítima
-	//
+
 	_, err = DB.Exec(`
 		CREATE TABLE IF NOT EXISTS gold_transactions (
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -200,16 +134,95 @@ func createTables() error {
 	}
 
 	// ==========================================================
-	// ÍNDICE - RANKING
+	// SHIELDS
+	// ==========================================================
+
+	_, err = DB.Exec(`
+		CREATE TABLE IF NOT EXISTS shields (
+			group_jid TEXT NOT NULL,
+			jid TEXT NOT NULL,
+
+			active INTEGER NOT NULL DEFAULT 0
+				CHECK (active IN (0, 1)),
+
+			attacks_received INTEGER NOT NULL DEFAULT 0
+				CHECK (attacks_received >= 0),
+
+			activated_at INTEGER NOT NULL DEFAULT 0,
+			expires_at INTEGER NOT NULL DEFAULT 0,
+
+			updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+			PRIMARY KEY (
+				group_jid,
+				jid
+			),
+
+			FOREIGN KEY (jid)
+				REFERENCES users(jid)
+				ON DELETE CASCADE
+		);
+	`)
+	if err != nil {
+		return fmt.Errorf(
+			"erro ao criar tabela shields: %w",
+			err,
+		)
+	}
+
+	// ==========================================================
+	// DAILY LUCK
 	// ==========================================================
 	//
-	// Otimiza:
+	// Controla o comando !sorte.
 	//
-	// SELECT ...
-	// FROM group_wallets
-	// WHERE group_jid = ?
-	// ORDER BY gold DESC
+	// Cada usuário possui um cooldown independente
+	// dentro de cada grupo.
 	//
+	// last_claimed_at:
+	//   Unix timestamp da última utilização válida.
+	//
+	// last_tier:
+	//   raridade obtida na última tentativa.
+	//
+	// last_amount:
+	//   quantidade de Gold recebida.
+	//
+	_, err = DB.Exec(`
+		CREATE TABLE IF NOT EXISTS daily_luck (
+			group_jid TEXT NOT NULL,
+			jid TEXT NOT NULL,
+
+			last_claimed_at INTEGER NOT NULL DEFAULT 0,
+
+			last_tier TEXT NOT NULL DEFAULT '',
+
+			last_amount INTEGER NOT NULL DEFAULT 0
+				CHECK (last_amount >= 0),
+
+			updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+			PRIMARY KEY (
+				group_jid,
+				jid
+			),
+
+			FOREIGN KEY (jid)
+				REFERENCES users(jid)
+				ON DELETE CASCADE
+		);
+	`)
+	if err != nil {
+		return fmt.Errorf(
+			"erro ao criar tabela daily_luck: %w",
+			err,
+		)
+	}
+
+	// ==========================================================
+	// ÍNDICE - RANKING
+	// ==========================================================
+
 	_, err = DB.Exec(`
 		CREATE INDEX IF NOT EXISTS idx_group_wallets_ranking
 		ON group_wallets (
@@ -225,7 +238,7 @@ func createTables() error {
 	}
 
 	// ==========================================================
-	// ÍNDICE - HISTÓRICO DO USUÁRIO
+	// ÍNDICE - HISTÓRICO GOLD
 	// ==========================================================
 
 	_, err = DB.Exec(`
@@ -246,12 +259,7 @@ func createTables() error {
 	// ==========================================================
 	// ÍNDICE - USUÁRIO RELACIONADO
 	// ==========================================================
-	//
-	// Útil principalmente para:
-	//
-	// !pix
-	// !roubar
-	//
+
 	_, err = DB.Exec(`
 		CREATE INDEX IF NOT EXISTS idx_gold_transactions_related
 		ON gold_transactions (
@@ -262,6 +270,43 @@ func createTables() error {
 	if err != nil {
 		return fmt.Errorf(
 			"erro ao criar índice de usuário relacionado: %w",
+			err,
+		)
+	}
+
+	// ==========================================================
+	// ÍNDICE - ESCUDOS
+	// ==========================================================
+
+	_, err = DB.Exec(`
+		CREATE INDEX IF NOT EXISTS idx_shields_group_active
+		ON shields (
+			group_jid,
+			active,
+			expires_at
+		);
+	`)
+	if err != nil {
+		return fmt.Errorf(
+			"erro ao criar índice de escudos: %w",
+			err,
+		)
+	}
+
+	// ==========================================================
+	// ÍNDICE - SORTE
+	// ==========================================================
+
+	_, err = DB.Exec(`
+		CREATE INDEX IF NOT EXISTS idx_daily_luck_group_claim
+		ON daily_luck (
+			group_jid,
+			last_claimed_at
+		);
+	`)
+	if err != nil {
+		return fmt.Errorf(
+			"erro ao criar índice de sorte diária: %w",
 			err,
 		)
 	}
