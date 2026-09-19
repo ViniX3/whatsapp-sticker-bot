@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "medium_001",
+    "category": "História",
+    "question": "Em qual ano começou a Revolução Francesa?",
+    "options": [
+      "1848",
+      "1815",
+      "1776",
+      "1789"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_002",
+    "category": "Biologia",
+    "question": "Qual organela celular é responsável pela maior parte da produção de ATP em células eucarióticas?",
+    "options": [
+      "Lisossomo",
+      "Complexo de Golgi",
+      "Mitocôndria",
+      "Ribossomo"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_003",
+    "category": "Música",
+    "question": "Quem compôs As Quatro Estações?",
+    "options": [
+      "Vivaldi",
+      "Mozart",
+      "Bach",
+      "Beethoven"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_004",
+    "category": "Tecnologia",
+    "question": "Qual é a principal função do DNS em uma rede IP?",
+    "options": [
+      "Criptografar arquivos",
+      "Resolver nomes para endereços IP",
+      "Distribuir endereços MAC",
+      "Filtrar pacotes TCP"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_005",
+    "category": "Astronomia",
+    "question": "Qual planeta possui o maior sistema de anéis visível do Sistema Solar?",
+    "options": [
+      "Júpiter",
+      "Saturno",
+      "Netuno",
+      "Urano"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_006",
+    "category": "Geografia",
+    "question": "Qual é a capital da Austrália?",
+    "options": [
+      "Perth",
+      "Melbourne",
+      "Sydney",
+      "Canberra"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_007",
+    "category": "Matemática",
+    "question": "Qual é o resultado de 2³ × 4?",
+    "options": [
+      "16",
+      "64",
+      "32",
+      "24"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_008",
+    "category": "Cinema",
+    "question": "Quem dirigiu o filme O Poderoso Chefão, lançado em 1972?",
+    "options": [
+      "Francis Ford Coppola",
+      "Martin Scorsese",
+      "Stanley Kubrick",
+      "Steven Spielberg"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_009",
+    "category": "Literatura",
+    "question": "Quem escreveu 1984?",
+    "options": [
+      "Ernest Hemingway",
+      "George Orwell",
+      "Ray Bradbury",
+      "Aldous Huxley"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_010",
+    "category": "Esportes",
+    "question": "Em uma partida oficial de vôlei de quadra, quantos jogadores de cada equipe permanecem simultaneamente em quadra?",
+    "options": [
+      "8",
+      "7",
+      "6",
+      "5"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_011",
+    "category": "Ciências",
+    "question": "Qual partícula subatômica possui carga elétrica negativa?",
+    "options": [
+      "Elétron",
+      "Pósitron",
+      "Nêutron",
+      "Próton"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_012",
+    "category": "História",
+    "question": "Qual civilização construiu a cidade de Machu Picchu?",
+    "options": [
+      "Inca",
+      "Maia",
+      "Asteca",
+      "Olmeca"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_013",
+    "category": "Tecnologia",
+    "question": "No modelo OSI, em qual camada ocorre o roteamento de pacotes IP?",
+    "options": [
+      "Aplicação",
+      "Enlace",
+      "Transporte",
+      "Rede"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_014",
+    "category": "Lógica",
+    "question": "Se todos os cães são mamíferos e Rex é um cão, qual conclusão é necessariamente verdadeira?",
+    "options": [
+      "Todo mamífero é cão",
+      "Rex é um réptil",
+      "Rex é um mamífero",
+      "Rex não é um animal"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_015",
+    "category": "Biologia",
+    "question": "Qual molécula armazena principalmente a informação genética nos seres humanos?",
+    "options": [
+      "DNA",
+      "Glicose",
+      "ATP",
+      "Colesterol"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_016",
+    "category": "Geografia",
+    "question": "Qual cordilheira separa geograficamente grande parte da Europa da Ásia na Rússia?",
+    "options": [
+      "Andes",
+      "Himalaia",
+      "Alpes",
+      "Montes Urais"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_017",
+    "category": "Games",
+    "question": "Em qual franquia de jogos aparece o personagem Master Chief?",
+    "options": [
+      "Halo",
+      "Metroid",
+      "Doom",
+      "Mass Effect"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_018",
+    "category": "Artes",
+    "question": "A obra O Grito é associada a qual artista?",
+    "options": [
+      "Paul Cézanne",
+      "Henri Matisse",
+      "Gustav Klimt",
+      "Edvard Munch"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_019",
+    "category": "Matemática",
+    "question": "Qual é a raiz quadrada de 225?",
+    "options": [
+      "13",
+      "12",
+      "15",
+      "14"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_020",
+    "category": "Cultura Geral",
+    "question": "Qual país utiliza o franco suíço como moeda oficial?",
+    "options": [
+      "Suíça",
+      "Áustria",
+      "Dinamarca",
+      "Suécia"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_021",
+    "category": "Astronomia",
+    "question": "Qual tipo de estrela é o Sol?",
+    "options": [
+      "Anã branca",
+      "Estrela de nêutrons",
+      "Estrela de sequência principal",
+      "Gigante vermelha"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_022",
+    "category": "Língua Portuguesa",
+    "question": "Qual figura de linguagem ocorre quando se atribuem características humanas a seres não humanos?",
+    "options": [
+      "Hipérbole",
+      "Personificação",
+      "Metonímia",
+      "Antítese"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_023",
+    "category": "Tecnologia",
+    "question": "Qual protocolo é normalmente utilizado para envio de e-mails entre servidores?",
+    "options": [
+      "DNS",
+      "SNMP",
+      "SSH",
+      "SMTP"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_024",
+    "category": "História",
+    "question": "Qual tratado encerrou oficialmente a Primeira Guerra Mundial entre a Alemanha e as principais potências aliadas?",
+    "options": [
+      "Tratado de Paris de 1763",
+      "Tratado de Versalhes",
+      "Tratado de Utrecht",
+      "Tratado de Tordesilhas"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_025",
+    "category": "Ciências",
+    "question": "Qual escala é utilizada para medir a acidez ou alcalinidade de uma solução aquosa?",
+    "options": [
+      "Escala Beaufort",
+      "Escala Richter",
+      "Escala Kelvin",
+      "Escala pH"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_026",
+    "category": "Geografia",
+    "question": "Qual país possui a maior área territorial da América do Sul?",
+    "options": [
+      "Brasil",
+      "Peru",
+      "Argentina",
+      "Colômbia"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_027",
+    "category": "Matemática",
+    "question": "Qual é o valor de x em 3x - 5 = 16?",
+    "options": [
+      "5",
+      "6",
+      "8",
+      "7"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_028",
+    "category": "Biologia",
+    "question": "Qual processo converte glicose em piruvato no citoplasma?",
+    "options": [
+      "Beta-oxidação",
+      "Ciclo de Krebs",
+      "Fotossíntese",
+      "Glicólise"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_029",
+    "category": "História",
+    "question": "Quem liderou a União Soviética durante a maior parte da Segunda Guerra Mundial?",
+    "options": [
+      "Khrushchev",
+      "Stalin",
+      "Lenin",
+      "Gorbachev"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_030",
+    "category": "Tecnologia",
+    "question": "Qual porta TCP é tradicionalmente usada pelo HTTPS?",
+    "options": [
+      "25",
+      "21",
+      "443",
+      "80"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_031",
+    "category": "Astronomia",
+    "question": "Qual é o nome da maior lua de Saturno?",
+    "options": [
+      "Tritão",
+      "Europa",
+      "Titã",
+      "Ganímedes"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_032",
+    "category": "Ciências",
+    "question": "Qual lei relaciona tensão, corrente e resistência elétrica?",
+    "options": [
+      "Lei de Ohm",
+      "Lei de Boyle",
+      "Lei de Kepler",
+      "Lei de Coulomb"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_033",
+    "category": "Literatura",
+    "question": "Quem escreveu Crime e Castigo?",
+    "options": [
+      "Tolstói",
+      "Dostoiévski",
+      "Gógol",
+      "Tchékhov"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_034",
+    "category": "Cinema",
+    "question": "Qual filme sul-coreano venceu o Oscar de Melhor Filme em 2020?",
+    "options": [
+      "Em Chamas",
+      "Memórias de um Assassino",
+      "Oldboy",
+      "Parasita"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_035",
+    "category": "Música",
+    "question": "Qual compositor escreveu a ópera A Flauta Mágica?",
+    "options": [
+      "Mozart",
+      "Wagner",
+      "Verdi",
+      "Puccini"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_036",
+    "category": "Esportes",
+    "question": "Qual prova do atletismo combina dez eventos?",
+    "options": [
+      "Triatlo",
+      "Heptatlo",
+      "Decatlo",
+      "Pentatlo"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_037",
+    "category": "Games",
+    "question": "Qual estúdio criou a franquia The Witcher em videogames?",
+    "options": [
+      "Valve",
+      "CD Projekt Red",
+      "Bungie",
+      "FromSoftware"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_038",
+    "category": "Artes",
+    "question": "Qual movimento artístico é associado a Wassily Kandinsky e à abstração?",
+    "options": [
+      "Neoclassicismo",
+      "Realismo",
+      "Rococó",
+      "Expressionismo"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_039",
+    "category": "Lógica",
+    "question": "Se nenhuma ave é mamífero e todo pinguim é ave, qual conclusão é válida?",
+    "options": [
+      "Algum mamífero é pinguim",
+      "Nenhum pinguim é mamífero",
+      "Todo pinguim é mamífero",
+      "Todo mamífero é ave"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_040",
+    "category": "Cultura Geral",
+    "question": "Qual país abriga a cidade histórica de Petra?",
+    "options": [
+      "Jordânia",
+      "Turquia",
+      "Egito",
+      "Líbano"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_041",
+    "category": "Geografia",
+    "question": "Qual rio passa por Budapeste?",
+    "options": [
+      "Reno",
+      "Tâmisa",
+      "Sena",
+      "Danúbio"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_042",
+    "category": "Matemática",
+    "question": "Qual é a área de um círculo de raio 3, em função de π?",
+    "options": [
+      "9π",
+      "3π",
+      "12π",
+      "6π"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_043",
+    "category": "Biologia",
+    "question": "Qual estrutura do neurônio recebe a maior parte dos sinais de outras células?",
+    "options": [
+      "Dendritos",
+      "Bainha de mielina",
+      "Axônio",
+      "Nó de Ranvier"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_044",
+    "category": "História",
+    "question": "Qual império foi governado por Mansa Musa no século XIV?",
+    "options": [
+      "Gana antigo",
+      "Mali",
+      "Songhai",
+      "Axum"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_045",
+    "category": "Tecnologia",
+    "question": "Qual protocolo distribui endereços IP automaticamente em uma rede local?",
+    "options": [
+      "DHCP",
+      "DNS",
+      "IMAP",
+      "FTP"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_046",
+    "category": "Astronomia",
+    "question": "Qual planeta possui a Grande Mancha Vermelha?",
+    "options": [
+      "Netuno",
+      "Júpiter",
+      "Urano",
+      "Saturno"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_047",
+    "category": "Ciências",
+    "question": "Qual é o elemento mais abundante no Universo?",
+    "options": [
+      "Carbono",
+      "Hidrogênio",
+      "Oxigênio",
+      "Hélio"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_048",
+    "category": "Literatura",
+    "question": "Quem escreveu O Retrato de Dorian Gray?",
+    "options": [
+      "Bram Stoker",
+      "Oscar Wilde",
+      "James Joyce",
+      "Charles Dickens"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_049",
+    "category": "Cinema",
+    "question": "Quem dirigiu Pulp Fiction?",
+    "options": [
+      "Quentin Tarantino",
+      "Ridley Scott",
+      "Sam Mendes",
+      "David Fincher"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_050",
+    "category": "Esportes",
+    "question": "Em qual esporte se usa o termo 'birdie'?",
+    "options": [
+      "Críquete",
+      "Beisebol",
+      "Tênis",
+      "Golfe"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_051",
+    "category": "Games",
+    "question": "Qual série apresenta as cidades fictícias Raccoon City e personagens como Leon S. Kennedy?",
+    "options": [
+      "Silent Hill",
+      "Fallout",
+      "Dead Space",
+      "Resident Evil"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_052",
+    "category": "Música",
+    "question": "Qual período musical veio aproximadamente antes do período clássico europeu?",
+    "options": [
+      "Barroco",
+      "Modernista",
+      "Romântico",
+      "Minimalista"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_053",
+    "category": "Artes",
+    "question": "Quem esculpiu David, obra renascentista em mármore localizada em Florença?",
+    "options": [
+      "Donatello",
+      "Michelangelo",
+      "Bernini",
+      "Rodin"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_054",
+    "category": "Língua Portuguesa",
+    "question": "Em 'Embora estivesse cansado, continuou trabalhando', a palavra 'embora' introduz ideia de quê?",
+    "options": [
+      "Concessão",
+      "Finalidade",
+      "Causa",
+      "Consequência"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_055",
+    "category": "Geografia",
+    "question": "Qual país é atravessado pela linha do Equador e possui as Ilhas Galápagos?",
+    "options": [
+      "Equador",
+      "Peru",
+      "Colômbia",
+      "Chile"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_056",
+    "category": "Matemática",
+    "question": "Qual é a soma das raízes da equação x² - 7x + 10 = 0?",
+    "options": [
+      "10",
+      "12",
+      "7",
+      "5"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_057",
+    "category": "Biologia",
+    "question": "Qual grupo de moléculas inclui enzimas, anticorpos e hemoglobina?",
+    "options": [
+      "Ácidos nucleicos",
+      "Proteínas",
+      "Lipídios",
+      "Carboidratos"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_058",
+    "category": "História",
+    "question": "Qual dinastia chinesa construiu grande parte da Cidade Proibida em Pequim?",
+    "options": [
+      "Qing",
+      "Ming",
+      "Tang",
+      "Han"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_059",
+    "category": "Tecnologia",
+    "question": "Qual estrutura de dados segue a política FIFO?",
+    "options": [
+      "Heap",
+      "Árvore",
+      "Fila",
+      "Pilha"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_060",
+    "category": "Astronomia",
+    "question": "Qual estrela é tradicionalmente usada para localizar aproximadamente o norte celeste no Hemisfério Norte?",
+    "options": [
+      "Sírius",
+      "Vega",
+      "Polaris",
+      "Betelgeuse"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_061",
+    "category": "Ciências",
+    "question": "Em química, qual número indica a quantidade de prótons no núcleo de um átomo?",
+    "options": [
+      "Número de massa",
+      "Valência",
+      "Número atômico",
+      "Número quântico"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_062",
+    "category": "Literatura",
+    "question": "Qual obra de Miguel de Cervantes satiriza os romances de cavalaria?",
+    "options": [
+      "A Ilíada",
+      "Os Miseráveis",
+      "Dom Quixote",
+      "Fausto"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_063",
+    "category": "Cinema",
+    "question": "Qual ator interpretou Neo em Matrix?",
+    "options": [
+      "Keanu Reeves",
+      "Matt Damon",
+      "Brad Pitt",
+      "Christian Bale"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_064",
+    "category": "Esportes",
+    "question": "Qual modalidade olímpica utiliza aparelhos como argolas, cavalo com alças e barras paralelas?",
+    "options": [
+      "Pentatlo moderno",
+      "Ginástica artística",
+      "Trampolim",
+      "Ginástica rítmica"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_065",
+    "category": "Games",
+    "question": "Qual jogo popularizou o gênero battle royale com uma ilha, construção e temporadas?",
+    "options": [
+      "Fortnite",
+      "Portal",
+      "Civilization",
+      "StarCraft"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_066",
+    "category": "Música",
+    "question": "Qual instrumento é afinado tradicionalmente nas notas E-A-D-G-B-E?",
+    "options": [
+      "Contrabaixo de quatro cordas",
+      "Violino",
+      "Ukulele",
+      "Violão de seis cordas"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_067",
+    "category": "Artes",
+    "question": "Qual artista é associado ao quadro A Persistência da Memória?",
+    "options": [
+      "René Magritte",
+      "Paul Klee",
+      "Joan Miró",
+      "Salvador Dalí"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_068",
+    "category": "Cultura Geral",
+    "question": "Qual prêmio é tradicionalmente concedido em áreas como Física, Química, Literatura e Paz?",
+    "options": [
+      "Pulitzer",
+      "Prêmio Nobel",
+      "Oscar",
+      "Grammy"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_069",
+    "category": "Geografia",
+    "question": "Qual é a capital da Nova Zelândia?",
+    "options": [
+      "Wellington",
+      "Christchurch",
+      "Queenstown",
+      "Auckland"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_070",
+    "category": "Matemática",
+    "question": "Qual é o valor de log10(1000)?",
+    "options": [
+      "100",
+      "2",
+      "10",
+      "3"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_071",
+    "category": "Biologia",
+    "question": "Qual hormônio pancreático reduz a glicemia ao favorecer a entrada de glicose nas células?",
+    "options": [
+      "Insulina",
+      "Cortisol",
+      "Tiroxina",
+      "Adrenalina"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_072",
+    "category": "História",
+    "question": "Qual guerra foi encerrada pelo armistício de 11 de novembro de 1918?",
+    "options": [
+      "Guerra da Crimeia",
+      "Primeira Guerra Mundial",
+      "Guerra Franco-Prussiana",
+      "Segunda Guerra Mundial"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_073",
+    "category": "Tecnologia",
+    "question": "Qual comando HTTP é usado normalmente para solicitar a representação de um recurso?",
+    "options": [
+      "POST",
+      "GET",
+      "DELETE",
+      "PATCH"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_074",
+    "category": "Astronomia",
+    "question": "Qual planeta leva aproximadamente 88 dias terrestres para completar uma órbita ao redor do Sol?",
+    "options": [
+      "Júpiter",
+      "Marte",
+      "Mercúrio",
+      "Vênus"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_075",
+    "category": "Ciências",
+    "question": "Qual grandeza física é medida em joules?",
+    "options": [
+      "Energia",
+      "Pressão",
+      "Potência",
+      "Corrente"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_076",
+    "category": "Literatura",
+    "question": "Quem escreveu Frankenstein?",
+    "options": [
+      "Jane Austen",
+      "George Eliot",
+      "Emily Dickinson",
+      "Mary Shelley"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_077",
+    "category": "Cinema",
+    "question": "Qual cineasta japonês dirigiu Os Sete Samurais?",
+    "options": [
+      "Takeshi Kitano",
+      "Akira Kurosawa",
+      "Hayao Miyazaki",
+      "Yasujiro Ozu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_078",
+    "category": "Esportes",
+    "question": "No tênis, como é chamado o placar de 40 a 40?",
+    "options": [
+      "Set point",
+      "Deuce",
+      "Ace",
+      "Break"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_079",
+    "category": "Games",
+    "question": "Qual série de estratégia em tempo real apresenta Terran, Zerg e Protoss?",
+    "options": [
+      "StarCraft",
+      "Age of Empires",
+      "Command & Conquer",
+      "Warcraft"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_080",
+    "category": "Música",
+    "question": "Qual compositor escreveu a ópera Carmen?",
+    "options": [
+      "Georges Bizet",
+      "Giuseppe Verdi",
+      "Giacomo Puccini",
+      "Richard Wagner"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_081",
+    "category": "Artes",
+    "question": "Qual arquiteto espanhol projetou a Sagrada Família em Barcelona?",
+    "options": [
+      "Oscar Niemeyer",
+      "Le Corbusier",
+      "Frank Lloyd Wright",
+      "Antoni Gaudí"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_082",
+    "category": "Geografia",
+    "question": "Qual mar separa grande parte da Europa do norte da África?",
+    "options": [
+      "Mediterrâneo",
+      "Negro",
+      "Vermelho",
+      "Báltico"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_083",
+    "category": "Matemática",
+    "question": "Qual é o próximo número da sequência 2, 6, 12, 20, 30, ...?",
+    "options": [
+      "42",
+      "44",
+      "36",
+      "40"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_084",
+    "category": "Biologia",
+    "question": "Qual divisão celular reduz pela metade o número de cromossomos para formar gametas?",
+    "options": [
+      "Fissão binária",
+      "Mitose",
+      "Brotamento",
+      "Meiose"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_085",
+    "category": "História",
+    "question": "Qual cidade romana foi destruída junto com Pompeia pela erupção do Vesúvio em 79?",
+    "options": [
+      "Ravena",
+      "Óstia",
+      "Herculano",
+      "Aquileia"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_086",
+    "category": "Tecnologia",
+    "question": "Qual é o resultado binário de 5 decimal?",
+    "options": [
+      "111",
+      "110",
+      "101",
+      "1001"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_087",
+    "category": "Astronomia",
+    "question": "Qual fenômeno ocorre quando uma estrela massiva explode ao final de sua evolução?",
+    "options": [
+      "Supernova",
+      "Eclipse",
+      "Precessão",
+      "Trânsito"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_088",
+    "category": "Ciências",
+    "question": "Qual é o pH aproximado de uma solução neutra a 25 °C?",
+    "options": [
+      "5",
+      "0",
+      "14",
+      "7"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_089",
+    "category": "Literatura",
+    "question": "Quem escreveu O Estrangeiro?",
+    "options": [
+      "Albert Camus",
+      "Jean-Paul Sartre",
+      "André Gide",
+      "Marcel Proust"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_090",
+    "category": "Cinema",
+    "question": "Qual filme de Christopher Nolan envolve sonhos dentro de sonhos?",
+    "options": [
+      "Dunkirk",
+      "A Origem",
+      "Oppenheimer",
+      "Interestelar"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_091",
+    "category": "Esportes",
+    "question": "Em uma partida de xadrez, quantas peças cada jogador possui no início?",
+    "options": [
+      "12",
+      "20",
+      "8",
+      "16"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_092",
+    "category": "Games",
+    "question": "Qual jogo da Valve apresenta a personagem GLaDOS?",
+    "options": [
+      "Left 4 Dead",
+      "Dota 2",
+      "Half-Life",
+      "Portal"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_093",
+    "category": "Música",
+    "question": "Qual voz masculina é tradicionalmente mais aguda?",
+    "options": [
+      "Baixo",
+      "Tenor",
+      "Contrabaixo",
+      "Barítono"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_094",
+    "category": "Artes",
+    "question": "Em qual país nasceu o pintor Vincent van Gogh?",
+    "options": [
+      "França",
+      "Bélgica",
+      "Países Baixos",
+      "Alemanha"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_095",
+    "category": "Lógica",
+    "question": "Se P é verdadeiro e Q é falso, qual é o valor de P E Q?",
+    "options": [
+      "Indeterminado",
+      "Verdadeiro",
+      "Depende de R",
+      "Falso"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_096",
+    "category": "Geografia",
+    "question": "Qual é o ponto mais alto da África?",
+    "options": [
+      "Monte Quênia",
+      "Kilimanjaro",
+      "Atlas",
+      "Ruwenzori"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_097",
+    "category": "Matemática",
+    "question": "Qual é o determinante da matriz 2×2 [[3,1],[2,4]]?",
+    "options": [
+      "8",
+      "14",
+      "10",
+      "12"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_098",
+    "category": "Biologia",
+    "question": "Qual pigmento é essencial para a captura de luz na fotossíntese das plantas verdes?",
+    "options": [
+      "Melanina",
+      "Clorofila",
+      "Hemoglobina",
+      "Queratina"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_099",
+    "category": "História",
+    "question": "Qual líder macedônio conquistou grande parte do Império Persa no século IV a.C.?",
+    "options": [
+      "Leônidas",
+      "Filipe V",
+      "Péricles",
+      "Alexandre, o Grande"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_100",
+    "category": "Tecnologia",
+    "question": "Em bancos de dados relacionais, qual comando SQL é usado para consultar dados?",
+    "options": [
+      "SELECT",
+      "UPDATE",
+      "ALTER",
+      "DROP"
+    ],
+    "correct": 0
+  }
+]

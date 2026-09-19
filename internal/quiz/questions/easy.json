@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "easy_001",
+    "category": "Ciências",
+    "question": "Qual é o símbolo químico do ouro?",
+    "options": [
+      "Au",
+      "O",
+      "Fe",
+      "Ag"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_002",
+    "category": "Literatura",
+    "question": "Quem escreveu Dom Casmurro?",
+    "options": [
+      "Graciliano Ramos",
+      "Machado de Assis",
+      "Carlos Drummond de Andrade",
+      "José de Alencar"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_003",
+    "category": "Geografia",
+    "question": "Qual é a capital do Canadá?",
+    "options": [
+      "Vancouver",
+      "Toronto",
+      "Ottawa",
+      "Montreal"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_004",
+    "category": "Tecnologia",
+    "question": "Quantos bits existem em um byte?",
+    "options": [
+      "4",
+      "32",
+      "16",
+      "8"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_005",
+    "category": "Games",
+    "question": "Qual empresa criou o personagem Sonic?",
+    "options": [
+      "Nintendo",
+      "Capcom",
+      "Konami",
+      "Sega"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_006",
+    "category": "História",
+    "question": "Em qual país teve início a Revolução Industrial?",
+    "options": [
+      "Alemanha",
+      "Reino Unido",
+      "Estados Unidos",
+      "França"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_007",
+    "category": "Astronomia",
+    "question": "Qual planeta do Sistema Solar é o mais próximo do Sol?",
+    "options": [
+      "Vênus",
+      "Marte",
+      "Terra",
+      "Mercúrio"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_008",
+    "category": "Biologia",
+    "question": "Qual órgão humano é responsável por bombear o sangue pelo corpo?",
+    "options": [
+      "Pulmão",
+      "Fígado",
+      "Coração",
+      "Rim"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_009",
+    "category": "Matemática",
+    "question": "Quanto é 15% de 200?",
+    "options": [
+      "20",
+      "25",
+      "35",
+      "30"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_010",
+    "category": "Cinema",
+    "question": "Qual diretor comandou o filme Titanic, lançado em 1997?",
+    "options": [
+      "Steven Spielberg",
+      "Christopher Nolan",
+      "Ridley Scott",
+      "James Cameron"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_011",
+    "category": "Música",
+    "question": "Qual destes instrumentos normalmente possui seis cordas?",
+    "options": [
+      "Flauta",
+      "Guitarra",
+      "Saxofone",
+      "Trompete"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_012",
+    "category": "Geografia",
+    "question": "Qual rio atravessa a cidade de Londres?",
+    "options": [
+      "Reno",
+      "Sena",
+      "Danúbio",
+      "Tâmisa"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_013",
+    "category": "História",
+    "question": "Quem foi o primeiro presidente do Brasil?",
+    "options": [
+      "Floriano Peixoto",
+      "Prudente de Morais",
+      "Deodoro da Fonseca",
+      "Getúlio Vargas"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_014",
+    "category": "Ciências",
+    "question": "Qual gás é o mais abundante na atmosfera terrestre?",
+    "options": [
+      "Hidrogênio",
+      "Oxigênio",
+      "Dióxido de carbono",
+      "Nitrogênio"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_015",
+    "category": "Esportes",
+    "question": "Em qual esporte é disputado o torneio de Wimbledon?",
+    "options": [
+      "Tênis",
+      "Rugby",
+      "Golfe",
+      "Críquete"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_016",
+    "category": "Tecnologia",
+    "question": "Qual componente de um computador é responsável principalmente por executar instruções de programas?",
+    "options": [
+      "CPU",
+      "Monitor",
+      "SSD",
+      "Fonte de alimentação"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_017",
+    "category": "Língua Portuguesa",
+    "question": "Qual destas palavras é um verbo?",
+    "options": [
+      "Casa",
+      "Correr",
+      "Azul",
+      "Bonito"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_018",
+    "category": "Artes",
+    "question": "Qual artista espanhol é famoso pela obra Guernica?",
+    "options": [
+      "Claude Monet",
+      "Edvard Munch",
+      "Rembrandt",
+      "Pablo Picasso"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_019",
+    "category": "Cultura Geral",
+    "question": "Qual moeda é utilizada oficialmente no Japão?",
+    "options": [
+      "Iene",
+      "Rupia",
+      "Won",
+      "Yuan"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_020",
+    "category": "Biologia",
+    "question": "Qual grupo sanguíneo é conhecido como doador universal de hemácias quando considerado também o fator Rh?",
+    "options": [
+      "A positivo",
+      "AB positivo",
+      "O negativo",
+      "B negativo"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_021",
+    "category": "Games",
+    "question": "Em Minecraft, qual material é tradicionalmente necessário para construir um portal para o Nether?",
+    "options": [
+      "Redstone",
+      "Obsidiana",
+      "Quartzo",
+      "Diamante"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_022",
+    "category": "Matemática",
+    "question": "Qual é o resultado de 9 × 8?",
+    "options": [
+      "72",
+      "81",
+      "64",
+      "70"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_023",
+    "category": "Astronomia",
+    "question": "Qual planeta é famoso por possuir um grande sistema de anéis visíveis?",
+    "options": [
+      "Marte",
+      "Saturno",
+      "Vênus",
+      "Mercúrio"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_024",
+    "category": "Cinema",
+    "question": "Qual personagem da Marvel utiliza um escudo circular de vibranium como arma característica?",
+    "options": [
+      "Capitão América",
+      "Hulk",
+      "Homem de Ferro",
+      "Thor"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_025",
+    "category": "Geografia",
+    "question": "Qual oceano separa principalmente a América da Europa e da África?",
+    "options": [
+      "Índico",
+      "Atlântico",
+      "Ártico",
+      "Pacífico"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_026",
+    "category": "História",
+    "question": "Qual civilização antiga construiu o Partenon?",
+    "options": [
+      "Persa",
+      "Romana",
+      "Grega",
+      "Egípcia"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_027",
+    "category": "Matemática",
+    "question": "Quanto é 3/4 de 100?",
+    "options": [
+      "75",
+      "25",
+      "50",
+      "80"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_028",
+    "category": "Ciências",
+    "question": "Qual unidade do SI mede força?",
+    "options": [
+      "Newton",
+      "Joule",
+      "Watt",
+      "Pascal"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_029",
+    "category": "Geografia",
+    "question": "Qual é a capital da Alemanha?",
+    "options": [
+      "Berlim",
+      "Frankfurt",
+      "Munique",
+      "Hamburgo"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_030",
+    "category": "Biologia",
+    "question": "Qual é a principal função dos glóbulos vermelhos?",
+    "options": [
+      "Digerir alimentos",
+      "Transportar oxigênio",
+      "Produzir hormônios",
+      "Formar ossos"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_031",
+    "category": "Tecnologia",
+    "question": "Qual protocolo é usado normalmente para acessar páginas web de forma criptografada?",
+    "options": [
+      "SMTP",
+      "FTP",
+      "HTTP",
+      "HTTPS"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_032",
+    "category": "Astronomia",
+    "question": "Qual planeta é o segundo mais próximo do Sol?",
+    "options": [
+      "Marte",
+      "Vênus",
+      "Terra",
+      "Mercúrio"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_033",
+    "category": "Literatura",
+    "question": "Quem escreveu O Hobbit?",
+    "options": [
+      "C. S. Lewis",
+      "Jules Verne",
+      "George Orwell",
+      "J. R. R. Tolkien"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_034",
+    "category": "Cinema",
+    "question": "Quem interpretou Jack Sparrow na série Piratas do Caribe?",
+    "options": [
+      "Tom Cruise",
+      "Brad Pitt",
+      "Johnny Depp",
+      "Leonardo DiCaprio"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_035",
+    "category": "Música",
+    "question": "Qual banda lançou a música Bohemian Rhapsody?",
+    "options": [
+      "Queen",
+      "U2",
+      "The Beatles",
+      "Pink Floyd"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_036",
+    "category": "Esportes",
+    "question": "Quantos jogadores de cada equipe ficam em quadra no basquete tradicional?",
+    "options": [
+      "6",
+      "5",
+      "4",
+      "7"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_037",
+    "category": "Games",
+    "question": "Em The Legend of Zelda, qual é o nome do protagonista controlado pelo jogador na maioria dos jogos?",
+    "options": [
+      "Ganon",
+      "Epona",
+      "Zelda",
+      "Link"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_038",
+    "category": "Artes",
+    "question": "Qual pintor é associado ao Impressionismo e à série Nenúfares?",
+    "options": [
+      "Salvador Dalí",
+      "Goya",
+      "Caravaggio",
+      "Claude Monet"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_039",
+    "category": "Cultura Geral",
+    "question": "Qual idioma possui o maior número de falantes nativos no mundo?",
+    "options": [
+      "Hindi",
+      "Inglês",
+      "Espanhol",
+      "Mandarim"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_040",
+    "category": "Língua Portuguesa",
+    "question": "Qual é o plural correto de 'cidadão'?",
+    "options": [
+      "Cidadões",
+      "Cidadãoses",
+      "Cidadãos",
+      "Cidadães"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_041",
+    "category": "História",
+    "question": "Qual evento de 1789 simboliza o início da Revolução Francesa?",
+    "options": [
+      "Revolta dos Boxers",
+      "Queda da Bastilha",
+      "Congresso de Viena",
+      "Batalha de Waterloo"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_042",
+    "category": "Geografia",
+    "question": "Qual é a capital do Chile?",
+    "options": [
+      "Quito",
+      "Lima",
+      "Santiago",
+      "Bogotá"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_043",
+    "category": "Matemática",
+    "question": "Qual é o valor de 7²?",
+    "options": [
+      "14",
+      "42",
+      "56",
+      "49"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_044",
+    "category": "Biologia",
+    "question": "Qual órgão filtra o sangue e produz urina?",
+    "options": [
+      "Pâncreas",
+      "Pulmão",
+      "Baço",
+      "Rim"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_045",
+    "category": "Ciências",
+    "question": "Qual metal líquido em temperatura ambiente é tradicionalmente conhecido?",
+    "options": [
+      "Mercúrio",
+      "Níquel",
+      "Ferro",
+      "Alumínio"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_046",
+    "category": "Tecnologia",
+    "question": "Qual destes é um sistema operacional?",
+    "options": [
+      "Chrome",
+      "Linux",
+      "Google",
+      "Python"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_047",
+    "category": "Astronomia",
+    "question": "Como se chama a galáxia onde está o Sistema Solar?",
+    "options": [
+      "Andrômeda",
+      "Triângulo",
+      "Sombrero",
+      "Via Láctea"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_048",
+    "category": "Literatura",
+    "question": "Quem escreveu A Metamorfose?",
+    "options": [
+      "Hemingway",
+      "Victor Hugo",
+      "Franz Kafka",
+      "Tolstói"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_049",
+    "category": "Cinema",
+    "question": "Qual estúdio de animação produziu Toy Story?",
+    "options": [
+      "Pixar",
+      "Illumination",
+      "DreamWorks",
+      "Studio Ghibli"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_050",
+    "category": "Esportes",
+    "question": "Em qual país surgiram os Jogos Olímpicos da Antiguidade?",
+    "options": [
+      "Turquia",
+      "Egito",
+      "Itália",
+      "Grécia"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_051",
+    "category": "Games",
+    "question": "Qual é o nome do protagonista da série God of War?",
+    "options": [
+      "Geralt",
+      "Kratos",
+      "Marcus",
+      "Dante"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_052",
+    "category": "Música",
+    "question": "Qual instrumento é tocado soprando e pressionando chaves, sendo comum no jazz?",
+    "options": [
+      "Violino",
+      "Bateria",
+      "Saxofone",
+      "Harpa"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_053",
+    "category": "Cultura Geral",
+    "question": "Qual país é conhecido pela Torre Eiffel?",
+    "options": [
+      "Itália",
+      "França",
+      "Suíça",
+      "Bélgica"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_054",
+    "category": "Artes",
+    "question": "Qual artista pintou O Nascimento de Vênus?",
+    "options": [
+      "Picasso",
+      "Sandro Botticelli",
+      "Van Gogh",
+      "Monet"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_055",
+    "category": "História",
+    "question": "Qual império tinha Roma como capital durante grande parte da Antiguidade?",
+    "options": [
+      "Império Asteca",
+      "Império Mongol",
+      "Império Inca",
+      "Império Romano"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_056",
+    "category": "Geografia",
+    "question": "Qual é a capital da Coreia do Sul?",
+    "options": [
+      "Incheon",
+      "Seul",
+      "Busan",
+      "Daegu"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_057",
+    "category": "Matemática",
+    "question": "Qual é a média aritmética de 10, 20 e 30?",
+    "options": [
+      "30",
+      "25",
+      "20",
+      "15"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_058",
+    "category": "Ciências",
+    "question": "Qual planeta possui gravidade superficial mais próxima da terrestre entre estas opções?",
+    "options": [
+      "Mercúrio",
+      "Lua",
+      "Vênus",
+      "Marte"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_059",
+    "category": "Biologia",
+    "question": "Qual vitamina é produzida na pele com ajuda da luz solar?",
+    "options": [
+      "Vitamina C",
+      "Vitamina D",
+      "Vitamina A",
+      "Vitamina K"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_060",
+    "category": "Tecnologia",
+    "question": "Qual extensão é comumente associada a arquivos de imagem JPEG?",
+    "options": [
+      ".jpg",
+      ".mp3",
+      ".exe",
+      ".txt"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_061",
+    "category": "Astronomia",
+    "question": "Como se chama o caminho aparente que um planeta percorre ao redor de uma estrela?",
+    "options": [
+      "Eclipse",
+      "Equador",
+      "Meridiano",
+      "Órbita"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_062",
+    "category": "Literatura",
+    "question": "Quem escreveu Os Lusíadas?",
+    "options": [
+      "Eça de Queirós",
+      "Luís de Camões",
+      "José Saramago",
+      "Fernando Pessoa"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_063",
+    "category": "Cinema",
+    "question": "Qual filme apresenta o personagem Forrest Gump?",
+    "options": [
+      "O Náufrago",
+      "Clube da Luta",
+      "Forrest Gump",
+      "À Espera de um Milagre"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_064",
+    "category": "Esportes",
+    "question": "Qual modalidade utiliza florete, espada ou sabre?",
+    "options": [
+      "Esgrima",
+      "Polo",
+      "Ginástica",
+      "Remo"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_065",
+    "category": "Games",
+    "question": "Em qual franquia aparece Lara Croft?",
+    "options": [
+      "Uncharted",
+      "Assassin's Creed",
+      "Tomb Raider",
+      "Resident Evil"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_066",
+    "category": "Música",
+    "question": "Quem é conhecido como Rei do Pop?",
+    "options": [
+      "Prince",
+      "Freddie Mercury",
+      "Michael Jackson",
+      "Elvis Presley"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_067",
+    "category": "Geografia",
+    "question": "Qual deserto ocupa grande parte do norte da África?",
+    "options": [
+      "Kalahari",
+      "Atacama",
+      "Saara",
+      "Gobi"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_068",
+    "category": "História",
+    "question": "Qual povo antigo fundou Cartago?",
+    "options": [
+      "Romanos",
+      "Fenícios",
+      "Vikings",
+      "Maias"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_069",
+    "category": "Matemática",
+    "question": "Se x + 5 = 12, qual é o valor de x?",
+    "options": [
+      "8",
+      "7",
+      "5",
+      "6"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_070",
+    "category": "Ciências",
+    "question": "Qual é a unidade de corrente elétrica no SI?",
+    "options": [
+      "Ampere",
+      "Volt",
+      "Ohm",
+      "Watt"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_071",
+    "category": "Biologia",
+    "question": "Qual é o maior osso do corpo humano?",
+    "options": [
+      "Fêmur",
+      "Tíbia",
+      "Rádio",
+      "Úmero"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_072",
+    "category": "Tecnologia",
+    "question": "Qual destes dispositivos armazena dados permanentemente?",
+    "options": [
+      "RAM",
+      "Registrador",
+      "Cache L1",
+      "SSD"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_073",
+    "category": "Astronomia",
+    "question": "Qual planeta tem um dia mais longo que seu ano?",
+    "options": [
+      "Vênus",
+      "Netuno",
+      "Marte",
+      "Júpiter"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_074",
+    "category": "Literatura",
+    "question": "Qual personagem é o protagonista de Dom Quixote?",
+    "options": [
+      "Hamlet",
+      "Ulisses",
+      "Dom Quixote",
+      "Sancho Pança"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_075",
+    "category": "Cinema",
+    "question": "Qual filme de Steven Spielberg apresenta um parque com dinossauros clonados?",
+    "options": [
+      "Indiana Jones",
+      "Jurassic Park",
+      "Tubarão",
+      "E.T."
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_076",
+    "category": "Esportes",
+    "question": "Qual país venceu a primeira Copa do Mundo masculina de futebol em 1930?",
+    "options": [
+      "Brasil",
+      "Itália",
+      "Uruguai",
+      "Argentina"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_077",
+    "category": "Games",
+    "question": "Qual franquia possui os personagens Scorpion e Sub-Zero?",
+    "options": [
+      "Soulcalibur",
+      "Tekken",
+      "Street Fighter",
+      "Mortal Kombat"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_078",
+    "category": "Música",
+    "question": "Qual compositor ficou surdo progressivamente durante a vida?",
+    "options": [
+      "Beethoven",
+      "Debussy",
+      "Vivaldi",
+      "Chopin"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_079",
+    "category": "Artes",
+    "question": "Qual técnica utiliza pequenas peças de material para formar imagens decorativas?",
+    "options": [
+      "Litografia",
+      "Gravura",
+      "Mosaico",
+      "Aquarela"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_080",
+    "category": "Cultura Geral",
+    "question": "Qual país possui a cidade de Dubai?",
+    "options": [
+      "Omã",
+      "Catar",
+      "Emirados Árabes Unidos",
+      "Bahrein"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_081",
+    "category": "Geografia",
+    "question": "Qual é a capital do México?",
+    "options": [
+      "Cidade do México",
+      "Cancún",
+      "Guadalajara",
+      "Monterrey"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_082",
+    "category": "História",
+    "question": "Quem liderou a independência da Índia por meio de resistência não violenta?",
+    "options": [
+      "Mahatma Gandhi",
+      "Jawaharlal Nehru",
+      "Nelson Mandela",
+      "Dalai Lama"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_083",
+    "category": "Matemática",
+    "question": "Qual é o perímetro de um quadrado de lado 6 cm?",
+    "options": [
+      "18 cm",
+      "36 cm",
+      "12 cm",
+      "24 cm"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_084",
+    "category": "Ciências",
+    "question": "Qual camada da Terra é líquida e formada principalmente por ferro e níquel?",
+    "options": [
+      "Crosta",
+      "Manto inferior",
+      "Núcleo interno",
+      "Núcleo externo"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_085",
+    "category": "Biologia",
+    "question": "Qual estrutura celular contém a maior parte do material genético em células eucarióticas?",
+    "options": [
+      "Núcleo",
+      "Lisossomo",
+      "Ribossomo",
+      "Vacúolo"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_086",
+    "category": "Tecnologia",
+    "question": "Qual linguagem é usada principalmente para estruturar páginas web?",
+    "options": [
+      "Bash",
+      "C",
+      "SQL",
+      "HTML"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_087",
+    "category": "Astronomia",
+    "question": "Qual corpo celeste é formado principalmente por gelo, poeira e rocha e pode desenvolver uma cauda perto do Sol?",
+    "options": [
+      "Cometa",
+      "Quasar",
+      "Planeta",
+      "Lua"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_088",
+    "category": "Literatura",
+    "question": "Quem escreveu Orgulho e Preconceito?",
+    "options": [
+      "Virginia Woolf",
+      "Emily Brontë",
+      "Jane Austen",
+      "Agatha Christie"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_089",
+    "category": "Cinema",
+    "question": "Quem dirigiu a trilogia O Senhor dos Anéis lançada entre 2001 e 2003?",
+    "options": [
+      "Tim Burton",
+      "George Lucas",
+      "Peter Jackson",
+      "James Cameron"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_090",
+    "category": "Esportes",
+    "question": "Qual esporte possui posições como levantador e líbero?",
+    "options": [
+      "Hóquei",
+      "Futebol",
+      "Vôlei",
+      "Basquete"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_091",
+    "category": "Games",
+    "question": "Qual empresa desenvolveu a série de jogos Gran Turismo?",
+    "options": [
+      "Naughty Dog",
+      "Polyphony Digital",
+      "Valve",
+      "Ubisoft"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_092",
+    "category": "Música",
+    "question": "Qual família de instrumentos inclui violino, viola, violoncelo e contrabaixo?",
+    "options": [
+      "Madeiras",
+      "Metais",
+      "Percussão",
+      "Cordas"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_093",
+    "category": "Artes",
+    "question": "Qual movimento artístico teve Claude Monet como um de seus principais representantes?",
+    "options": [
+      "Barroco",
+      "Futurismo",
+      "Surrealismo",
+      "Impressionismo"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_094",
+    "category": "Cultura Geral",
+    "question": "Qual é a moeda oficial dos Estados Unidos?",
+    "options": [
+      "Euro",
+      "Libra esterlina",
+      "Dólar americano",
+      "Peso"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_095",
+    "category": "Geografia",
+    "question": "Qual é a capital da Grécia?",
+    "options": [
+      "Tessalônica",
+      "Esparta",
+      "Atenas",
+      "Corinto"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_096",
+    "category": "História",
+    "question": "Qual muro caiu em 1989 e simbolizou o enfraquecimento da divisão da Alemanha?",
+    "options": [
+      "Muralha da China",
+      "Linha Maginot",
+      "Muro de Adriano",
+      "Muro de Berlim"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_097",
+    "category": "Matemática",
+    "question": "Quanto é 2⁵?",
+    "options": [
+      "16",
+      "32",
+      "24",
+      "64"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_098",
+    "category": "Ciências",
+    "question": "Qual instrumento mede a pressão atmosférica?",
+    "options": [
+      "Barômetro",
+      "Higrômetro",
+      "Anemômetro",
+      "Termômetro"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_099",
+    "category": "Biologia",
+    "question": "Qual processo celular divide uma célula somática em duas células-filhas geneticamente semelhantes?",
+    "options": [
+      "Mitose",
+      "Tradução",
+      "Meiose",
+      "Fecundação"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_100",
+    "category": "Tecnologia",
+    "question": "Qual serviço traduz nomes como exemplo.com para endereços IP?",
+    "options": [
+      "DNS",
+      "SSH",
+      "DHCP",
+      "NTP"
+    ],
+    "correct": 0
+  }
+]

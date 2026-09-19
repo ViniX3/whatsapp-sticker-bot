@@ -14,6 +14,7 @@ import (
 	"whatsapp-sticker-bot/internal/logger"
 	"whatsapp-sticker-bot/internal/media"
 	"whatsapp-sticker-bot/internal/processor"
+	"whatsapp-sticker-bot/internal/quiz"
 	"whatsapp-sticker-bot/internal/whatsapp"
 
 	"go.mau.fi/whatsmeow"
@@ -76,6 +77,39 @@ func ProcessMessage(
 	}
 
 	command := strings.ToLower(parts[0])
+
+	// ==========================================================
+	// RESPOSTA DE QUIZ
+	// ==========================================================
+	//
+	// Antes dos demais comandos verificamos se a mensagem
+	// é simplesmente:
+	//
+	// A
+	// B
+	// C
+	// D
+	//
+	// Caso exista um quiz ativo, a mensagem poderá ser
+	// interpretada como resposta.
+	//
+	// ==========================================================
+
+	if msgEvent.Info.IsGroup &&
+		isQuizAnswer(text) {
+
+		handled :=
+			handleQuizAnswer(
+				client,
+				msgEvent,
+				text,
+			)
+
+		if handled {
+			logger.Info("==============================")
+			return
+		}
+	}
 
 	// ==========================================================
 	// !gold
@@ -537,7 +571,7 @@ func ProcessMessage(
 					&cooldownErr,
 				) {
 					response := fmt.Sprintf(
-						"🍀 @%s, você já tentou sua sorte hoje!*\n\n⏳ Próxima tentativa em: *%s*",
+						"🍀 @%s, você já tentou sua sorte hoje!\n\n⏳ Próxima tentativa em: *%s*",
 						name,
 						formatDuration(
 							cooldownErr.Remaining,
@@ -610,6 +644,259 @@ func ProcessMessage(
 			result.Tier,
 			"Prêmio:",
 			result.Amount,
+		)
+
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
+	// !quiz
+	// ==========================================================
+
+	if command == "!quiz" {
+		if !requireGoldGroup(
+			client,
+			msgEvent,
+			"!quiz",
+		) {
+			return
+		}
+
+		if len(parts) != 1 {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"Uso correto: *!quiz*",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		groupJID :=
+			msgEvent.Info.Chat.String()
+
+		jid :=
+			canonicalSenderJID(msgEvent)
+
+		name :=
+			msgEvent.Info.PushName
+
+		// ======================================================
+		// VERIFICAR CARTEIRA
+		// ======================================================
+
+		wallet, err :=
+			database.GetWallet(
+				groupJID,
+				jid,
+			)
+
+		if err != nil {
+			logger.Error(
+				"Erro ao consultar carteira para quiz:",
+				err,
+			)
+
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ Não foi possível iniciar o Quiz.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		if wallet == nil {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				fmt.Sprintf(
+					"❌ Você ainda não possui uma carteira Gold neste grupo.\n\nUse *!gold* para receber seus *%d Gold* iniciais.",
+					gold.InitialGold,
+				),
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		// ======================================================
+		// INICIAR QUIZ
+		// ======================================================
+
+		session, err :=
+			quiz.Start(
+				groupJID,
+				jid,
+			)
+
+		if err != nil {
+			if errors.Is(
+				err,
+				quiz.ErrQuizActive,
+			) {
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"🧠 Existe um Quiz ativo no momento, aguarde sua vez.",
+				)
+
+				logger.Info("==============================")
+				return
+			}
+
+			logger.Error(
+				"Erro ao iniciar Quiz:",
+				err,
+			)
+
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ Não foi possível iniciar o Quiz.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		// ======================================================
+		// ENVIAR PERGUNTA
+		// ======================================================
+
+		response :=
+			formatQuizQuestion(
+				name,
+				session,
+			)
+
+		_ = whatsapp.SendMentionedText(
+			client,
+			msgEvent.Info.Chat,
+			response,
+			[]types.JID{
+				msgEvent.Info.Sender.ToNonAD(),
+			},
+		)
+
+		logger.Success(
+			"Quiz iniciado:",
+			"Grupo:",
+			groupJID,
+			"Usuário:",
+			jid,
+			"Dificuldade:",
+			session.Difficulty,
+			"Prêmio:",
+			session.Reward,
+		)
+
+		// ======================================================
+		// TIMER
+		// ======================================================
+
+		duration :=
+			time.Until(
+				session.ExpiresAt,
+			)
+
+		if duration < 0 {
+			duration = 0
+		}
+
+		chatJID :=
+			msgEvent.Info.Chat
+
+		sessionID :=
+			session.ID
+
+		ownerJID :=
+			jid
+
+		ownerName :=
+			name
+
+		question :=
+			session.Question
+
+		reward :=
+			session.Reward
+
+		time.AfterFunc(
+			duration,
+			func() {
+				expired :=
+					quiz.Expire(
+						groupJID,
+						sessionID,
+					)
+
+				if !expired {
+					return
+				}
+
+				correctLetter :=
+					quizCorrectLetter(
+						question.CorrectAnswer,
+					)
+
+				correctOption :=
+					quizOptionByIndex(
+						question,
+						question.CorrectAnswer,
+					)
+
+				timeoutResponse := fmt.Sprintf(
+					"⏰ *TEMPO ESGOTADO!*\n\n@%s não respondeu a tempo.\n\n✅ Resposta correta:\n*%s)* %s\n\n💰 Prêmio perdido: *%d Gold*",
+					ownerName,
+					correctLetter,
+					correctOption,
+					reward,
+				)
+
+				parsedOwner,
+					parseErr :=
+					types.ParseJID(
+						ownerJID,
+					)
+
+				if parseErr != nil {
+					logger.Error(
+						"Erro ao converter JID do jogador no timeout do Quiz:",
+						parseErr,
+					)
+
+					_ = whatsapp.SendText(
+						client,
+						chatJID,
+						timeoutResponse,
+					)
+
+					return
+				}
+
+				_ = whatsapp.SendMentionedText(
+					client,
+					chatJID,
+					timeoutResponse,
+					[]types.JID{
+						parsedOwner.ToNonAD(),
+					},
+				)
+
+				logger.Info(
+					"Quiz expirado:",
+					"Grupo:",
+					groupJID,
+					"Usuário:",
+					ownerJID,
+					"Prêmio perdido:",
+					reward,
+				)
+			},
 		)
 
 		logger.Info("==============================")
@@ -1377,10 +1664,6 @@ func ProcessMessage(
 			return
 		}
 
-		// ======================================================
-		// ESCUDO BLOQUEOU O ROUBO
-		// ======================================================
-
 		if result.ShieldBlocked {
 			if result.ShieldBroken {
 				response := fmt.Sprintf(
@@ -1447,10 +1730,6 @@ func ProcessMessage(
 			logger.Info("==============================")
 			return
 		}
-
-		// ======================================================
-		// ROUBO NORMAL
-		// ======================================================
 
 		var response string
 
@@ -1527,6 +1806,369 @@ func ProcessMessage(
 	)
 
 	logger.Info("==============================")
+}
+
+// ==========================================================
+// QUIZ - RESPOSTAS
+// ==========================================================
+
+func isQuizAnswer(
+	text string,
+) bool {
+
+	normalized :=
+		strings.TrimSpace(
+			strings.ToUpper(
+				text,
+			),
+		)
+
+	switch normalized {
+	case "A", "B", "C", "D":
+		return true
+
+	default:
+		return false
+	}
+}
+
+// handleQuizAnswer retorna true quando a mensagem fazia parte
+// de um Quiz ativo.
+//
+// Respostas de pessoas que não iniciaram a rodada são
+// silenciosamente ignoradas.
+func handleQuizAnswer(
+	client *whatsmeow.Client,
+	msg *events.Message,
+	answer string,
+) bool {
+
+	groupJID :=
+		msg.Info.Chat.String()
+
+	session, exists :=
+		quiz.GetActive(
+			groupJID,
+		)
+
+	if !exists {
+		return false
+	}
+
+	jid :=
+		canonicalSenderJID(msg)
+
+	// Existe Quiz, mas a mensagem veio de outra pessoa.
+	//
+	// Ignoramos para não poluir o grupo.
+	if session.OwnerJID != jid {
+		logger.Debug(
+			"Resposta de Quiz ignorada de usuário que não iniciou a rodada:",
+			jid,
+		)
+
+		return true
+	}
+
+	result, err :=
+		quiz.Answer(
+			groupJID,
+			jid,
+			answer,
+		)
+
+	if err != nil {
+		switch {
+		case errors.Is(
+			err,
+			quiz.ErrQuizExpired,
+		):
+			return true
+
+		case errors.Is(
+			err,
+			quiz.ErrNoActiveQuiz,
+		):
+			return true
+
+		case errors.Is(
+			err,
+			quiz.ErrNotQuizOwner,
+		):
+			return true
+
+		case errors.Is(
+			err,
+			quiz.ErrInvalidAnswer,
+		):
+			return true
+
+		default:
+			logger.Error(
+				"Erro ao processar resposta do Quiz:",
+				err,
+			)
+
+			return true
+		}
+	}
+
+	name :=
+		msg.Info.PushName
+
+	selectedIndex :=
+		quizIndexFromLetter(
+			result.SelectedAnswer,
+		)
+
+	selectedOption :=
+		quizOptionByIndex(
+			result.Question,
+			selectedIndex,
+		)
+
+	correctOption :=
+		quizOptionByIndex(
+			result.Question,
+			result.Question.CorrectAnswer,
+		)
+
+	// ======================================================
+	// ACERTO
+	// ======================================================
+
+	if result.Correct {
+		rewardResult, rewardErr :=
+			gold.RewardQuiz(
+				groupJID,
+				jid,
+				result.Reward,
+				string(
+					result.Difficulty,
+				),
+			)
+
+		if rewardErr != nil {
+			logger.Error(
+				"Erro ao pagar prêmio do Quiz:",
+				rewardErr,
+			)
+
+			_ = whatsapp.SendText(
+				client,
+				msg.Info.Chat,
+				"❌ Você acertou o Quiz, mas ocorreu um erro ao creditar o prêmio.",
+			)
+
+			return true
+		}
+
+		response := fmt.Sprintf(
+			"✅ *RESPOSTA CORRETA!*\n\n@%s acertou!\n\n✅ *%s)* %s\n\n💰 Prêmio: *+%d Gold*\n💰 Saldo atual: *%d Gold*",
+			name,
+			result.CorrectAnswer,
+			correctOption,
+			rewardResult.Amount,
+			rewardResult.Balance,
+		)
+
+		_ = whatsapp.SendMentionedText(
+			client,
+			msg.Info.Chat,
+			response,
+			[]types.JID{
+				msg.Info.Sender.ToNonAD(),
+			},
+		)
+
+		logger.Success(
+			"Quiz respondido corretamente:",
+			"Usuário:",
+			jid,
+			"Dificuldade:",
+			result.Difficulty,
+			"Prêmio:",
+			rewardResult.Amount,
+		)
+
+		return true
+	}
+
+	// ======================================================
+	// ERRO
+	// ======================================================
+
+	response := fmt.Sprintf(
+		"❌ *RESPOSTA ERRADA!*\n\n@%s respondeu:\n*%s)* %s\n\n✅ Resposta correta:\n*%s)* %s\n\n💰 Prêmio perdido: *%d Gold*",
+		name,
+		result.SelectedAnswer,
+		selectedOption,
+		result.CorrectAnswer,
+		correctOption,
+		result.Reward,
+	)
+
+	_ = whatsapp.SendMentionedText(
+		client,
+		msg.Info.Chat,
+		response,
+		[]types.JID{
+			msg.Info.Sender.ToNonAD(),
+		},
+	)
+
+	logger.Info(
+		"Quiz respondido incorretamente:",
+		"Usuário:",
+		jid,
+		"Dificuldade:",
+		result.Difficulty,
+		"Resposta:",
+		result.SelectedAnswer,
+		"Correta:",
+		result.CorrectAnswer,
+	)
+
+	return true
+}
+
+// ==========================================================
+// QUIZ - FORMATAÇÃO
+// ==========================================================
+
+func formatQuizQuestion(
+	name string,
+	session *quiz.Session,
+) string {
+
+	seconds :=
+		quizTimeLimitSeconds(
+			session.Difficulty,
+		)
+
+	title :=
+		fmt.Sprintf(
+			"🧠 *QUIZ — %s*",
+			session.Difficulty,
+		)
+
+	if session.Difficulty ==
+		quiz.DifficultyInsane {
+
+		title =
+			"🔥 *QUIZ INSANO* 🔥"
+	}
+
+	response := fmt.Sprintf(
+		"%s\n\n@%s, sua pergunta é:\n\n*%s*\n\n*A)* %s\n*B)* %s\n*C)* %s\n*D)* %s\n\n💰 Prêmio: *%d Gold*\n⏳ Você tem *%d segundos*!\n\nResponda apenas com *A*, *B*, *C* ou *D*.",
+		title,
+		name,
+		session.Question.Text,
+		session.Question.Options[0],
+		session.Question.Options[1],
+		session.Question.Options[2],
+		session.Question.Options[3],
+		session.Reward,
+		seconds,
+	)
+
+	if session.Difficulty ==
+		quiz.DifficultyInsane {
+
+		response = fmt.Sprintf(
+			"%s\n\n@%s, você encontrou uma pergunta *INSANA*!\n\n*%s*\n\n*A)* %s\n*B)* %s\n*C)* %s\n*D)* %s\n\n👑 Prêmio: *%d Gold*\n⏳ VOCÊ TEM APENAS *%d SEGUNDOS*!\n\nResponda apenas com *A*, *B*, *C* ou *D*.",
+			title,
+			name,
+			session.Question.Text,
+			session.Question.Options[0],
+			session.Question.Options[1],
+			session.Question.Options[2],
+			session.Question.Options[3],
+			session.Reward,
+			seconds,
+		)
+	}
+
+	return response
+}
+
+func quizTimeLimitSeconds(
+	difficulty quiz.Difficulty,
+) int {
+
+	if difficulty ==
+		quiz.DifficultyInsane {
+
+		return int(
+			quiz.InsaneTimeLimit.Seconds(),
+		)
+	}
+
+	return int(
+		quiz.NormalTimeLimit.Seconds(),
+	)
+}
+
+func quizCorrectLetter(
+	index int,
+) string {
+
+	switch index {
+	case 0:
+		return "A"
+
+	case 1:
+		return "B"
+
+	case 2:
+		return "C"
+
+	case 3:
+		return "D"
+
+	default:
+		return "?"
+	}
+}
+
+func quizIndexFromLetter(
+	letter string,
+) int {
+
+	switch strings.ToUpper(
+		strings.TrimSpace(
+			letter,
+		),
+	) {
+	case "A":
+		return 0
+
+	case "B":
+		return 1
+
+	case "C":
+		return 2
+
+	case "D":
+		return 3
+
+	default:
+		return -1
+	}
+}
+
+func quizOptionByIndex(
+	question quiz.Question,
+	index int,
+) string {
+
+	if index < 0 ||
+		index >= len(question.Options) {
+
+		return "Resposta desconhecida"
+	}
+
+	return question.Options[index]
 }
 
 // ==========================================================
@@ -1751,15 +2393,6 @@ func rankingDisplayName(
 // FORMATAÇÃO DE TEMPO
 // ==========================================================
 
-// formatDuration é utilizada tanto pelo !escudo quanto
-// pelo cooldown do !sorte.
-//
-// Exemplos:
-//
-//	23h 41m
-//	11h 05m
-//	53m
-//	menos de 1 minuto
 func formatDuration(
 	duration time.Duration,
 ) string {

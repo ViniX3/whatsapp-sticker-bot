@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "hard_001",
+    "category": "Tecnologia",
+    "question": "Quantos endereços IPv4 totais existem em uma sub-rede /27?",
+    "options": [
+      "16",
+      "30",
+      "64",
+      "32"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_002",
+    "category": "História",
+    "question": "Em qual ano foi assinada a Paz de Vestfália, associada ao fim da Guerra dos Trinta Anos?",
+    "options": [
+      "1688",
+      "1618",
+      "1713",
+      "1648"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_003",
+    "category": "Literatura",
+    "question": "Quem escreveu o romance O Processo?",
+    "options": [
+      "Thomas Mann",
+      "Albert Camus",
+      "Franz Kafka",
+      "Hermann Hesse"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_004",
+    "category": "Ciências",
+    "question": "Qual valor aproxima melhor a constante de Avogadro?",
+    "options": [
+      "1,602 × 10⁻¹⁹",
+      "3,00 × 10⁸",
+      "9,81 × 10²",
+      "6,022 × 10²³"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_005",
+    "category": "Matemática",
+    "question": "Se os autovalores de uma matriz 3×3 são 2, 3 e 4, qual é seu determinante?",
+    "options": [
+      "36",
+      "12",
+      "9",
+      "24"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_006",
+    "category": "Geografia",
+    "question": "Qual estreito separa a Rússia do Alasca?",
+    "options": [
+      "Estreito de Bering",
+      "Estreito de Ormuz",
+      "Estreito de Malaca",
+      "Estreito de Gibraltar"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_007",
+    "category": "Biologia",
+    "question": "Em células eucarióticas, em qual fase da mitose os cromossomos se alinham no plano equatorial da célula?",
+    "options": [
+      "Anáfase",
+      "Metáfase",
+      "Telófase",
+      "Prófase"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_008",
+    "category": "Astronomia",
+    "question": "Qual é o nome da região ao redor de um buraco negro além da qual nem mesmo a luz pode escapar?",
+    "options": [
+      "Disco de acreção",
+      "Horizonte de eventos",
+      "Magnetosfera",
+      "Zona de Roche"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_009",
+    "category": "História",
+    "question": "Qual imperador romano promulgou o Édito de Milão em 313, associado à tolerância ao cristianismo no Império Romano?",
+    "options": [
+      "Nero",
+      "Trajano",
+      "Augusto",
+      "Constantino I"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_010",
+    "category": "Tecnologia",
+    "question": "Qual algoritmo de consenso é utilizado pelo etcd para manter consistência entre os membros do cluster?",
+    "options": [
+      "Raft",
+      "PBFT",
+      "Paxos",
+      "Two-Phase Commit"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_011",
+    "category": "Matemática",
+    "question": "Qual é a soma dos ângulos internos de um decágono?",
+    "options": [
+      "1260°",
+      "1800°",
+      "1440°",
+      "1620°"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_012",
+    "category": "Ciências",
+    "question": "Qual partícula mediadora é associada à interação eletromagnética no Modelo Padrão?",
+    "options": [
+      "Glúon",
+      "Gráviton",
+      "Fóton",
+      "Bóson W"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_013",
+    "category": "Cinema",
+    "question": "Qual cineasta dirigiu 2001: Uma Odisseia no Espaço?",
+    "options": [
+      "Francis Ford Coppola",
+      "Stanley Kubrick",
+      "Akira Kurosawa",
+      "Alfred Hitchcock"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_014",
+    "category": "Literatura",
+    "question": "Qual autor escreveu Cem Anos de Solidão?",
+    "options": [
+      "Julio Cortázar",
+      "Gabriel García Márquez",
+      "Mario Vargas Llosa",
+      "Jorge Luis Borges"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_015",
+    "category": "Esportes",
+    "question": "Em uma maratona oficial, qual é aproximadamente a distância total percorrida?",
+    "options": [
+      "40,0 km",
+      "41,195 km",
+      "42,195 km",
+      "43,0 km"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_016",
+    "category": "Tecnologia",
+    "question": "Qual nível de isolamento SQL impede dirty reads, mas ainda pode permitir non-repeatable reads?",
+    "options": [
+      "REPEATABLE READ",
+      "SERIALIZABLE",
+      "READ COMMITTED",
+      "READ UNCOMMITTED"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_017",
+    "category": "Artes",
+    "question": "Qual movimento artístico está fortemente associado a Salvador Dalí?",
+    "options": [
+      "Surrealismo",
+      "Expressionismo",
+      "Cubismo",
+      "Impressionismo"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_018",
+    "category": "Biologia",
+    "question": "Qual enzima é responsável por sintetizar RNA a partir de uma molécula de DNA durante a transcrição?",
+    "options": [
+      "Ligase",
+      "Helicase",
+      "RNA polimerase",
+      "DNA polimerase"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_019",
+    "category": "Geografia",
+    "question": "Qual país possui a maior população da América do Sul?",
+    "options": [
+      "Argentina",
+      "Peru",
+      "Brasil",
+      "Colômbia"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_020",
+    "category": "Lógica",
+    "question": "Se a proposição 'Se P, então Q' é falsa, qual combinação de valores lógicos necessariamente ocorre?",
+    "options": [
+      "P falsa e Q falsa",
+      "P falsa e Q verdadeira",
+      "P verdadeira e Q falsa",
+      "P verdadeira e Q verdadeira"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_021",
+    "category": "Astronomia",
+    "question": "Qual é a estrela mais próxima da Terra depois do Sol?",
+    "options": [
+      "Betelgeuse",
+      "Vega",
+      "Sírius",
+      "Proxima Centauri"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_022",
+    "category": "Games",
+    "question": "Qual estúdio desenvolveu originalmente o jogo Half-Life?",
+    "options": [
+      "Epic Games",
+      "Valve",
+      "id Software",
+      "Blizzard Entertainment"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_023",
+    "category": "Música",
+    "question": "Qual compositor escreveu a Nona Sinfonia que inclui a famosa Ode à Alegria?",
+    "options": [
+      "Ludwig van Beethoven",
+      "Wolfgang Amadeus Mozart",
+      "Franz Schubert",
+      "Johann Sebastian Bach"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_024",
+    "category": "Tecnologia",
+    "question": "Em uma árvore AVL válida, qual é o maior valor absoluto permitido para o fator de balanceamento de qualquer nó?",
+    "options": [
+      "3",
+      "2",
+      "1",
+      "0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_025",
+    "category": "Ciências",
+    "question": "Qual princípio estabelece que não é possível determinar simultaneamente, com precisão arbitrária, a posição e o momento de uma partícula?",
+    "options": [
+      "Princípio de Arquimedes",
+      "Princípio de Bernoulli",
+      "Princípio da Incerteza de Heisenberg",
+      "Princípio de Pascal"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_026",
+    "category": "Matemática",
+    "question": "Qual é o valor de φ(20), onde φ é a função totiente de Euler?",
+    "options": [
+      "4",
+      "12",
+      "8",
+      "10"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_027",
+    "category": "Tecnologia",
+    "question": "Em IPv6, quantos bits possui um endereço completo?",
+    "options": [
+      "128",
+      "256",
+      "64",
+      "96"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_028",
+    "category": "História",
+    "question": "Qual cidade foi a capital do Império Bizantino?",
+    "options": [
+      "Alexandria",
+      "Éfeso",
+      "Antioquia",
+      "Constantinopla"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_029",
+    "category": "Biologia",
+    "question": "Qual complexo enzimático produz ATP usando um gradiente de prótons na membrana mitocondrial interna?",
+    "options": [
+      "DNA ligase",
+      "Pepsina",
+      "Rubisco",
+      "ATP sintase"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_030",
+    "category": "Astronomia",
+    "question": "Qual é a maior lua de Júpiter?",
+    "options": [
+      "Europa",
+      "Calisto",
+      "Ganímedes",
+      "Io"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_031",
+    "category": "Química",
+    "question": "Qual é a geometria molecular ideal do metano CH4?",
+    "options": [
+      "Trigonal planar",
+      "Angular",
+      "Linear",
+      "Tetraédrica"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_032",
+    "category": "Física",
+    "question": "Qual unidade do SI corresponde à capacitância elétrica?",
+    "options": [
+      "Henry",
+      "Tesla",
+      "Farad",
+      "Weber"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_033",
+    "category": "Literatura",
+    "question": "Quem escreveu O Som e a Fúria?",
+    "options": [
+      "Ernest Hemingway",
+      "F. Scott Fitzgerald",
+      "William Faulkner",
+      "John Steinbeck"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_034",
+    "category": "Geografia",
+    "question": "Qual país possui soberania sobre a ilha da Groenlândia por meio do Reino da Dinamarca?",
+    "options": [
+      "Canadá",
+      "Noruega",
+      "Dinamarca",
+      "Islândia"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_035",
+    "category": "Tecnologia",
+    "question": "Qual mecanismo do TCP controla a quantidade de dados não confirmados em trânsito com base na capacidade do receptor?",
+    "options": [
+      "ARP cache",
+      "Checksum IP",
+      "Janela de recepção",
+      "TTL"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_036",
+    "category": "História",
+    "question": "Qual batalha de 1815 marcou a derrota final de Napoleão Bonaparte?",
+    "options": [
+      "Trafalgar",
+      "Leipzig",
+      "Waterloo",
+      "Austerlitz"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_037",
+    "category": "Matemática",
+    "question": "Qual é a derivada de ln(x), para x > 0?",
+    "options": [
+      "ln(x)/x",
+      "e^x",
+      "1/x",
+      "x"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_038",
+    "category": "Biologia",
+    "question": "Qual estrutura renal realiza a filtração inicial do sangue?",
+    "options": [
+      "Glomérulo",
+      "Pelve renal",
+      "Ureter",
+      "Alça de Henle"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_039",
+    "category": "Cinema",
+    "question": "Quem dirigiu Rashomon?",
+    "options": [
+      "Akira Kurosawa",
+      "Yasujiro Ozu",
+      "Hiroshi Teshigahara",
+      "Kenji Mizoguchi"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_040",
+    "category": "Música",
+    "question": "Qual compositor escreveu o ciclo O Anel do Nibelungo?",
+    "options": [
+      "Gustav Mahler",
+      "Richard Wagner",
+      "Johannes Brahms",
+      "Franz Liszt"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_041",
+    "category": "Artes",
+    "question": "Qual artista criou a escultura O Pensador?",
+    "options": [
+      "Auguste Rodin",
+      "Alberto Giacometti",
+      "Henry Moore",
+      "Constantin Brâncuși"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_042",
+    "category": "Esportes",
+    "question": "Qual país sediou a primeira edição moderna dos Jogos Olímpicos em 1896?",
+    "options": [
+      "França",
+      "Itália",
+      "Reino Unido",
+      "Grécia"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_043",
+    "category": "Games",
+    "question": "Qual empresa originalmente desenvolveu Doom, lançado em 1993?",
+    "options": [
+      "id Software",
+      "LucasArts",
+      "Valve",
+      "Origin Systems"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_044",
+    "category": "Tecnologia",
+    "question": "Em criptografia assimétrica RSA, qual operação matemática está diretamente ligada à dificuldade de recuperar a chave privada a partir da pública?",
+    "options": [
+      "Fatoração de inteiros grandes",
+      "Ordenação de vetores",
+      "Transformada de Fourier",
+      "Busca binária"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_045",
+    "category": "Geografia",
+    "question": "Qual é o lago de água doce com maior volume do mundo?",
+    "options": [
+      "Vitória",
+      "Tanganica",
+      "Baikal",
+      "Superior"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_046",
+    "category": "História",
+    "question": "Qual imperador romano dividiu administrativamente o Império e instituiu a Tetrarquia?",
+    "options": [
+      "Diocleciano",
+      "Trajano",
+      "Augusto",
+      "Teodósio I"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_047",
+    "category": "Matemática",
+    "question": "Qual é o valor de ∫₀¹ x² dx?",
+    "options": [
+      "1/3",
+      "2/3",
+      "1",
+      "1/2"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_048",
+    "category": "Física",
+    "question": "Qual lei descreve a força entre duas cargas elétricas pontuais?",
+    "options": [
+      "Lei de Coulomb",
+      "Lei de Lenz",
+      "Lei de Faraday",
+      "Lei de Hooke"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_049",
+    "category": "Química",
+    "question": "Qual é o estado de oxidação do oxigênio na maioria dos compostos comuns?",
+    "options": [
+      "-2",
+      "+2",
+      "+1",
+      "-1"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_050",
+    "category": "Biologia",
+    "question": "Qual molécula transporta aminoácidos até o ribossomo durante a tradução?",
+    "options": [
+      "tRNA",
+      "rRNA",
+      "mRNA",
+      "DNA"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_051",
+    "category": "Astronomia",
+    "question": "Qual classificação espectral corresponde ao Sol?",
+    "options": [
+      "A0V",
+      "K5III",
+      "G2V",
+      "M1V"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_052",
+    "category": "Literatura",
+    "question": "Qual poeta escreveu A Terra Desolada?",
+    "options": [
+      "T. S. Eliot",
+      "Ezra Pound",
+      "W. B. Yeats",
+      "Walt Whitman"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_053",
+    "category": "Cinema",
+    "question": "Quem dirigiu Persona, de 1966?",
+    "options": [
+      "Federico Fellini",
+      "Ingmar Bergman",
+      "Michelangelo Antonioni",
+      "François Truffaut"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_054",
+    "category": "Música",
+    "question": "Qual compositor escreveu Boléro?",
+    "options": [
+      "Maurice Ravel",
+      "Gabriel Fauré",
+      "Claude Debussy",
+      "Erik Satie"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_055",
+    "category": "Artes",
+    "question": "Qual pintor é associado ao tríptico O Jardim das Delícias Terrenas?",
+    "options": [
+      "Peter Paul Rubens",
+      "El Greco",
+      "Hieronymus Bosch",
+      "Jan van Eyck"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_056",
+    "category": "Tecnologia",
+    "question": "Qual estrutura de dados é normalmente usada para implementar busca em largura em grafos?",
+    "options": [
+      "Heap máximo",
+      "Fila",
+      "Árvore B",
+      "Pilha"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_057",
+    "category": "Matemática",
+    "question": "Se uma matriz quadrada tem determinante zero, qual afirmação é necessariamente verdadeira?",
+    "options": [
+      "Ela é singular",
+      "Ela é invertível",
+      "Ela é diagonal",
+      "Todos os autovalores são 1"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_058",
+    "category": "História",
+    "question": "Qual dinastia governava a China durante as viagens de Marco Polo?",
+    "options": [
+      "Song do Sul",
+      "Qing",
+      "Ming",
+      "Yuan"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_059",
+    "category": "Geografia",
+    "question": "Qual é o país mais populoso da África?",
+    "options": [
+      "Etiópia",
+      "África do Sul",
+      "Egito",
+      "Nigéria"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_060",
+    "category": "Biologia",
+    "question": "Qual etapa da respiração celular ocorre principalmente na matriz mitocondrial?",
+    "options": [
+      "Fotólise da água",
+      "Glicólise",
+      "Ciclo de Krebs",
+      "Fermentação lática"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_061",
+    "category": "Química",
+    "question": "Qual princípio prevê o deslocamento de um equilíbrio químico diante de uma perturbação?",
+    "options": [
+      "Aufbau",
+      "Pauli",
+      "Hess",
+      "Le Châtelier"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_062",
+    "category": "Física",
+    "question": "Qual grandeza é conservada em todas as colisões isoladas, sejam elásticas ou inelásticas?",
+    "options": [
+      "Velocidade de cada corpo",
+      "Momento linear",
+      "Energia cinética",
+      "Aceleração"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_063",
+    "category": "Tecnologia",
+    "question": "Em uma tabela hash, qual técnica resolve colisões armazenando múltiplos elementos em uma estrutura associada ao mesmo bucket?",
+    "options": [
+      "Busca binária",
+      "Encadeamento separado",
+      "Paginação",
+      "Recursão de cauda"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_064",
+    "category": "Astronomia",
+    "question": "Qual planeta possui a lua Tritão?",
+    "options": [
+      "Júpiter",
+      "Netuno",
+      "Urano",
+      "Saturno"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_065",
+    "category": "Literatura",
+    "question": "Quem escreveu O Leopardo?",
+    "options": [
+      "Giuseppe Tomasi di Lampedusa",
+      "Cesare Pavese",
+      "Italo Calvino",
+      "Umberto Eco"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_066",
+    "category": "Cinema",
+    "question": "Qual diretor realizou Stalker, de 1979?",
+    "options": [
+      "Andrei Tarkovsky",
+      "Sergei Eisenstein",
+      "Aleksandr Sokurov",
+      "Elem Klimov"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_067",
+    "category": "Música",
+    "question": "Quem compôs a Sinfonia do Novo Mundo?",
+    "options": [
+      "Gustav Mahler",
+      "Leoš Janáček",
+      "Bedřich Smetana",
+      "Antonín Dvořák"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_068",
+    "category": "Artes",
+    "question": "Qual escola de arte e design fundada por Walter Gropius teve grande influência no modernismo?",
+    "options": [
+      "Hudson River School",
+      "Bauhaus",
+      "Barbizon",
+      "De Stijl"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_069",
+    "category": "Esportes",
+    "question": "No beisebol, quantos strikes normalmente resultam em strikeout?",
+    "options": [
+      "2",
+      "4",
+      "3",
+      "5"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_070",
+    "category": "Games",
+    "question": "Qual jogo de 1998 da Valve introduziu Gordon Freeman?",
+    "options": [
+      "Deus Ex",
+      "Half-Life",
+      "Quake II",
+      "System Shock 2"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_071",
+    "category": "História",
+    "question": "Qual tratado de 1494 dividiu áreas de expansão ultramarina entre Portugal e Castela?",
+    "options": [
+      "Utrecht",
+      "Tordesilhas",
+      "Versalhes",
+      "Methuen"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_072",
+    "category": "Geografia",
+    "question": "Qual país africano tem Adis Abeba como capital?",
+    "options": [
+      "Etiópia",
+      "Sudão",
+      "Somália",
+      "Eritreia"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_073",
+    "category": "Matemática",
+    "question": "Qual é o valor de 10! / 8!?",
+    "options": [
+      "72",
+      "100",
+      "80",
+      "90"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_074",
+    "category": "Biologia",
+    "question": "Qual enzima desenrola a dupla hélice de DNA durante a replicação?",
+    "options": [
+      "Transcriptase",
+      "Ligase",
+      "Peptidase",
+      "Helicase"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_075",
+    "category": "Química",
+    "question": "Qual gás nobre possui número atômico 18?",
+    "options": [
+      "Xenônio",
+      "Neônio",
+      "Argônio",
+      "Criptônio"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_076",
+    "category": "Física",
+    "question": "Qual é a dimensão física de potência?",
+    "options": [
+      "Força por unidade de área",
+      "Carga por unidade de tempo",
+      "Massa por unidade de volume",
+      "Energia por unidade de tempo"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_077",
+    "category": "Tecnologia",
+    "question": "Em Kubernetes, qual objeto expõe uma aplicação por um endereço estável e balanceia tráfego para Pods selecionados?",
+    "options": [
+      "Secret",
+      "Service",
+      "Namespace",
+      "ConfigMap"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_078",
+    "category": "Astronomia",
+    "question": "Qual fenômeno é causado principalmente pela rotação da Terra quando observamos o movimento aparente diário das estrelas?",
+    "options": [
+      "Precessão dos equinócios",
+      "Paralaxe anual",
+      "Aberração estelar",
+      "Movimento aparente de leste para oeste"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_079",
+    "category": "Literatura",
+    "question": "Qual autor argentino escreveu Ficções?",
+    "options": [
+      "Jorge Luis Borges",
+      "Adolfo Bioy Casares",
+      "Julio Cortázar",
+      "Ernesto Sabato"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_080",
+    "category": "Cinema",
+    "question": "Quem dirigiu O Sétimo Selo?",
+    "options": [
+      "Ingmar Bergman",
+      "Carl Theodor Dreyer",
+      "Jean Renoir",
+      "Fritz Lang"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_081",
+    "category": "Música",
+    "question": "Qual compositor escreveu a ópera Tristão e Isolda?",
+    "options": [
+      "Richard Strauss",
+      "Richard Wagner",
+      "Giacomo Puccini",
+      "Giuseppe Verdi"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_082",
+    "category": "Artes",
+    "question": "Qual movimento artístico italiano do início do século XX exaltava velocidade, máquinas e modernidade?",
+    "options": [
+      "Rococó",
+      "Dadaísmo",
+      "Simbolismo",
+      "Futurismo"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_083",
+    "category": "Lógica",
+    "question": "Qual é a negação lógica de 'Todos os A são B'?",
+    "options": [
+      "Existe pelo menos um B que não é A",
+      "Todos os B são A",
+      "Nenhum A é B",
+      "Existe pelo menos um A que não é B"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_084",
+    "category": "História",
+    "question": "Qual rei inglês assinou a Magna Carta em 1215?",
+    "options": [
+      "João Sem Terra",
+      "Henrique VIII",
+      "Ricardo III",
+      "Eduardo I"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_085",
+    "category": "Geografia",
+    "question": "Qual corrente oceânica quente influencia fortemente o clima da Europa Ocidental?",
+    "options": [
+      "Corrente de Oyashio",
+      "Corrente de Benguela",
+      "Corrente do Golfo",
+      "Corrente de Humboldt"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_086",
+    "category": "Matemática",
+    "question": "Qual é a probabilidade de obter exatamente duas caras em três lançamentos de uma moeda justa?",
+    "options": [
+      "1/8",
+      "1/2",
+      "1/4",
+      "3/8"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_087",
+    "category": "Biologia",
+    "question": "Qual estrutura celular modifica e empacota proteínas destinadas à secreção?",
+    "options": [
+      "Peroxissomo",
+      "Centríolo",
+      "Nucléolo",
+      "Complexo de Golgi"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_088",
+    "category": "Química",
+    "question": "Qual tipo de ligação predomina entre os átomos em uma molécula de N2?",
+    "options": [
+      "Iônica",
+      "Metálica",
+      "Covalente tripla",
+      "Covalente simples"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_089",
+    "category": "Física",
+    "question": "Qual princípio explica o empuxo sobre um corpo imerso em um fluido?",
+    "options": [
+      "Princípio de Huygens",
+      "Princípio de Pauli",
+      "Princípio de Arquimedes",
+      "Princípio de Fermat"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_090",
+    "category": "Tecnologia",
+    "question": "Qual protocolo de roteamento é classificado como link-state?",
+    "options": [
+      "OSPF",
+      "BGP",
+      "RIP",
+      "EIGRP clássico"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_091",
+    "category": "Astronomia",
+    "question": "Qual classe de objeto compacto é sustentada principalmente pela pressão de degenerescência dos elétrons?",
+    "options": [
+      "Buraco negro",
+      "Gigante vermelha",
+      "Estrela de nêutrons",
+      "Anã branca"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_092",
+    "category": "Literatura",
+    "question": "Quem escreveu A Montanha Mágica?",
+    "options": [
+      "Hermann Hesse",
+      "Franz Kafka",
+      "Robert Musil",
+      "Thomas Mann"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_093",
+    "category": "Cinema",
+    "question": "Qual filme de Fritz Lang apresenta a cidade futurista dividida por classes sociais?",
+    "options": [
+      "O Gabinete do Dr. Caligari",
+      "Nosferatu",
+      "Metrópolis",
+      "M"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_094",
+    "category": "Música",
+    "question": "Qual compositor escreveu a suíte Os Planetas?",
+    "options": [
+      "Gustav Holst",
+      "Ralph Vaughan Williams",
+      "Benjamin Britten",
+      "Edward Elgar"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_095",
+    "category": "Artes",
+    "question": "Qual pintor espanhol produziu a série de obras conhecida como Pinturas Negras?",
+    "options": [
+      "Diego Velázquez",
+      "Francisco Goya",
+      "Joan Miró",
+      "El Greco"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_096",
+    "category": "História",
+    "question": "Qual império tinha Tenochtitlán como capital?",
+    "options": [
+      "Tolteca",
+      "Inca",
+      "Asteca",
+      "Maia"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_097",
+    "category": "Matemática",
+    "question": "Qual é o valor de i² no conjunto dos números complexos?",
+    "options": [
+      "1",
+      "0",
+      "i",
+      "-1"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_098",
+    "category": "Biologia",
+    "question": "Qual base nitrogenada está presente no RNA no lugar da timina?",
+    "options": [
+      "Guanina",
+      "Citosina",
+      "Uracila",
+      "Adenina"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_099",
+    "category": "Tecnologia",
+    "question": "Em Git, qual comando cria um novo commit a partir das alterações previamente adicionadas ao staging area?",
+    "options": [
+      "git fetch",
+      "git push",
+      "git clone",
+      "git commit"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_100",
+    "category": "Geografia",
+    "question": "Qual cadeia montanhosa contém o monte Aconcágua?",
+    "options": [
+      "Alpes",
+      "Cáucaso",
+      "Himalaia",
+      "Andes"
+    ],
+    "correct": 3
+  }
+]

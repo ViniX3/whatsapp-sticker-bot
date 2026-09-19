@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "super_easy_001",
+    "category": "Matemática",
+    "question": "Quanto é 5 + 7?",
+    "options": [
+      "13",
+      "10",
+      "12",
+      "11"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_002",
+    "category": "Geografia",
+    "question": "Qual é a capital do Brasil?",
+    "options": [
+      "Brasília",
+      "Salvador",
+      "São Paulo",
+      "Rio de Janeiro"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_003",
+    "category": "Astronomia",
+    "question": "Qual é o maior planeta do Sistema Solar?",
+    "options": [
+      "Saturno",
+      "Júpiter",
+      "Terra",
+      "Marte"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_004",
+    "category": "Artes",
+    "question": "Quem pintou a Mona Lisa?",
+    "options": [
+      "Pablo Picasso",
+      "Claude Monet",
+      "Leonardo da Vinci",
+      "Michelangelo"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_005",
+    "category": "Esportes",
+    "question": "Quantos jogadores cada equipe possui em campo no início de uma partida de futebol?",
+    "options": [
+      "9",
+      "11",
+      "12",
+      "10"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_006",
+    "category": "Ciências",
+    "question": "Qual é a fórmula química da água?",
+    "options": [
+      "CO2",
+      "H2O",
+      "NaCl",
+      "O2"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_007",
+    "category": "História",
+    "question": "Quem foi o primeiro ser humano a caminhar na Lua?",
+    "options": [
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "John Glenn",
+      "Neil Armstrong"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_008",
+    "category": "Biologia",
+    "question": "Qual é o maior órgão do corpo humano?",
+    "options": [
+      "Pulmão",
+      "Coração",
+      "Fígado",
+      "Pele"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_009",
+    "category": "Literatura",
+    "question": "Quem escreveu a série de livros Harry Potter?",
+    "options": [
+      "C. S. Lewis",
+      "J. K. Rowling",
+      "George R. R. Martin",
+      "J. R. R. Tolkien"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_010",
+    "category": "Música",
+    "question": "Qual instrumento musical possui teclas brancas e pretas?",
+    "options": [
+      "Flauta",
+      "Piano",
+      "Tambor",
+      "Violino"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_011",
+    "category": "Cinema",
+    "question": "Na saga Star Wars, qual personagem é o pai de Luke Skywalker?",
+    "options": [
+      "Obi-Wan Kenobi",
+      "Yoda",
+      "Han Solo",
+      "Darth Vader"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_012",
+    "category": "Games",
+    "question": "Qual empresa criou o personagem Mario?",
+    "options": [
+      "Nintendo",
+      "Atari",
+      "Sega",
+      "Sony"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_013",
+    "category": "Geografia",
+    "question": "Qual é o maior país do mundo em área territorial?",
+    "options": [
+      "Rússia",
+      "Estados Unidos",
+      "Canadá",
+      "China"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_014",
+    "category": "Ciências",
+    "question": "Em condições normais de pressão, a água congela aproximadamente a quantos graus Celsius?",
+    "options": [
+      "0 °C",
+      "10 °C",
+      "50 °C",
+      "100 °C"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_015",
+    "category": "Matemática",
+    "question": "Qual é a metade de 100?",
+    "options": [
+      "50",
+      "25",
+      "40",
+      "75"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_016",
+    "category": "Língua Portuguesa",
+    "question": "Qual destas palavras é o oposto de 'alto' quando se fala de altura?",
+    "options": [
+      "Baixo",
+      "Forte",
+      "Grande",
+      "Longo"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_017",
+    "category": "Tecnologia",
+    "question": "O que significa a sigla WWW usada em endereços da internet?",
+    "options": [
+      "Wireless Wide Web",
+      "World Web Window",
+      "World Wide Web",
+      "Web World Wire"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_018",
+    "category": "Biologia",
+    "question": "Qual destes animais é uma ave?",
+    "options": [
+      "Tubarão",
+      "Golfinho",
+      "Morcego",
+      "Pinguim"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_019",
+    "category": "Astronomia",
+    "question": "Qual é o satélite natural da Terra?",
+    "options": [
+      "Sol",
+      "Vênus",
+      "Lua",
+      "Marte"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_020",
+    "category": "Esportes",
+    "question": "Quantos pontos vale um lance livre convertido no basquete?",
+    "options": [
+      "2",
+      "4",
+      "3",
+      "1"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_021",
+    "category": "História",
+    "question": "Em qual país ficam as pirâmides de Gizé?",
+    "options": [
+      "Itália",
+      "Grécia",
+      "Índia",
+      "Egito"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_022",
+    "category": "Geografia",
+    "question": "Em qual continente está localizado o Brasil?",
+    "options": [
+      "América do Sul",
+      "África",
+      "Europa",
+      "Ásia"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_023",
+    "category": "Biologia",
+    "question": "Qual gás as plantas absorvem da atmosfera durante a fotossíntese?",
+    "options": [
+      "Oxigênio",
+      "Dióxido de carbono",
+      "Hidrogênio",
+      "Hélio"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_024",
+    "category": "Artes",
+    "question": "Quem pintou a obra A Noite Estrelada?",
+    "options": [
+      "Pablo Picasso",
+      "Vincent van Gogh",
+      "Salvador Dalí",
+      "Claude Monet"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_025",
+    "category": "Cultura Geral",
+    "question": "Quantas horas possui um dia completo?",
+    "options": [
+      "24",
+      "18",
+      "12",
+      "48"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_026",
+    "category": "Matemática",
+    "question": "Quanto é 9 + 6?",
+    "options": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_027",
+    "category": "Geografia",
+    "question": "Qual é a capital da Argentina?",
+    "options": [
+      "Santiago",
+      "Montevidéu",
+      "Lima",
+      "Buenos Aires"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_028",
+    "category": "Ciências",
+    "question": "Qual gás é essencial para a respiração humana?",
+    "options": [
+      "Hélio",
+      "Nitrogênio",
+      "Neônio",
+      "Oxigênio"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_029",
+    "category": "História",
+    "question": "Qual navegador português chegou ao Brasil em 1500?",
+    "options": [
+      "Bartolomeu Dias",
+      "Fernão de Magalhães",
+      "Vasco da Gama",
+      "Pedro Álvares Cabral"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_030",
+    "category": "Biologia",
+    "question": "Qual animal passa por metamorfose de girino para adulto?",
+    "options": [
+      "Gato",
+      "Sapo",
+      "Cavalo",
+      "Galinha"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_031",
+    "category": "Literatura",
+    "question": "Quem escreveu O Pequeno Príncipe?",
+    "options": [
+      "Júlio Verne",
+      "Antoine de Saint-Exupéry",
+      "Alexandre Dumas",
+      "Victor Hugo"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_032",
+    "category": "Música",
+    "question": "Quantas cordas possui normalmente um violino?",
+    "options": [
+      "5",
+      "6",
+      "4",
+      "3"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_033",
+    "category": "Cinema",
+    "question": "Qual personagem vive em uma casa no fundo do mar em Bob Esponja?",
+    "options": [
+      "Seu Siriguejo",
+      "Patrick",
+      "Bob Esponja",
+      "Lula Molusco"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_034",
+    "category": "Games",
+    "question": "Em Pokémon, Pikachu é principalmente de qual tipo?",
+    "options": [
+      "Fogo",
+      "Água",
+      "Elétrico",
+      "Planta"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_035",
+    "category": "Esportes",
+    "question": "Qual esporte utiliza uma cesta e uma bola laranja?",
+    "options": [
+      "Golfe",
+      "Basquete",
+      "Tênis",
+      "Vôlei"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_036",
+    "category": "Tecnologia",
+    "question": "Qual dispositivo é normalmente usado para mover o ponteiro na tela de um computador?",
+    "options": [
+      "Impressora",
+      "Microfone",
+      "Roteador",
+      "Mouse"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_037",
+    "category": "Geografia",
+    "question": "Qual oceano banha a costa leste do Brasil?",
+    "options": [
+      "Pacífico",
+      "Ártico",
+      "Atlântico",
+      "Índico"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_038",
+    "category": "Matemática",
+    "question": "Quanto é 10 × 10?",
+    "options": [
+      "20",
+      "50",
+      "100",
+      "10"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_039",
+    "category": "Astronomia",
+    "question": "Qual estrela está no centro do Sistema Solar?",
+    "options": [
+      "Sírius",
+      "Vega",
+      "Sol",
+      "Polaris"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_040",
+    "category": "Artes",
+    "question": "Qual destas é uma cor primária no modelo tradicional de pintura?",
+    "options": [
+      "Vermelho",
+      "Roxo",
+      "Laranja",
+      "Verde"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_041",
+    "category": "Cultura Geral",
+    "question": "Quantos meses possui um ano?",
+    "options": [
+      "10",
+      "12",
+      "13",
+      "11"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_042",
+    "category": "Língua Portuguesa",
+    "question": "Qual destas palavras está no plural?",
+    "options": [
+      "Casa",
+      "Livros",
+      "Mesa",
+      "Papel"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_043",
+    "category": "Biologia",
+    "question": "Qual parte da planta geralmente absorve água do solo?",
+    "options": [
+      "Fruto",
+      "Flor",
+      "Folha",
+      "Raiz"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_044",
+    "category": "História",
+    "question": "Qual povo construiu o Coliseu de Roma?",
+    "options": [
+      "Astecas",
+      "Vikings",
+      "Romanos",
+      "Egípcios"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_045",
+    "category": "Geografia",
+    "question": "Qual é a capital de Portugal?",
+    "options": [
+      "Braga",
+      "Coimbra",
+      "Porto",
+      "Lisboa"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_046",
+    "category": "Ciências",
+    "question": "Qual estado físico da água é o gelo?",
+    "options": [
+      "Sólido",
+      "Plasma",
+      "Líquido",
+      "Gasoso"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_047",
+    "category": "Música",
+    "question": "Qual destes instrumentos é de percussão?",
+    "options": [
+      "Clarinete",
+      "Violino",
+      "Flauta",
+      "Tambor"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_048",
+    "category": "Cinema",
+    "question": "Qual super-herói é conhecido como Homem-Morcego?",
+    "options": [
+      "Flash",
+      "Aquaman",
+      "Batman",
+      "Superman"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_049",
+    "category": "Games",
+    "question": "Em qual jogo aparece o encanador Luigi?",
+    "options": [
+      "Minecraft",
+      "Mario Bros.",
+      "Tetris",
+      "Fortnite"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_050",
+    "category": "Esportes",
+    "question": "Qual esporte é praticado em uma piscina e envolve estilos como crawl e peito?",
+    "options": [
+      "Handebol",
+      "Judô",
+      "Ciclismo",
+      "Natação"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_051",
+    "category": "Matemática",
+    "question": "Quanto é 20 - 8?",
+    "options": [
+      "12",
+      "13",
+      "10",
+      "11"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_052",
+    "category": "Geografia",
+    "question": "Qual é a capital da França?",
+    "options": [
+      "Marselha",
+      "Lyon",
+      "Nice",
+      "Paris"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_053",
+    "category": "Astronomia",
+    "question": "Qual planeta é conhecido como Planeta Vermelho?",
+    "options": [
+      "Júpiter",
+      "Vênus",
+      "Netuno",
+      "Marte"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_054",
+    "category": "Biologia",
+    "question": "Qual destes animais é um mamífero?",
+    "options": [
+      "Polvo",
+      "Golfinho",
+      "Sardinha",
+      "Tubarão"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_055",
+    "category": "Ciências",
+    "question": "Qual metal é atraído fortemente por um ímã comum?",
+    "options": [
+      "Ferro",
+      "Ouro",
+      "Prata",
+      "Cobre"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_056",
+    "category": "História",
+    "question": "Qual cidade italiana ficou soterrada pela erupção do Vesúvio no ano 79?",
+    "options": [
+      "Pompeia",
+      "Florença",
+      "Milão",
+      "Veneza"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_057",
+    "category": "Literatura",
+    "question": "Qual personagem de conto de fadas perde um sapatinho de cristal?",
+    "options": [
+      "Rapunzel",
+      "Cinderela",
+      "Branca de Neve",
+      "Bela Adormecida"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_058",
+    "category": "Artes",
+    "question": "Qual material é usado principalmente na escultura clássica de mármore?",
+    "options": [
+      "Papel",
+      "Pedra",
+      "Madeira",
+      "Vidro"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_059",
+    "category": "Tecnologia",
+    "question": "Qual destas opções é um navegador de internet?",
+    "options": [
+      "Chrome",
+      "Photoshop",
+      "PowerPoint",
+      "Excel"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_060",
+    "category": "Cultura Geral",
+    "question": "Quantos minutos possui uma hora?",
+    "options": [
+      "45",
+      "60",
+      "30",
+      "90"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_061",
+    "category": "Matemática",
+    "question": "Qual é o dobro de 18?",
+    "options": [
+      "28",
+      "38",
+      "32",
+      "36"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_062",
+    "category": "Geografia",
+    "question": "Qual país tem formato frequentemente comparado a uma bota?",
+    "options": [
+      "Noruega",
+      "México",
+      "Itália",
+      "Índia"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_063",
+    "category": "Biologia",
+    "question": "Qual órgão é usado principalmente para respirar?",
+    "options": [
+      "Fígado",
+      "Estômago",
+      "Rins",
+      "Pulmões"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_064",
+    "category": "Astronomia",
+    "question": "Qual destes é um planeta?",
+    "options": [
+      "Vênus",
+      "Plutão",
+      "Lua",
+      "Sol"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_065",
+    "category": "Esportes",
+    "question": "Qual esporte utiliza raquete, rede e uma peteca?",
+    "options": [
+      "Rugby",
+      "Basquete",
+      "Beisebol",
+      "Badminton"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_066",
+    "category": "Cinema",
+    "question": "Qual ogro verde é protagonista de uma famosa série de filmes de animação?",
+    "options": [
+      "Nemo",
+      "Simba",
+      "Woody",
+      "Shrek"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_067",
+    "category": "Games",
+    "question": "Qual jogo clássico consiste em encaixar blocos geométricos que caem pela tela?",
+    "options": [
+      "Doom",
+      "The Sims",
+      "Pac-Man",
+      "Tetris"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_068",
+    "category": "Música",
+    "question": "Qual destas pessoas é conhecida como compositor clássico?",
+    "options": [
+      "Mozart",
+      "Picasso",
+      "Darwin",
+      "Pelé"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_069",
+    "category": "História",
+    "question": "Qual antiga civilização utilizava faraós como governantes?",
+    "options": [
+      "Egípcia",
+      "Viking",
+      "Inca",
+      "Fenícia"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_070",
+    "category": "Ciências",
+    "question": "Qual destes é um planeta gasoso gigante?",
+    "options": [
+      "Terra",
+      "Júpiter",
+      "Mercúrio",
+      "Marte"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_071",
+    "category": "Língua Portuguesa",
+    "question": "Qual destas palavras é um adjetivo?",
+    "options": [
+      "Ontem",
+      "Casa",
+      "Bonito",
+      "Correr"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_072",
+    "category": "Matemática",
+    "question": "Quanto é 36 ÷ 6?",
+    "options": [
+      "6",
+      "5",
+      "7",
+      "4"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_073",
+    "category": "Geografia",
+    "question": "Qual é a capital da Espanha?",
+    "options": [
+      "Barcelona",
+      "Valência",
+      "Sevilha",
+      "Madri"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_074",
+    "category": "Biologia",
+    "question": "Qual destes animais é um réptil?",
+    "options": [
+      "Crocodilo",
+      "Sapo",
+      "Pombo",
+      "Golfinho"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_075",
+    "category": "Cultura Geral",
+    "question": "Qual cor surge da mistura de azul e amarelo em tintas tradicionais?",
+    "options": [
+      "Marrom",
+      "Laranja",
+      "Roxo",
+      "Verde"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_076",
+    "category": "Tecnologia",
+    "question": "Qual tecla é normalmente usada para criar um espaço entre palavras?",
+    "options": [
+      "Espaço",
+      "Enter",
+      "Shift",
+      "Tab"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_077",
+    "category": "Astronomia",
+    "question": "Como é chamado o movimento da Terra ao redor do Sol?",
+    "options": [
+      "Rotação",
+      "Refração",
+      "Oscilação",
+      "Translação"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_078",
+    "category": "Esportes",
+    "question": "Qual esporte é associado à Fórmula 1?",
+    "options": [
+      "Ciclismo",
+      "Motocross",
+      "Atletismo",
+      "Automobilismo"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_079",
+    "category": "Cinema",
+    "question": "Qual personagem é um brinquedo cowboy em Toy Story?",
+    "options": [
+      "Woody",
+      "Rex",
+      "Buzz Lightyear",
+      "Slinky"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_080",
+    "category": "Literatura",
+    "question": "Qual destas obras é de Monteiro Lobato?",
+    "options": [
+      "Vidas Secas",
+      "Sítio do Picapau Amarelo",
+      "Dom Casmurro",
+      "Iracema"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_081",
+    "category": "História",
+    "question": "Qual país foi governado por faraós na Antiguidade?",
+    "options": [
+      "Egito",
+      "Brasil",
+      "Canadá",
+      "Japão"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_082",
+    "category": "Ciências",
+    "question": "Qual unidade é usada com frequência para medir temperatura no Brasil?",
+    "options": [
+      "Metro",
+      "Celsius",
+      "Litro",
+      "Watt"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_083",
+    "category": "Matemática",
+    "question": "Qual número vem depois de 99?",
+    "options": [
+      "98",
+      "100",
+      "101",
+      "109"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_084",
+    "category": "Geografia",
+    "question": "Qual é a capital do Japão?",
+    "options": [
+      "Tóquio",
+      "Nagoya",
+      "Osaka",
+      "Kyoto"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_085",
+    "category": "Biologia",
+    "question": "Qual destes animais possui penas?",
+    "options": [
+      "Tartaruga",
+      "Sapo",
+      "Cachorro",
+      "Águia"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_086",
+    "category": "Artes",
+    "question": "Qual destas atividades está diretamente ligada à fotografia?",
+    "options": [
+      "Jogar futebol",
+      "Tocar piano",
+      "Capturar imagens com câmera",
+      "Escrever código"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_087",
+    "category": "Games",
+    "question": "Qual console pertence à Sony?",
+    "options": [
+      "Xbox",
+      "Switch",
+      "PlayStation",
+      "Dreamcast"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_088",
+    "category": "Música",
+    "question": "Qual destes instrumentos possui cordas?",
+    "options": [
+      "Triângulo",
+      "Trompete",
+      "Flauta",
+      "Violão"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_089",
+    "category": "Tecnologia",
+    "question": "Qual dispositivo normalmente exibe as imagens de um computador?",
+    "options": [
+      "Roteador",
+      "Scanner",
+      "Teclado",
+      "Monitor"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_090",
+    "category": "Cultura Geral",
+    "question": "Quantos dias possui normalmente uma semana?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_091",
+    "category": "Astronomia",
+    "question": "Qual fenômeno ocorre quando a Lua fica entre a Terra e o Sol?",
+    "options": [
+      "Chuva de meteoros",
+      "Eclipse lunar",
+      "Aurora",
+      "Eclipse solar"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_092",
+    "category": "Esportes",
+    "question": "Qual esporte utiliza luvas e um ringue em combates tradicionais?",
+    "options": [
+      "Boxe",
+      "Vôlei",
+      "Natação",
+      "Tênis"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_093",
+    "category": "Cinema",
+    "question": "Qual animal é Simba em O Rei Leão?",
+    "options": [
+      "Tigre",
+      "Lobo",
+      "Urso",
+      "Leão"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_094",
+    "category": "História",
+    "question": "Qual cidade é famosa pelo Big Ben?",
+    "options": [
+      "Roma",
+      "Berlim",
+      "Londres",
+      "Paris"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_easy_095",
+    "category": "Geografia",
+    "question": "Qual é a capital da Itália?",
+    "options": [
+      "Nápoles",
+      "Turim",
+      "Milão",
+      "Roma"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_096",
+    "category": "Matemática",
+    "question": "Quanto é 7 × 7?",
+    "options": [
+      "42",
+      "49",
+      "56",
+      "47"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_easy_097",
+    "category": "Ciências",
+    "question": "Qual destes materiais é transparente em condições comuns?",
+    "options": [
+      "Vidro",
+      "Ferro",
+      "Madeira",
+      "Tijolo"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_easy_098",
+    "category": "Biologia",
+    "question": "Qual sentido humano está associado aos olhos?",
+    "options": [
+      "Olfato",
+      "Audição",
+      "Paladar",
+      "Visão"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_099",
+    "category": "Língua Portuguesa",
+    "question": "Qual sinal normalmente encerra uma frase declarativa?",
+    "options": [
+      "Hífen",
+      "Dois-pontos",
+      "Vírgula",
+      "Ponto final"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_easy_100",
+    "category": "Cultura Geral",
+    "question": "Qual estação do ano vem depois do inverno no ciclo tradicional?",
+    "options": [
+      "Primavera",
+      "Inverno",
+      "Outono",
+      "Verão"
+    ],
+    "correct": 0
+  }
+]

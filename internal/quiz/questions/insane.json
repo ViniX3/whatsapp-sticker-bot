@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "insane_001",
+    "category": "Tecnologia",
+    "question": "O endereço IPv4 172.16.203.77/20 pertence a qual endereço de rede?",
+    "options": [
+      "172.16.200.0",
+      "172.16.208.0",
+      "172.16.192.0",
+      "172.16.203.0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_002",
+    "category": "Matemática",
+    "question": "Segundo o pequeno teorema de Fermat, se p é primo e a não é divisível por p, qual congruência é válida?",
+    "options": [
+      "a^(p+1) ≡ 1 (mod p)",
+      "a^p ≡ 0 (mod p)",
+      "a^(p−1) ≡ 1 (mod p)",
+      "a^(p−1) ≡ 0 (mod p)"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_003",
+    "category": "Computação",
+    "question": "Qual problema clássico é indecidível para uma máquina de Turing geral?",
+    "options": [
+      "Árvore geradora mínima",
+      "Ordenação comparativa",
+      "Caminho mínimo",
+      "Problema da parada"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_004",
+    "category": "Matemática",
+    "question": "Se uma matriz 3×3 possui autovalores 2, 3 e 5, qual é seu determinante?",
+    "options": [
+      "10",
+      "60",
+      "30",
+      "15"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_005",
+    "category": "Estatística",
+    "question": "Em uma distribuição normal padrão, aproximadamente qual porcentagem dos valores está entre −1,96 e +1,96 desvios-padrão da média?",
+    "options": [
+      "90%",
+      "99,7%",
+      "95%",
+      "68%"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_006",
+    "category": "Matemática",
+    "question": "Qual é o valor da função totiente de Euler φ(36)?",
+    "options": [
+      "12",
+      "18",
+      "6",
+      "9"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_007",
+    "category": "Tecnologia",
+    "question": "Quantos endereços IPv4 totais existem em uma rede com prefixo /21?",
+    "options": [
+      "1024",
+      "2048",
+      "4096",
+      "2046"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_008",
+    "category": "Criptografia",
+    "question": "Quantos bits possui o digest produzido pelo algoritmo SHA-256?",
+    "options": [
+      "160",
+      "128",
+      "256",
+      "512"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_009",
+    "category": "Redes",
+    "question": "Qual algoritmo é utilizado pelo OSPF para calcular a árvore de caminhos mínimos?",
+    "options": [
+      "Dijkstra",
+      "Kruskal",
+      "Bellman-Ford",
+      "Floyd-Warshall"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_010",
+    "category": "Computação",
+    "question": "Qual classe de complexidade contém problemas cujas soluções podem ser verificadas em tempo polinomial por uma máquina determinística?",
+    "options": [
+      "L",
+      "PSPACE",
+      "EXPTIME",
+      "NP"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_011",
+    "category": "História",
+    "question": "Em qual ano foi assinado o Tratado de Tordesilhas entre Portugal e Castela?",
+    "options": [
+      "1500",
+      "1453",
+      "1494",
+      "1492"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_012",
+    "category": "História",
+    "question": "Em qual ano Constantinopla foi conquistada pelos otomanos, marcando o fim do Império Bizantino?",
+    "options": [
+      "1415",
+      "1526",
+      "1492",
+      "1453"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_013",
+    "category": "História",
+    "question": "Em qual ano ocorreu a Batalha de Austerlitz, uma das maiores vitórias de Napoleão?",
+    "options": [
+      "1799",
+      "1804",
+      "1812",
+      "1805"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_014",
+    "category": "Física",
+    "question": "Na relação de Planck E = hν, o símbolo ν representa qual grandeza física?",
+    "options": [
+      "Comprimento de onda",
+      "Amplitude",
+      "Momento linear",
+      "Frequência"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_015",
+    "category": "Química",
+    "question": "Qual elemento químico possui número atômico 92?",
+    "options": [
+      "Plutônio",
+      "Tório",
+      "Urânio",
+      "Rádio"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_016",
+    "category": "Biologia",
+    "question": "Quantos códons diferentes existem no código genético considerando todas as combinações possíveis de três bases?",
+    "options": [
+      "64",
+      "32",
+      "61",
+      "20"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_017",
+    "category": "Biologia",
+    "question": "Qual códon do RNA mensageiro funciona tipicamente como códon de iniciação da tradução?",
+    "options": [
+      "UGA",
+      "UAA",
+      "UAG",
+      "AUG"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_018",
+    "category": "Astronomia",
+    "question": "Qual é aproximadamente o raio de Schwarzschild de um objeto com uma massa solar?",
+    "options": [
+      "300 metros",
+      "300 quilômetros",
+      "3 quilômetros",
+      "3 metros"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_019",
+    "category": "Astronomia",
+    "question": "Qual é a grande galáxia espiral mais próxima da Via Láctea?",
+    "options": [
+      "Galáxia do Redemoinho",
+      "Galáxia de Andrômeda",
+      "Galáxia do Triângulo",
+      "Galáxia do Sombrero"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_020",
+    "category": "Matemática",
+    "question": "Quantos elementos possui o grupo simétrico S5?",
+    "options": [
+      "60",
+      "625",
+      "25",
+      "120"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_021",
+    "category": "Matemática",
+    "question": "O argumento diagonal de Cantor demonstra que qual conjunto é incontável?",
+    "options": [
+      "Números naturais",
+      "Números reais",
+      "Números racionais",
+      "Números inteiros"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_022",
+    "category": "Literatura",
+    "question": "Quem escreveu o romance Ulisses, publicado originalmente em 1922?",
+    "options": [
+      "James Joyce",
+      "T. S. Eliot",
+      "Samuel Beckett",
+      "Virginia Woolf"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_023",
+    "category": "Artes",
+    "question": "A pintura O Casal Arnolfini é tradicionalmente atribuída a qual artista?",
+    "options": [
+      "Jan van Eyck",
+      "Albrecht Dürer",
+      "Pieter Bruegel",
+      "Hieronymus Bosch"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_024",
+    "category": "Geografia",
+    "question": "Qual destes países é duplamente encravado, exigindo atravessar pelo menos dois outros países para alcançar o oceano?",
+    "options": [
+      "Mongólia",
+      "Uzbequistão",
+      "Nepal",
+      "Paraguai"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_025",
+    "category": "Computação",
+    "question": "Em análise assintótica, qual é a complexidade temporal média da busca em uma tabela hash bem dimensionada?",
+    "options": [
+      "O(n log n)",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_026",
+    "category": "Matemática",
+    "question": "Qual é o valor de φ(49)?",
+    "options": [
+      "42",
+      "40",
+      "36",
+      "48"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_027",
+    "category": "Redes",
+    "question": "Qual é o endereço de broadcast da rede 192.168.14.130/26?",
+    "options": [
+      "192.168.14.129",
+      "192.168.14.255",
+      "192.168.14.159",
+      "192.168.14.191"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_028",
+    "category": "Computação",
+    "question": "Qual teorema estabelece que todo sistema formal consistente, recursivamente axiomatizável e suficientemente expressivo para a aritmética contém proposições indecidíveis?",
+    "options": [
+      "Teorema de Noether",
+      "Teorema de Green",
+      "Teorema da incompletude de Gödel",
+      "Teorema de Bayes"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_029",
+    "category": "História",
+    "question": "Qual tratado de 1648 reconheceu, entre outros pontos, a independência formal das Províncias Unidas em relação à Espanha?",
+    "options": [
+      "Tratado de Nijmegen",
+      "Paz de Münster",
+      "Tratado de Cateau-Cambrésis",
+      "Tratado de Utrecht"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_030",
+    "category": "Física",
+    "question": "Qual é o spin intrínseco do fóton em unidades de ħ?",
+    "options": [
+      "0",
+      "1",
+      "1/2",
+      "2"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_031",
+    "category": "Química",
+    "question": "Qual elemento possui a configuração eletrônica fundamental [Xe] 4f14 5d10 6s1?",
+    "options": [
+      "Mercúrio",
+      "Prata",
+      "Ouro",
+      "Platina"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_032",
+    "category": "Biologia",
+    "question": "Qual complexo da cadeia respiratória mitocondrial não bombeia prótons através da membrana interna?",
+    "options": [
+      "Complexo IV",
+      "Complexo I",
+      "Complexo III",
+      "Complexo II"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_033",
+    "category": "Astronomia",
+    "question": "Qual limite de massa, cerca de 1,4 massas solares, está associado à estabilidade de anãs brancas?",
+    "options": [
+      "Limite de Chandrasekhar",
+      "Limite de Tolman",
+      "Limite de Eddington",
+      "Limite de Roche"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_034",
+    "category": "Matemática",
+    "question": "Qual é a soma da série infinita 1 + 1/2 + 1/4 + 1/8 + ...?",
+    "options": [
+      "2",
+      "e",
+      "3/2",
+      "π/2"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_035",
+    "category": "Computação",
+    "question": "Qual estrutura de dados permite encontrar e unir conjuntos disjuntos eficientemente com path compression e union by rank?",
+    "options": [
+      "Disjoint Set Union",
+      "Trie",
+      "Deque",
+      "B-tree"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_036",
+    "category": "Literatura",
+    "question": "Qual autor escreveu A Consciência de Zeno?",
+    "options": [
+      "Cesare Pavese",
+      "Italo Calvino",
+      "Luigi Pirandello",
+      "Italo Svevo"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_037",
+    "category": "Artes",
+    "question": "Qual pintor criou a obra A Ronda Noturna?",
+    "options": [
+      "Rembrandt",
+      "Frans Hals",
+      "Vermeer",
+      "Rubens"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_038",
+    "category": "Música",
+    "question": "Qual compositor escreveu a ópera Moses und Aron?",
+    "options": [
+      "Paul Hindemith",
+      "Arnold Schoenberg",
+      "Anton Webern",
+      "Alban Berg"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_039",
+    "category": "Geografia",
+    "question": "Qual país contém o enclave de Cabinda separado do restante do território nacional?",
+    "options": [
+      "República do Congo",
+      "Angola",
+      "Gabão",
+      "Namíbia"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_040",
+    "category": "História",
+    "question": "Qual imperador do Sacro Império Romano-Germânico foi deposto após o conflito das investiduras e a luta contra Gregório VII?",
+    "options": [
+      "Carlos IV",
+      "Henrique IV",
+      "Otão I",
+      "Frederico II"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_041",
+    "category": "Matemática",
+    "question": "Qual é o valor do determinante de [[1,2,3],[0,1,4],[5,6,0]]?",
+    "options": [
+      "5",
+      "0",
+      "1",
+      "-1"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_042",
+    "category": "Redes",
+    "question": "Em BGP, qual atributo é normalmente preferido em maior valor dentro de um AS para influenciar a saída de tráfego?",
+    "options": [
+      "MED",
+      "AS_PATH",
+      "LOCAL_PREF",
+      "ORIGIN"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_043",
+    "category": "Computação",
+    "question": "Qual problema é NP-completo na formulação clássica de decisão?",
+    "options": [
+      "Árvore geradora mínima",
+      "Caminho mínimo em DAG",
+      "Busca binária",
+      "SAT"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_044",
+    "category": "Física",
+    "question": "Qual simetria contínua, pelo teorema de Noether, está associada à conservação da energia?",
+    "options": [
+      "Translação no tempo",
+      "Translação no espaço",
+      "Transformação de calibre local",
+      "Rotação espacial"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_045",
+    "category": "Química",
+    "question": "Qual é a geometria molecular de XeF4 segundo VSEPR?",
+    "options": [
+      "Trigonal bipiramidal",
+      "Tetraédrica",
+      "Quadrado planar",
+      "Octaédrica"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_046",
+    "category": "Biologia",
+    "question": "Qual DNA polimerase bacteriana é principalmente responsável pela síntese contínua da nova fita durante a replicação em Escherichia coli?",
+    "options": [
+      "DNA polimerase III",
+      "Telomerase",
+      "RNA polimerase",
+      "DNA polimerase I"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_047",
+    "category": "Astronomia",
+    "question": "Qual relação descreve aproximadamente a luminosidade de uma estrela de sequência principal em função de sua massa, em uma faixa limitada de massas?",
+    "options": [
+      "Relação período-luminosidade",
+      "Relação massa-luminosidade",
+      "Lei de Hubble",
+      "Lei de Kepler"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_048",
+    "category": "Literatura",
+    "question": "Quem escreveu o romance Os Detetives Selvagens?",
+    "options": [
+      "Juan Rulfo",
+      "Carlos Fuentes",
+      "Roberto Bolaño",
+      "Mario Vargas Llosa"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_049",
+    "category": "Artes",
+    "question": "Quem pintou O Embarque para Citera?",
+    "options": [
+      "Antoine Watteau",
+      "Nicolas Poussin",
+      "Jean-Honoré Fragonard",
+      "François Boucher"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_050",
+    "category": "Música",
+    "question": "Qual compositor escreveu a obra sinfônica Atmosphères?",
+    "options": [
+      "Pierre Boulez",
+      "György Ligeti",
+      "Karlheinz Stockhausen",
+      "Iannis Xenakis"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_051",
+    "category": "Geografia",
+    "question": "Qual é o ponto mais profundo conhecido dos oceanos, localizado na Fossa das Marianas?",
+    "options": [
+      "Tonga Deep",
+      "Puerto Rico Trench",
+      "Java Deep",
+      "Challenger Deep"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_052",
+    "category": "História",
+    "question": "Qual tratado de 1555 consolidou temporariamente a divisão religiosa do Sacro Império sob o princípio cuius regio, eius religio?",
+    "options": [
+      "Paz de Praga",
+      "Paz de Augsburgo",
+      "Paz de Vestfália",
+      "Concordata de Worms"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_053",
+    "category": "Matemática",
+    "question": "Qual é o valor de C(12,5)?",
+    "options": [
+      "462",
+      "792",
+      "924",
+      "1024"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_054",
+    "category": "Redes",
+    "question": "Uma máscara IPv4 255.255.255.240 corresponde a qual prefixo CIDR?",
+    "options": [
+      "/27",
+      "/26",
+      "/29",
+      "/28"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_055",
+    "category": "Computação",
+    "question": "Qual propriedade distingue uma árvore B de alta ordem de uma árvore binária de busca comum?",
+    "options": [
+      "Só funciona em memória RAM",
+      "Cada nó tem exatamente dois filhos",
+      "Nós podem armazenar várias chaves e ter muitos filhos",
+      "Não permite chaves ordenadas"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_056",
+    "category": "Física",
+    "question": "Qual é a energia de repouso de uma partícula sem massa, como um fóton?",
+    "options": [
+      "Zero",
+      "Infinita",
+      "Depende do referencial de repouso do fóton",
+      "mc² com m diferente de zero"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_057",
+    "category": "Química",
+    "question": "Qual é a hibridização do átomo central de carbono no dióxido de carbono CO2?",
+    "options": [
+      "sp2",
+      "sp3",
+      "sp",
+      "dsp2"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_058",
+    "category": "Biologia",
+    "question": "Qual proteína motora move-se tipicamente em direção à extremidade positiva dos microtúbulos?",
+    "options": [
+      "Cinesina",
+      "Miosina II",
+      "Actina",
+      "Dineína citoplasmática"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_059",
+    "category": "Astronomia",
+    "question": "Qual parâmetro cosmológico representa aproximadamente a taxa atual de expansão do Universo?",
+    "options": [
+      "Constante de Boltzmann",
+      "Constante de Planck",
+      "Constante de Hubble",
+      "Constante solar"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_060",
+    "category": "Literatura",
+    "question": "Quem escreveu O Reconhecimento, romance publicado em 1955?",
+    "options": [
+      "William Gaddis",
+      "John Barth",
+      "Thomas Pynchon",
+      "Don DeLillo"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_061",
+    "category": "Artes",
+    "question": "Qual artista holandês pintou Vista de Delft?",
+    "options": [
+      "Pieter de Hooch",
+      "Rembrandt",
+      "Johannes Vermeer",
+      "Frans Hals"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_062",
+    "category": "Música",
+    "question": "Quem compôs a obra Gruppen para três orquestras?",
+    "options": [
+      "György Ligeti",
+      "Pierre Boulez",
+      "Luciano Berio",
+      "Karlheinz Stockhausen"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_063",
+    "category": "Geografia",
+    "question": "Qual estreito separa as ilhas de Sumatra e Java?",
+    "options": [
+      "Estreito de Sunda",
+      "Estreito de Malaca",
+      "Estreito de Lombok",
+      "Estreito de Makassar"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_064",
+    "category": "História",
+    "question": "Qual batalha de 1526 resultou na morte do rei Luís II da Hungria e na expansão otomana na Europa Central?",
+    "options": [
+      "Nicópolis",
+      "Kosovo",
+      "Mohács",
+      "Lepanto"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_065",
+    "category": "Matemática",
+    "question": "Qual é o número de árvores geradoras distintas de um grafo completo K5?",
+    "options": [
+      "625",
+      "25",
+      "125",
+      "64"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_066",
+    "category": "Redes",
+    "question": "Qual protocolo de redundância de primeiro salto foi originalmente desenvolvido pela Cisco e usa roteadores ativo e standby?",
+    "options": [
+      "VRRP",
+      "LACP",
+      "OSPF",
+      "HSRP"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_067",
+    "category": "Computação",
+    "question": "Qual algoritmo encontra componentes fortemente conexos de um grafo dirigido em tempo O(V+E) usando uma única DFS e uma pilha?",
+    "options": [
+      "Kruskal",
+      "Prim",
+      "Floyd-Warshall",
+      "Tarjan"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_068",
+    "category": "Física",
+    "question": "Qual é o valor do fator de Lorentz γ quando v = 0?",
+    "options": [
+      "1",
+      "0",
+      "c",
+      "Infinito"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_069",
+    "category": "Química",
+    "question": "Qual composto possui geometria trigonal bipiramidal ideal?",
+    "options": [
+      "CH4",
+      "BF3",
+      "SF6",
+      "PCl5"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_070",
+    "category": "Biologia",
+    "question": "Qual enzima converte superóxido em peróxido de hidrogênio e oxigênio?",
+    "options": [
+      "ATP sintase",
+      "Superóxido dismutase",
+      "Peroxidase",
+      "Catalase"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_071",
+    "category": "Astronomia",
+    "question": "Qual fenômeno ocorre quando um objeto massivo curva a luz de uma fonte ao fundo, produzindo imagens múltiplas ou arcos?",
+    "options": [
+      "Paralaxe estelar",
+      "Efeito fotoelétrico",
+      "Lente gravitacional",
+      "Precessão apsidal"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_072",
+    "category": "Literatura",
+    "question": "Qual autor escreveu O Arco-Íris da Gravidade?",
+    "options": [
+      "David Foster Wallace",
+      "Thomas Pynchon",
+      "William Gaddis",
+      "Don DeLillo"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_073",
+    "category": "Artes",
+    "question": "Qual pintor flamengo criou A Descida da Cruz conservada no Museu do Prado?",
+    "options": [
+      "Hans Memling",
+      "Pieter Bruegel",
+      "Rogier van der Weyden",
+      "Jan van Eyck"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_074",
+    "category": "Música",
+    "question": "Qual compositor escreveu a ópera Saint François d'Assise?",
+    "options": [
+      "Pierre Boulez",
+      "Henri Dutilleux",
+      "Francis Poulenc",
+      "Olivier Messiaen"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_075",
+    "category": "Geografia",
+    "question": "Qual é a capital de Burkina Faso?",
+    "options": [
+      "Bamako",
+      "Niamey",
+      "Lomé",
+      "Ouagadougou"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_076",
+    "category": "História",
+    "question": "Qual imperador romano morreu na Batalha de Adrianópolis em 378?",
+    "options": [
+      "Teodósio I",
+      "Valente",
+      "Juliano",
+      "Valentiniano I"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_077",
+    "category": "Matemática",
+    "question": "Qual é o valor da soma 1² + 2² + ... + 10²?",
+    "options": [
+      "385",
+      "435",
+      "285",
+      "335"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_078",
+    "category": "Redes",
+    "question": "Qual é o endereço de rede de 10.77.149.200/18?",
+    "options": [
+      "10.77.192.0",
+      "10.77.149.0",
+      "10.77.128.0",
+      "10.77.144.0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_079",
+    "category": "Computação",
+    "question": "Qual princípio afirma que, em um sistema distribuído sujeito a partições de rede, não é possível garantir simultaneamente consistência forte e disponibilidade total?",
+    "options": [
+      "Princípio DRY",
+      "Teorema de Bayes",
+      "Lei de Amdahl",
+      "Teorema CAP"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_080",
+    "category": "Física",
+    "question": "Qual bóson mediador está associado à interação fraca eletricamente neutra?",
+    "options": [
+      "Bóson Z",
+      "Glúon",
+      "Fóton",
+      "Bóson W+"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_081",
+    "category": "Química",
+    "question": "Qual é o número de coordenação do íon central em um complexo octaédrico simples como [Co(NH3)6]3+?",
+    "options": [
+      "6",
+      "5",
+      "4",
+      "8"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_082",
+    "category": "Biologia",
+    "question": "Qual processo remove íntrons do pré-mRNA e une éxons em eucariotos?",
+    "options": [
+      "Splicing",
+      "Replicação",
+      "Transdução",
+      "Tradução"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_083",
+    "category": "Astronomia",
+    "question": "Qual estrela é a principal componente do sistema Alfa Centauri e é ligeiramente mais massiva que o Sol?",
+    "options": [
+      "Proxima Centauri",
+      "Sirius B",
+      "Barnard's Star",
+      "Alpha Centauri A"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_084",
+    "category": "Literatura",
+    "question": "Qual escritor austríaco escreveu O Homem sem Posteridade e Auto de Fé?",
+    "options": [
+      "Robert Musil",
+      "Hermann Broch",
+      "Elias Canetti",
+      "Stefan Zweig"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_085",
+    "category": "Artes",
+    "question": "Qual artista criou a instalação The Weather Project, apresentada na Tate Modern em 2003?",
+    "options": [
+      "Ai Weiwei",
+      "Olafur Eliasson",
+      "Anish Kapoor",
+      "Damien Hirst"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_086",
+    "category": "Música",
+    "question": "Quem compôs Le Marteau sans maître?",
+    "options": [
+      "Olivier Messiaen",
+      "Pierre Boulez",
+      "Iannis Xenakis",
+      "Luciano Berio"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_087",
+    "category": "Geografia",
+    "question": "Qual país é o único a fazer fronteira terrestre com a Gâmbia?",
+    "options": [
+      "Mali",
+      "Guiné",
+      "Guiné-Bissau",
+      "Senegal"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_088",
+    "category": "História",
+    "question": "Qual concílio de 451 formulou a definição cristológica de Calcedônia?",
+    "options": [
+      "Concílio de Éfeso",
+      "Concílio de Trento",
+      "Concílio de Niceia I",
+      "Concílio de Calcedônia"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_089",
+    "category": "Matemática",
+    "question": "Qual é a cardinalidade do conjunto das partes de um conjunto com cardinalidade ℵ₀?",
+    "options": [
+      "ℵ₀² = finito",
+      "ℵ₀",
+      "ℵ₀ + 1",
+      "2^ℵ₀"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_090",
+    "category": "Redes",
+    "question": "Qual é o tamanho em bits do campo de endereço de uma interface MAC tradicional IEEE 802?",
+    "options": [
+      "32",
+      "128",
+      "64",
+      "48"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_091",
+    "category": "Computação",
+    "question": "Qual algoritmo de compressão sem perdas constrói códigos prefix-free a partir das frequências dos símbolos?",
+    "options": [
+      "Huffman",
+      "AES",
+      "RSA",
+      "LZW exclusivamente"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_092",
+    "category": "Física",
+    "question": "Qual princípio quântico impede dois férmions idênticos de ocuparem o mesmo estado quântico completo?",
+    "options": [
+      "Princípio de exclusão de Pauli",
+      "Princípio de superposição",
+      "Princípio de correspondência",
+      "Princípio da incerteza"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_093",
+    "category": "Química",
+    "question": "Qual elemento apresenta o maior valor de eletronegatividade na escala de Pauling?",
+    "options": [
+      "Nitrogênio",
+      "Flúor",
+      "Oxigênio",
+      "Cloro"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_094",
+    "category": "Biologia",
+    "question": "Qual RNA catalítico compõe o centro peptidil transferase do ribossomo bacteriano 50S?",
+    "options": [
+      "5S rRNA",
+      "tRNAfMet",
+      "16S rRNA",
+      "23S rRNA"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_095",
+    "category": "Astronomia",
+    "question": "Qual é a causa principal do desvio para o vermelho cosmológico em grandes escalas?",
+    "options": [
+      "Rotação da Via Láctea",
+      "Absorção por poeira",
+      "Refração atmosférica",
+      "Expansão do espaço"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_096",
+    "category": "Literatura",
+    "question": "Quem escreveu Berlin Alexanderplatz?",
+    "options": [
+      "Alfred Döblin",
+      "Hermann Hesse",
+      "Thomas Mann",
+      "Heinrich Mann"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_097",
+    "category": "Artes",
+    "question": "Qual escultor criou Formas Únicas da Continuidade no Espaço?",
+    "options": [
+      "Constantin Brâncuși",
+      "Umberto Boccioni",
+      "Marcel Duchamp",
+      "Giacomo Balla"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_098",
+    "category": "Música",
+    "question": "Qual compositor escreveu Metastaseis?",
+    "options": [
+      "Pierre Schaeffer",
+      "Karlheinz Stockhausen",
+      "György Ligeti",
+      "Iannis Xenakis"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_099",
+    "category": "Geografia",
+    "question": "Qual país possui a região autônoma de Gorno-Badakhshan?",
+    "options": [
+      "Afeganistão",
+      "Uzbequistão",
+      "Tajiquistão",
+      "Quirguistão"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_100",
+    "category": "Computação",
+    "question": "Qual algoritmo de consenso tolerante a falhas bizantinas clássico exige, para tolerar f nós maliciosos, pelo menos 3f + 1 réplicas?",
+    "options": [
+      "PBFT",
+      "Paxos clássico",
+      "Raft",
+      "Two-Phase Commit"
+    ],
+    "correct": 0
+  }
+]
