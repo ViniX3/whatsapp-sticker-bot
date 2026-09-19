@@ -34,6 +34,12 @@ Aposta uma quantidade de Gold.
 Exemplo:
 *!bet 500*
 
+*!slots <valor>*
+Joga no caça-níquel utilizando Gold.
+
+Exemplo:
+*!slots 500*
+
 *!pix @pessoa <valor>*
 Transfere Gold para outra pessoa.
 
@@ -51,6 +57,23 @@ Participa do sorteio diário e pode ganhar Gold.
 
 *!ranking*
 Mostra os jogadores mais ricos do grupo.
+
+
+⚔️ *DUELOS*
+
+*!duelo @pessoa <valor>*
+Desafia outro jogador para um duelo valendo Gold.
+
+Exemplo:
+*!duelo @pessoa 1000*
+
+*!aceitar*
+Aceita um duelo pendente.
+
+*!recusar*
+Recusa um duelo pendente.
+
+O vencedor é escolhido automaticamente e recebe todo o pote.
 
 
 🧠 *QUIZ*
@@ -78,6 +101,17 @@ Quanto maior a dificuldade, maior a recompensa em Gold.
 
 
 🎉 *DIVERSÃO*
+
+*!ship*
+Sorteia duas pessoas do grupo e calcula a compatibilidade. 💘
+
+*!ship @pessoa*
+Calcula a compatibilidade entre você e a pessoa marcada.
+
+*!ship @pessoa1 @pessoa2*
+Calcula a compatibilidade entre duas pessoas.
+
+A porcentagem de cada dupla é sempre a mesma.
 
 *!beijo @pessoa*
 Dá um beijo na pessoa marcada. 💋

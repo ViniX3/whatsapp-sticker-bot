@@ -519,15 +519,15 @@ func Bet(
 	var multiplier int
 
 	switch {
-	case draw < 5500:
+	case draw < 5000:
 		result = "💀 PERDEU"
 		multiplier = 0
 
-	case draw < 8000:
+	case draw < 7500:
 		result = "😐 RECUPEROU"
 		multiplier = 1
 
-	case draw < 9400:
+	case draw < 9500:
 		result = "🍀 PEQUENO PRÊMIO"
 		multiplier = 2
 

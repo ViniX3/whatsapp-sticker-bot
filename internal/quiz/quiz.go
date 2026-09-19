@@ -15,8 +15,8 @@ import (
 // ==========================================================
 
 const (
-	NormalTimeLimit = 15 * time.Second
-	InsaneTimeLimit = 6 * time.Second
+	NormalTimeLimit = 25 * time.Second
+	InsaneTimeLimit = 15 * time.Second
 )
 
 // ==========================================================

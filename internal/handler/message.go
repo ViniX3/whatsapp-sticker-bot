@@ -131,6 +131,45 @@ func ProcessMessage(
 	// !menu
 	// ==========================================================
 
+	// ==========================================================
+	// !perfil
+	// ==========================================================
+
+	// ==========================================================
+	// !slots
+	// ==========================================================
+
+	// ==========================================================
+	// !duelo / !aceitar / !recusar
+	// ==========================================================
+
+	if handleDuelCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
+	if handleSlotsCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
+	if handleProfileCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
 	if handleMenuCommand(
 		client,
 		msgEvent,
@@ -143,6 +182,19 @@ func ProcessMessage(
 	// ==========================================================
 	// COMANDOS RECREATIVOS
 	// ==========================================================
+
+	// ==========================================================
+	// !ship
+	// ==========================================================
+
+	if handleShipCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
 
 	if handleFunCommand(
 		client,
@@ -653,6 +705,12 @@ func ProcessMessage(
 			return
 		}
 
+		progressText :=
+			recordDailyLuckProgress(
+				groupJID,
+				jid,
+			)
+
 		headline :=
 			luckHeadline(
 				result.Tier,
@@ -667,6 +725,8 @@ func ProcessMessage(
 			result.Amount,
 			result.Balance,
 		)
+
+		response += progressText
 
 		_ = whatsapp.SendMentionedText(
 			client,
@@ -1392,6 +1452,13 @@ func ProcessMessage(
 			return
 		}
 
+		progressText :=
+			recordBetProgress(
+				groupJID,
+				jid,
+				result.Multiplier,
+			)
+
 		var response string
 
 		switch result.Multiplier {
@@ -1461,6 +1528,8 @@ func ProcessMessage(
 			name,
 			response,
 		)
+
+		response += progressText
 
 		_ = whatsapp.SendMentionedText(
 			client,
@@ -1706,6 +1775,14 @@ func ProcessMessage(
 			return
 		}
 
+		progressText :=
+			recordRobberyProgress(
+				groupJID,
+				jid,
+				result.Success &&
+					!result.ShieldBlocked,
+			)
+
 		if result.ShieldBlocked {
 			if result.ShieldBroken {
 				response := fmt.Sprintf(
@@ -1794,6 +1871,8 @@ func ProcessMessage(
 				result.RobberBalance,
 			)
 		}
+
+		response += progressText
 
 		_ = whatsapp.SendMentionedText(
 			client,
@@ -2026,6 +2105,14 @@ func handleQuizAnswer(
 			return true
 		}
 
+		progressText :=
+			recordQuizProgress(
+				groupJID,
+				jid,
+				result.Difficulty,
+				true,
+			)
+
 		response := fmt.Sprintf(
 			"✅ *RESPOSTA CORRETA!*\n\n@%s acertou!\n\n✅ *%s)* %s\n\n💰 Prêmio: *+%d Gold*\n💰 Saldo atual: *%d Gold*",
 			name,
@@ -2034,6 +2121,8 @@ func handleQuizAnswer(
 			rewardResult.Amount,
 			rewardResult.Balance,
 		)
+
+		response += progressText
 
 		_ = whatsapp.SendMentionedText(
 			client,
@@ -2060,6 +2149,13 @@ func handleQuizAnswer(
 	// ======================================================
 	// ERRO
 	// ======================================================
+
+	_ = recordQuizProgress(
+		groupJID,
+		jid,
+		result.Difficulty,
+		false,
+	)
 
 	response := fmt.Sprintf(
 		"❌ *RESPOSTA ERRADA!*\n\n@%s respondeu:\n*%s)* %s\n\n✅ Resposta correta:\n*%s)* %s\n\n💰 Prêmio perdido: *%d Gold*",

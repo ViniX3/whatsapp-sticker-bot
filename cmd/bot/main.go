@@ -9,6 +9,7 @@ import (
 	"whatsapp-sticker-bot/internal/database"
 	"whatsapp-sticker-bot/internal/handler"
 	"whatsapp-sticker-bot/internal/logger"
+	"whatsapp-sticker-bot/internal/profile"
 	"whatsapp-sticker-bot/internal/whatsapp"
 
 	"go.mau.fi/whatsmeow"
@@ -44,6 +45,22 @@ func main() {
 
 	logger.Success(
 		"Banco SQLite inicializado com sucesso",
+	)
+
+	// ==========================================================
+	// SISTEMA DE PERFIL / XP
+	// ==========================================================
+
+	if err := profile.Init(); err != nil {
+		logger.Error(
+			"Erro ao inicializar sistema de perfil:",
+			err,
+		)
+		return
+	}
+
+	logger.Success(
+		"Sistema de perfil e XP inicializado",
 	)
 
 	// ==========================================================

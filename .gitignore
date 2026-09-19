@@ -48,3 +48,6 @@ groups.json
 storage/*.db-wal
 storage/*.db-shm
 storage/*.db-journal
+
+# Backups temporarios de patches
+*.before-*
