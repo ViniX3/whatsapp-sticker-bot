@@ -51,6 +51,42 @@ var slapMessages = []string{
 	"🔧 @%s tentou corrigir o problema em @%s utilizando a tradicional manutenção percussiva: *TAPA!* 😂",
 }
 
+var hugMessages = []string{
+	"🤗 @%s deu aquele abraço apertado em @%s! ❤️",
+	"🫂 @%s puxou @%s para um abraço daqueles que recarregam a bateria.",
+	"🥰 @%s decidiu que @%s precisava de um abraço imediatamente!",
+	"💞 @%s abraçou @%s e o nível de fofura do grupo aumentou.",
+	"✨ @%s deu um abraço em @%s. Momento wholesome desbloqueado!",
+	"🐻 @%s aplicou um abraço de urso em @%s!",
+	"❤️ @%s abriu os braços e @%s ganhou um abraço grátis!",
+	"🌈 @%s mandou energias boas para @%s em forma de abraço.",
+	"😌 @%s abraçou @%s. Por alguns segundos, tudo ficou em paz.",
+	"🎁 @%s entregou para @%s o melhor presente possível: um abraço!",
+	"🫶 @%s chegou junto e deu um abraço carinhoso em @%s.",
+	"😊 @%s encontrou @%s pelo grupo e resolveu distribuir carinho.",
+	"💖 @%s abraçou @%s com 100% de sinceridade e 0% de cooldown.",
+	"🔋 @%s deu um abraço em @%s e restaurou +100 de energia emocional.",
+	"☁️ @%s deu um abraço tão confortável em @%s que parecia travesseiro.",
+}
+
+var biteMessages = []string{
+	"🦷 @%s deu uma mordidinha em @%s! Ninguém sabe o motivo. 😂",
+	"😈 @%s olhou para @%s e decidiu: hoje vai ter mordida!",
+	"🧛 @%s ativou o modo vampiro e mordeu @%s!",
+	"😂 @%s simplesmente mordeu @%s e se recusou a explicar.",
+	"🐊 @%s confundiu o grupo com um documentário e mordeu @%s!",
+	"🤨 @%s deu uma mordida em @%s. Comportamento absolutamente normal.",
+	"🚨 Atenção: @%s acaba de atacar @%s com uma mordidinha surpresa!",
+	"😳 @%s chegou perto de @%s e... *NHAC!*",
+	"🐹 @%s deu uma mordidinha em @%s digna de hamster bravo.",
+	"🍪 @%s aparentemente confundiu @%s com um biscoito e deu uma mordida.",
+	"🤣 @%s mordeu @%s. O RH do grupo já foi notificado.",
+	"🦈 @%s apareceu do nada e deu uma mordida em @%s!",
+	"👀 @%s encarou @%s por alguns segundos antes do inevitável *NHAC!*",
+	"🎯 @%s encontrou o alvo perfeito para uma mordidinha: @%s!",
+	"⚠️ @%s mordeu @%s. Recomenda-se manter distância de segurança.",
+}
+
 type funParticipant struct {
 	JID         types.JID
 	DisplayName string
@@ -70,7 +106,9 @@ func handleFunCommand(
 	command := strings.ToLower(parts[0])
 
 	if command != "!beijo" &&
-		command != "!tapa" {
+		command != "!tapa" &&
+		command != "!abraco" &&
+		command != "!morder" {
 		return false
 	}
 
@@ -288,6 +326,12 @@ func handleFunCommand(
 
 	case "!tapa":
 		templates = slapMessages
+
+	case "!abraco":
+		templates = hugMessages
+
+	case "!morder":
+		templates = biteMessages
 	}
 
 	template := randomFunMessage(
@@ -589,6 +633,12 @@ func funUsageMessage(
 
 	case "!tapa":
 		return "👋 Use *!tapa @pessoa* ou apenas *!tapa* para escolher alguém aleatoriamente."
+
+	case "!abraco":
+		return "🤗 Use *!abraco @pessoa* ou apenas *!abraco* para escolher alguém aleatoriamente."
+
+	case "!morder":
+		return "🦷 Use *!morder @pessoa* ou apenas *!morder* para escolher alguém aleatoriamente."
 
 	default:
 		return "❌ Comando inválido."

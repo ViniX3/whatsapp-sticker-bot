@@ -59,6 +59,18 @@ Participa do sorteio diário e pode ganhar Gold.
 Mostra os jogadores mais ricos do grupo.
 
 
+🏆 *PROGRESSÃO*
+
+*!perfil*
+Mostra nível, XP, Gold e estatísticas do jogador.
+
+*!conquistas*
+Mostra suas conquistas e o progresso de cada uma.
+
+*!conquistas @pessoa*
+Consulta as conquistas de outro jogador.
+
+
 ⚔️ *DUELOS*
 
 *!duelo @pessoa <valor>*
@@ -125,6 +137,18 @@ Dá um tapa na pessoa marcada. 👋
 *!tapa*
 Escolhe uma vítima aleatória no grupo. 😂
 
+*!abraco @pessoa*
+Dá um abraço na pessoa marcada. 🤗
+
+*!abraco*
+Abraça alguém aleatoriamente no grupo. 🫂
+
+*!morder @pessoa*
+Dá uma mordidinha na pessoa marcada. 🦷
+
+*!morder*
+Escolhe alguém aleatoriamente para morder. 😈
+
 
 📖 *AJUDA*
 
@@ -136,7 +160,7 @@ Exibe este menu.
 
 💡 *Dica*
 
-Os comandos *!beijo* e *!tapa* podem ser usados com ou sem marcação.
+Os comandos *!beijo*, *!tapa*, *!abraco* e *!morder* podem ser usados com ou sem marcação.
 
 No modo aleatório, o bot escolhe outra pessoa do grupo automaticamente.
 

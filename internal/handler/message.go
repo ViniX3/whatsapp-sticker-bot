@@ -161,6 +161,19 @@ func ProcessMessage(
 		return
 	}
 
+	// ==========================================================
+	// !conquistas
+	// ==========================================================
+
+	if handleAchievementsCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
 	if handleProfileCommand(
 		client,
 		msgEvent,
