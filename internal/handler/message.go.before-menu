@@ -127,23 +127,6 @@ func ProcessMessage(
 	//
 	// ==========================================================
 
-	// ==========================================================
-	// !menu
-	// ==========================================================
-
-	if handleMenuCommand(
-		client,
-		msgEvent,
-		text,
-	) {
-		logger.Info("==============================")
-		return
-	}
-
-	// ==========================================================
-	// COMANDOS RECREATIVOS
-	// ==========================================================
-
 	if handleFunCommand(
 		client,
 		msgEvent,
@@ -1819,27 +1802,6 @@ func ProcessMessage(
 	// ==========================================================
 
 	if !IsStickerCommand(text) {
-		// ======================================================
-		// COMANDO DESCONHECIDO
-		// ======================================================
-		//
-		// Neste ponto todos os comandos válidos já foram
-		// processados. Se a mensagem começar com "!", ela
-		// representa uma tentativa de utilizar um comando
-		// inexistente.
-		//
-		// Mensagens comuns continuam sendo ignoradas.
-		//
-
-		if handleUnknownCommand(
-			client,
-			msgEvent,
-			text,
-		) {
-			logger.Info("==============================")
-			return
-		}
-
 		logger.Debug(
 			"Sem comando reconhecido, ignorando",
 		)
