@@ -1198,5 +1198,821 @@
       "Two-Phase Commit"
     ],
     "correct": 0
+  },
+  {
+    "id": "insane_101",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 10.201.173.219/13.",
+    "options": [
+      "10.200.0.0",
+      "10.200.0.1",
+      "10.208.0.0",
+      "10.192.0.0"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_102",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 10.201.173.219/13.",
+    "options": [
+      "10.203.255.255",
+      "10.207.255.255",
+      "10.207.255.254",
+      "10.208.0.0"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_103",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 172.18.203.77/14.",
+    "options": [
+      "172.16.0.1",
+      "172.20.0.0",
+      "172.12.0.0",
+      "172.16.0.0"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_104",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 172.18.203.77/14.",
+    "options": [
+      "172.19.255.255",
+      "172.20.0.0",
+      "172.19.255.254",
+      "172.17.255.255"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_105",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 10.77.249.201/15.",
+    "options": [
+      "10.76.0.1",
+      "10.76.0.0",
+      "10.78.0.0",
+      "10.74.0.0"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_106",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 10.77.249.201/15.",
+    "options": [
+      "10.76.255.255",
+      "10.77.255.254",
+      "10.77.255.255",
+      "10.78.0.0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_107",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 172.22.191.250/16.",
+    "options": [
+      "172.21.0.0",
+      "172.23.0.0",
+      "172.22.0.1",
+      "172.22.0.0"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_108",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 172.22.191.250/16.",
+    "options": [
+      "172.22.255.254",
+      "172.22.127.255",
+      "172.22.255.255",
+      "172.23.0.0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_109",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 10.222.145.99/17.",
+    "options": [
+      "10.222.128.1",
+      "10.222.0.0",
+      "10.222.128.0",
+      "10.223.0.0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_110",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 10.222.145.99/17.",
+    "options": [
+      "10.223.0.0",
+      "10.222.255.255",
+      "10.222.191.255",
+      "10.222.255.254"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_111",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 172.29.217.199/18.",
+    "options": [
+      "172.29.192.0",
+      "172.29.192.1",
+      "172.30.0.0",
+      "172.29.128.0"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_112",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 172.29.217.199/18.",
+    "options": [
+      "172.29.255.255",
+      "172.29.255.254",
+      "172.30.0.0",
+      "172.29.223.255"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_113",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 10.155.199.222/19.",
+    "options": [
+      "10.155.160.0",
+      "10.155.192.0",
+      "10.155.224.0",
+      "10.155.192.1"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_114",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 10.155.199.222/19.",
+    "options": [
+      "10.155.207.255",
+      "10.155.224.0",
+      "10.155.223.255",
+      "10.155.223.254"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_115",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 172.31.173.219/20.",
+    "options": [
+      "172.31.160.0",
+      "172.31.176.0",
+      "172.31.160.1",
+      "172.31.144.0"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_116",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 172.31.173.219/20.",
+    "options": [
+      "172.31.176.0",
+      "172.31.167.255",
+      "172.31.175.255",
+      "172.31.175.254"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_117",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 10.99.205.155/21.",
+    "options": [
+      "10.99.208.0",
+      "10.99.200.0",
+      "10.99.200.1",
+      "10.99.192.0"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_118",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 10.99.205.155/21.",
+    "options": [
+      "10.99.208.0",
+      "10.99.207.254",
+      "10.99.207.255",
+      "10.99.203.255"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_119",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine a rede de 172.24.141.244/22.",
+    "options": [
+      "172.24.140.0",
+      "172.24.136.0",
+      "172.24.144.0",
+      "172.24.140.1"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_120",
+    "category": "Tecnologia",
+    "question": "Sem arredondamentos, determine o broadcast de 172.24.141.244/22.",
+    "options": [
+      "172.24.143.254",
+      "172.24.141.255",
+      "172.24.144.0",
+      "172.24.143.255"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_121",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 2^100 mod 13.",
+    "options": [
+      "4",
+      "3",
+      "6",
+      "5"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_122",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 3^100 mod 17.",
+    "options": [
+      "14",
+      "16",
+      "15",
+      "13"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_123",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 5^100 mod 19.",
+    "options": [
+      "7",
+      "5",
+      "6",
+      "8"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_124",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 7^100 mod 23.",
+    "options": [
+      "17",
+      "19",
+      "16",
+      "18"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_125",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 11^80 mod 29.",
+    "options": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_126",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 13^70 mod 31.",
+    "options": [
+      "5",
+      "8",
+      "7",
+      "6"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_127",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 17^60 mod 37.",
+    "options": [
+      "12",
+      "13",
+      "11",
+      "10"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_128",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 19^50 mod 41.",
+    "options": [
+      "33",
+      "35",
+      "32",
+      "34"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_129",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 23^40 mod 43.",
+    "options": [
+      "13",
+      "12",
+      "10",
+      "11"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_130",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 29^35 mod 47.",
+    "options": [
+      "29",
+      "27",
+      "26",
+      "28"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_131",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 31^30 mod 53.",
+    "options": [
+      "7",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_132",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 37^25 mod 59.",
+    "options": [
+      "37",
+      "34",
+      "35",
+      "36"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_133",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 41^22 mod 61.",
+    "options": [
+      "35",
+      "37",
+      "34",
+      "36"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_134",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 43^20 mod 67.",
+    "options": [
+      "64",
+      "65",
+      "63",
+      "62"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_135",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 47^18 mod 71.",
+    "options": [
+      "39",
+      "41",
+      "38",
+      "40"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_136",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 53^16 mod 73.",
+    "options": [
+      "56",
+      "57",
+      "58",
+      "55"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_137",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 59^14 mod 79.",
+    "options": [
+      "75",
+      "73",
+      "76",
+      "74"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_138",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 61^13 mod 83.",
+    "options": [
+      "31",
+      "32",
+      "34",
+      "33"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_139",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 67^12 mod 89.",
+    "options": [
+      "67",
+      "69",
+      "70",
+      "68"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_140",
+    "category": "Matemática",
+    "question": "Compute rigorosamente 71^11 mod 97.",
+    "options": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_141",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(20,6).",
+    "options": [
+      "38754",
+      "38760",
+      "77520",
+      "38766"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_142",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(20,7).",
+    "options": [
+      "155040",
+      "77513",
+      "77527",
+      "77520"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_143",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(21,5).",
+    "options": [
+      "20344",
+      "20354",
+      "40698",
+      "20349"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_144",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(21,6).",
+    "options": [
+      "108528",
+      "54258",
+      "54270",
+      "54264"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_145",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(22,5).",
+    "options": [
+      "26339",
+      "26329",
+      "26334",
+      "52668"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_146",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(22,6).",
+    "options": [
+      "149226",
+      "74607",
+      "74619",
+      "74613"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_147",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(23,4).",
+    "options": [
+      "8855",
+      "17710",
+      "8851",
+      "8859"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_148",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(23,5).",
+    "options": [
+      "33654",
+      "67298",
+      "33644",
+      "33649"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_149",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(24,4).",
+    "options": [
+      "10630",
+      "10626",
+      "10622",
+      "21252"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_150",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(24,5).",
+    "options": [
+      "85008",
+      "42504",
+      "42509",
+      "42499"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_151",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(25,4).",
+    "options": [
+      "12650",
+      "25300",
+      "12646",
+      "12654"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_152",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(25,5).",
+    "options": [
+      "53125",
+      "106260",
+      "53135",
+      "53130"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_153",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(26,4).",
+    "options": [
+      "14950",
+      "29900",
+      "14946",
+      "14954"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_154",
+    "category": "Matemática",
+    "question": "Calcule exatamente o coeficiente binomial C(26,5).",
+    "options": [
+      "65780",
+      "65775",
+      "65785",
+      "131560"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_155",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4096 decimal para hexadecimal.",
+    "options": [
+      "FFF",
+      "1010",
+      "1001",
+      "1000"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_156",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4097 decimal para hexadecimal.",
+    "options": [
+      "1000",
+      "1001",
+      "1002",
+      "1011"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_157",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4098 decimal para hexadecimal.",
+    "options": [
+      "1012",
+      "1002",
+      "1001",
+      "1003"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_158",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4099 decimal para hexadecimal.",
+    "options": [
+      "1003",
+      "1002",
+      "1013",
+      "1004"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_159",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4100 decimal para hexadecimal.",
+    "options": [
+      "1003",
+      "1005",
+      "1004",
+      "1014"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_160",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4101 decimal para hexadecimal.",
+    "options": [
+      "1005",
+      "1006",
+      "1004",
+      "1015"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "insane_161",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4102 decimal para hexadecimal.",
+    "options": [
+      "1016",
+      "1006",
+      "1007",
+      "1005"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_162",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4103 decimal para hexadecimal.",
+    "options": [
+      "1008",
+      "1007",
+      "1017",
+      "1006"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_163",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4104 decimal para hexadecimal.",
+    "options": [
+      "1007",
+      "1018",
+      "1008",
+      "1009"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_164",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4105 decimal para hexadecimal.",
+    "options": [
+      "1019",
+      "1009",
+      "1008",
+      "100A"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "insane_165",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4106 decimal para hexadecimal.",
+    "options": [
+      "100B",
+      "1009",
+      "101A",
+      "100A"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_166",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4107 decimal para hexadecimal.",
+    "options": [
+      "100C",
+      "100A",
+      "101B",
+      "100B"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "insane_167",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4108 decimal para hexadecimal.",
+    "options": [
+      "100D",
+      "101C",
+      "100C",
+      "100B"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "insane_168",
+    "category": "Tecnologia",
+    "question": "Faça a conversão exata de 4109 decimal para hexadecimal.",
+    "options": [
+      "100D",
+      "100C",
+      "101D",
+      "100E"
+    ],
+    "correct": 0
   }
 ]

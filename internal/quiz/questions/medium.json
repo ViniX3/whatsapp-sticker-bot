@@ -1198,5 +1198,797 @@
       "DROP"
     ],
     "correct": 0
+  },
+  {
+    "id": "medium_101",
+    "category": "Tecnologia",
+    "question": "Qual protocolo é normalmente utilizado para resolução de nomes na Internet?",
+    "options": [
+      "DNS",
+      "SSH",
+      "FTP",
+      "SNMP"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_102",
+    "category": "Ciências",
+    "question": "Qual é o elemento químico de símbolo Na?",
+    "options": [
+      "Nitrogênio",
+      "Sódio",
+      "Neônio",
+      "Níquel"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_103",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /16?",
+    "options": [
+      "65534",
+      "65536",
+      "32768",
+      "131072"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_104",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /17?",
+    "options": [
+      "16384",
+      "65536",
+      "32766",
+      "32768"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_105",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /18?",
+    "options": [
+      "16384",
+      "8192",
+      "16382",
+      "32768"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_106",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /19?",
+    "options": [
+      "8192",
+      "4096",
+      "8190",
+      "16384"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_107",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /20?",
+    "options": [
+      "4094",
+      "2048",
+      "8192",
+      "4096"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_108",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /21?",
+    "options": [
+      "4096",
+      "2046",
+      "1024",
+      "2048"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_109",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /22?",
+    "options": [
+      "2048",
+      "512",
+      "1024",
+      "1022"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_110",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /23?",
+    "options": [
+      "512",
+      "256",
+      "1024",
+      "510"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_111",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /24?",
+    "options": [
+      "128",
+      "256",
+      "254",
+      "512"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_112",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /25?",
+    "options": [
+      "256",
+      "64",
+      "126",
+      "128"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_113",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /26?",
+    "options": [
+      "64",
+      "128",
+      "32",
+      "62"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_114",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /27?",
+    "options": [
+      "30",
+      "64",
+      "16",
+      "32"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_115",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /28?",
+    "options": [
+      "16",
+      "14",
+      "8",
+      "32"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_116",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /29?",
+    "options": [
+      "8",
+      "6",
+      "16",
+      "4"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_117",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /30?",
+    "options": [
+      "4",
+      "8",
+      "2",
+      "3"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_118",
+    "category": "Tecnologia",
+    "question": "Em IPv4, quantos endereços totais existem em um bloco /31?",
+    "options": [
+      "4",
+      "0",
+      "1",
+      "2"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_119",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /16?",
+    "options": [
+      "32766",
+      "65536",
+      "65532",
+      "65534"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_120",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /17?",
+    "options": [
+      "32764",
+      "32766",
+      "16382",
+      "32768"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_121",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /18?",
+    "options": [
+      "16380",
+      "16384",
+      "16382",
+      "8190"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_122",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /19?",
+    "options": [
+      "8192",
+      "8188",
+      "4094",
+      "8190"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_123",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /20?",
+    "options": [
+      "4094",
+      "4092",
+      "2046",
+      "4096"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_124",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /21?",
+    "options": [
+      "2044",
+      "1022",
+      "2046",
+      "2048"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_125",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /22?",
+    "options": [
+      "1024",
+      "1022",
+      "1020",
+      "510"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_126",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /23?",
+    "options": [
+      "510",
+      "254",
+      "512",
+      "508"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_127",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /24?",
+    "options": [
+      "126",
+      "254",
+      "252",
+      "256"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_128",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /25?",
+    "options": [
+      "126",
+      "62",
+      "124",
+      "128"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_129",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /26?",
+    "options": [
+      "62",
+      "64",
+      "60",
+      "30"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_130",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /27?",
+    "options": [
+      "14",
+      "32",
+      "28",
+      "30"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_131",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /28?",
+    "options": [
+      "16",
+      "14",
+      "12",
+      "6"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_132",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /29?",
+    "options": [
+      "4",
+      "8",
+      "2",
+      "6"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_133",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /30?",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "0"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_134",
+    "category": "Tecnologia",
+    "question": "Em IPv4 tradicional, quantos hosts utilizáveis há em /31?",
+    "options": [
+      "1",
+      "-1",
+      "0",
+      "2"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_135",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 120 para binário.",
+    "options": [
+      "1111010",
+      "1110111",
+      "1111000",
+      "1111001"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_136",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 121 para binário.",
+    "options": [
+      "1111001",
+      "1111000",
+      "1111010",
+      "1111011"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_137",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 122 para binário.",
+    "options": [
+      "1111100",
+      "1111010",
+      "1111001",
+      "1111011"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_138",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 123 para binário.",
+    "options": [
+      "1111101",
+      "1111010",
+      "1111011",
+      "1111100"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_139",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 124 para binário.",
+    "options": [
+      "1111101",
+      "1111100",
+      "1111011",
+      "1111110"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_140",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 125 para binário.",
+    "options": [
+      "1111110",
+      "1111101",
+      "1111111",
+      "1111100"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_141",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 126 para binário.",
+    "options": [
+      "1111111",
+      "1111110",
+      "1111101",
+      "10000000"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_142",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 127 para binário.",
+    "options": [
+      "10000000",
+      "1111110",
+      "1111111",
+      "10000001"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_143",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 128 para binário.",
+    "options": [
+      "10000001",
+      "1111111",
+      "10000000",
+      "10000010"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_144",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 129 para binário.",
+    "options": [
+      "10000011",
+      "10000010",
+      "10000001",
+      "10000000"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_145",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 130 para binário.",
+    "options": [
+      "10000100",
+      "10000011",
+      "10000010",
+      "10000001"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_146",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 131 para binário.",
+    "options": [
+      "10000011",
+      "10000100",
+      "10000101",
+      "10000010"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_147",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 132 para binário.",
+    "options": [
+      "10000100",
+      "10000110",
+      "10000101",
+      "10000011"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_148",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 133 para binário.",
+    "options": [
+      "10000110",
+      "10000101",
+      "10000100",
+      "10000111"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_149",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 134 para binário.",
+    "options": [
+      "10001000",
+      "10000101",
+      "10000110",
+      "10000111"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_150",
+    "category": "Tecnologia",
+    "question": "Converta o decimal 135 para binário.",
+    "options": [
+      "10000111",
+      "10001001",
+      "10001000",
+      "10000110"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_151",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 31.",
+    "options": [
+      "992",
+      "961",
+      "930",
+      "1023"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_152",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 32.",
+    "options": [
+      "1056",
+      "1088",
+      "992",
+      "1024"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_153",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 33.",
+    "options": [
+      "1056",
+      "1089",
+      "1155",
+      "1122"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_154",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 34.",
+    "options": [
+      "1156",
+      "1224",
+      "1122",
+      "1190"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_155",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 35.",
+    "options": [
+      "1190",
+      "1225",
+      "1295",
+      "1260"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "medium_156",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 36.",
+    "options": [
+      "1260",
+      "1332",
+      "1368",
+      "1296"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_157",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 37.",
+    "options": [
+      "1443",
+      "1406",
+      "1369",
+      "1332"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_158",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 38.",
+    "options": [
+      "1406",
+      "1482",
+      "1444",
+      "1520"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_159",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 39.",
+    "options": [
+      "1560",
+      "1482",
+      "1521",
+      "1599"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "medium_160",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 40.",
+    "options": [
+      "1640",
+      "1560",
+      "1680",
+      "1600"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_161",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 41.",
+    "options": [
+      "1763",
+      "1640",
+      "1722",
+      "1681"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_162",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 42.",
+    "options": [
+      "1806",
+      "1722",
+      "1848",
+      "1764"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_163",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 43.",
+    "options": [
+      "1892",
+      "1935",
+      "1806",
+      "1849"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_164",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 44.",
+    "options": [
+      "1936",
+      "1892",
+      "1980",
+      "2024"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "medium_165",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 45.",
+    "options": [
+      "2070",
+      "2115",
+      "1980",
+      "2025"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "medium_166",
+    "category": "Matemática",
+    "question": "Determine o quadrado de 46.",
+    "options": [
+      "2070",
+      "2208",
+      "2116",
+      "2162"
+    ],
+    "correct": 2
   }
 ]

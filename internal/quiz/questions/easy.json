@@ -1198,5 +1198,797 @@
       "NTP"
     ],
     "correct": 0
+  },
+  {
+    "id": "easy_101",
+    "category": "Matemática",
+    "question": "Na equação 2x + 3 = 13, determine x.",
+    "options": [
+      "5",
+      "6",
+      "4",
+      "3"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_102",
+    "category": "Matemática",
+    "question": "Na equação 3x + 4 = 22, determine x.",
+    "options": [
+      "5",
+      "7",
+      "6",
+      "4"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_103",
+    "category": "Matemática",
+    "question": "Na equação 4x + 5 = 33, determine x.",
+    "options": [
+      "7",
+      "8",
+      "6",
+      "5"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_104",
+    "category": "Matemática",
+    "question": "Na equação 5x + 6 = 46, determine x.",
+    "options": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_105",
+    "category": "Matemática",
+    "question": "Na equação 6x + 7 = 61, determine x.",
+    "options": [
+      "9",
+      "8",
+      "7",
+      "10"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_106",
+    "category": "Matemática",
+    "question": "Na equação 7x + 3 = 73, determine x.",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_107",
+    "category": "Matemática",
+    "question": "Na equação 2x + 4 = 26, determine x.",
+    "options": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_108",
+    "category": "Matemática",
+    "question": "Na equação 3x + 5 = 41, determine x.",
+    "options": [
+      "12",
+      "10",
+      "11",
+      "13"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_109",
+    "category": "Matemática",
+    "question": "Na equação 4x + 6 = 58, determine x.",
+    "options": [
+      "11",
+      "14",
+      "13",
+      "12"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_110",
+    "category": "Matemática",
+    "question": "Na equação 5x + 7 = 77, determine x.",
+    "options": [
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_111",
+    "category": "Matemática",
+    "question": "Na equação 6x + 3 = 93, determine x.",
+    "options": [
+      "15",
+      "16",
+      "13",
+      "14"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_112",
+    "category": "Matemática",
+    "question": "Na equação 7x + 4 = 116, determine x.",
+    "options": [
+      "17",
+      "16",
+      "15",
+      "14"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_113",
+    "category": "Matemática",
+    "question": "Na equação 2x + 5 = 39, determine x.",
+    "options": [
+      "18",
+      "15",
+      "17",
+      "16"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_114",
+    "category": "Matemática",
+    "question": "Na equação 3x + 6 = 60, determine x.",
+    "options": [
+      "18",
+      "17",
+      "19",
+      "16"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_115",
+    "category": "Matemática",
+    "question": "Na equação 4x + 7 = 83, determine x.",
+    "options": [
+      "18",
+      "19",
+      "20",
+      "17"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_116",
+    "category": "Matemática",
+    "question": "Na equação 5x + 3 = 103, determine x.",
+    "options": [
+      "19",
+      "20",
+      "21",
+      "18"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_117",
+    "category": "Matemática",
+    "question": "Na equação 6x + 4 = 130, determine x.",
+    "options": [
+      "21",
+      "19",
+      "20",
+      "22"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_118",
+    "category": "Matemática",
+    "question": "Na equação 7x + 5 = 159, determine x.",
+    "options": [
+      "20",
+      "23",
+      "22",
+      "21"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_119",
+    "category": "Matemática",
+    "question": "Na equação 2x + 6 = 52, determine x.",
+    "options": [
+      "21",
+      "22",
+      "23",
+      "24"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_120",
+    "category": "Matemática",
+    "question": "Na equação 3x + 7 = 79, determine x.",
+    "options": [
+      "22",
+      "25",
+      "24",
+      "23"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_121",
+    "category": "Matemática",
+    "question": "Na equação 4x + 3 = 103, determine x.",
+    "options": [
+      "26",
+      "24",
+      "23",
+      "25"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_122",
+    "category": "Matemática",
+    "question": "Na equação 5x + 4 = 134, determine x.",
+    "options": [
+      "24",
+      "25",
+      "27",
+      "26"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_123",
+    "category": "Matemática",
+    "question": "Um retângulo mede 4 por 3. Qual é seu perímetro?",
+    "options": [
+      "14",
+      "7",
+      "12",
+      "16"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_124",
+    "category": "Matemática",
+    "question": "Um retângulo mede 5 por 4. Qual é seu perímetro?",
+    "options": [
+      "18",
+      "20",
+      "17",
+      "9"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_125",
+    "category": "Matemática",
+    "question": "Um retângulo mede 6 por 5. Qual é seu perímetro?",
+    "options": [
+      "22",
+      "11",
+      "30",
+      "24"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_126",
+    "category": "Matemática",
+    "question": "Um retângulo mede 7 por 6. Qual é seu perímetro?",
+    "options": [
+      "28",
+      "26",
+      "42",
+      "13"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_127",
+    "category": "Matemática",
+    "question": "Um retângulo mede 8 por 7. Qual é seu perímetro?",
+    "options": [
+      "32",
+      "30",
+      "15",
+      "56"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_128",
+    "category": "Matemática",
+    "question": "Um retângulo mede 9 por 8. Qual é seu perímetro?",
+    "options": [
+      "72",
+      "17",
+      "34",
+      "36"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_129",
+    "category": "Matemática",
+    "question": "Um retângulo mede 10 por 9. Qual é seu perímetro?",
+    "options": [
+      "19",
+      "90",
+      "38",
+      "40"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_130",
+    "category": "Matemática",
+    "question": "Um retângulo mede 11 por 3. Qual é seu perímetro?",
+    "options": [
+      "28",
+      "14",
+      "30",
+      "33"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_131",
+    "category": "Matemática",
+    "question": "Um retângulo mede 12 por 4. Qual é seu perímetro?",
+    "options": [
+      "34",
+      "48",
+      "16",
+      "32"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_132",
+    "category": "Matemática",
+    "question": "Um retângulo mede 13 por 5. Qual é seu perímetro?",
+    "options": [
+      "65",
+      "18",
+      "38",
+      "36"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_133",
+    "category": "Matemática",
+    "question": "Um retângulo mede 14 por 6. Qual é seu perímetro?",
+    "options": [
+      "84",
+      "40",
+      "20",
+      "42"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_134",
+    "category": "Matemática",
+    "question": "Um retângulo mede 15 por 7. Qual é seu perímetro?",
+    "options": [
+      "22",
+      "46",
+      "44",
+      "105"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_135",
+    "category": "Matemática",
+    "question": "Um retângulo mede 16 por 8. Qual é seu perímetro?",
+    "options": [
+      "50",
+      "24",
+      "48",
+      "128"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_136",
+    "category": "Matemática",
+    "question": "Um retângulo mede 17 por 9. Qual é seu perímetro?",
+    "options": [
+      "153",
+      "52",
+      "54",
+      "26"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_137",
+    "category": "Matemática",
+    "question": "Um retângulo mede 18 por 3. Qual é seu perímetro?",
+    "options": [
+      "21",
+      "44",
+      "42",
+      "54"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_138",
+    "category": "Matemática",
+    "question": "Um retângulo mede 19 por 4. Qual é seu perímetro?",
+    "options": [
+      "48",
+      "76",
+      "46",
+      "23"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_139",
+    "category": "Matemática",
+    "question": "Um retângulo mede 20 por 5. Qual é seu perímetro?",
+    "options": [
+      "100",
+      "50",
+      "25",
+      "52"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_140",
+    "category": "Matemática",
+    "question": "Um retângulo mede 21 por 6. Qual é seu perímetro?",
+    "options": [
+      "56",
+      "126",
+      "54",
+      "27"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_141",
+    "category": "Matemática",
+    "question": "Um retângulo mede 22 por 7. Qual é seu perímetro?",
+    "options": [
+      "29",
+      "58",
+      "154",
+      "60"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_142",
+    "category": "Matemática",
+    "question": "Um retângulo mede 23 por 8. Qual é seu perímetro?",
+    "options": [
+      "64",
+      "31",
+      "62",
+      "184"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_143",
+    "category": "Matemática",
+    "question": "Um retângulo mede 24 por 9. Qual é seu perímetro?",
+    "options": [
+      "33",
+      "68",
+      "216",
+      "66"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_144",
+    "category": "Matemática",
+    "question": "Um retângulo mede 25 por 3. Qual é seu perímetro?",
+    "options": [
+      "28",
+      "75",
+      "56",
+      "58"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_145",
+    "category": "Matemática",
+    "question": "Calcule 5% de 40.",
+    "options": [
+      "1",
+      "4",
+      "2",
+      "7"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_146",
+    "category": "Matemática",
+    "question": "Calcule 10% de 60.",
+    "options": [
+      "11",
+      "1",
+      "12",
+      "6"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_147",
+    "category": "Matemática",
+    "question": "Calcule 20% de 80.",
+    "options": [
+      "21",
+      "32",
+      "16",
+      "11"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_148",
+    "category": "Matemática",
+    "question": "Calcule 25% de 100.",
+    "options": [
+      "50",
+      "25",
+      "20",
+      "30"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_149",
+    "category": "Matemática",
+    "question": "Calcule 50% de 120.",
+    "options": [
+      "65",
+      "60",
+      "120",
+      "55"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_150",
+    "category": "Matemática",
+    "question": "Calcule 5% de 140.",
+    "options": [
+      "12",
+      "14",
+      "2",
+      "7"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_151",
+    "category": "Matemática",
+    "question": "Calcule 10% de 160.",
+    "options": [
+      "21",
+      "11",
+      "32",
+      "16"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_152",
+    "category": "Matemática",
+    "question": "Calcule 20% de 180.",
+    "options": [
+      "36",
+      "72",
+      "41",
+      "31"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_153",
+    "category": "Matemática",
+    "question": "Calcule 25% de 200.",
+    "options": [
+      "100",
+      "55",
+      "45",
+      "50"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_154",
+    "category": "Matemática",
+    "question": "Calcule 50% de 220.",
+    "options": [
+      "105",
+      "220",
+      "115",
+      "110"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_155",
+    "category": "Matemática",
+    "question": "Calcule 5% de 240.",
+    "options": [
+      "24",
+      "7",
+      "17",
+      "12"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_156",
+    "category": "Matemática",
+    "question": "Calcule 10% de 260.",
+    "options": [
+      "52",
+      "26",
+      "31",
+      "21"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_157",
+    "category": "Matemática",
+    "question": "Calcule 20% de 280.",
+    "options": [
+      "56",
+      "61",
+      "112",
+      "51"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_158",
+    "category": "Matemática",
+    "question": "Calcule 25% de 300.",
+    "options": [
+      "80",
+      "70",
+      "150",
+      "75"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_159",
+    "category": "Matemática",
+    "question": "Calcule 50% de 320.",
+    "options": [
+      "320",
+      "155",
+      "160",
+      "165"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_160",
+    "category": "Matemática",
+    "question": "Calcule 5% de 340.",
+    "options": [
+      "17",
+      "34",
+      "22",
+      "12"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_161",
+    "category": "Matemática",
+    "question": "Calcule 10% de 360.",
+    "options": [
+      "31",
+      "72",
+      "41",
+      "36"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_162",
+    "category": "Matemática",
+    "question": "Calcule 20% de 380.",
+    "options": [
+      "152",
+      "71",
+      "81",
+      "76"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "easy_163",
+    "category": "Matemática",
+    "question": "Calcule 25% de 400.",
+    "options": [
+      "105",
+      "100",
+      "95",
+      "200"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "easy_164",
+    "category": "Matemática",
+    "question": "Calcule 50% de 420.",
+    "options": [
+      "210",
+      "420",
+      "215",
+      "205"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "easy_165",
+    "category": "Matemática",
+    "question": "Calcule 5% de 440.",
+    "options": [
+      "44",
+      "27",
+      "22",
+      "17"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "easy_166",
+    "category": "Matemática",
+    "question": "Calcule 10% de 460.",
+    "options": [
+      "51",
+      "41",
+      "92",
+      "46"
+    ],
+    "correct": 3
   }
 ]

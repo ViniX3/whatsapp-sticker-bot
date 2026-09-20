@@ -1,0 +1,686 @@
+[
+  {
+    "word": "computador",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "programação",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "servidor",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "firewall",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "algoritmo",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "banco de dados",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "código fonte",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "inteligência artificial",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "computação em nuvem",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "virtualização",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "capivara",
+    "category": "Animais"
+  },
+  {
+    "word": "tamanduá",
+    "category": "Animais"
+  },
+  {
+    "word": "ornitorrinco",
+    "category": "Animais"
+  },
+  {
+    "word": "camaleão",
+    "category": "Animais"
+  },
+  {
+    "word": "escorpião",
+    "category": "Animais"
+  },
+  {
+    "word": "morcego",
+    "category": "Animais"
+  },
+  {
+    "word": "pinguim",
+    "category": "Animais"
+  },
+  {
+    "word": "tubarão",
+    "category": "Animais"
+  },
+  {
+    "word": "baleia azul",
+    "category": "Animais"
+  },
+  {
+    "word": "rinoceronte",
+    "category": "Animais"
+  },
+  {
+    "word": "tempestade",
+    "category": "Natureza"
+  },
+  {
+    "word": "cachoeira",
+    "category": "Natureza"
+  },
+  {
+    "word": "montanha",
+    "category": "Natureza"
+  },
+  {
+    "word": "floresta",
+    "category": "Natureza"
+  },
+  {
+    "word": "oceano",
+    "category": "Natureza"
+  },
+  {
+    "word": "vulcão",
+    "category": "Natureza"
+  },
+  {
+    "word": "relâmpago",
+    "category": "Natureza"
+  },
+  {
+    "word": "girassol",
+    "category": "Natureza"
+  },
+  {
+    "word": "esmeralda",
+    "category": "Natureza"
+  },
+  {
+    "word": "deserto",
+    "category": "Natureza"
+  },
+  {
+    "word": "dragão",
+    "category": "Fantasia"
+  },
+  {
+    "word": "feiticeiro",
+    "category": "Fantasia"
+  },
+  {
+    "word": "armadura",
+    "category": "Fantasia"
+  },
+  {
+    "word": "espada",
+    "category": "Fantasia"
+  },
+  {
+    "word": "masmorra",
+    "category": "Fantasia"
+  },
+  {
+    "word": "tesouro",
+    "category": "Fantasia"
+  },
+  {
+    "word": "cavaleiro",
+    "category": "Fantasia"
+  },
+  {
+    "word": "labirinto",
+    "category": "Fantasia"
+  },
+  {
+    "word": "castelo",
+    "category": "Fantasia"
+  },
+  {
+    "word": "alquimista",
+    "category": "Fantasia"
+  },
+  {
+    "word": "galáxia",
+    "category": "Espaço"
+  },
+  {
+    "word": "satélite",
+    "category": "Espaço"
+  },
+  {
+    "word": "foguete",
+    "category": "Espaço"
+  },
+  {
+    "word": "planeta",
+    "category": "Espaço"
+  },
+  {
+    "word": "meteorito",
+    "category": "Espaço"
+  },
+  {
+    "word": "constelação",
+    "category": "Espaço"
+  },
+  {
+    "word": "buraco negro",
+    "category": "Espaço"
+  },
+  {
+    "word": "via láctea",
+    "category": "Espaço"
+  },
+  {
+    "word": "astronomia",
+    "category": "Espaço"
+  },
+  {
+    "word": "supernova",
+    "category": "Espaço"
+  },
+  {
+    "word": "chocolate",
+    "category": "Alimentos"
+  },
+  {
+    "word": "abacaxi",
+    "category": "Alimentos"
+  },
+  {
+    "word": "maracujá",
+    "category": "Alimentos"
+  },
+  {
+    "word": "jabuticaba",
+    "category": "Alimentos"
+  },
+  {
+    "word": "brigadeiro",
+    "category": "Alimentos"
+  },
+  {
+    "word": "fotografia",
+    "category": "Cultura"
+  },
+  {
+    "word": "orquestra",
+    "category": "Cultura"
+  },
+  {
+    "word": "violino",
+    "category": "Cultura"
+  },
+  {
+    "word": "xadrez",
+    "category": "Cultura"
+  },
+  {
+    "word": "biblioteca",
+    "category": "Cultura"
+  },
+  {
+    "word": "processador",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "placa de vídeo",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "memória ram",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "sistema operacional",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "criptografia",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "elefante",
+    "category": "Animais"
+  },
+  {
+    "word": "guepardo",
+    "category": "Animais"
+  },
+  {
+    "word": "crocodilo",
+    "category": "Animais"
+  },
+  {
+    "word": "kubernetes",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "balanceador de carga",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "hipopótamo",
+    "category": "Animais"
+  },
+  {
+    "word": "roteador",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "switch de rede",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "hipervisor",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "contêiner",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "microsserviço",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "orquestração",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "balanceamento",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "autenticação",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "observabilidade",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "monitoramento",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "repositório",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "compilador",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "depuração",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "terminal",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "protocolo",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "ethernet",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "fibra óptica",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "certificado digital",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "chave pública",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "redundância",
+    "category": "Tecnologia"
+  },
+  {
+    "word": "axolote",
+    "category": "Animais"
+  },
+  {
+    "word": "lêmure",
+    "category": "Animais"
+  },
+  {
+    "word": "suricato",
+    "category": "Animais"
+  },
+  {
+    "word": "panda vermelho",
+    "category": "Animais"
+  },
+  {
+    "word": "caranguejo",
+    "category": "Animais"
+  },
+  {
+    "word": "água viva",
+    "category": "Animais"
+  },
+  {
+    "word": "cavalo marinho",
+    "category": "Animais"
+  },
+  {
+    "word": "orangotango",
+    "category": "Animais"
+  },
+  {
+    "word": "flamingo",
+    "category": "Animais"
+  },
+  {
+    "word": "peixe palhaço",
+    "category": "Animais"
+  },
+  {
+    "word": "águia real",
+    "category": "Animais"
+  },
+  {
+    "word": "búfalo",
+    "category": "Animais"
+  },
+  {
+    "word": "pantera",
+    "category": "Animais"
+  },
+  {
+    "word": "iguana",
+    "category": "Animais"
+  },
+  {
+    "word": "ouriço",
+    "category": "Animais"
+  },
+  {
+    "word": "arquipélago",
+    "category": "Geografia"
+  },
+  {
+    "word": "península",
+    "category": "Geografia"
+  },
+  {
+    "word": "planalto",
+    "category": "Geografia"
+  },
+  {
+    "word": "cordilheira",
+    "category": "Geografia"
+  },
+  {
+    "word": "equador",
+    "category": "Geografia"
+  },
+  {
+    "word": "meridiano",
+    "category": "Geografia"
+  },
+  {
+    "word": "hemisfério",
+    "category": "Geografia"
+  },
+  {
+    "word": "geleira",
+    "category": "Geografia"
+  },
+  {
+    "word": "fiorde",
+    "category": "Geografia"
+  },
+  {
+    "word": "delta de rio",
+    "category": "Geografia"
+  },
+  {
+    "word": "fotossíntese",
+    "category": "Ciências"
+  },
+  {
+    "word": "gravidade",
+    "category": "Ciências"
+  },
+  {
+    "word": "molécula",
+    "category": "Ciências"
+  },
+  {
+    "word": "cromossomo",
+    "category": "Ciências"
+  },
+  {
+    "word": "ecossistema",
+    "category": "Ciências"
+  },
+  {
+    "word": "biodiversidade",
+    "category": "Ciências"
+  },
+  {
+    "word": "radioatividade",
+    "category": "Ciências"
+  },
+  {
+    "word": "eletromagnetismo",
+    "category": "Ciências"
+  },
+  {
+    "word": "microscópio",
+    "category": "Ciências"
+  },
+  {
+    "word": "termômetro",
+    "category": "Ciências"
+  },
+  {
+    "word": "oxigênio",
+    "category": "Ciências"
+  },
+  {
+    "word": "hidrogênio",
+    "category": "Ciências"
+  },
+  {
+    "word": "nitrogênio",
+    "category": "Ciências"
+  },
+  {
+    "word": "carbono",
+    "category": "Ciências"
+  },
+  {
+    "word": "neutrino",
+    "category": "Ciências"
+  },
+  {
+    "word": "necromante",
+    "category": "Fantasia"
+  },
+  {
+    "word": "grifo",
+    "category": "Fantasia"
+  },
+  {
+    "word": "hidra",
+    "category": "Fantasia"
+  },
+  {
+    "word": "basilisco",
+    "category": "Fantasia"
+  },
+  {
+    "word": "minotauro",
+    "category": "Fantasia"
+  },
+  {
+    "word": "centauro",
+    "category": "Fantasia"
+  },
+  {
+    "word": "golem",
+    "category": "Fantasia"
+  },
+  {
+    "word": "runa antiga",
+    "category": "Fantasia"
+  },
+  {
+    "word": "poção mágica",
+    "category": "Fantasia"
+  },
+  {
+    "word": "portal dimensional",
+    "category": "Fantasia"
+  },
+  {
+    "word": "grimório",
+    "category": "Fantasia"
+  },
+  {
+    "word": "feiticeira",
+    "category": "Fantasia"
+  },
+  {
+    "word": "paladino",
+    "category": "Fantasia"
+  },
+  {
+    "word": "arqueiro",
+    "category": "Fantasia"
+  },
+  {
+    "word": "dragão celestial",
+    "category": "Fantasia"
+  },
+  {
+    "word": "nebulosa",
+    "category": "Espaço"
+  },
+  {
+    "word": "quasar",
+    "category": "Espaço"
+  },
+  {
+    "word": "exoplaneta",
+    "category": "Espaço"
+  },
+  {
+    "word": "asteroide",
+    "category": "Espaço"
+  },
+  {
+    "word": "cometa",
+    "category": "Espaço"
+  },
+  {
+    "word": "pulsar",
+    "category": "Espaço"
+  },
+  {
+    "word": "anã branca",
+    "category": "Espaço"
+  },
+  {
+    "word": "estrela de nêutrons",
+    "category": "Espaço"
+  },
+  {
+    "word": "horizonte de eventos",
+    "category": "Espaço"
+  },
+  {
+    "word": "matéria escura",
+    "category": "Espaço"
+  },
+  {
+    "word": "lasanha",
+    "category": "Alimentos"
+  },
+  {
+    "word": "panqueca",
+    "category": "Alimentos"
+  },
+  {
+    "word": "pão de queijo",
+    "category": "Alimentos"
+  },
+  {
+    "word": "tapioca",
+    "category": "Alimentos"
+  },
+  {
+    "word": "moqueca",
+    "category": "Alimentos"
+  },
+  {
+    "word": "acarajé",
+    "category": "Alimentos"
+  },
+  {
+    "word": "pamonha",
+    "category": "Alimentos"
+  },
+  {
+    "word": "cuscuz",
+    "category": "Alimentos"
+  },
+  {
+    "word": "goiabada",
+    "category": "Alimentos"
+  },
+  {
+    "word": "paçoca",
+    "category": "Alimentos"
+  },
+  {
+    "word": "escultura",
+    "category": "Cultura"
+  },
+  {
+    "word": "aquarela",
+    "category": "Cultura"
+  },
+  {
+    "word": "sanfona",
+    "category": "Cultura"
+  },
+  {
+    "word": "literatura",
+    "category": "Cultura"
+  },
+  {
+    "word": "cinematografia",
+    "category": "Cultura"
+  }
+]

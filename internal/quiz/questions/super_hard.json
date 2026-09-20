@@ -1198,5 +1198,809 @@
       "Trie"
     ],
     "correct": 2
+  },
+  {
+    "id": "super_hard_101",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /27 existem exatamente dentro de um bloco /20?",
+    "options": [
+      "32",
+      "256",
+      "128",
+      "64"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_102",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /28 existem exatamente dentro de um bloco /20?",
+    "options": [
+      "512",
+      "256",
+      "128",
+      "64"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_103",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /28 existem exatamente dentro de um bloco /21?",
+    "options": [
+      "32",
+      "128",
+      "256",
+      "64"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_104",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /29 existem exatamente dentro de um bloco /21?",
+    "options": [
+      "512",
+      "128",
+      "256",
+      "64"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_105",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /29 existem exatamente dentro de um bloco /22?",
+    "options": [
+      "64",
+      "32",
+      "256",
+      "128"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_106",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /30 existem exatamente dentro de um bloco /22?",
+    "options": [
+      "256",
+      "64",
+      "128",
+      "512"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_107",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /27 existem exatamente dentro de um bloco /19?",
+    "options": [
+      "512",
+      "128",
+      "64",
+      "256"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_108",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /28 existem exatamente dentro de um bloco /19?",
+    "options": [
+      "128",
+      "256",
+      "1024",
+      "512"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_109",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /26 existem exatamente dentro de um bloco /18?",
+    "options": [
+      "512",
+      "128",
+      "256",
+      "64"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_110",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /27 existem exatamente dentro de um bloco /18?",
+    "options": [
+      "1024",
+      "512",
+      "128",
+      "256"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_111",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /25 existem exatamente dentro de um bloco /17?",
+    "options": [
+      "256",
+      "64",
+      "512",
+      "128"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_112",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /26 existem exatamente dentro de um bloco /17?",
+    "options": [
+      "512",
+      "128",
+      "256",
+      "1024"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_113",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /24 existem exatamente dentro de um bloco /16?",
+    "options": [
+      "128",
+      "512",
+      "64",
+      "256"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_114",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /25 existem exatamente dentro de um bloco /16?",
+    "options": [
+      "1024",
+      "512",
+      "128",
+      "256"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_115",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /23 existem exatamente dentro de um bloco /15?",
+    "options": [
+      "256",
+      "512",
+      "128",
+      "64"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_116",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /24 existem exatamente dentro de um bloco /15?",
+    "options": [
+      "256",
+      "1024",
+      "128",
+      "512"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_117",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /22 existem exatamente dentro de um bloco /14?",
+    "options": [
+      "256",
+      "512",
+      "64",
+      "128"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_118",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /23 existem exatamente dentro de um bloco /14?",
+    "options": [
+      "256",
+      "512",
+      "128",
+      "1024"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_119",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /21 existem exatamente dentro de um bloco /13?",
+    "options": [
+      "128",
+      "256",
+      "64",
+      "512"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_120",
+    "category": "Tecnologia",
+    "question": "Quantos blocos /22 existem exatamente dentro de um bloco /13?",
+    "options": [
+      "128",
+      "1024",
+      "256",
+      "512"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_121",
+    "category": "Matemática",
+    "question": "Calcule det([[2,3],[1,5]]).",
+    "options": [
+      "7",
+      "6",
+      "10",
+      "8"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_122",
+    "category": "Matemática",
+    "question": "Calcule det([[3,4],[2,6]]).",
+    "options": [
+      "9",
+      "10",
+      "13",
+      "11"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_123",
+    "category": "Matemática",
+    "question": "Calcule det([[4,5],[3,7]]).",
+    "options": [
+      "16",
+      "13",
+      "14",
+      "12"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_124",
+    "category": "Matemática",
+    "question": "Calcule det([[5,6],[4,8]]).",
+    "options": [
+      "17",
+      "15",
+      "19",
+      "16"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_125",
+    "category": "Matemática",
+    "question": "Calcule det([[6,7],[5,9]]).",
+    "options": [
+      "18",
+      "19",
+      "22",
+      "20"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_126",
+    "category": "Matemática",
+    "question": "Calcule det([[7,3],[6,10]]).",
+    "options": [
+      "55",
+      "53",
+      "52",
+      "51"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_127",
+    "category": "Matemática",
+    "question": "Calcule det([[8,4],[7,5]]).",
+    "options": [
+      "15",
+      "13",
+      "11",
+      "12"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_128",
+    "category": "Matemática",
+    "question": "Calcule det([[9,5],[1,6]]).",
+    "options": [
+      "48",
+      "49",
+      "52",
+      "50"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_129",
+    "category": "Matemática",
+    "question": "Calcule det([[10,6],[2,7]]).",
+    "options": [
+      "58",
+      "57",
+      "59",
+      "61"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_130",
+    "category": "Matemática",
+    "question": "Calcule det([[11,7],[3,8]]).",
+    "options": [
+      "68",
+      "66",
+      "70",
+      "67"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_131",
+    "category": "Matemática",
+    "question": "Calcule det([[12,3],[4,9]]).",
+    "options": [
+      "95",
+      "96",
+      "97",
+      "99"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_132",
+    "category": "Matemática",
+    "question": "Calcule det([[13,4],[5,10]]).",
+    "options": [
+      "110",
+      "111",
+      "113",
+      "109"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_133",
+    "category": "Matemática",
+    "question": "Calcule det([[14,5],[6,5]]).",
+    "options": [
+      "39",
+      "43",
+      "40",
+      "41"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_134",
+    "category": "Matemática",
+    "question": "Calcule det([[15,6],[7,6]]).",
+    "options": [
+      "48",
+      "49",
+      "51",
+      "47"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_135",
+    "category": "Matemática",
+    "question": "Calcule det([[16,7],[1,7]]).",
+    "options": [
+      "106",
+      "104",
+      "105",
+      "108"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_136",
+    "category": "Matemática",
+    "question": "Calcule det([[17,3],[2,8]]).",
+    "options": [
+      "133",
+      "130",
+      "129",
+      "131"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_137",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 2^50 mod 17.",
+    "options": [
+      "7",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_138",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 3^40 mod 19.",
+    "options": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_139",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 5^30 mod 23.",
+    "options": [
+      "17",
+      "19",
+      "18",
+      "16"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_140",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 7^25 mod 29.",
+    "options": [
+      "25",
+      "24",
+      "26",
+      "23"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_141",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 11^20 mod 31.",
+    "options": [
+      "28",
+      "26",
+      "27",
+      "25"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_142",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 13^18 mod 37.",
+    "options": [
+      "2",
+      "1",
+      "36",
+      "0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_143",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 17^16 mod 41.",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_144",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 19^14 mod 43.",
+    "options": [
+      "37",
+      "38",
+      "36",
+      "39"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_145",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 23^12 mod 47.",
+    "options": [
+      "29",
+      "28",
+      "27",
+      "30"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_146",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 29^10 mod 53.",
+    "options": [
+      "50",
+      "47",
+      "49",
+      "48"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_147",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 31^9 mod 59.",
+    "options": [
+      "55",
+      "54",
+      "57",
+      "56"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_148",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 37^8 mod 61.",
+    "options": [
+      "11",
+      "9",
+      "10",
+      "12"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_149",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 41^7 mod 67.",
+    "options": [
+      "12",
+      "14",
+      "13",
+      "15"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_150",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 43^6 mod 71.",
+    "options": [
+      "30",
+      "29",
+      "28",
+      "27"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_151",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 47^5 mod 73.",
+    "options": [
+      "34",
+      "33",
+      "32",
+      "31"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_152",
+    "category": "Matemática",
+    "question": "Determine o resíduo de 53^5 mod 79.",
+    "options": [
+      "69",
+      "67",
+      "68",
+      "66"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_153",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 2^14.",
+    "options": [
+      "16386",
+      "8192",
+      "16384",
+      "32768"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_154",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 2^15.",
+    "options": [
+      "32768",
+      "32770",
+      "65536",
+      "16384"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_155",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 2^16.",
+    "options": [
+      "32768",
+      "65536",
+      "131072",
+      "65538"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_156",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 3^7.",
+    "options": [
+      "729",
+      "6561",
+      "2187",
+      "2190"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_157",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 3^8.",
+    "options": [
+      "19683",
+      "6561",
+      "2187",
+      "6564"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_158",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 4^6.",
+    "options": [
+      "4096",
+      "4100",
+      "16384",
+      "1024"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "super_hard_159",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 5^5.",
+    "options": [
+      "625",
+      "15625",
+      "3125",
+      "3130"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_160",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 6^4.",
+    "options": [
+      "1302",
+      "216",
+      "7776",
+      "1296"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_161",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 7^4.",
+    "options": [
+      "16807",
+      "2408",
+      "2401",
+      "343"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_162",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 8^4.",
+    "options": [
+      "32768",
+      "4104",
+      "4096",
+      "512"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "super_hard_163",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 9^4.",
+    "options": [
+      "59049",
+      "6570",
+      "729",
+      "6561"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "super_hard_164",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 10^5.",
+    "options": [
+      "100010",
+      "100000",
+      "10000",
+      "1000000"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_165",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 11^4.",
+    "options": [
+      "161051",
+      "14641",
+      "14652",
+      "1331"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_166",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 12^4.",
+    "options": [
+      "1728",
+      "20736",
+      "248832",
+      "20748"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "super_hard_167",
+    "category": "Matemática",
+    "question": "Calcule exatamente a potência 13^4.",
+    "options": [
+      "28574",
+      "28561",
+      "371293",
+      "2197"
+    ],
+    "correct": 1
   }
 ]

@@ -152,6 +152,45 @@ func ProcessMessage(
 		return
 	}
 
+	// ==========================================================
+	// !caraoucoroa
+	// ==========================================================
+
+	// ==========================================================
+	// !forca / !letra / !palavra
+	// ==========================================================
+
+	if handleForcaCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
+	// !loteria
+	// ==========================================================
+
+	if handleLotteryCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
+	if handleCoinflipCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
 	if handleSlotsCommand(
 		client,
 		msgEvent,

@@ -248,6 +248,38 @@ func handleProfileCommand(
 			level.ProgressPercent,
 		)
 
+	coinflipStats, err :=
+		profile.GetCoinflipStats(
+			groupJID,
+			targetJID,
+		)
+
+	if err != nil {
+		logger.Error(
+			"Erro ao consultar estatísticas do Cara ou Coroa:",
+			err,
+		)
+
+		coinflipStats =
+			&profile.CoinflipStats{}
+	}
+
+	lotteryStats, err :=
+		profile.GetLotteryStats(
+			groupJID,
+			targetJID,
+		)
+
+	if err != nil {
+		logger.Error(
+			"Erro ao consultar estatísticas da Loteria:",
+			err,
+		)
+
+		lotteryStats =
+			&profile.LotteryStats{}
+	}
+
 	response := fmt.Sprintf(
 		"👤 *PERFIL DO JOGADOR*\n\n"+
 			"@%s\n\n"+
@@ -263,6 +295,9 @@ func handleProfileCommand(
 			"🎲 Apostas: *%d* vitórias / *%d* partidas\n"+
 			"🎰 Slots: *%d* vitórias / *%d* partidas\n"+
 			"💎 Maior prêmio no Slots: *%d Gold*\n"+
+			"🪙 Cara ou Coroa: *%d* vitórias / *%d* partidas\n"+
+			"🎟️ Loteria: *%d* vitórias • *%d* bilhetes\n"+
+			"🏆 Gold ganho na Loteria: *%d Gold*\n"+
 			"⚔️ Duelos: *%d* vitórias • *%d* derrotas\n"+
 			"🦹 Roubos: *%d* sucessos • *%d* falhas",
 		name,
@@ -283,6 +318,11 @@ func handleProfileCommand(
 		player.SlotsWon,
 		player.SlotsPlayed,
 		player.SlotsBiggestPrize,
+		coinflipStats.Won,
+		coinflipStats.Played,
+		lotteryStats.Wins,
+		lotteryStats.TicketsBought,
+		lotteryStats.GoldWon,
 		player.DuelsWon,
 		player.DuelsLost,
 		player.RobberiesSuccess,

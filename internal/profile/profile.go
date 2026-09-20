@@ -137,6 +137,10 @@ func Init() error {
 		)
 	}
 
+	if err := initCoinflipSchema(); err != nil {
+		return err
+	}
+
 	return nil
 }
 

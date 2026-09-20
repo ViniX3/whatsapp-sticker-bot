@@ -34,6 +34,44 @@ Aposta uma quantidade de Gold.
 Exemplo:
 *!bet 500*
 
+*!forca*
+Inicia uma partida coletiva do jogo da Forca.
+
+*!letra <letra>*
+Tenta revelar uma letra da palavra.
+
+Exemplo:
+*!letra a*
+
+*!palavra <resposta>*
+Tenta descobrir a palavra completa.
+
+Exemplo:
+*!palavra inteligência artificial*
+
+🏆 Quem concluir recebe Gold e XP.
+
+
+*!loteria*
+Mostra a rodada atual da Loteria do grupo.
+
+*!loteria <quantidade>*
+Compra bilhetes da rodada atual.
+
+💰 Cada bilhete custa *500 Gold*.
+🎟️ Máximo de *20 bilhetes por jogador*.
+🏆 O sorteio acontece automaticamente ao vender os 100 bilhetes.
+
+Exemplo:
+*!loteria 5*
+
+
+*!caraoucoroa <valor> <cara|coroa>*
+Aposte Gold em um lançamento de moeda com chance real de 50/50.
+
+Exemplo:
+*!caraoucoroa 1000 cara*
+
 *!slots <valor>*
 Joga no caça-níquel utilizando Gold.
 

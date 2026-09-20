@@ -1198,5 +1198,809 @@
       "Andes"
     ],
     "correct": 3
+  },
+  {
+    "id": "hard_101",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 10.12.77.201/20.",
+    "options": [
+      "10.12.48.0",
+      "10.12.64.1",
+      "10.12.64.0",
+      "10.12.80.0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_102",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 10.12.77.201/20.",
+    "options": [
+      "10.12.80.0",
+      "10.12.71.255",
+      "10.12.79.254",
+      "10.12.79.255"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_103",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 10.44.139.17/21.",
+    "options": [
+      "10.44.136.0",
+      "10.44.144.0",
+      "10.44.136.1",
+      "10.44.128.0"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_104",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 10.44.139.17/21.",
+    "options": [
+      "10.44.139.255",
+      "10.44.143.254",
+      "10.44.144.0",
+      "10.44.143.255"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_105",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 172.16.93.222/22.",
+    "options": [
+      "172.16.96.0",
+      "172.16.88.0",
+      "172.16.92.1",
+      "172.16.92.0"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_106",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 172.16.93.222/22.",
+    "options": [
+      "172.16.95.255",
+      "172.16.95.254",
+      "172.16.93.255",
+      "172.16.96.0"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_107",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 172.20.214.9/23.",
+    "options": [
+      "172.20.214.1",
+      "172.20.216.0",
+      "172.20.212.0",
+      "172.20.214.0"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_108",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 172.20.214.9/23.",
+    "options": [
+      "172.20.214.255",
+      "172.20.215.255",
+      "172.20.216.0",
+      "172.20.215.254"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_109",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 192.168.45.199/26.",
+    "options": [
+      "192.168.45.193",
+      "192.168.46.0",
+      "192.168.45.128",
+      "192.168.45.192"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_110",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 192.168.45.199/26.",
+    "options": [
+      "192.168.45.255",
+      "192.168.45.254",
+      "192.168.46.0",
+      "192.168.45.223"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_111",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 192.168.88.73/27.",
+    "options": [
+      "192.168.88.96",
+      "192.168.88.32",
+      "192.168.88.65",
+      "192.168.88.64"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_112",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 192.168.88.73/27.",
+    "options": [
+      "192.168.88.96",
+      "192.168.88.95",
+      "192.168.88.94",
+      "192.168.88.79"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_113",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 10.99.201.55/19.",
+    "options": [
+      "10.99.224.0",
+      "10.99.192.1",
+      "10.99.192.0",
+      "10.99.160.0"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_114",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 10.99.201.55/19.",
+    "options": [
+      "10.99.207.255",
+      "10.99.223.255",
+      "10.99.224.0",
+      "10.99.223.254"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_115",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 172.31.145.250/20.",
+    "options": [
+      "172.31.144.0",
+      "172.31.128.0",
+      "172.31.160.0",
+      "172.31.144.1"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_116",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 172.31.145.250/20.",
+    "options": [
+      "172.31.159.254",
+      "172.31.160.0",
+      "172.31.159.255",
+      "172.31.151.255"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_117",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 10.200.33.129/24.",
+    "options": [
+      "10.200.32.0",
+      "10.200.33.0",
+      "10.200.34.0",
+      "10.200.33.1"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_118",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 10.200.33.129/24.",
+    "options": [
+      "10.200.33.254",
+      "10.200.33.255",
+      "10.200.34.0",
+      "10.200.33.127"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_119",
+    "category": "Tecnologia",
+    "question": "Calcule a rede IPv4 que contém 192.168.120.190/25.",
+    "options": [
+      "192.168.120.0",
+      "192.168.120.129",
+      "192.168.121.0",
+      "192.168.120.128"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_120",
+    "category": "Tecnologia",
+    "question": "Calcule o broadcast IPv4 do bloco que contém 192.168.120.190/25.",
+    "options": [
+      "192.168.120.254",
+      "192.168.120.255",
+      "192.168.121.0",
+      "192.168.120.191"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_121",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(10,2).",
+    "options": [
+      "43",
+      "90",
+      "47",
+      "45"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_122",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(10,3).",
+    "options": [
+      "120",
+      "123",
+      "117",
+      "240"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_123",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(11,2).",
+    "options": [
+      "110",
+      "55",
+      "57",
+      "53"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_124",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(11,3).",
+    "options": [
+      "165",
+      "168",
+      "330",
+      "162"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_125",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(12,2).",
+    "options": [
+      "68",
+      "64",
+      "66",
+      "132"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_126",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(12,3).",
+    "options": [
+      "217",
+      "440",
+      "223",
+      "220"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_127",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(12,4).",
+    "options": [
+      "495",
+      "499",
+      "990",
+      "491"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_128",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(13,2).",
+    "options": [
+      "80",
+      "156",
+      "78",
+      "76"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_129",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(13,3).",
+    "options": [
+      "283",
+      "572",
+      "289",
+      "286"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_130",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(13,4).",
+    "options": [
+      "1430",
+      "715",
+      "711",
+      "719"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_131",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(14,2).",
+    "options": [
+      "93",
+      "182",
+      "91",
+      "89"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_132",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(14,3).",
+    "options": [
+      "364",
+      "728",
+      "367",
+      "361"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_133",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(14,4).",
+    "options": [
+      "1005",
+      "997",
+      "2002",
+      "1001"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_134",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(15,2).",
+    "options": [
+      "210",
+      "105",
+      "107",
+      "103"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_135",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(15,3).",
+    "options": [
+      "458",
+      "910",
+      "452",
+      "455"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_136",
+    "category": "Matemática",
+    "question": "Avalie a combinação C(15,4).",
+    "options": [
+      "2730",
+      "1365",
+      "1361",
+      "1369"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_137",
+    "category": "Matemática",
+    "question": "Encontre 2^12 módulo 7.",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "3"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_138",
+    "category": "Matemática",
+    "question": "Encontre 3^9 módulo 11.",
+    "options": [
+      "5",
+      "7",
+      "6",
+      "4"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_139",
+    "category": "Matemática",
+    "question": "Encontre 5^8 módulo 13.",
+    "options": [
+      "4",
+      "2",
+      "3",
+      "1"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_140",
+    "category": "Matemática",
+    "question": "Encontre 7^6 módulo 17.",
+    "options": [
+      "9",
+      "11",
+      "10",
+      "12"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_141",
+    "category": "Matemática",
+    "question": "Encontre 11^5 módulo 19.",
+    "options": [
+      "7",
+      "9",
+      "8",
+      "10"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_142",
+    "category": "Matemática",
+    "question": "Encontre 2^20 módulo 13.",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "9"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_143",
+    "category": "Matemática",
+    "question": "Encontre 3^12 módulo 17.",
+    "options": [
+      "7",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_144",
+    "category": "Matemática",
+    "question": "Encontre 5^10 módulo 19.",
+    "options": [
+      "6",
+      "5",
+      "8",
+      "7"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_145",
+    "category": "Matemática",
+    "question": "Encontre 7^8 módulo 23.",
+    "options": [
+      "15",
+      "12",
+      "14",
+      "13"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_146",
+    "category": "Matemática",
+    "question": "Encontre 11^7 módulo 29.",
+    "options": [
+      "15",
+      "12",
+      "14",
+      "13"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_147",
+    "category": "Matemática",
+    "question": "Encontre 13^6 módulo 31.",
+    "options": [
+      "17",
+      "19",
+      "16",
+      "18"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_148",
+    "category": "Matemática",
+    "question": "Encontre 17^5 módulo 37.",
+    "options": [
+      "21",
+      "22",
+      "19",
+      "20"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_149",
+    "category": "Matemática",
+    "question": "Encontre 19^4 módulo 41.",
+    "options": [
+      "26",
+      "24",
+      "23",
+      "25"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_150",
+    "category": "Matemática",
+    "question": "Encontre 23^3 módulo 43.",
+    "options": [
+      "0",
+      "42",
+      "41",
+      "1"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_151",
+    "category": "Matemática",
+    "question": "Encontre 29^3 módulo 47.",
+    "options": [
+      "46",
+      "43",
+      "44",
+      "45"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_152",
+    "category": "Matemática",
+    "question": "Encontre 31^3 módulo 53.",
+    "options": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_153",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 500 em hexadecimal.",
+    "options": [
+      "1F5",
+      "1F4",
+      "1F3",
+      "204"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_154",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 501 em hexadecimal.",
+    "options": [
+      "205",
+      "1F4",
+      "1F6",
+      "1F5"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_155",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 502 em hexadecimal.",
+    "options": [
+      "1F6",
+      "206",
+      "1F7",
+      "1F5"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_156",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 503 em hexadecimal.",
+    "options": [
+      "1F6",
+      "207",
+      "1F8",
+      "1F7"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_157",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 504 em hexadecimal.",
+    "options": [
+      "208",
+      "1F7",
+      "1F9",
+      "1F8"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_158",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 505 em hexadecimal.",
+    "options": [
+      "209",
+      "1F8",
+      "1F9",
+      "1FA"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_159",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 506 em hexadecimal.",
+    "options": [
+      "1FB",
+      "1FA",
+      "1F9",
+      "20A"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_160",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 507 em hexadecimal.",
+    "options": [
+      "1FC",
+      "1FA",
+      "1FB",
+      "20B"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_161",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 508 em hexadecimal.",
+    "options": [
+      "1FD",
+      "1FB",
+      "20C",
+      "1FC"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_162",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 509 em hexadecimal.",
+    "options": [
+      "1FC",
+      "1FD",
+      "1FE",
+      "20D"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_163",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 510 em hexadecimal.",
+    "options": [
+      "1FE",
+      "1FD",
+      "20E",
+      "1FF"
+    ],
+    "correct": 0
+  },
+  {
+    "id": "hard_164",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 511 em hexadecimal.",
+    "options": [
+      "200",
+      "1FF",
+      "20F",
+      "1FE"
+    ],
+    "correct": 1
+  },
+  {
+    "id": "hard_165",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 512 em hexadecimal.",
+    "options": [
+      "201",
+      "210",
+      "200",
+      "1FF"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "hard_166",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 513 em hexadecimal.",
+    "options": [
+      "202",
+      "211",
+      "200",
+      "201"
+    ],
+    "correct": 3
+  },
+  {
+    "id": "hard_167",
+    "category": "Tecnologia",
+    "question": "Escreva o decimal 514 em hexadecimal.",
+    "options": [
+      "203",
+      "212",
+      "202",
+      "201"
+    ],
+    "correct": 2
   }
 ]
