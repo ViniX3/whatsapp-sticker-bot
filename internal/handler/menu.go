@@ -10,199 +10,148 @@ import (
 	"go.mau.fi/whatsmeow/types/events"
 )
 
-const menuMessage = `🤖 *MENU DO BOT*
+const menuMessage = `╔════════════════════╗
+⚔️ *GRIMÓRIO DO AVENTUREIRO*
+🏰 *VERSÃO 3.3.0*
+╚════════════════════╝
 
-🎨 *FIGURINHAS*
+📜 *Saudações, aventureiro!*
+Aqui estão os caminhos disponíveis neste reino.
 
-*!f*
-Cria uma figurinha a partir de imagem, vídeo ou GIF.
+━━━━━━━━━━━━━━━━━━━━
+👑 *CRÔNICAS DO HERÓI*
+━━━━━━━━━━━━━━━━━━━━
 
-Envie a mídia com *!f* na legenda ou responda uma mídia com *!f*.
+👤 *!perfil*
+Veja seu nível, XP, Gold e estatísticas.
 
+🏆 *!conquistas*
+Consulte suas conquistas e progresso.
 
-💰 *ECONOMIA GOLD*
+🏆 *!conquistas @pessoa*
+Veja as conquistas de outro aventureiro.
 
-*!gold*
-Cria sua carteira e recebe o Gold inicial.
+💰 *!ranking*
+Conheça os mais ricos do reino.
 
-*!saldo*
-Mostra seu saldo atual de Gold.
+━━━━━━━━━━━━━━━━━━━━
+💰 *TESOURO DO REINO*
+━━━━━━━━━━━━━━━━━━━━
 
-*!bet <valor>*
-Aposta uma quantidade de Gold.
+🪙 *!gold*
+Crie sua carteira e receba o Gold inicial.
 
-Exemplo:
-*!bet 500*
+💰 *!saldo*
+Consulte suas riquezas.
 
-*!forca*
-Inicia uma partida coletiva do jogo da Forca.
+🤝 *!pix @pessoa <valor>*
+Transfira Gold para outro aventureiro.
 
-*!letra <letra>*
-Tenta revelar uma letra da palavra.
+━━━━━━━━━━━━━━━━━━━━
+🎲 *JOGOS DA TAVERNA*
+━━━━━━━━━━━━━━━━━━━━
 
-Exemplo:
-*!letra a*
+🎲 *!bet <valor>*
+Arrisque seu Gold em uma aposta.
 
-*!palavra <resposta>*
-Tenta descobrir a palavra completa.
+🎰 *!slots <valor>*
+Tente a sorte no caça-níquel.
 
-Exemplo:
-*!palavra inteligência artificial*
+🪙 *!caraoucoroa <valor> <cara|coroa>*
+Desafie a sorte em um lançamento de moeda.
 
-🏆 Quem concluir recebe Gold e XP.
+🍀 *!sorte*
+Receba sua recompensa diária.
 
+🎟️ *!loteria*
+Veja a rodada atual da Loteria.
 
-*!loteria*
-Mostra a rodada atual da Loteria do grupo.
+🎟️ *!loteria <quantidade>*
+Compre bilhetes para disputar o Jackpot.
 
-*!loteria <quantidade>*
-Compra bilhetes da rodada atual.
+━━━━━━━━━━━━━━━━━━━━
+⚔️ *ARENA DOS GUERREIROS*
+━━━━━━━━━━━━━━━━━━━━
 
-💰 Cada bilhete custa *500 Gold*.
-🎟️ Máximo de *20 bilhetes por jogador*.
-🏆 O sorteio acontece automaticamente ao vender os 100 bilhetes.
+⚔️ *!duelo @pessoa <valor>*
+Desafie outro guerreiro valendo Gold.
 
-Exemplo:
-*!loteria 5*
+✅ *!aceitar*
+Aceite um duelo pendente.
 
+❌ *!recusar*
+Recuse o desafio.
 
-*!caraoucoroa <valor> <cara|coroa>*
-Aposte Gold em um lançamento de moeda com chance real de 50/50.
+━━━━━━━━━━━━━━━━━━━━
+🧠 *PROVAS DO SÁBIO*
+━━━━━━━━━━━━━━━━━━━━
 
-Exemplo:
-*!caraoucoroa 1000 cara*
+📚 *!quiz*
+Enfrente uma das *1.000 perguntas* do reino.
 
-*!slots <valor>*
-Joga no caça-níquel utilizando Gold.
+🎯 *!forca*
+Inicie uma partida coletiva de Forca.
 
-Exemplo:
-*!slots 500*
+🔤 *!letra <letra>*
+Tente revelar uma letra.
 
-*!pix @pessoa <valor>*
-Transfere Gold para outra pessoa.
+📜 *!palavra <resposta>*
+Arrisque a palavra completa.
 
-Exemplo:
-*!pix @pessoa 1000*
+━━━━━━━━━━━━━━━━━━━━
+🦹 *SUBMUNDO DO REINO*
+━━━━━━━━━━━━━━━━━━━━
 
-*!roubar @pessoa*
-Tenta roubar Gold de outro jogador.
+🗡️ *!roubar @pessoa*
+Tente roubar Gold de outro aventureiro.
 
-*!escudo*
-Compra proteção temporária contra roubos.
+🛡️ *!escudo*
+Proteja suas riquezas contra ladrões.
 
-*!sorte*
-Participa do sorteio diário e pode ganhar Gold.
+━━━━━━━━━━━━━━━━━━━━
+🍻 *TAVERNA DOS VIAJANTES*
+━━━━━━━━━━━━━━━━━━━━
 
-*!ranking*
-Mostra os jogadores mais ricos do grupo.
+💘 *!ship*
+Descubra a compatibilidade entre aventureiros.
 
+💋 *!beijo @pessoa*
+🤗 *!abraco @pessoa*
+👋 *!tapa @pessoa*
+🦷 *!morder @pessoa*
 
-🏆 *PROGRESSÃO*
+Os comandos também funcionam sem marcação,
+escolhendo alguém aleatoriamente.
 
-*!perfil*
-Mostra nível, XP, Gold e estatísticas do jogador.
+━━━━━━━━━━━━━━━━━━━━
+🔨 *OFICINA DO ARTÍFICE*
+━━━━━━━━━━━━━━━━━━━━
 
-*!conquistas*
-Mostra suas conquistas e o progresso de cada uma.
+🎨 *!f*
+Transforme imagem, vídeo ou GIF em figurinha.
 
-*!conquistas @pessoa*
-Consulta as conquistas de outro jogador.
+━━━━━━━━━━━━━━━━━━━━
+🏰 *PORTÕES DO REINO RPG*
+━━━━━━━━━━━━━━━━━━━━
 
+🔒 *O Reino ainda está sendo preparado...*
 
-⚔️ *DUELOS*
+Em breve, aventureiros poderão acessar:
 
-*!duelo @pessoa <valor>*
-Desafia outro jogador para um duelo valendo Gold.
+🏪 Mercado Real
+🔮 Mercado Arcano
+🎒 Inventário
+⚔️ Equipamentos
+🐺 Caçadas PvE
+🏚️ Dungeons
+🐉 Bosses e Raids
 
-Exemplo:
-*!duelo @pessoa 1000*
+━━━━━━━━━━━━━━━━━━━━
 
-*!aceitar*
-Aceita um duelo pendente.
+⚜️ *Que a sorte acompanhe sua jornada.*
 
-*!recusar*
-Recusa um duelo pendente.
-
-O vencedor é escolhido automaticamente e recebe todo o pote.
-
-
-🧠 *QUIZ*
-
-*!quiz*
-Inicia uma pergunta aleatória.
-
-São *600 perguntas* distribuídas em 6 dificuldades:
-
-🟢 Super Fácil
-🔵 Fácil
-🟡 Médio
-🟠 Difícil
-🔴 Super Difícil
-💀 Insano
-
-Responda usando:
-
-*A*
-*B*
-*C*
-*D*
-
-Quanto maior a dificuldade, maior a recompensa em Gold.
-
-
-🎉 *DIVERSÃO*
-
-*!ship*
-Sorteia duas pessoas do grupo e calcula a compatibilidade. 💘
-
-*!ship @pessoa*
-Calcula a compatibilidade entre você e a pessoa marcada.
-
-*!ship @pessoa1 @pessoa2*
-Calcula a compatibilidade entre duas pessoas.
-
-A porcentagem de cada dupla é sempre a mesma.
-
-*!beijo @pessoa*
-Dá um beijo na pessoa marcada. 💋
-
-*!beijo*
-Escolhe alguém aleatoriamente no grupo. 😏
-
-*!tapa @pessoa*
-Dá um tapa na pessoa marcada. 👋
-
-*!tapa*
-Escolhe uma vítima aleatória no grupo. 😂
-
-*!abraco @pessoa*
-Dá um abraço na pessoa marcada. 🤗
-
-*!abraco*
-Abraça alguém aleatoriamente no grupo. 🫂
-
-*!morder @pessoa*
-Dá uma mordidinha na pessoa marcada. 🦷
-
-*!morder*
-Escolhe alguém aleatoriamente para morder. 😈
-
-
-📖 *AJUDA*
-
-*!menu*
-Exibe este menu.
-
-
-━━━━━━━━━━━━━━━━━━
-
-💡 *Dica*
-
-Os comandos *!beijo*, *!tapa*, *!abraco* e *!morder* podem ser usados com ou sem marcação.
-
-No modo aleatório, o bot escolhe outra pessoa do grupo automaticamente.
-
-Boa diversão! 🎮`
+📖 Use *!menu* sempre que precisar
+consultar este grimório.`
 
 // handleMenuCommand processa o comando !menu.
 //
