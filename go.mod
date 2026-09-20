@@ -6,7 +6,7 @@ require (
 	github.com/agusira/webpexif v0.0.0-20260713080900-3a039711955a
 	github.com/mattn/go-sqlite3 v1.14.52
 	github.com/mdp/qrterminal/v3 v3.2.1
-	go.mau.fi/whatsmeow v0.0.0-20260917111002-2e338d0ee73d
+	go.mau.fi/whatsmeow v0.0.0-20260919103545-0057a822e79a
 	google.golang.org/protobuf v1.36.12
 )
 
@@ -18,7 +18,7 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/mattn/go-colorable v0.1.15 // indirect
 	github.com/mattn/go-isatty v0.0.24 // indirect
-	github.com/petermattis/goid v0.0.0-20260917103748-04b046e838b2 // indirect
+	github.com/petermattis/goid v0.0.0-20260918085751-abfca077860b // indirect
 	github.com/rs/zerolog v1.35.1 // indirect
 	github.com/vektah/gqlparser/v2 v2.5.37 // indirect
 	go.mau.fi/libsignal v0.2.2 // indirect
