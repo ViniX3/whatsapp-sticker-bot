@@ -25,9 +25,6 @@ func TestPhase1DEMenuDiscoverability(
 		"!equipamentos",
 		"!arsenal",
 
-		"!coletar",
-		"!recolher",
-
 		"!pve",
 		"!caçar",
 

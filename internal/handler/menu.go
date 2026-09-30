@@ -56,9 +56,6 @@ const menuMessage = `⚔️ *GRIMÓRIO DO AVENTUREIRO*
 🛡️ !equipamentos
 ↳ !arsenal • !gear
 
-🌲 !coletar [região]
-↳ !coleta • !recolher
-
 🐺 !pve [região]
 ↳ !caçar • !lutar • !combater
 

@@ -147,25 +147,10 @@ func rollPVEEquipmentDrop(
 
 	for _, item := range catalog.Items() {
 
-		if item.Rarity !=
-			enemy.Rarity {
-
-			continue
-		}
-
-		// Itens exclusivos do Mercador não entram
-		// no loot PvE comum.
-		if item.Source ==
-			SourceOtherworldMerchant {
-
-			continue
-		}
-
-		// Bosses priorizam equipamentos
-		// originalmente classificados como BOSS_DROP.
-		if enemy.Boss &&
-			item.Source !=
-				SourceBossDrop {
+		if !pveEquipmentEligibleForEnemy(
+			enemy,
+			item,
+		) {
 
 			continue
 		}
@@ -175,34 +160,6 @@ func rollPVEEquipmentDrop(
 				pool,
 				item,
 			)
-	}
-
-	// Fallback para o catálogo atual caso ainda não
-	// existam itens BOSS_DROP compatíveis com os
-	// bosses regionais novos.
-	if len(pool) == 0 &&
-		enemy.Boss {
-
-		for _, item := range catalog.Items() {
-
-			if item.Rarity !=
-				RarityLegendary {
-
-				continue
-			}
-
-			if item.Source ==
-				SourceOtherworldMerchant {
-
-				continue
-			}
-
-			pool =
-				append(
-					pool,
-					item,
-				)
-		}
 	}
 
 	if len(pool) == 0 {

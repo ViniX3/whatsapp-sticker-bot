@@ -251,6 +251,15 @@ func handleRPGForgeCraft(
 		return
 	}
 
+	autoEquip,
+		autoEquipErr :=
+		rpg.AutoEquipIfBetter(
+			groupJID,
+			jid,
+			result.Recipe.Item.ID,
+			catalog,
+		)
+
 	var builder strings.Builder
 
 	fmt.Fprintf(
@@ -310,6 +319,44 @@ func handleRPGForgeCraft(
 				"%s×%d",
 				name,
 				requirement.Quantity,
+			)
+		}
+	}
+
+	if autoEquipErr == nil &&
+		autoEquip != nil {
+
+		switch {
+		case autoEquip.Equipped &&
+			autoEquip.HadPrevious:
+
+			fmt.Fprintf(
+				&builder,
+				"\n⚡ *AUTO-EQUIP:* %s substituiu %s.\n"+
+					"🏆 %s PC → %s PC",
+				autoEquip.Item.Name,
+				autoEquip.PreviousItem.Name,
+				forgeFormatNumber(
+					autoEquip.PreviousItem.Power,
+				),
+				forgeFormatNumber(
+					autoEquip.Item.Power,
+				),
+			)
+
+		case autoEquip.Equipped:
+			builder.WriteString(
+				"\n⚡ *AUTO-EQUIP:* equipado automaticamente.",
+			)
+
+		case autoEquip.HadPrevious:
+			fmt.Fprintf(
+				&builder,
+				"\n🛡️ Mantido: *%s* (%s PC).",
+				autoEquip.PreviousItem.Name,
+				forgeFormatNumber(
+					autoEquip.PreviousItem.Power,
+				),
 			)
 		}
 	}

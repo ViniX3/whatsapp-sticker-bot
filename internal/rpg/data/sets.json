@@ -870,5 +870,537 @@
         ]
       }
     ]
+  },
+  {
+    "id": "legendary_obsidian_basilisk",
+    "name": "Regalia do Basilisco de Obsidiana",
+    "rarity": "LEGENDARY",
+    "theme": "Relíquias negras impregnadas pelo veneno e pelo olhar petrificante do Basilisco de Obsidiana.",
+    "pieces": [
+      "legendary_obsidian_basilisk_weapon",
+      "legendary_obsidian_basilisk_shield",
+      "legendary_obsidian_basilisk_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "RARE_DROP_CHANCE_PERCENT",
+            "value": 5,
+            "description": "+5% de chance de drops raros."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "BOSS_DAMAGE_PERCENT",
+            "value": 8,
+            "description": "+8% de dano contra Bosses."
+          },
+          {
+            "type": "DROP_CHANCE_PERCENT",
+            "value": 5,
+            "description": "+5% de chance de drops."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "legendary_abyssal_kraken",
+    "name": "Tesouros do Kraken Abissal",
+    "rarity": "LEGENDARY",
+    "theme": "Equipamentos moldados nas profundezas oceânicas onde o Kraken Abissal domina sem oposição.",
+    "pieces": [
+      "legendary_abyssal_kraken_weapon",
+      "legendary_abyssal_kraken_shield",
+      "legendary_abyssal_kraken_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "CRYSTAL_REWARD_PERCENT",
+            "value": 10,
+            "description": "+10% de Cristais Mágicos obtidos."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "DUNGEON_SUCCESS_PERCENT",
+            "value": 7,
+            "description": "+7% de chance de sucesso em Dungeons."
+          },
+          {
+            "type": "DROP_CHANCE_PERCENT",
+            "value": 5,
+            "description": "+5% de chance de drops."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "legendary_crimson_chimera",
+    "name": "Arsenal da Quimera Carmesim",
+    "rarity": "LEGENDARY",
+    "theme": "Um conjunto instável formado pela essência fundida das feras que compõem a Quimera Carmesim.",
+    "pieces": [
+      "legendary_crimson_chimera_weapon",
+      "legendary_crimson_chimera_shield",
+      "legendary_crimson_chimera_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "BOSS_DAMAGE_PERCENT",
+            "value": 8,
+            "description": "+8% de dano contra Bosses."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "COMBAT_POWER_PERCENT",
+            "value": 6,
+            "description": "+6% de Poder de Combate."
+          },
+          {
+            "type": "GAME_LUCK_PERCENT",
+            "value": 2,
+            "description": "+2% de Sorte."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "legendary_ash_cerberus",
+    "name": "Relíquias do Cérbero das Cinzas",
+    "rarity": "LEGENDARY",
+    "theme": "Armas e armaduras queimadas pelo fogo eterno do guardião de três cabeças.",
+    "pieces": [
+      "legendary_ash_cerberus_weapon",
+      "legendary_ash_cerberus_shield",
+      "legendary_ash_cerberus_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "COMBAT_POWER_PERCENT",
+            "value": 7,
+            "description": "+7% de Poder de Combate."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "BLESSING_CHANCE_PERCENT",
+            "value": 2,
+            "description": "+2% de chance de receber uma bênção."
+          },
+          {
+            "type": "DROP_CHANCE_PERCENT",
+            "value": 6,
+            "description": "+6% de chance de drops."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "legendary_crystal_golem",
+    "name": "Núcleo do Golem de Cristal",
+    "rarity": "LEGENDARY",
+    "theme": "Equipamentos prismáticos formados pelos fragmentos do núcleo vivo do Golem de Cristal.",
+    "pieces": [
+      "legendary_crystal_golem_weapon",
+      "legendary_crystal_golem_shield",
+      "legendary_crystal_golem_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "CRYSTAL_REWARD_PERCENT",
+            "value": 10,
+            "description": "+10% de Cristais Mágicos obtidos."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "RARE_DROP_CHANCE_PERCENT",
+            "value": 6,
+            "description": "+6% de chance de drops raros."
+          },
+          {
+            "type": "DROP_RARITY_UPGRADE_CHANCE_PERCENT",
+            "value": 3,
+            "description": "+3% de chance de elevar a raridade dos drops."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "legendary_onyx_spider_queen",
+    "name": "Vestes da Rainha Aracnídea de Ônix",
+    "rarity": "LEGENDARY",
+    "theme": "Um conjunto sombrio tecido com fios minerais produzidos pela Rainha Aracnídea de Ônix.",
+    "pieces": [
+      "legendary_onyx_spider_queen_weapon",
+      "legendary_onyx_spider_queen_shield",
+      "legendary_onyx_spider_queen_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "DROP_CHANCE_PERCENT",
+            "value": 7,
+            "description": "+7% de chance de drops."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "GAME_LUCK_PERCENT",
+            "value": 2,
+            "description": "+2% de Sorte."
+          },
+          {
+            "type": "RARE_DROP_CHANCE_PERCENT",
+            "value": 5,
+            "description": "+5% de chance de drops raros."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "legendary_eternal_labyrinth_minotaur",
+    "name": "Arsenal do Labirinto Eterno",
+    "rarity": "LEGENDARY",
+    "theme": "Equipamentos carregados pelo guardião que percorreu o Labirinto Eterno durante incontáveis eras.",
+    "pieces": [
+      "legendary_eternal_labyrinth_minotaur_weapon",
+      "legendary_eternal_labyrinth_minotaur_shield",
+      "legendary_eternal_labyrinth_minotaur_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "DUNGEON_SUCCESS_PERCENT",
+            "value": 7,
+            "description": "+7% de chance de sucesso em Dungeons."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "COMBAT_POWER_PERCENT",
+            "value": 6,
+            "description": "+6% de Poder de Combate."
+          },
+          {
+            "type": "BOSS_DAMAGE_PERCENT",
+            "value": 7,
+            "description": "+7% de dano contra Bosses."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "legendary_jade_dragon",
+    "name": "Regalia do Dragão de Jade",
+    "rarity": "LEGENDARY",
+    "theme": "Relíquias esculpidas em jade vivo e fortalecidas pelo sopro ancestral do Dragão de Jade.",
+    "pieces": [
+      "legendary_jade_dragon_weapon",
+      "legendary_jade_dragon_shield",
+      "legendary_jade_dragon_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "BOSS_DAMAGE_PERCENT",
+            "value": 8,
+            "description": "+8% de dano contra Bosses."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "DROP_RARITY_UPGRADE_CHANCE_PERCENT",
+            "value": 3,
+            "description": "+3% de chance de elevar a raridade dos drops."
+          },
+          {
+            "type": "CRYSTAL_REWARD_PERCENT",
+            "value": 10,
+            "description": "+10% de Cristais Mágicos obtidos."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mythic_chronal_dragon",
+    "name": "Regalia do Dragão Cronal",
+    "rarity": "MYTHIC",
+    "theme": "Equipamentos que existem simultaneamente em diversos instantes do tempo.",
+    "pieces": [
+      "mythic_chronal_dragon_weapon",
+      "mythic_chronal_dragon_shield",
+      "mythic_chronal_dragon_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "COMBAT_POWER_PERCENT",
+            "value": 10,
+            "description": "+10% de Poder de Combate."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "DROP_RARITY_UPGRADE_CHANCE_PERCENT",
+            "value": 5,
+            "description": "+5% de chance de elevar a raridade dos drops."
+          },
+          {
+            "type": "BOSS_DAMAGE_PERCENT",
+            "value": 10,
+            "description": "+10% de dano contra Bosses."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mythic_spectral_emperor",
+    "name": "Tesouros do Imperador Espectral",
+    "rarity": "MYTHIC",
+    "theme": "Relíquias imperiais envoltas pelas almas das legiões que ainda obedecem ao Imperador Espectral.",
+    "pieces": [
+      "mythic_spectral_emperor_weapon",
+      "mythic_spectral_emperor_shield",
+      "mythic_spectral_emperor_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "BLESSING_CHANCE_PERCENT",
+            "value": 4,
+            "description": "+4% de chance de receber uma bênção."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "RARE_DROP_CHANCE_PERCENT",
+            "value": 10,
+            "description": "+10% de chance de drops raros."
+          },
+          {
+            "type": "CRYSTAL_REWARD_PERCENT",
+            "value": 15,
+            "description": "+15% de Cristais Mágicos obtidos."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mythic_solar_archon",
+    "name": "Regalia do Arconte Solar",
+    "rarity": "MYTHIC",
+    "theme": "Artefatos radiantes moldados a partir da energia concentrada de uma estrela.",
+    "pieces": [
+      "mythic_solar_archon_weapon",
+      "mythic_solar_archon_shield",
+      "mythic_solar_archon_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "BOSS_DAMAGE_PERCENT",
+            "value": 12,
+            "description": "+12% de dano contra Bosses."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "CRYSTAL_REWARD_PERCENT",
+            "value": 18,
+            "description": "+18% de Cristais Mágicos obtidos."
+          },
+          {
+            "type": "DROP_CHANCE_PERCENT",
+            "value": 8,
+            "description": "+8% de chance de drops."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mythic_end_herald",
+    "name": "Vestígios do Arauto do Fim",
+    "rarity": "MYTHIC",
+    "theme": "Equipamentos que carregam o presságio de um mundo prestes a desaparecer.",
+    "pieces": [
+      "mythic_end_herald_weapon",
+      "mythic_end_herald_shield",
+      "mythic_end_herald_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "STELLAR_STONE_CHANCE_PERCENT",
+            "value": 8,
+            "description": "+8% de chance de obter Pedras Estelares."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "BOSS_DAMAGE_PERCENT",
+            "value": 10,
+            "description": "+10% de dano contra Bosses."
+          },
+          {
+            "type": "DROP_CHANCE_PERCENT",
+            "value": 10,
+            "description": "+10% de chance de drops."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mythic_infinity_guardian",
+    "name": "Arsenal do Guardião do Infinito",
+    "rarity": "MYTHIC",
+    "theme": "Artefatos impossíveis cujas superfícies parecem se estender muito além de seus próprios limites.",
+    "pieces": [
+      "mythic_infinity_guardian_weapon",
+      "mythic_infinity_guardian_shield",
+      "mythic_infinity_guardian_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "COMBAT_POWER_PERCENT",
+            "value": 12,
+            "description": "+12% de Poder de Combate."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "STELLAR_STONE_CHANCE_PERCENT",
+            "value": 8,
+            "description": "+8% de chance de obter Pedras Estelares."
+          },
+          {
+            "type": "DROP_RARITY_UPGRADE_CHANCE_PERCENT",
+            "value": 5,
+            "description": "+5% de chance de elevar a raridade dos drops."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mythic_aurora_colossus",
+    "name": "Arsenal do Colosso da Aurora",
+    "rarity": "MYTHIC",
+    "theme": "Equipamentos gigantescos cobertos por luzes que se movem como uma aurora no céu.",
+    "pieces": [
+      "mythic_aurora_colossus_weapon",
+      "mythic_aurora_colossus_shield",
+      "mythic_aurora_colossus_armor"
+    ],
+    "bonuses": [
+      {
+        "required_pieces": 2,
+        "effects": [
+          {
+            "type": "CRYSTAL_REWARD_PERCENT",
+            "value": 18,
+            "description": "+18% de Cristais Mágicos obtidos."
+          }
+        ]
+      },
+      {
+        "required_pieces": 3,
+        "effects": [
+          {
+            "type": "BLESSING_CHANCE_PERCENT",
+            "value": 5,
+            "description": "+5% de chance de receber uma bênção."
+          },
+          {
+            "type": "DROP_CHANCE_PERCENT",
+            "value": 10,
+            "description": "+10% de chance de drops."
+          }
+        ]
+      }
+    ]
   }
 ]

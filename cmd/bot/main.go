@@ -131,9 +131,16 @@ func main() {
 			"Sincronização concluída. Bot pronto.",
 		)
 
-		handler.StartChaosScheduler(
+		handler.StartReleaseAnnouncement(
 			client,
 		)
+
+		handler.StartRaidResolutionWorker(
+			client,
+		)
+
+		// Presságio do Caos temporariamente desativado.
+		// O módulo permanece preservado para futura reformulação.
 	}()
 
 	// ==========================================================

@@ -1,0 +1,308 @@
+[
+  {
+    "id": "black_dragon",
+    "name": "Dragão Negro",
+    "rarity": "LEGENDARY",
+    "power": 12000,
+    "set_id": "legendary_black_dragon",
+    "image_key": "black_dragon",
+    "description": "Um rugido ancestral ecoa pelos céus. A escuridão se espalha e o terror desperta enquanto asas negras cobrem o horizonte."
+  },
+  {
+    "id": "storm_griffin",
+    "name": "Grifo da Tempestade",
+    "rarity": "LEGENDARY",
+    "power": 13200,
+    "set_id": "legendary_storm_griffin",
+    "image_key": "storm_griffin",
+    "description": "Uma criatura alada que domina ventos violentos e tempestades sobre as montanhas."
+  },
+  {
+    "id": "frost_wyrm",
+    "name": "Wyrm de Gelo",
+    "rarity": "LEGENDARY",
+    "power": 14400,
+    "set_id": "legendary_frost_wyrm",
+    "image_key": "frost_wyrm",
+    "description": "Um wyrm ancestral cujo sopro transforma campos de batalha em desertos congelados."
+  },
+  {
+    "id": "behemoth",
+    "name": "Behemoth",
+    "rarity": "LEGENDARY",
+    "power": 15600,
+    "set_id": "legendary_behemoth",
+    "image_key": "behemoth",
+    "description": "Uma besta colossal de força monstruosa e couraça quase impenetrável."
+  },
+  {
+    "id": "leviathan",
+    "name": "Leviatã",
+    "rarity": "LEGENDARY",
+    "power": 16800,
+    "set_id": "legendary_leviathan",
+    "image_key": "leviathan",
+    "description": "Uma monstruosidade dos oceanos profundos capaz de afundar embarcações com um único movimento."
+  },
+  {
+    "id": "blood_moon_wolf",
+    "name": "Lobo da Lua de Sangue",
+    "rarity": "LEGENDARY",
+    "power": 18000,
+    "set_id": "legendary_blood_moon_wolf",
+    "image_key": "blood_moon_wolf",
+    "description": "Um predador sobrenatural que desperta quando a lua assume a cor do sangue."
+  },
+  {
+    "id": "ancient_demon",
+    "name": "Demônio Ancião",
+    "rarity": "LEGENDARY",
+    "power": 19200,
+    "set_id": "legendary_ancient_demon",
+    "image_key": "ancient_demon",
+    "description": "Uma entidade demoníaca selada durante eras e libertada novamente sobre o mundo."
+  },
+  {
+    "id": "infernal_colossus",
+    "name": "Colosso Infernal",
+    "rarity": "LEGENDARY",
+    "power": 20400,
+    "set_id": "legendary_infernal_colossus",
+    "image_key": "infernal_colossus",
+    "description": "Um gigante de rocha e magma alimentado por um núcleo vulcânico incandescente."
+  },
+  {
+    "id": "obsidian_basilisk",
+    "name": "Basilisco de Obsidiana",
+    "rarity": "LEGENDARY",
+    "power": 21600,
+    "set_id": "legendary_obsidian_basilisk",
+    "image_key": "obsidian_basilisk",
+    "description": "Um enorme réptil de escamas negras cujo olhar petrifica aqueles que ousam enfrentá-lo."
+  },
+  {
+    "id": "abyssal_kraken",
+    "name": "Kraken Abissal",
+    "rarity": "LEGENDARY",
+    "power": 22800,
+    "set_id": "legendary_abyssal_kraken",
+    "image_key": "abyssal_kraken",
+    "description": "Uma criatura tentacular que emerge das regiões mais profundas e desconhecidas do oceano."
+  },
+  {
+    "id": "crimson_chimera",
+    "name": "Quimera Carmesim",
+    "rarity": "LEGENDARY",
+    "power": 24000,
+    "set_id": "legendary_crimson_chimera",
+    "image_key": "crimson_chimera",
+    "description": "Uma aberração formada por múltiplas feras e alimentada por uma chama carmesim."
+  },
+  {
+    "id": "ash_cerberus",
+    "name": "Cérbero das Cinzas",
+    "rarity": "LEGENDARY",
+    "power": 25200,
+    "set_id": "legendary_ash_cerberus",
+    "image_key": "ash_cerberus",
+    "description": "Um guardião de três cabeças que caminha entre brasas e ruínas de antigos reinos."
+  },
+  {
+    "id": "crystal_golem",
+    "name": "Golem de Cristal",
+    "rarity": "LEGENDARY",
+    "power": 26400,
+    "set_id": "legendary_crystal_golem",
+    "image_key": "crystal_golem",
+    "description": "Uma construção colossal animada por um coração formado inteiramente por cristais mágicos."
+  },
+  {
+    "id": "onyx_spider_queen",
+    "name": "Rainha Aracnídea de Ônix",
+    "rarity": "LEGENDARY",
+    "power": 27600,
+    "set_id": "legendary_onyx_spider_queen",
+    "image_key": "onyx_spider_queen",
+    "description": "A soberana de uma colônia subterrânea cujas teias negras aprisionam até guerreiros experientes."
+  },
+  {
+    "id": "eternal_labyrinth_minotaur",
+    "name": "Minotauro do Labirinto Eterno",
+    "rarity": "LEGENDARY",
+    "power": 28800,
+    "set_id": "legendary_eternal_labyrinth_minotaur",
+    "image_key": "eternal_labyrinth_minotaur",
+    "description": "O guardião de um labirinto ancestral do qual poucos aventureiros conseguiram retornar."
+  },
+  {
+    "id": "jade_dragon",
+    "name": "Dragão de Jade",
+    "rarity": "LEGENDARY",
+    "power": 30000,
+    "set_id": "legendary_jade_dragon",
+    "image_key": "jade_dragon",
+    "description": "Um dragão oriental ancestral envolto por energia espiritual e escamas semelhantes a jade."
+  },
+  {
+    "id": "phoenix",
+    "name": "Fênix",
+    "rarity": "MYTHIC",
+    "power": 35000,
+    "set_id": "mythic_phoenix",
+    "image_key": "phoenix",
+    "description": "Uma ave imortal que renasce repetidamente das próprias chamas."
+  },
+  {
+    "id": "ancient_titan",
+    "name": "Titã Primordial",
+    "rarity": "MYTHIC",
+    "power": 63571,
+    "set_id": "mythic_ancient_titan",
+    "image_key": "ancient_titan",
+    "description": "Um titã ancestral despertado após séculos adormecido nas profundezas do mundo."
+  },
+  {
+    "id": "world_serpent",
+    "name": "Serpente-Mundo",
+    "rarity": "MYTHIC",
+    "power": 43571,
+    "set_id": "mythic_world_serpent",
+    "image_key": "world_serpent",
+    "description": "Uma serpente gigantesca que atravessa continentes e oceanos como se o mundo fosse seu território."
+  },
+  {
+    "id": "celestial_hydra",
+    "name": "Hidra Celestial",
+    "rarity": "MYTHIC",
+    "power": 40714,
+    "set_id": "mythic_celestial_hydra",
+    "image_key": "celestial_hydra",
+    "description": "Uma hidra de múltiplas cabeças envolvida pela energia das estrelas."
+  },
+  {
+    "id": "abyss_king",
+    "name": "Rei Abissal",
+    "rarity": "MYTHIC",
+    "power": 46429,
+    "set_id": "mythic_abyss_king",
+    "image_key": "abyss_king",
+    "description": "Um soberano caído que conquistou enorme poder nas regiões congeladas do Abismo."
+  },
+  {
+    "id": "void_colossus",
+    "name": "Colosso do Vazio",
+    "rarity": "MYTHIC",
+    "power": 52143,
+    "set_id": "mythic_void_colossus",
+    "image_key": "void_colossus",
+    "description": "Uma criatura colossal cuja matéria foi parcialmente consumida pelo próprio vazio."
+  },
+  {
+    "id": "eternal_lich",
+    "name": "Lich Eterno",
+    "rarity": "MYTHIC",
+    "power": 37857,
+    "set_id": "mythic_eternal_lich",
+    "image_key": "eternal_lich",
+    "description": "Um arquimago morto-vivo que derrotou a própria mortalidade por meios proibidos."
+  },
+  {
+    "id": "chaos_dragon",
+    "name": "Dragão do Caos",
+    "rarity": "MYTHIC",
+    "power": 69286,
+    "set_id": "mythic_chaos_dragon",
+    "image_key": "chaos_dragon",
+    "description": "Um dragão corrompido por energia caótica capaz de alterar a realidade ao seu redor."
+  },
+  {
+    "id": "moon_devourer",
+    "name": "Devorador da Lua",
+    "rarity": "MYTHIC",
+    "power": 49286,
+    "set_id": "mythic_moon_devourer",
+    "image_key": "moon_devourer",
+    "description": "Uma besta colossal associada ao desaparecimento de antigas luas e civilizações."
+  },
+  {
+    "id": "chronal_dragon",
+    "name": "Dragão Cronal",
+    "rarity": "MYTHIC",
+    "power": 72143,
+    "set_id": "mythic_chronal_dragon",
+    "image_key": "chronal_dragon",
+    "description": "Um dragão capaz de distorcer o fluxo do tempo durante o combate."
+  },
+  {
+    "id": "spectral_emperor",
+    "name": "Imperador Espectral",
+    "rarity": "MYTHIC",
+    "power": 55000,
+    "set_id": "mythic_spectral_emperor",
+    "image_key": "spectral_emperor",
+    "description": "O espírito de um antigo imperador que continua comandando suas legiões mesmo após a morte."
+  },
+  {
+    "id": "solar_archon",
+    "name": "Arconte Solar",
+    "rarity": "MYTHIC",
+    "power": 57857,
+    "set_id": "mythic_solar_archon",
+    "image_key": "solar_archon",
+    "description": "Uma entidade guerreira envolvida por energia semelhante à superfície de uma estrela."
+  },
+  {
+    "id": "end_herald",
+    "name": "Arauto do Fim",
+    "rarity": "MYTHIC",
+    "power": 60714,
+    "set_id": "mythic_end_herald",
+    "image_key": "end_herald",
+    "description": "Uma entidade misteriosa cuja aparição nas antigas histórias antecedia a queda de grandes impérios."
+  },
+  {
+    "id": "infinity_guardian",
+    "name": "Guardião do Infinito",
+    "rarity": "MYTHIC",
+    "power": 75000,
+    "set_id": "mythic_infinity_guardian",
+    "image_key": "infinity_guardian",
+    "description": "Um guardião dimensional responsável por impedir que mundos diferentes colidam entre si."
+  },
+  {
+    "id": "aurora_colossus",
+    "name": "Colosso da Aurora",
+    "rarity": "MYTHIC",
+    "power": 66429,
+    "set_id": "mythic_aurora_colossus",
+    "image_key": "aurora_colossus",
+    "description": "Um gigante envolto por luzes celestiais cujo despertar ilumina todo o horizonte."
+  },
+  {
+    "id": "bahamut",
+    "name": "Bahamut, o Dragão Primordial",
+    "rarity": "SACRED",
+    "power": 90000,
+    "set_id": "sacred_bahamut",
+    "image_key": "bahamut",
+    "description": "O Dragão Primordial, uma criatura sagrada cuja existência remonta às primeiras eras do mundo."
+  },
+  {
+    "id": "azathor",
+    "name": "Azathor, o Deus do Vazio",
+    "rarity": "SACRED",
+    "power": 115000,
+    "set_id": "sacred_azathor",
+    "image_key": "azathor",
+    "description": "Uma divindade do vazio cuja presença ameaça as próprias leis da realidade."
+  },
+  {
+    "id": "beyond_stars",
+    "name": "A Entidade Além das Estrelas",
+    "rarity": "SACRED",
+    "power": 140000,
+    "set_id": "sacred_beyond_stars",
+    "image_key": "beyond_stars",
+    "description": "Um ser universal de corpo semelhante ao espaço sideral que atravessa sistemas consumindo mundos."
+  }
+]

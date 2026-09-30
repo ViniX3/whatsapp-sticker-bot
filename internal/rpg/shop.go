@@ -18,7 +18,7 @@ const (
 	// Épicos acima deste valor continuam existindo no
 	// catálogo e podem ser obtidos por progressão RPG,
 	// como Forja e PvE.
-	ShopEpicMaxPower = 620
+	ShopEpicMaxPower = 1000
 
 	ShopWornMultiplier   = 3
 	ShopCommonMultiplier = 5

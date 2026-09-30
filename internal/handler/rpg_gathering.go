@@ -16,11 +16,13 @@ import (
 // handleRPGGathering processa:
 //
 //	!coletar
+//
+// Os formatos antigos com região continuam aceitos por
+// compatibilidade, porém todos executam a mesma varredura:
+//
 //	!coletar floresta
 //	!coletar pedreira
 //	!coletar mina
-//
-// Sem região informada, uma região é escolhida aleatoriamente.
 func handleRPGGathering(
 	client *whatsmeow.Client,
 	msgEvent *events.Message,
@@ -35,15 +37,12 @@ func handleRPGGathering(
 		return
 	}
 
-	var region rpg.GatheringRegion
-
 	if len(parts) == 2 {
-		parsedRegion, ok :=
+		if _, ok :=
 			parseNaturalRPGRegion(
 				parts[1],
-			)
+			); !ok {
 
-		if !ok {
 			sendRPGGatheringUsage(
 				client,
 				msgEvent,
@@ -51,8 +50,6 @@ func handleRPGGathering(
 
 			return
 		}
-
-		region = parsedRegion
 	}
 
 	catalog,
@@ -79,17 +76,6 @@ func handleRPGGathering(
 			msgEvent,
 		)
 
-	// ======================================================
-	// MIGRAÇÃO RPG
-	// ======================================================
-	//
-	// Jogadores antigos que já possuem carteira Gold,
-	// mas ainda não possuem RPG, recebem somente o
-	// Set do Recruta.
-	//
-	// Nenhum Gold inicial é concedido por !coletar.
-	// ======================================================
-
 	_, err =
 		rpg.ClaimStarterSet(
 			groupJID,
@@ -99,13 +85,11 @@ func handleRPGGathering(
 
 	switch {
 	case err == nil:
-		// Starter criado agora.
 
 	case errors.Is(
 		err,
 		rpg.ErrStarterAlreadyClaimed,
 	):
-		// RPG já inicializado.
 
 	case errors.Is(
 		err,
@@ -131,15 +115,10 @@ func handleRPGGathering(
 		return
 	}
 
-	// ======================================================
-	// COLETA
-	// ======================================================
-
 	result, err :=
-		rpg.Gather(
+		rpg.GatherAllRegions(
 			groupJID,
 			jid,
-			region,
 			materialCatalog,
 		)
 
@@ -155,24 +134,12 @@ func handleRPGGathering(
 				client,
 				msgEvent.Info.Chat,
 				fmt.Sprintf(
-					"⏳ %s *%s ainda está em cooldown.*\n\n"+
-						"Tente explorar esta região novamente em *%s*.\n\n"+
-						"💡 As outras regiões continuam disponíveis.",
-					cooldownErr.Region.Icon(),
-					cooldownErr.Region.Name(),
+					"⏳ *SUA ROTA DE COLETA AINDA ESTÁ EM DESCANSO*\n\n"+
+						"Nova varredura disponível em *%s*.",
 					formatGatheringDuration(
 						cooldownErr.Remaining,
 					),
 				),
-			)
-
-		case errors.Is(
-			err,
-			rpg.ErrInvalidGatheringRegion,
-		):
-			sendRPGGatheringUsage(
-				client,
-				msgEvent,
 			)
 
 		case errors.Is(
@@ -182,14 +149,14 @@ func handleRPGGathering(
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
-				"❌ Nenhum recurso pôde ser encontrado nesta região.",
+				"❌ Nenhum recurso pôde ser encontrado durante a varredura.",
 			)
 
 		default:
 			sendRPGInternalError(
 				client,
 				msgEvent,
-				"realizando coleta",
+				"realizando varredura de coleta",
 				err,
 			)
 		}
@@ -197,34 +164,67 @@ func handleRPGGathering(
 		return
 	}
 
-	// ======================================================
-	// RESPOSTA
-	// ======================================================
-
 	var builder strings.Builder
+
+	builder.WriteString(
+		"🌿 *VARREDURA DE RECURSOS CONCLUÍDA*\n",
+	)
+
+	for _, region := range result.Regions {
+
+		fmt.Fprintf(
+			&builder,
+			"\n%s *%s*\n",
+			region.Region.Icon(),
+			region.Region.Name(),
+		)
+
+		for _, drop := range region.Drops {
+
+			fmt.Fprintf(
+				&builder,
+				"%s %s ×%d\n",
+				rpgGatheringRarityIcon(
+					drop.Material.Rarity,
+				),
+				drop.Material.Name,
+				drop.Quantity,
+			)
+		}
+
+		if region.BonusRoll {
+			builder.WriteString(
+				"🍀 Exploração extra nesta região!\n",
+			)
+		}
+	}
 
 	fmt.Fprintf(
 		&builder,
-		"%s *%s*\n",
-		result.Region.Icon(),
-		result.Region.Name(),
+		"\n📦 Total: *%d recursos* • 🎲 %d rolagens",
+		result.TotalItems,
+		result.Rolls,
 	)
 
-	for _, drop := range result.Drops {
+	if result.EpicItems > 0 {
 		fmt.Fprintf(
 			&builder,
-			"%s %s ×%d\n",
-			rpgGatheringRarityIcon(
-				drop.Material.Rarity,
-			),
-			drop.Material.Name,
-			drop.Quantity,
+			"\n🟣 Épicos coletados: *%d*",
+			result.EpicItems,
+		)
+	}
+
+	if result.LegendaryItems > 0 {
+		fmt.Fprintf(
+			&builder,
+			"\n🔴 Lendários coletados: *%d*",
+			result.LegendaryItems,
 		)
 	}
 
 	fmt.Fprintf(
 		&builder,
-		"\n⏳ %s",
+		"\n\n⏳ Nova varredura em *%s*.",
 		formatGatheringDuration(
 			rpg.GatheringCooldown,
 		),
@@ -253,15 +253,14 @@ func sendRPGGatheringUsage(
 		client,
 		msgEvent.Info.Chat,
 		"🌿 *COLETA DE RECURSOS*\n\n"+
-			"Use:\n"+
-			"*!coletar*\n"+
-			"*!coletar floresta*\n"+
-			"*!coletar pedreira*\n"+
-			"*!coletar mina*\n\n"+
-			"🌱 Aliases:\n"+
-			"*!coleta • !recolher*\n\n"+
-			"🗺️ Regiões também aceitam:\n"+
-			"*mata • bosque • rocha • mineração*",
+			"Use *!coletar* para fazer uma varredura completa em:\n"+
+			"🌲 Floresta\n"+
+			"🪨 Pedreira\n"+
+			"⛏️ Mina\n\n"+
+			"⏳ Cooldown: *30 segundos*.\n\n"+
+			"🌱 Aliases: *!coleta • !recolher*\n\n"+
+			"💡 Os antigos comandos por região continuam aceitos, "+
+			"mas agora também executam a varredura completa.",
 	)
 }
 

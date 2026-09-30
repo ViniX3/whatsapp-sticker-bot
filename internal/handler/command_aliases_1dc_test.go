@@ -19,12 +19,6 @@ func TestPhase1DCCommandAliases(
 			"!lutar": "!pve",
 
 			"!combater": "!pve",
-
-			"!coletar": "!coletar",
-
-			"!coleta": "!coletar",
-
-			"!recolher": "!coletar",
 		}
 
 	for input, want := range tests {

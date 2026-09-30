@@ -14,3 +14,4 @@ services:
       - ./temp:/app/temp
       - ./groups.json:/app/groups.json:ro
       - ./storage:/app/storage
+      - ./assets:/app/assets:ro

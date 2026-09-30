@@ -83,6 +83,20 @@ func handleRPGDungeons(
 			groupJID,
 			jid,
 			catalog,
+			false,
+		)
+
+		return
+
+	case dungeonActionChaosList:
+
+		renderRPGDungeonList(
+			client,
+			msgEvent,
+			groupJID,
+			jid,
+			catalog,
+			true,
 		)
 
 		return
@@ -99,6 +113,16 @@ func handleRPGDungeons(
 			sendRPGDungeonUsage(
 				client,
 				msgEvent,
+			)
+
+			return
+		}
+
+		if dungeon.Locked {
+			sendRPGChaosDungeonLocked(
+				client,
+				msgEvent,
+				dungeon,
 			)
 
 			return
@@ -142,6 +166,7 @@ func renderRPGDungeonList(
 	groupJID string,
 	jid string,
 	catalog *rpg.Catalog,
+	chaosOnly bool,
 ) {
 	summary, err :=
 		rpg.GetEquipmentSummary(
@@ -161,45 +186,95 @@ func renderRPGDungeonList(
 		return
 	}
 
-	bonus :=
-		rpg.DungeonSuccessBonus(
-			summary,
-		)
-
 	var builder strings.Builder
+	var dungeons []rpg.Dungeon
 
-	fmt.Fprintf(
-		&builder,
-		"🏰 *DUNGEONS* • ⚡ %s PC\n\n",
-		formatRPGNumber(
-			summary.CombatPower,
-		),
-	)
-
-	for _, dungeon := range rpg.Dungeons() {
-
-		chance :=
-			rpg.DungeonSuccessChance(
-				summary.CombatPower,
-				dungeon.RecommendedPower,
-				bonus,
-			)
+	if chaosOnly {
+		dungeons =
+			rpg.ChaosDungeons()
 
 		fmt.Fprintf(
 			&builder,
-			"%s *%s* • ⚡%s • 🎯%d%%\n",
-			dungeon.Emoji,
-			dungeon.ID,
+			"🌑 *DUNGEONS DO CAOS*\n"+
+				"━━━━━━━━━━━━━━━━━━\n"+
+				"⚡ Seu Poder: *%s PC*\n\n",
 			formatRPGNumber(
-				dungeon.RecommendedPower,
+				summary.CombatPower,
 			),
-			chance,
+		)
+	} else {
+		dungeons =
+			rpg.NormalDungeons()
+
+		fmt.Fprintf(
+			&builder,
+			"🏰 *DUNGEONS*\n"+
+				"━━━━━━━━━━━━━━━━━━\n"+
+				"⚡ Seu Poder: *%s PC*\n\n",
+			formatRPGNumber(
+				summary.CombatPower,
+			),
 		)
 	}
 
+	for index, dungeon := range dungeons {
+
+		if dungeon.Locked {
+			fmt.Fprintf(
+				&builder,
+				"%s *%s*\n"+
+					"⚡ Recomendado: %s PC\n"+
+					"🔒 *SELADA*\n",
+				dungeon.Emoji,
+				strings.ToUpper(
+					dungeon.Name,
+				),
+				formatRPGNumber(
+					dungeon.RecommendedPower,
+				),
+			)
+		} else {
+			fmt.Fprintf(
+				&builder,
+				"%s *%s*\n"+
+					"⚡ Recomendado: %s PC\n"+
+					"🎁 Lendário: %d%%\n",
+				dungeon.Emoji,
+				strings.ToUpper(
+					dungeon.Name,
+				),
+				formatRPGNumber(
+					dungeon.RecommendedPower,
+				),
+				dungeon.EquipmentDropChance,
+			)
+		}
+
+		if index <
+			len(dungeons)-1 {
+
+			builder.WriteString(
+				"\n",
+			)
+		}
+	}
+
 	builder.WriteString(
-		"\n⚔️ *!dungeons <id> entrar*",
+		"\n\n━━━━━━━━━━━━━━━━━━\n",
 	)
+
+	if chaosOnly {
+		builder.WriteString(
+			"☄️ *O caminho permanece selado.*\n" +
+				"Algo além deste mundo aguarda o Presságio...",
+		)
+	} else {
+		builder.WriteString(
+			"⚔️ Para desafiar:\n" +
+				"*!dungeons <id> entrar*\n\n" +
+				"🌑 *!dungeons caos*",
+		)
+	}
 
 	_ = whatsapp.SendText(
 		client,
@@ -234,57 +309,45 @@ func renderRPGDungeonDetails(
 		return
 	}
 
-	bonus :=
-		rpg.DungeonSuccessBonus(
-			summary,
-		)
-
-	chance :=
-		rpg.DungeonSuccessChance(
-			summary.CombatPower,
-			dungeon.RecommendedPower,
-			bonus,
-		)
-
-	response :=
-		fmt.Sprintf(
-			"%s *%s*\n"+
-				"⚡ %s/%s PC • 🎯%d%%\n"+
-				"💰 %s–%s • 💎 %d–%d\n"+
-				"⏳ 1 min\n\n"+
-				"⚔️ *!dungeons %s entrar*",
-			dungeon.Emoji,
-			dungeon.Name,
-
-			formatRPGNumber(
-				summary.CombatPower,
-			),
-
-			formatRPGNumber(
-				dungeon.RecommendedPower,
-			),
-
-			chance,
-
-			formatRPGNumber(
-				dungeon.GoldMin,
-			),
-
-			formatRPGNumber(
-				dungeon.GoldMax,
-			),
-
-			dungeon.CrystalMin,
-			dungeon.CrystalMax,
-
-			dungeon.ID,
-		)
-
 	_ = whatsapp.SendText(
 		client,
 		msgEvent.Info.Chat,
-		response,
+		fmt.Sprintf(
+			"%s *%s*\n"+
+				"━━━━━━━━━━━━━━━━━━\n"+
+				"⚡ Seu Poder: %s PC\n"+
+				"⚔️ Recomendado: %s PC\n\n"+
+				"💰 Gold: %s – %s\n"+
+				"💎 Cristais: %d – %d\n"+
+				"🟠 Lendário: %d%%\n"+
+				"⏳ Recuperação: 1 min\n\n"+
+				"📜 _%s_\n\n"+
+				"━━━━━━━━━━━━━━━━━━\n"+
+				"⚔️ *!dungeons %s entrar*",
+			dungeon.Emoji,
+			strings.ToUpper(
+				dungeon.Name,
+			),
+			formatRPGNumber(
+				summary.CombatPower,
+			),
+			formatRPGNumber(
+				dungeon.RecommendedPower,
+			),
+			formatRPGNumber(
+				dungeon.GoldMin,
+			),
+			formatRPGNumber(
+				dungeon.GoldMax,
+			),
+			dungeon.CrystalMin,
+			dungeon.CrystalMax,
+			dungeon.EquipmentDropChance,
+			dungeon.Description,
+			dungeon.ID,
+		),
 	)
+
 }
 
 func handleRPGDungeonAttempt(
@@ -325,6 +388,23 @@ func handleRPGDungeonAttempt(
 						cooldownErr.Remaining,
 					),
 				),
+			)
+
+		case errors.Is(
+			err,
+			rpg.ErrDungeonLocked,
+		):
+
+			dungeon,
+				_ :=
+				rpg.DungeonByID(
+					dungeonID,
+				)
+
+			sendRPGChaosDungeonLocked(
+				client,
+				msgEvent,
+				dungeon,
 			)
 
 		case errors.Is(
@@ -382,10 +462,41 @@ func handleRPGDungeonAttempt(
 			)
 	}
 
+	autoEquipText := ""
+	equipmentText := ""
+
+	if result.EquipmentDrop != nil {
+		equipmentText =
+			fmt.Sprintf(
+				"\n🎁 %s *%s*",
+				rpgRarityIcon(
+					result.EquipmentDrop.Rarity,
+				),
+				result.EquipmentDrop.Name,
+			)
+
+		autoEquip,
+			autoEquipErr :=
+			rpg.AutoEquipIfBetter(
+				groupJID,
+				jid,
+				result.EquipmentDrop.ID,
+				catalog,
+			)
+
+		if autoEquipErr == nil &&
+			autoEquip != nil &&
+			autoEquip.Equipped {
+
+			autoEquipText =
+				"\n⚡ *Autoequipado*"
+		}
+	}
+
 	response :=
 		fmt.Sprintf(
 			"✅ *DUNGEON CONCLUÍDA* • %s\n"+
-				"💰 +%s • 💎 +%s%s\n"+
+				"💰 +%s • 💎 +%s%s%s%s\n"+
 				"⏳ 1 min",
 			result.Dungeon.Name,
 
@@ -398,6 +509,8 @@ func handleRPGDungeonAttempt(
 			),
 
 			lootText,
+			equipmentText,
+			autoEquipText,
 		)
 
 	response +=
@@ -427,7 +540,8 @@ func sendRPGDungeonUsage(
 		msgEvent.Info.Chat,
 		"🏰 *DUNGEONS*\n\n"+
 			"📜 Listar:\n"+
-			"*!dungeons*\n\n"+
+			"*!dungeons*\n"+
+			"*!dungeons caos*\n\n"+
 			"🔎 Ver detalhes:\n"+
 			"*!dungeons <dungeon>*\n\n"+
 			"⚔️ Entrar:\n"+
@@ -439,6 +553,27 @@ func sendRPGDungeonUsage(
 			"• *cripta*\n"+
 			"• *fortaleza*\n\n"+
 			"✨ Acentos, maiúsculas e ordem flexível são aceitos.",
+	)
+}
+
+func sendRPGChaosDungeonLocked(
+	client *whatsmeow.Client,
+	msgEvent *events.Message,
+	dungeon rpg.Dungeon,
+) {
+	_ = whatsapp.SendText(
+		client,
+		msgEvent.Info.Chat,
+		fmt.Sprintf(
+			"🔒 %s *%s*\n"+
+				"⚡ %s PC recomendado\n"+
+				"☄️ Esta Dungeon permanece selada até a próxima fase do *Presságio do Caos*.",
+			dungeon.Emoji,
+			dungeon.Name,
+			formatRPGNumber(
+				dungeon.RecommendedPower,
+			),
+		),
 	)
 }
 

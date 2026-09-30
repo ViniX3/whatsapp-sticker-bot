@@ -56,12 +56,6 @@ var commandAliases = map[string]string{
 	"!cacar":    "!pve",
 	"!lutar":    "!pve",
 	"!combater": "!pve",
-
-	// Coleta
-	"!coletar":  "!coletar",
-	"!coleta":   "!coletar",
-	"!recolher": "!coletar",
-
 	// Equipamentos
 	"!equip":   "!equipar",
 	"!equipar": "!equipar",

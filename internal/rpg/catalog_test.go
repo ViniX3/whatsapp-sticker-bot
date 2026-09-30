@@ -291,9 +291,9 @@ func TestFinalEquipmentCatalog(
 
 			RarityEpic: 50,
 
-			RarityLegendary: 38,
+			RarityLegendary: 62,
 
-			RarityMythic: 28,
+			RarityMythic: 46,
 
 			RaritySacred: 9,
 		}
@@ -321,9 +321,9 @@ func TestFinalEquipmentCatalog(
 		total += len(items)
 	}
 
-	if total != 395 {
+	if total != 437 {
 		t.Fatalf(
-			"esperados 395 equipamentos, encontrados %d",
+			"esperados 437 equipamentos, encontrados %d",
 			total,
 		)
 	}
@@ -359,9 +359,9 @@ func TestLegendaryDistribution(
 		}
 	}
 
-	if bossDrops != 26 {
+	if bossDrops != 50 {
 		t.Fatalf(
-			"esperados 26 Lendários de Boss, encontrados %d",
+			"esperados 50 Lendários de Boss, encontrados %d",
 			bossDrops,
 		)
 	}
@@ -389,9 +389,9 @@ func TestMythicDistribution(
 			RarityMythic,
 		)
 
-	if len(items) != 28 {
+	if len(items) != 46 {
 		t.Fatalf(
-			"esperados 28 itens Míticos, encontrados %d",
+			"esperados 46 itens Míticos, encontrados %d",
 			len(items),
 		)
 	}
@@ -434,7 +434,7 @@ func TestHighTierSets(
 		counts[set.Rarity]++
 	}
 
-	if counts[RarityLegendary] != 12 {
+	if counts[RarityLegendary] != 20 {
 
 		t.Fatalf(
 			"esperados 12 sets Lendários, encontrados %d",
@@ -442,7 +442,7 @@ func TestHighTierSets(
 		)
 	}
 
-	if counts[RarityMythic] != 9 {
+	if counts[RarityMythic] != 15 {
 
 		t.Fatalf(
 			"esperados 9 sets Míticos, encontrados %d",

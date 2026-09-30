@@ -9,17 +9,17 @@ import (
 )
 
 const (
-	EnemyCommonMinPower = 550
-	EnemyCommonMaxPower = 750
+	EnemyCommonMinPower = 300
+	EnemyCommonMaxPower = 1200
 
-	EnemyRareMinPower = 1050
-	EnemyRareMaxPower = 1450
+	EnemyRareMinPower = 1400
+	EnemyRareMaxPower = 3000
 
-	EnemyEpicMinPower = 1900
-	EnemyEpicMaxPower = 2500
+	EnemyEpicMinPower = 3200
+	EnemyEpicMaxPower = 5500
 
-	EnemyBossMinPower = 2900
-	EnemyBossMaxPower = 3400
+	EnemyBossMinPower = 6000
+	EnemyBossMaxPower = 7000
 )
 
 type BossBlessing struct {

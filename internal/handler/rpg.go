@@ -71,7 +71,6 @@ func handleRPGCommand(
 		"!equipamentos",
 		"!equipar",
 		"!desequipar",
-		"!coletar",
 		"!forja",
 		"!forjar",
 		"!loja",
@@ -79,6 +78,10 @@ func handleRPGCommand(
 		"!pve",
 		"!dungeons",
 		"!cristais":
+
+	case "!boss",
+		"!raid",
+		"!raide":
 
 	default:
 		return false
@@ -125,14 +128,6 @@ func handleRPGCommand(
 			msgEvent,
 			parts,
 		)
-
-	case "!coletar":
-		handleRPGGathering(
-			client,
-			msgEvent,
-			parts,
-		)
-
 	case "!forja":
 		handleRPGForge(
 			client,
@@ -180,6 +175,16 @@ func handleRPGCommand(
 			client,
 			msgEvent,
 			parts,
+		)
+
+	case "!boss",
+		"!raid",
+		"!raide":
+
+		handleRPGRaid(
+			client,
+			msgEvent,
+			text,
 		)
 
 	}

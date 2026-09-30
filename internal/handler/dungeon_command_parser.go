@@ -8,49 +8,32 @@ type dungeonCommandIntent struct {
 }
 
 const (
-	dungeonActionList  = "list"
-	dungeonActionInfo  = "info"
-	dungeonActionEnter = "enter"
+	dungeonActionList      = "list"
+	dungeonActionChaosList = "chaos-list"
+	dungeonActionInfo      = "info"
+	dungeonActionEnter     = "enter"
 
-	dungeonRuins    = "ruinas"
-	dungeonCrypt    = "cripta"
-	dungeonFortress = "fortaleza"
+	dungeonRuins         = "ruinas"
+	dungeonCrypt         = "cripta"
+	dungeonFortress      = "fortaleza"
+	dungeonTemple        = "templo"
+	dungeonLabyrinth     = "labirinto"
+	dungeonThrone        = "trono"
+	dungeonChaosRift     = "fenda-caos"
+	dungeonVoidCathedral = "catedral-vazio"
+	dungeonEndHeart      = "coracao-fim"
 )
 
-// parseDungeonCommand interpreta formas naturais do comando.
-//
-// Exemplos aceitos:
-//
-//	!dungeons
-//	!dungeon
-//	!masmorra
-//
-//	!dungeons ruinas
-//	!dungeons ruínas
-//	!dungeons fortaleza
-//
-//	!dungeons ruinas entrar
-//	!dungeons entrar ruinas
-//	!dungeons ruínas entrar
-//
-//	!entrar ruinas
-//	!entrar fortaleza
-//	!entrar cripta
 func parseDungeonCommand(
 	text string,
 ) (
 	dungeonCommandIntent,
 	bool,
 ) {
-
-	parts :=
-		strings.Fields(
-			text,
-		)
+	parts := strings.Fields(text)
 
 	if len(parts) == 0 {
-		return dungeonCommandIntent{},
-			false
+		return dungeonCommandIntent{}, false
 	}
 
 	command :=
@@ -58,19 +41,12 @@ func parseDungeonCommand(
 			parts[0],
 		)
 
-	// !entrar é uma forma curta específica.
-	if normalizeCommandToken(
-		parts[0],
-	) == "!entrar" {
-
-		return parseShortDungeonEnter(
-			parts,
-		)
+	if normalizeCommandToken(parts[0]) == "!entrar" {
+		return parseShortDungeonEnter(parts)
 	}
 
 	if command != "!dungeons" {
-		return dungeonCommandIntent{},
-			false
+		return dungeonCommandIntent{}, false
 	}
 
 	if len(parts) == 1 {
@@ -81,16 +57,22 @@ func parseDungeonCommand(
 	}
 
 	var (
-		dungeon string
-		action  string
+		dungeon        string
+		action         string
+		chaosRequested bool
 	)
 
 	for _, raw := range parts[1:] {
-
 		token :=
 			normalizeCommandToken(
 				raw,
 			)
+
+		if token == "caos" ||
+			token == "chaos" {
+			chaosRequested = true
+			continue
+		}
 
 		if parsedDungeon,
 			ok :=
@@ -98,18 +80,12 @@ func parseDungeonCommand(
 				token,
 			); ok {
 
-			// Duas dungeons diferentes na mesma mensagem:
-			// entrada ambígua.
 			if dungeon != "" &&
 				dungeon != parsedDungeon {
-
-				return dungeonCommandIntent{},
-					false
+				return dungeonCommandIntent{}, false
 			}
 
-			dungeon =
-				parsedDungeon
-
+			dungeon = parsedDungeon
 			continue
 		}
 
@@ -121,35 +97,30 @@ func parseDungeonCommand(
 
 			if action != "" &&
 				action != parsedAction {
-
-				return dungeonCommandIntent{},
-					false
+				return dungeonCommandIntent{}, false
 			}
 
-			action =
-				parsedAction
-
+			action = parsedAction
 			continue
 		}
 
-		// Palavra desconhecida.
-		return dungeonCommandIntent{},
-			false
+		return dungeonCommandIntent{}, false
 	}
 
 	if dungeon == "" {
-		return dungeonCommandIntent{},
-			false
+		if chaosRequested &&
+			action == "" {
+			return dungeonCommandIntent{
+					Action: dungeonActionChaosList,
+				},
+				true
+		}
+
+		return dungeonCommandIntent{}, false
 	}
 
-	// Somente o nome da dungeon:
-	//
-	// !dungeons fortaleza
-	//
-	// mantém comportamento de consulta/detalhes.
 	if action == "" {
-		action =
-			dungeonActionInfo
+		action = dungeonActionInfo
 	}
 
 	return dungeonCommandIntent{
@@ -165,10 +136,8 @@ func parseShortDungeonEnter(
 	dungeonCommandIntent,
 	bool,
 ) {
-
 	if len(parts) != 2 {
-		return dungeonCommandIntent{},
-			false
+		return dungeonCommandIntent{}, false
 	}
 
 	dungeon,
@@ -180,8 +149,7 @@ func parseShortDungeonEnter(
 		)
 
 	if !ok {
-		return dungeonCommandIntent{},
-			false
+		return dungeonCommandIntent{}, false
 	}
 
 	return dungeonCommandIntent{
@@ -197,38 +165,28 @@ func parseDungeonName(
 	string,
 	bool,
 ) {
-
-	switch normalizeCommandToken(
-		value,
-	) {
-
-	case "ruina",
-		"ruinas",
-		"ruin",
-		"ruins":
-
-		return dungeonRuins,
-			true
-
-	case "cripta",
-		"criptas",
-		"crypt",
-		"crypts":
-
-		return dungeonCrypt,
-			true
-
-	case "fortaleza",
-		"fortalezas",
-		"fort",
-		"fortress":
-
-		return dungeonFortress,
-			true
+	switch normalizeCommandToken(value) {
+	case "ruina", "ruinas", "ruin", "ruins":
+		return dungeonRuins, true
+	case "cripta", "criptas", "crypt", "crypts":
+		return dungeonCrypt, true
+	case "fortaleza", "fortalezas", "fort", "fortress":
+		return dungeonFortress, true
+	case "templo", "abismo", "templo-abismo":
+		return dungeonTemple, true
+	case "labirinto", "labirintos", "rei-caido":
+		return dungeonLabyrinth, true
+	case "trono", "antigos", "trono-antigos":
+		return dungeonThrone, true
+	case "fenda", "fenda-caos":
+		return dungeonChaosRift, true
+	case "catedral", "vazio", "catedral-vazio":
+		return dungeonVoidCathedral, true
+	case "coracao", "fim", "coracao-fim":
+		return dungeonEndHeart, true
 	}
 
-	return "",
-		false
+	return "", false
 }
 
 func parseDungeonAction(
@@ -237,29 +195,12 @@ func parseDungeonAction(
 	string,
 	bool,
 ) {
-
-	switch normalizeCommandToken(
-		value,
-	) {
-
-	case "entrar",
-		"entrada",
-		"acessar",
-		"iniciar",
-		"comecar":
-
-		return dungeonActionEnter,
-			true
-
-	case "info",
-		"detalhes",
-		"detalhe",
-		"ver":
-
-		return dungeonActionInfo,
-			true
+	switch normalizeCommandToken(value) {
+	case "entrar", "entrada", "acessar", "iniciar", "comecar":
+		return dungeonActionEnter, true
+	case "info", "detalhes", "detalhe", "ver":
+		return dungeonActionInfo, true
 	}
 
-	return "",
-		false
+	return "", false
 }

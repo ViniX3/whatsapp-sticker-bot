@@ -20,6 +20,10 @@ var (
 	ErrDungeonLootUnavailable = errors.New(
 		"nenhum loot disponível para a dungeon",
 	)
+
+	ErrDungeonLocked = errors.New(
+		"dungeon selada",
+	)
 )
 
 type DungeonCooldownError struct {
@@ -47,6 +51,12 @@ type Dungeon struct {
 	MinLootRarity Rarity
 	MaxLootRarity Rarity
 
+	EquipmentDropChance int
+	EquipmentPrefixes   []string
+
+	Chaos  bool
+	Locked bool
+
 	Cooldown time.Duration
 }
 
@@ -68,74 +78,152 @@ type DungeonAttemptResult struct {
 
 	Loot         *Material
 	LootQuantity int
+
+	EquipmentDrop *Item
 }
 
 var dungeonCatalog = []Dungeon{
 	{
-		ID: "ruinas",
-
-		Name: "Ruínas Abandonadas",
-
-		Emoji: "🏚️",
-
-		Description: "Antigas ruínas tomadas por criaturas e saqueadores.",
-
-		RecommendedPower: 250,
-
-		GoldMin: 100000,
-		GoldMax: 150000,
-
-		CrystalMin: 10,
-		CrystalMax: 20,
-
-		MinLootRarity: RarityCommon,
-		MaxLootRarity: RarityRare,
-
+		ID:                  "ruinas",
+		Name:                "Ruínas Abandonadas",
+		Emoji:               "🏚️",
+		Description:         "O primeiro desafio após o fim da progressão PvE.",
+		RecommendedPower:    8000,
+		GoldMin:             800000,
+		GoldMax:             1200000,
+		CrystalMin:          100,
+		CrystalMax:          200,
+		MinLootRarity:       RarityRare,
+		MaxLootRarity:       RarityEpic,
+		EquipmentDropChance: 10,
+		EquipmentPrefixes: []string{
+			"legendary_blood_moon_wolf",
+			"legendary_storm_griffin",
+		},
 		Cooldown: time.Minute,
 	},
 	{
-		ID: "cripta",
-
-		Name: "Cripta Sombria",
-
-		Emoji: "⚰️",
-
-		Description: "Uma cripta esquecida onde forças sombrias guardam tesouros antigos.",
-
-		RecommendedPower: 600,
-
-		GoldMin: 300000,
-		GoldMax: 500000,
-
-		CrystalMin: 25,
-		CrystalMax: 50,
-
-		MinLootRarity: RarityRare,
-		MaxLootRarity: RarityEpic,
-
+		ID:                  "cripta",
+		Name:                "Cripta Sombria",
+		Emoji:               "⚰️",
+		Description:         "Uma necrópole profunda onde os primeiros Lendários aguardam.",
+		RecommendedPower:    9500,
+		GoldMin:             1500000,
+		GoldMax:             2200000,
+		CrystalMin:          200,
+		CrystalMax:          350,
+		MinLootRarity:       RarityRare,
+		MaxLootRarity:       RarityEpic,
+		EquipmentDropChance: 12,
+		EquipmentPrefixes: []string{
+			"legendary_leviathan",
+			"legendary_frost_wyrm",
+		},
 		Cooldown: time.Minute,
 	},
 	{
-		ID: "fortaleza",
-
-		Name: "Fortaleza Amaldiçoada",
-
-		Emoji: "🏰",
-
-		Description: "Uma fortaleza dominada por guerreiros e criaturas de grande poder.",
-
-		RecommendedPower: 1200,
-
-		GoldMin: 800000,
-		GoldMax: 1200000,
-
-		CrystalMin: 60,
-		CrystalMax: 100,
-
-		MinLootRarity: RarityEpic,
-		MaxLootRarity: RarityLegendary,
-
+		ID:                  "fortaleza",
+		Name:                "Fortaleza Amaldiçoada",
+		Emoji:               "🏰",
+		Description:         "Uma cidadela em guerra permanente, guardada por seres ancestrais.",
+		RecommendedPower:    11000,
+		GoldMin:             2500000,
+		GoldMax:             3500000,
+		CrystalMin:          350,
+		CrystalMax:          550,
+		MinLootRarity:       RarityEpic,
+		MaxLootRarity:       RarityEpic,
+		EquipmentDropChance: 14,
+		EquipmentPrefixes: []string{
+			"legendary_black_dragon",
+			"legendary_ancient_demon",
+		},
 		Cooldown: time.Minute,
+	},
+	{
+		ID:                  "templo",
+		Name:                "Templo do Abismo",
+		Emoji:               "🕯️",
+		Description:         "Um templo soterrado onde antigas entidades ainda recebem oferendas.",
+		RecommendedPower:    13000,
+		GoldMin:             4000000,
+		GoldMax:             6000000,
+		CrystalMin:          550,
+		CrystalMax:          800,
+		MinLootRarity:       RarityEpic,
+		MaxLootRarity:       RarityEpic,
+		EquipmentDropChance: 17,
+		EquipmentPrefixes: []string{
+			"legendary_behemoth",
+			"legendary_infernal_colossus",
+		},
+		Cooldown: time.Minute,
+	},
+	{
+		ID:                  "labirinto",
+		Name:                "Labirinto do Rei Caído",
+		Emoji:               "👑",
+		Description:         "Corredores sem fim escondem criaturas que destruíram antigos reinos.",
+		RecommendedPower:    15500,
+		GoldMin:             6500000,
+		GoldMax:             9000000,
+		CrystalMin:          800,
+		CrystalMax:          1200,
+		MinLootRarity:       RarityEpic,
+		MaxLootRarity:       RarityLegendary,
+		EquipmentDropChance: 20,
+		EquipmentPrefixes: []string{
+			"legendary_obsidian_basilisk",
+		},
+		Cooldown: time.Minute,
+	},
+	{
+		ID:                  "trono",
+		Name:                "Trono dos Antigos",
+		Emoji:               "🗿",
+		Description:         "O limite das Dungeons do mundo normal e a última prova antes do endgame.",
+		RecommendedPower:    18000,
+		GoldMin:             10000000,
+		GoldMax:             15000000,
+		CrystalMin:          1200,
+		CrystalMax:          1800,
+		MinLootRarity:       RarityEpic,
+		MaxLootRarity:       RarityLegendary,
+		EquipmentDropChance: 25,
+		EquipmentPrefixes: []string{
+			"legendary_abyssal_kraken",
+		},
+		Cooldown: time.Minute,
+	},
+	{
+		ID:               "fenda-caos",
+		Name:             "Fenda do Caos",
+		Emoji:            "🌀",
+		Description:      "Uma ruptura impossível na realidade. Algo observa do outro lado.",
+		RecommendedPower: 100000,
+		Chaos:            true,
+		Locked:           true,
+		Cooldown:         5 * time.Minute,
+	},
+	{
+		ID:               "catedral-vazio",
+		Name:             "Catedral do Vazio",
+		Emoji:            "🌑",
+		Description:      "Uma construção de outro mundo onde as leis naturais deixaram de existir.",
+		RecommendedPower: 175000,
+		Chaos:            true,
+		Locked:           true,
+		Cooldown:         5 * time.Minute,
+	},
+	{
+		ID:               "coracao-fim",
+		Name:             "Coração do Fim",
+		Emoji:            "☠️",
+		Description:      "O lugar onde até os monstros do Caos temem entrar.",
+		RecommendedPower: 300000,
+		Chaos:            true,
+		Locked:           true,
+		Cooldown:         10 * time.Minute,
 	},
 }
 
@@ -154,6 +242,32 @@ func Dungeons() []Dungeon {
 	return result
 }
 
+func NormalDungeons() []Dungeon {
+	result := make([]Dungeon, 0, 6)
+
+	for _, dungeon := range dungeonCatalog {
+		if dungeon.Chaos {
+			continue
+		}
+		result = append(result, dungeon)
+	}
+
+	return result
+}
+
+func ChaosDungeons() []Dungeon {
+	result := make([]Dungeon, 0, 3)
+
+	for _, dungeon := range dungeonCatalog {
+		if !dungeon.Chaos {
+			continue
+		}
+		result = append(result, dungeon)
+	}
+
+	return result
+}
+
 func DungeonByID(
 	value string,
 ) (Dungeon, bool) {
@@ -166,24 +280,24 @@ func DungeonByID(
 		)
 
 	switch value {
-
-	case "1",
-		"ruina",
-		"ruinas",
-		"ruína",
-		"ruínas":
-
+	case "1", "ruina", "ruinas", "ruína", "ruínas":
 		value = "ruinas"
-
-	case "2",
-		"cripta":
-
+	case "2", "cripta":
 		value = "cripta"
-
-	case "3",
-		"fortaleza":
-
+	case "3", "fortaleza":
 		value = "fortaleza"
+	case "4", "templo", "abismo", "templo-abismo":
+		value = "templo"
+	case "5", "labirinto", "rei-caido", "rei-caído":
+		value = "labirinto"
+	case "6", "trono", "antigos", "trono-antigos":
+		value = "trono"
+	case "7", "fenda", "fenda-caos":
+		value = "fenda-caos"
+	case "8", "catedral", "vazio", "catedral-vazio":
+		value = "catedral-vazio"
+	case "9", "coracao", "coração", "fim", "coracao-fim", "coração-fim":
+		value = "coracao-fim"
 	}
 
 	for _, dungeon := range dungeonCatalog {
@@ -310,12 +424,6 @@ func DungeonSuccessChance(
 
 		baseChance = 5
 
-	} else if playerPower >=
-		recommendedPower*3 {
-
-		// Jogador extremamente superior.
-		baseChance = 98
-
 	} else {
 
 		// Reutiliza a curva PvE balanceada,
@@ -349,6 +457,66 @@ func DungeonSuccessChance(
 	return chance
 }
 
+func DungeonSuccessChanceFor(
+	dungeon Dungeon,
+	playerPower int,
+	bonus int,
+) int {
+	if !dungeon.Chaos {
+		return DungeonSuccessChance(
+			playerPower,
+			dungeon.RecommendedPower,
+			bonus,
+		)
+	}
+
+	if playerPower <= 0 ||
+		dungeon.RecommendedPower <= 0 {
+		return 0
+	}
+
+	ratio := playerPower * 100 / dungeon.RecommendedPower
+
+	baseChance := 1
+
+	switch {
+	case ratio < 50:
+		baseChance = 1
+	case ratio < 75:
+		baseChance = 3
+	case ratio < 100:
+		baseChance = 8
+	case ratio < 125:
+		baseChance = 18
+	case ratio < 150:
+		baseChance = 28
+	case ratio < 200:
+		baseChance = 40
+	case ratio < 250:
+		baseChance = 55
+	case ratio < 300:
+		baseChance = 65
+	case ratio < 400:
+		baseChance = 75
+	case ratio < 500:
+		baseChance = 85
+	default:
+		baseChance = 92
+	}
+
+	chance := baseChance + bonus
+
+	if chance < 1 {
+		chance = 1
+	}
+
+	if chance > 95 {
+		chance = 95
+	}
+
+	return chance
+}
+
 func AttemptDungeon(
 	groupJID string,
 	jid string,
@@ -365,6 +533,11 @@ func AttemptDungeon(
 	if !exists {
 		return nil,
 			ErrDungeonNotFound
+	}
+
+	if dungeon.Locked {
+		return nil,
+			ErrDungeonLocked
 	}
 
 	if catalog == nil {
@@ -411,9 +584,9 @@ func AttemptDungeon(
 		)
 
 	chance :=
-		DungeonSuccessChance(
+		DungeonSuccessChanceFor(
+			dungeon,
 			summary.CombatPower,
-			dungeon.RecommendedPower,
 			bonus,
 		)
 
@@ -557,6 +730,16 @@ func AttemptDungeon(
 			return nil, err
 		}
 
+		equipmentDrop, err :=
+			rollDungeonEquipment(
+				dungeon,
+				catalog,
+			)
+
+		if err != nil {
+			return nil, err
+		}
+
 		updateResult, err :=
 			tx.Exec(`
 				UPDATE group_wallets
@@ -691,6 +874,42 @@ func AttemptDungeon(
 				)
 		}
 
+		if equipmentDrop != nil {
+			_, err =
+				tx.Exec(`
+					INSERT INTO rpg_inventory (
+						group_jid,
+						jid,
+						item_id,
+						quantity
+					)
+					VALUES (?, ?, ?, 1)
+
+					ON CONFLICT (
+						group_jid,
+						jid,
+						item_id
+					)
+					DO UPDATE SET
+						quantity =
+							rpg_inventory.quantity + 1,
+						updated_at =
+							CURRENT_TIMESTAMP
+				`,
+					groupJID,
+					jid,
+					equipmentDrop.ID,
+				)
+
+			if err != nil {
+				return nil,
+					fmt.Errorf(
+						"erro adicionando equipamento da dungeon: %w",
+						err,
+					)
+			}
+		}
+
 		result.GoldReward =
 			goldReward
 
@@ -702,6 +921,9 @@ func AttemptDungeon(
 
 		result.LootQuantity =
 			quantity
+
+		result.EquipmentDrop =
+			equipmentDrop
 	}
 
 	winValue := 0
@@ -873,6 +1095,82 @@ func ensureDungeonSchema() error {
 	}
 
 	return nil
+}
+
+func rollDungeonEquipment(
+	dungeon Dungeon,
+	catalog *Catalog,
+) (
+	*Item,
+	error,
+) {
+	if dungeon.EquipmentDropChance <= 0 ||
+		len(dungeon.EquipmentPrefixes) == 0 {
+		return nil, nil
+	}
+
+	wonRoll, err :=
+		dungeonRoll(
+			dungeon.EquipmentDropChance,
+		)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if !wonRoll {
+		return nil, nil
+	}
+
+	pool := make([]Item, 0, 16)
+
+	for _, item := range catalog.ItemsByRarity(
+		RarityLegendary,
+	) {
+
+		if !dungeonEquipmentAllowed(
+			dungeon,
+			item.ID,
+		) {
+			continue
+		}
+
+		pool = append(pool, item)
+	}
+
+	if len(pool) == 0 {
+		return nil, nil
+	}
+
+	index, err :=
+		dungeonRandomInt(
+			len(pool),
+		)
+
+	if err != nil {
+		return nil, err
+	}
+
+	item := pool[index]
+
+	return &item, nil
+}
+
+func dungeonEquipmentAllowed(
+	dungeon Dungeon,
+	itemID string,
+) bool {
+	for _, prefix := range dungeon.EquipmentPrefixes {
+
+		if strings.HasPrefix(
+			itemID,
+			prefix+"_",
+		) {
+			return true
+		}
+	}
+
+	return false
 }
 
 func rollDungeonLoot(

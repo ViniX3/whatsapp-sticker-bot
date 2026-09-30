@@ -26,6 +26,15 @@ func handleRPGPVE(
 	msgEvent *events.Message,
 	parts []string,
 ) {
+
+	if tryHandleRPGPVEBatch(
+		client,
+		msgEvent,
+		parts,
+	) {
+		return
+	}
+
 	if len(parts) > 2 {
 		sendRPGPVEUsage(
 			client,
@@ -195,6 +204,28 @@ func handleRPGPVE(
 			result,
 		)
 
+	if result.EquipmentDrop != nil {
+		autoEquip,
+			autoEquipErr :=
+			rpg.AutoEquipIfBetter(
+				groupJID,
+				jid,
+				result.EquipmentDrop.ID,
+				itemCatalog,
+			)
+
+		if autoEquipErr == nil &&
+			autoEquip != nil &&
+			autoEquip.Equipped {
+
+			response +=
+				fmt.Sprintf(
+					"\n⚡ Autoequip: *%s*",
+					result.EquipmentDrop.Name,
+				)
+		}
+	}
+
 	if result.Won {
 		response +=
 			recordRPGXP(
@@ -211,6 +242,15 @@ func handleRPGPVE(
 		msgEvent.Info.Chat,
 		response,
 	)
+
+	notifyForgeReadyRecipes(
+		client,
+		msgEvent,
+		groupJID,
+		jid,
+		itemCatalog,
+		materialCatalog,
+	)
 }
 
 func renderPVEResult(
@@ -219,22 +259,21 @@ func renderPVEResult(
 	var builder strings.Builder
 
 	rarityIcon,
-		rarityName :=
+		_ :=
 		formatPVERarity(
 			result.Enemy.Rarity,
 		)
 
 	fmt.Fprintf(
 		&builder,
-		"⚔️ %s *%s* [%s]\n",
+		"⚔️ %s *%s*",
 		rarityIcon,
 		result.Enemy.Name,
-		rarityName,
 	)
 
 	if !result.Won {
 		builder.WriteString(
-			"💀 *Derrota*",
+			" • 💀",
 		)
 
 		return builder.String()
@@ -242,44 +281,33 @@ func renderPVEResult(
 
 	if result.Enemy.Boss {
 		builder.WriteString(
-			"👑 *Boss derrotado!*\n",
+			" • 👑",
 		)
 	} else {
 		builder.WriteString(
-			"🏆 *Vitória*\n",
+			" • ✅",
 		)
 	}
 
-	if result.GoldReward > 0 {
+	if result.GoldReward > 0 ||
+		result.CrystalReward > 0 {
+
 		fmt.Fprintf(
 			&builder,
-			"💰 +%s\n",
+			"\n💰 %s • 💎 %s",
 			formatGold(
 				result.GoldReward,
 			),
-		)
-	}
-
-	if result.CrystalReward > 0 {
-		fmt.Fprintf(
-			&builder,
-			"💎 +%s Cristal",
 			formatRPGNumber(
 				result.CrystalReward,
 			),
 		)
-
-		if result.CrystalReward != 1 {
-			builder.WriteString("is")
-		}
-
-		builder.WriteString("\n")
 	}
 
 	if result.MaterialDrop != nil {
 		fmt.Fprintf(
 			&builder,
-			"📦 %s ×%d\n",
+			"\n📦 %s×%d",
 			result.MaterialDrop.Material.Name,
 			result.MaterialDrop.Quantity,
 		)
@@ -288,14 +316,11 @@ func renderPVEResult(
 	if result.EquipmentDrop != nil {
 		fmt.Fprintf(
 			&builder,
-			"🎁 %s *%s* [%s]\n",
-			rpgItemTypeIcon(
-				result.EquipmentDrop.Type,
-			),
-			result.EquipmentDrop.Name,
-			rpgRarityName(
+			"\n🎁 %s %s",
+			rpgRarityIcon(
 				result.EquipmentDrop.Rarity,
 			),
+			result.EquipmentDrop.Name,
 		)
 	}
 
@@ -304,7 +329,7 @@ func renderPVEResult(
 
 		fmt.Fprintf(
 			&builder,
-			"✨ %s",
+			"\n✨ %s",
 			result.Blessing.Name,
 		)
 	}
@@ -400,6 +425,11 @@ func sendRPGPVEUsage(
 			"*!pve floresta*\n"+
 			"*!pve pedreira*\n"+
 			"*!pve mina*\n\n"+
+			"🚀 Expedições em lote:\n"+
+			"*!pve 100*\n"+
+			"*!pve mina 500*\n"+
+			"*!pve floresta 1000*\n"+
+			"Máximo: *1.000* batalhas.\n\n"+
 			"⚔️ Aliases:\n"+
 			"*!caçar • !lutar • !combater*\n\n"+
 			"🗺️ Regiões também aceitam:\n"+

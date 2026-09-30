@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	GatheringCooldown = 2 * time.Minute
+	GatheringCooldown = 30 * time.Second
 
 	GatheringBaseRolls = 3
 
