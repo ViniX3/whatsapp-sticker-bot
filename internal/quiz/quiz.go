@@ -581,27 +581,32 @@ func rewardRange(
 	difficulty Difficulty,
 ) (int, int) {
 
+	// Progressão forte por dificuldade.
+	//
+	// O objetivo é fazer o Quiz competir
+	// economicamente com Bet e Slots,
+	// premiando conhecimento em vez de sorte.
 	switch difficulty {
 	case DifficultySuperEasy:
-		return 500, 900
+		return 2000, 4000
 
 	case DifficultyEasy:
-		return 1000, 1800
+		return 5000, 10000
 
 	case DifficultyMedium:
-		return 2200, 3500
+		return 15000, 30000
 
 	case DifficultyHard:
-		return 4500, 7000
+		return 40000, 80000
 
 	case DifficultySuperHard:
-		return 9000, 15000
+		return 100000, 200000
 
 	case DifficultyInsane:
-		return 25000, 50000
+		return 300000, 600000
 
 	default:
-		return 500, 900
+		return 2000, 4000
 	}
 }
 

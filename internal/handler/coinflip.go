@@ -3,7 +3,6 @@ package handler
 import (
 	"errors"
 	"fmt"
-	"strconv"
 	"strings"
 
 	"whatsapp-sticker-bot/internal/gold"
@@ -45,29 +44,30 @@ func handleCoinflipCommand(
 			client,
 			msgEvent.Info.Chat,
 			fmt.Sprintf(
-				"🪙 *CARA OU COROA*\n\n"+
-					"Uso correto:\n"+
-					"*!caraoucoroa <valor> <cara|coroa>*\n\n"+
-					"Exemplo:\n"+
-					"*!caraoucoroa 1000 cara*\n\n"+
-					"💰 Aposta mínima: *%d Gold*",
-				gold.CoinflipMinBet,
+				"🪙 *CARA OU COROA*\n"+
+					"*!caraoucoroa <valor> <cara|coroa>*\n"+
+					"💰 Mínimo: *%s*",
+				formatGold(
+					gold.CoinflipMinBet,
+				),
 			),
 		)
 
 		return true
 	}
 
-	amount, err :=
-		strconv.Atoi(
+	amount,
+		err :=
+		resolveFlexibleGameGoldAmount(
+			msgEvent,
 			parts[1],
 		)
 
 	if err != nil {
-		_ = whatsapp.SendText(
+		sendFlexibleGameGoldAmountError(
 			client,
-			msgEvent.Info.Chat,
-			"❌ O valor da aposta precisa ser um número inteiro.",
+			msgEvent,
+			err,
 		)
 
 		return true
@@ -78,8 +78,10 @@ func handleCoinflipCommand(
 			client,
 			msgEvent.Info.Chat,
 			fmt.Sprintf(
-				"🪙 A aposta mínima do *!caraoucoroa* é de *%d Gold*.",
-				gold.CoinflipMinBet,
+				"🪙 Aposta mínima: *%s*.",
+				formatGold(
+					gold.CoinflipMinBet,
+				),
 			),
 		)
 
@@ -167,8 +169,10 @@ func handleCoinflipCommand(
 				client,
 				msgEvent.Info.Chat,
 				fmt.Sprintf(
-					"❌ A aposta mínima é de *%d Gold*.",
-					gold.CoinflipMinBet,
+					"❌ Aposta mínima: *%s*.",
+					formatGold(
+						gold.CoinflipMinBet,
+					),
 				),
 			)
 
@@ -225,44 +229,37 @@ func handleCoinflipCommand(
 
 	if result.Won {
 		response = fmt.Sprintf(
-			"@%s\n\n"+
-				"🪙 *CARA OU COROA*\n\n"+
-				"🎯 Você escolheu: *%s*\n"+
-				"💰 Aposta: *%d Gold*\n\n"+
-				"🪙 A moeda foi lançada...\n\n"+
-				"*%s!*\n\n"+
-				"🎉 *VOCÊ VENCEU!*\n\n"+
-				"🏆 Retorno: *%d Gold*\n"+
-				"📈 Lucro: *+%d Gold*\n"+
-				"💰 Saldo: *%d Gold*",
+			"🪙 *@%s* • %s → %s\n"+
+				"🎉 *Venceu*\n"+
+				"💰 +%s\n"+
+				"💰 *%s*",
 			name,
 			choiceText,
-			result.BetAmount,
 			outcomeText,
-			result.Prize,
-			result.NetResult,
-			result.Balance,
+			formatGold(
+				result.NetResult,
+			),
+			formatGold(
+				result.Balance,
+			),
 		)
 	} else {
 		response = fmt.Sprintf(
-			"@%s\n\n"+
-				"🪙 *CARA OU COROA*\n\n"+
-				"🎯 Você escolheu: *%s*\n"+
-				"💰 Aposta: *%d Gold*\n\n"+
-				"🪙 A moeda foi lançada...\n\n"+
-				"*%s!*\n\n"+
-				"💀 *VOCÊ PERDEU!*\n\n"+
-				"📉 Perda: *-%d Gold*\n"+
-				"💰 Saldo: *%d Gold*",
+			"🪙 *@%s* • %s → %s\n"+
+				"💀 *Perdeu*\n"+
+				"💸 -%s\n"+
+				"💰 *%s*",
 			name,
 			choiceText,
-			result.BetAmount,
 			outcomeText,
-			result.BetAmount,
-			result.Balance,
+			formatGold(
+				result.BetAmount,
+			),
+			formatGold(
+				result.Balance,
+			),
 		)
 	}
-
 	err =
 		whatsapp.SendMentionedText(
 			client,

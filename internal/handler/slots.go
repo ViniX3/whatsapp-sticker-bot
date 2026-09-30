@@ -3,7 +3,6 @@ package handler
 import (
 	"errors"
 	"fmt"
-	"strconv"
 	"strings"
 
 	"whatsapp-sticker-bot/internal/gold"
@@ -52,14 +51,18 @@ func handleSlotsCommand(
 		return true
 	}
 
-	amount, err := strconv.Atoi(
-		parts[1],
-	)
+	amount,
+		err :=
+		resolveFlexibleGameGoldAmount(
+			msgEvent,
+			parts[1],
+		)
+
 	if err != nil {
-		_ = whatsapp.SendText(
+		sendFlexibleGameGoldAmountError(
 			client,
-			msgEvent.Info.Chat,
-			"❌ O valor da aposta precisa ser um número inteiro.",
+			msgEvent,
+			err,
 		)
 
 		return true
@@ -162,43 +165,67 @@ func handleSlotsCommand(
 		)
 
 	machine := fmt.Sprintf(
-		"┃ %s ┃ %s ┃ %s ┃",
+		"┃ %s │ %s │ %s ┃\n"+
+			"┃ %s │ %s │ %s ┃\n"+
+			"┃ %s │ %s │ %s ┃",
 		result.Symbols[0],
 		result.Symbols[1],
 		result.Symbols[2],
+		result.Symbols[3],
+		result.Symbols[4],
+		result.Symbols[5],
+		result.Symbols[6],
+		result.Symbols[7],
+		result.Symbols[8],
 	)
 
 	var response string
 
-	switch result.Multiplier {
-	case 0:
+	switch {
+	case result.NetResult < 0:
 		response = fmt.Sprintf(
-			"🎰 *SLOT MACHINE* 🎰\n\n%s\n\n💀 *NÃO FOI DESSA VEZ!*\n\n💰 Aposta: *%d Gold*\n💸 Perda: *-%d Gold*\n💰 Saldo: *%d Gold*",
+			"🎰 *SLOTS*\n\n%s\n\n"+
+				"💀 *Perdeu*\n"+
+				"💸 %s\n"+
+				"💰 *%s*",
 			machine,
-			result.BetAmount,
-			result.BetAmount,
-			result.Balance,
+			formatSignedGold(
+				result.NetResult,
+			),
+			formatGold(
+				result.Balance,
+			),
 		)
 
-	case 1:
+	case result.NetResult == 0:
 		response = fmt.Sprintf(
-			"🎰 *SLOT MACHINE* 🎰\n\n%s\n\n🍒 *RECUPEROU!*\n\n💰 Aposta: *%d Gold*\n↩️ Retorno: *%d Gold*\n💰 Saldo: *%d Gold*",
+			"🎰 *SLOTS*\n\n%s\n\n"+
+				"🍒 *Recuperou*\n"+
+				"↩️ %s\n"+
+				"💰 *%s*",
 			machine,
-			result.BetAmount,
-			result.Prize,
-			result.Balance,
+			formatGold(
+				result.Prize,
+			),
+			formatGold(
+				result.Balance,
+			),
 		)
 
 	default:
 		response = fmt.Sprintf(
-			"🎰 *SLOT MACHINE* 🎰\n\n%s\n\n🔥 *%s!*\n\n💰 Aposta: *%d Gold*\n🏆 Prêmio: *%d Gold*\n📈 Lucro: *+%d Gold*\n✖️ Multiplicador: *%dx*\n💰 Saldo: *%d Gold*",
+			"🎰 *SLOTS*\n\n%s\n\n"+
+				"🔥 *%s*\n"+
+				"🏆 %s\n"+
+				"💰 *%s*",
 			machine,
 			result.Tier,
-			result.BetAmount,
-			result.Prize,
-			result.NetResult,
-			result.Multiplier,
-			result.Balance,
+			formatSignedGold(
+				result.NetResult,
+			),
+			formatGold(
+				result.Balance,
+			),
 		)
 	}
 
@@ -240,6 +267,41 @@ func handleSlotsCommand(
 	)
 
 	return true
+}
+
+func formatSlotsPayout(
+	percent int,
+) string {
+	if percent <= 0 {
+		return "0x"
+	}
+
+	whole :=
+		percent / 100
+
+	decimal :=
+		percent % 100
+
+	if decimal == 0 {
+		return fmt.Sprintf(
+			"%dx",
+			whole,
+		)
+	}
+
+	if decimal%10 == 0 {
+		return fmt.Sprintf(
+			"%d,%dx",
+			whole,
+			decimal/10,
+		)
+	}
+
+	return fmt.Sprintf(
+		"%d,%02dx",
+		whole,
+		decimal,
+	)
 }
 
 func recordSlotsProgress(

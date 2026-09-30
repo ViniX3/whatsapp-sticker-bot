@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "epic_weapon_001",
+    "name": "Espada de Obsidiana do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 500,
+    "attack": 435,
+    "defense": 65,
+    "description": "Espada criado com Obsidiana e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 75000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "obsidian",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 4
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_002",
+    "name": "Machado de Mithril do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 506,
+    "attack": 440,
+    "defense": 66,
+    "description": "Machado criado com Mithril e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 78571,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_mithril",
+        "quantity": 6
+      },
+      {
+        "material_id": "ice_wyvern_claw",
+        "quantity": 4
+      },
+      {
+        "material_id": "hydra_venom",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_003",
+    "name": "Lança de Wyvern Gélido do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 512,
+    "attack": 445,
+    "defense": 67,
+    "description": "Lança criado com Wyvern Gélido e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 82142,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ice_wyvern_claw",
+        "quantity": 5
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 4
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_004",
+    "name": "Adaga de Basilisco do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 518,
+    "attack": 451,
+    "defense": 67,
+    "description": "Adaga criado com Basilisco e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 85714,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 6
+      },
+      {
+        "material_id": "hydra_venom",
+        "quantity": 4
+      },
+      {
+        "material_id": "demon_horn",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_005",
+    "name": "Maça de Hidra do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 524,
+    "attack": 456,
+    "defense": 68,
+    "description": "Maça criado com Hidra e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 89285,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hydra_venom",
+        "quantity": 5
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 4
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_006",
+    "name": "Martelo de Escamas de Dragão do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 530,
+    "attack": 461,
+    "defense": 69,
+    "description": "Martelo criado com Escamas de Dragão e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 92857,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "dragon_scale",
+        "quantity": 6
+      },
+      {
+        "material_id": "demon_horn",
+        "quantity": 4
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_007",
+    "name": "Arco de Chifre Demoníaco do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 536,
+    "attack": 466,
+    "defense": 70,
+    "description": "Arco criado com Chifre Demoníaco e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 96428,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "demon_horn",
+        "quantity": 5
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 4
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_008",
+    "name": "Foice de Núcleo de Golem do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 542,
+    "attack": 472,
+    "defense": 70,
+    "description": "Foice criado com Núcleo de Golem e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 100000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "golem_core",
+        "quantity": 6
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 4
+      },
+      {
+        "material_id": "ice_wyvern_claw",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_009",
+    "name": "Sabre de Obsidiana do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 548,
+    "attack": 477,
+    "defense": 71,
+    "description": "Sabre criado com Obsidiana e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 103571,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "obsidian",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 4
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_010",
+    "name": "Gládio de Mithril do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 555,
+    "attack": 483,
+    "defense": 72,
+    "description": "Gládio criado com Mithril e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 107142,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_mithril",
+        "quantity": 6
+      },
+      {
+        "material_id": "ice_wyvern_claw",
+        "quantity": 4
+      },
+      {
+        "material_id": "hydra_venom",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_011",
+    "name": "Alabarda de Wyvern Gélido do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 561,
+    "attack": 488,
+    "defense": 73,
+    "description": "Alabarda criado com Wyvern Gélido e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 110714,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ice_wyvern_claw",
+        "quantity": 5
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 4
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_012",
+    "name": "Clava de Basilisco do Campeão",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 567,
+    "attack": 493,
+    "defense": 74,
+    "description": "Clava criado com Basilisco e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 114285,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 6
+      },
+      {
+        "material_id": "hydra_venom",
+        "quantity": 4
+      },
+      {
+        "material_id": "demon_horn",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_013",
+    "name": "Espada de Hidra da Tempestade",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 573,
+    "attack": 499,
+    "defense": 74,
+    "description": "Espada criado com Hidra e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 117857,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hydra_venom",
+        "quantity": 5
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 4
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_014",
+    "name": "Machado de Escamas de Dragão da Tempestade",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 579,
+    "attack": 504,
+    "defense": 75,
+    "description": "Machado criado com Escamas de Dragão e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 121428,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "dragon_scale",
+        "quantity": 6
+      },
+      {
+        "material_id": "demon_horn",
+        "quantity": 4
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_015",
+    "name": "Lança de Chifre Demoníaco da Tempestade",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 585,
+    "attack": 509,
+    "defense": 76,
+    "description": "Lança criado com Chifre Demoníaco e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 125000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "demon_horn",
+        "quantity": 5
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 4
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_016",
+    "name": "Adaga de Núcleo de Golem da Tempestade",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 591,
+    "attack": 514,
+    "defense": 77,
+    "description": "Adaga criado com Núcleo de Golem e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 128571,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "golem_core",
+        "quantity": 6
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 4
+      },
+      {
+        "material_id": "ice_wyvern_claw",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_weapon_017",
+    "name": "Maça de Obsidiana da Tempestade",
+    "type": "WEAPON",
+    "rarity": "EPIC",
+    "power": 597,
+    "attack": 519,
+    "defense": 78,
+    "description": "Maça criado com Obsidiana e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 132142,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "obsidian",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 4
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_001",
+    "name": "Escudo de Mithril do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 604,
+    "attack": 72,
+    "defense": 532,
+    "description": "Escudo criado com Mithril e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 135714,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_mithril",
+        "quantity": 5
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 4
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_002",
+    "name": "Broquel de Escamas de Dragão do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 610,
+    "attack": 73,
+    "defense": 537,
+    "description": "Broquel criado com Escamas de Dragão e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 139285,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "dragon_scale",
+        "quantity": 6
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 4
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_003",
+    "name": "Pavês de Núcleo de Golem do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 616,
+    "attack": 74,
+    "defense": 542,
+    "description": "Pavês criado com Núcleo de Golem e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 142857,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "golem_core",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_004",
+    "name": "Égide de Casco de Tartaruga do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 622,
+    "attack": 75,
+    "defense": 547,
+    "description": "Égide criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 146428,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 6
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 4
+      },
+      {
+        "material_id": "sapphire",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_005",
+    "name": "Escudo-Torre de Obsidiana do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 628,
+    "attack": 75,
+    "defense": 553,
+    "description": "Escudo-Torre criado com Obsidiana e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 150000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "obsidian",
+        "quantity": 5
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_006",
+    "name": "Escudo Redondo de Penas de Grifo do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 634,
+    "attack": 76,
+    "defense": 558,
+    "description": "Escudo Redondo criado com Penas de Grifo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 153571,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "griffin_feather",
+        "quantity": 6
+      },
+      {
+        "material_id": "sapphire",
+        "quantity": 4
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_007",
+    "name": "Baluarte de Safira do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 640,
+    "attack": 77,
+    "defense": 563,
+    "description": "Baluarte criado com Safira e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 157142,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "sapphire",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 4
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_008",
+    "name": "Escudo de Guerra de Mithril do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 646,
+    "attack": 78,
+    "defense": 568,
+    "description": "Escudo de Guerra criado com Mithril e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 160714,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_mithril",
+        "quantity": 6
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 4
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_009",
+    "name": "Escudo de Braço de Escamas de Dragão do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 653,
+    "attack": 78,
+    "defense": 575,
+    "description": "Escudo de Braço criado com Escamas de Dragão e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 164285,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "dragon_scale",
+        "quantity": 5
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 4
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_010",
+    "name": "Escudo Reforçado de Núcleo de Golem do Campeão",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 659,
+    "attack": 79,
+    "defense": 580,
+    "description": "Escudo Reforçado criado com Núcleo de Golem e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 167857,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "golem_core",
+        "quantity": 6
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_011",
+    "name": "Escudo de Casco de Tartaruga da Tempestade",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 665,
+    "attack": 80,
+    "defense": 585,
+    "description": "Escudo criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 171428,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 5
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 4
+      },
+      {
+        "material_id": "sapphire",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_012",
+    "name": "Broquel de Obsidiana da Tempestade",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 671,
+    "attack": 81,
+    "defense": 590,
+    "description": "Broquel criado com Obsidiana e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 175000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "obsidian",
+        "quantity": 6
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_013",
+    "name": "Pavês de Penas de Grifo da Tempestade",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 677,
+    "attack": 81,
+    "defense": 596,
+    "description": "Pavês criado com Penas de Grifo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 178571,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "griffin_feather",
+        "quantity": 5
+      },
+      {
+        "material_id": "sapphire",
+        "quantity": 4
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_014",
+    "name": "Égide de Safira da Tempestade",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 683,
+    "attack": 82,
+    "defense": 601,
+    "description": "Égide criado com Safira e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 182142,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "sapphire",
+        "quantity": 6
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 4
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_015",
+    "name": "Escudo-Torre de Mithril da Tempestade",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 689,
+    "attack": 83,
+    "defense": 606,
+    "description": "Escudo-Torre criado com Mithril e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 185714,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_mithril",
+        "quantity": 5
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 4
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_016",
+    "name": "Escudo Redondo de Escamas de Dragão da Tempestade",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 695,
+    "attack": 83,
+    "defense": 612,
+    "description": "Escudo Redondo criado com Escamas de Dragão e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 189285,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "dragon_scale",
+        "quantity": 6
+      },
+      {
+        "material_id": "golem_core",
+        "quantity": 4
+      },
+      {
+        "material_id": "obsidian",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_shield_017",
+    "name": "Baluarte de Núcleo de Golem da Tempestade",
+    "type": "SHIELD",
+    "rarity": "EPIC",
+    "power": 702,
+    "attack": 84,
+    "defense": 618,
+    "description": "Baluarte criado com Núcleo de Golem e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 192857,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "golem_core",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_001",
+    "name": "Armadura de Fibra Arcana do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 708,
+    "attack": 156,
+    "defense": 552,
+    "description": "Armadura criado com Fibra Arcana e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 196428,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "arcane_fiber",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 4
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_002",
+    "name": "Couraça de Mithril do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 714,
+    "attack": 157,
+    "defense": 557,
+    "description": "Couraça criado com Mithril e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 200000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_mithril",
+        "quantity": 6
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 4
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_003",
+    "name": "Cota de Escamas de Dragão do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 720,
+    "attack": 158,
+    "defense": 562,
+    "description": "Cota criado com Escamas de Dragão e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 203571,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "dragon_scale",
+        "quantity": 5
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ruby",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_004",
+    "name": "Brunea de Penas de Grifo do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 726,
+    "attack": 160,
+    "defense": 566,
+    "description": "Brunea criado com Penas de Grifo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 207142,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "griffin_feather",
+        "quantity": 6
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 4
+      },
+      {
+        "material_id": "emerald",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_005",
+    "name": "Peitoral de Basilisco do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 732,
+    "attack": 161,
+    "defense": 571,
+    "description": "Peitoral criado com Basilisco e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 210714,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 5
+      },
+      {
+        "material_id": "ruby",
+        "quantity": 4
+      },
+      {
+        "material_id": "arcane_fiber",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_006",
+    "name": "Armadura Laminar de Rubi do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 738,
+    "attack": 162,
+    "defense": 576,
+    "description": "Armadura Laminar produzido com Rubi e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 214285,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ruby",
+        "quantity": 6
+      },
+      {
+        "material_id": "emerald",
+        "quantity": 4
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_007",
+    "name": "Armadura de Placas de Esmeralda do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 744,
+    "attack": 164,
+    "defense": 580,
+    "description": "Armadura de Placas criado com Esmeralda e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 217857,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "emerald",
+        "quantity": 5
+      },
+      {
+        "material_id": "arcane_fiber",
+        "quantity": 4
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_008",
+    "name": "Gibão de Guerra de Fibra Arcana do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 751,
+    "attack": 165,
+    "defense": 586,
+    "description": "Gibão de Guerra criado com Fibra Arcana e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 221428,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "arcane_fiber",
+        "quantity": 6
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 4
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_009",
+    "name": "Vestes de Batalha de Mithril do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 757,
+    "attack": 167,
+    "defense": 590,
+    "description": "Vestes de Batalha criado com Mithril e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 225000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_mithril",
+        "quantity": 5
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 4
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_010",
+    "name": "Armadura Reforçada de Escamas de Dragão do Campeão",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 763,
+    "attack": 168,
+    "defense": 595,
+    "description": "Armadura Reforçada criado com Escamas de Dragão e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 228571,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "dragon_scale",
+        "quantity": 6
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ruby",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_011",
+    "name": "Armadura de Penas de Grifo da Tempestade",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 769,
+    "attack": 169,
+    "defense": 600,
+    "description": "Armadura criado com Penas de Grifo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 232142,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "griffin_feather",
+        "quantity": 5
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 4
+      },
+      {
+        "material_id": "emerald",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_012",
+    "name": "Couraça de Basilisco da Tempestade",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 775,
+    "attack": 170,
+    "defense": 605,
+    "description": "Couraça criado com Basilisco e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 235714,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 6
+      },
+      {
+        "material_id": "ruby",
+        "quantity": 4
+      },
+      {
+        "material_id": "arcane_fiber",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_013",
+    "name": "Cota de Rubi da Tempestade",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 781,
+    "attack": 172,
+    "defense": 609,
+    "description": "Cota produzido com Rubi e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 239285,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ruby",
+        "quantity": 5
+      },
+      {
+        "material_id": "emerald",
+        "quantity": 4
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_014",
+    "name": "Brunea de Esmeralda da Tempestade",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 787,
+    "attack": 173,
+    "defense": 614,
+    "description": "Brunea criado com Esmeralda e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 242857,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "emerald",
+        "quantity": 6
+      },
+      {
+        "material_id": "arcane_fiber",
+        "quantity": 4
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_015",
+    "name": "Peitoral de Fibra Arcana da Tempestade",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 793,
+    "attack": 174,
+    "defense": 619,
+    "description": "Peitoral criado com Fibra Arcana e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 246428,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "arcane_fiber",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_mithril",
+        "quantity": 4
+      },
+      {
+        "material_id": "griffin_feather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "epic_armor_016",
+    "name": "Armadura Laminar de Mithril da Tempestade",
+    "type": "ARMOR",
+    "rarity": "EPIC",
+    "power": 800,
+    "attack": 176,
+    "defense": 624,
+    "description": "Armadura Laminar criado com Mithril e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 250000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_mithril",
+        "quantity": 6
+      },
+      {
+        "material_id": "dragon_scale",
+        "quantity": 4
+      },
+      {
+        "material_id": "basilisk_eye",
+        "quantity": 2
+      }
+    ]
+  }
+]

@@ -1,0 +1,2242 @@
+[
+  {
+    "id": "rare_weapon_001",
+    "name": "Espada de Aço do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 260,
+    "attack": 226,
+    "defense": 34,
+    "description": "Espada criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 15000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_002",
+    "name": "Machado de Prata do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 262,
+    "attack": 228,
+    "defense": 34,
+    "description": "Machado criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 15569,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 3
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_003",
+    "name": "Lança de Ouro do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 265,
+    "attack": 231,
+    "defense": 34,
+    "description": "Lança criado com Ouro e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 16139,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_gold",
+        "quantity": 4
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_004",
+    "name": "Adaga de Presa de Lobo do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 267,
+    "attack": 232,
+    "defense": 35,
+    "description": "Adaga criado com Presa de Lobo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 16708,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wolf_fang",
+        "quantity": 5
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_005",
+    "name": "Maça de Presa de Javali do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 270,
+    "attack": 235,
+    "defense": 35,
+    "description": "Maça criado com Presa de Javali e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 17278,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "boar_tusk",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_006",
+    "name": "Martelo de Quartzo do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 272,
+    "attack": 237,
+    "defense": 35,
+    "description": "Martelo produzido com Quartzo e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 17848,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_007",
+    "name": "Arco de Aço do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 275,
+    "attack": 239,
+    "defense": 36,
+    "description": "Arco criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 18417,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_008",
+    "name": "Foice de Prata do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 277,
+    "attack": 241,
+    "defense": 36,
+    "description": "Foice criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 18987,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 3
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_009",
+    "name": "Sabre de Ouro do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 280,
+    "attack": 244,
+    "defense": 36,
+    "description": "Sabre criado com Ouro e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 19556,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_gold",
+        "quantity": 4
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_010",
+    "name": "Gládio de Presa de Lobo do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 282,
+    "attack": 245,
+    "defense": 37,
+    "description": "Gládio criado com Presa de Lobo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 20126,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wolf_fang",
+        "quantity": 5
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_011",
+    "name": "Alabarda de Presa de Javali do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 285,
+    "attack": 248,
+    "defense": 37,
+    "description": "Alabarda criado com Presa de Javali e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 20696,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "boar_tusk",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_012",
+    "name": "Clava de Quartzo do Veterano",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 287,
+    "attack": 250,
+    "defense": 37,
+    "description": "Clava produzido com Quartzo e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 21265,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_013",
+    "name": "Espada de Aço do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 290,
+    "attack": 252,
+    "defense": 38,
+    "description": "Espada criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 21835,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_014",
+    "name": "Machado de Prata do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 292,
+    "attack": 254,
+    "defense": 38,
+    "description": "Machado criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 22405,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 3
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_015",
+    "name": "Lança de Ouro do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 295,
+    "attack": 257,
+    "defense": 38,
+    "description": "Lança criado com Ouro e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 22974,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_gold",
+        "quantity": 4
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_016",
+    "name": "Adaga de Presa de Lobo do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 297,
+    "attack": 258,
+    "defense": 39,
+    "description": "Adaga criado com Presa de Lobo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 23544,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wolf_fang",
+        "quantity": 5
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_017",
+    "name": "Maça de Presa de Javali do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 300,
+    "attack": 261,
+    "defense": 39,
+    "description": "Maça criado com Presa de Javali e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 24113,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "boar_tusk",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_018",
+    "name": "Martelo de Quartzo do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 303,
+    "attack": 264,
+    "defense": 39,
+    "description": "Martelo produzido com Quartzo e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 24683,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_019",
+    "name": "Arco de Aço do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 305,
+    "attack": 265,
+    "defense": 40,
+    "description": "Arco criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 25253,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_020",
+    "name": "Foice de Prata do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 308,
+    "attack": 268,
+    "defense": 40,
+    "description": "Foice criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 25822,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 3
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_021",
+    "name": "Sabre de Ouro do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 310,
+    "attack": 270,
+    "defense": 40,
+    "description": "Sabre criado com Ouro e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 26392,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_gold",
+        "quantity": 4
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_022",
+    "name": "Gládio de Presa de Lobo do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 313,
+    "attack": 272,
+    "defense": 41,
+    "description": "Gládio criado com Presa de Lobo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 26962,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wolf_fang",
+        "quantity": 5
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_023",
+    "name": "Alabarda de Presa de Javali do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 315,
+    "attack": 274,
+    "defense": 41,
+    "description": "Alabarda criado com Presa de Javali e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 27531,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "boar_tusk",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_024",
+    "name": "Clava de Quartzo do Guardião",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 318,
+    "attack": 277,
+    "defense": 41,
+    "description": "Clava produzido com Quartzo e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 28101,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_025",
+    "name": "Espada de Aço da Montanha",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 320,
+    "attack": 278,
+    "defense": 42,
+    "description": "Espada criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 28670,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_026",
+    "name": "Machado de Prata da Montanha",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 323,
+    "attack": 281,
+    "defense": 42,
+    "description": "Machado criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 29240,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "ore_gold",
+        "quantity": 3
+      },
+      {
+        "material_id": "boar_tusk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_weapon_027",
+    "name": "Lança de Ouro da Montanha",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "power": 325,
+    "attack": 283,
+    "defense": 42,
+    "description": "Lança criado com Ouro e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 29810,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ore_gold",
+        "quantity": 4
+      },
+      {
+        "material_id": "wolf_fang",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_001",
+    "name": "Escudo de Carvalho do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 328,
+    "attack": 39,
+    "defense": 289,
+    "description": "Escudo produzido com Carvalho e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 30379,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_oak",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_002",
+    "name": "Broquel de Aço do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 330,
+    "attack": 40,
+    "defense": 290,
+    "description": "Broquel criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 30949,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_003",
+    "name": "Pavês de Casco de Tartaruga do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 333,
+    "attack": 40,
+    "defense": 293,
+    "description": "Pavês criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 31518,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_004",
+    "name": "Égide de Couro Endurecido do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 335,
+    "attack": 40,
+    "defense": 295,
+    "description": "Égide produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 32088,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 5
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_oak",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_005",
+    "name": "Escudo-Torre de Prata do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 338,
+    "attack": 41,
+    "defense": 297,
+    "description": "Escudo-Torre produzido com Prata e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 32658,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_006",
+    "name": "Escudo Redondo de Quartzo do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 341,
+    "attack": 41,
+    "defense": 300,
+    "description": "Escudo Redondo criado com Quartzo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 33227,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "wood_oak",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_007",
+    "name": "Baluarte de Carvalho do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 343,
+    "attack": 41,
+    "defense": 302,
+    "description": "Baluarte produzido com Carvalho e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 33797,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_oak",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_008",
+    "name": "Escudo de Guerra de Aço do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 346,
+    "attack": 42,
+    "defense": 304,
+    "description": "Escudo de Guerra criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 34367,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_009",
+    "name": "Escudo de Braço de Casco de Tartaruga do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 348,
+    "attack": 42,
+    "defense": 306,
+    "description": "Escudo de Braço criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 34936,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_010",
+    "name": "Escudo Reforçado de Couro Endurecido do Veterano",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 351,
+    "attack": 42,
+    "defense": 309,
+    "description": "Escudo Reforçado produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 35506,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 5
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_oak",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_011",
+    "name": "Escudo de Prata do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 353,
+    "attack": 42,
+    "defense": 311,
+    "description": "Escudo produzido com Prata e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 36075,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_012",
+    "name": "Broquel de Quartzo do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 356,
+    "attack": 43,
+    "defense": 313,
+    "description": "Broquel criado com Quartzo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 36645,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "wood_oak",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_013",
+    "name": "Pavês de Carvalho do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 358,
+    "attack": 43,
+    "defense": 315,
+    "description": "Pavês produzido com Carvalho e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 37215,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_oak",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_014",
+    "name": "Égide de Aço do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 361,
+    "attack": 43,
+    "defense": 318,
+    "description": "Égide criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 37784,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_015",
+    "name": "Escudo-Torre de Casco de Tartaruga do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 363,
+    "attack": 44,
+    "defense": 319,
+    "description": "Escudo-Torre criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 38354,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_016",
+    "name": "Escudo Redondo de Couro Endurecido do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 366,
+    "attack": 44,
+    "defense": 322,
+    "description": "Escudo Redondo produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 38924,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 5
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_oak",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_017",
+    "name": "Baluarte de Prata do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 368,
+    "attack": 44,
+    "defense": 324,
+    "description": "Baluarte produzido com Prata e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 39493,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_018",
+    "name": "Escudo de Guerra de Quartzo do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 371,
+    "attack": 45,
+    "defense": 326,
+    "description": "Escudo de Guerra criado com Quartzo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 40063,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "wood_oak",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_019",
+    "name": "Escudo de Braço de Carvalho do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 373,
+    "attack": 45,
+    "defense": 328,
+    "description": "Escudo de Braço produzido com Carvalho e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 40632,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_oak",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_020",
+    "name": "Escudo Reforçado de Aço do Guardião",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 376,
+    "attack": 45,
+    "defense": 331,
+    "description": "Escudo Reforçado criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 41202,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_021",
+    "name": "Escudo de Casco de Tartaruga da Montanha",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 378,
+    "attack": 45,
+    "defense": 333,
+    "description": "Escudo criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 41772,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_022",
+    "name": "Broquel de Couro Endurecido da Montanha",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 381,
+    "attack": 46,
+    "defense": 335,
+    "description": "Broquel produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 42341,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 5
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_oak",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_023",
+    "name": "Pavês de Prata da Montanha",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 384,
+    "attack": 46,
+    "defense": 338,
+    "description": "Pavês produzido com Prata e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 42911,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_024",
+    "name": "Égide de Quartzo da Montanha",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 386,
+    "attack": 46,
+    "defense": 340,
+    "description": "Égide criado com Quartzo e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 43481,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "wood_oak",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_025",
+    "name": "Escudo-Torre de Carvalho da Montanha",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 389,
+    "attack": 47,
+    "defense": 342,
+    "description": "Escudo-Torre produzido com Carvalho e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 44050,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_oak",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_026",
+    "name": "Escudo Redondo de Aço da Montanha",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 391,
+    "attack": 47,
+    "defense": 344,
+    "description": "Escudo Redondo criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 44620,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_shield_027",
+    "name": "Baluarte de Casco de Tartaruga da Montanha",
+    "type": "SHIELD",
+    "rarity": "RARE",
+    "power": 394,
+    "attack": 47,
+    "defense": 347,
+    "description": "Baluarte criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 45189,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_001",
+    "name": "Armadura de Couro Endurecido do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 396,
+    "attack": 87,
+    "defense": 309,
+    "description": "Armadura produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 45759,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_002",
+    "name": "Couraça de Aço do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 399,
+    "attack": 88,
+    "defense": 311,
+    "description": "Couraça criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 46329,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "silk",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_003",
+    "name": "Cota de Seda do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 401,
+    "attack": 88,
+    "defense": 313,
+    "description": "Cota produzido com Seda e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 46898,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "silk",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_004",
+    "name": "Brunea de Prata do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 404,
+    "attack": 89,
+    "defense": 315,
+    "description": "Brunea criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 47468,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_005",
+    "name": "Peitoral de Casco de Tartaruga do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 406,
+    "attack": 89,
+    "defense": 317,
+    "description": "Peitoral criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 48037,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_006",
+    "name": "Armadura Laminar de Quartzo do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 409,
+    "attack": 90,
+    "defense": 319,
+    "description": "Armadura Laminar produzido com Quartzo e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 48607,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "silk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_007",
+    "name": "Armadura de Placas de Couro Endurecido do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 411,
+    "attack": 90,
+    "defense": 321,
+    "description": "Armadura de Placas produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 49177,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_008",
+    "name": "Gibão de Guerra de Aço do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 414,
+    "attack": 91,
+    "defense": 323,
+    "description": "Gibão de Guerra criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 49746,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "silk",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_009",
+    "name": "Vestes de Batalha de Seda do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 416,
+    "attack": 92,
+    "defense": 324,
+    "description": "Vestes de Batalha produzido com Seda e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 50316,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "silk",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_010",
+    "name": "Armadura Reforçada de Prata do Veterano",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 419,
+    "attack": 92,
+    "defense": 327,
+    "description": "Armadura Reforçada criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 50886,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_011",
+    "name": "Armadura de Casco de Tartaruga do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 422,
+    "attack": 93,
+    "defense": 329,
+    "description": "Armadura criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 51455,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_012",
+    "name": "Couraça de Quartzo do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 424,
+    "attack": 93,
+    "defense": 331,
+    "description": "Couraça produzido com Quartzo e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 52025,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "silk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_013",
+    "name": "Cota de Couro Endurecido do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 427,
+    "attack": 94,
+    "defense": 333,
+    "description": "Cota produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 52594,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_014",
+    "name": "Brunea de Aço do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 429,
+    "attack": 94,
+    "defense": 335,
+    "description": "Brunea criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 53164,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "silk",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_015",
+    "name": "Peitoral de Seda do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 432,
+    "attack": 95,
+    "defense": 337,
+    "description": "Peitoral produzido com Seda e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 53734,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "silk",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_016",
+    "name": "Armadura Laminar de Prata do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 434,
+    "attack": 95,
+    "defense": 339,
+    "description": "Armadura Laminar criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 54303,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_017",
+    "name": "Armadura de Placas de Casco de Tartaruga do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 437,
+    "attack": 96,
+    "defense": 341,
+    "description": "Armadura de Placas criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 54873,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_018",
+    "name": "Gibão de Guerra de Quartzo do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 439,
+    "attack": 97,
+    "defense": 342,
+    "description": "Gibão de Guerra produzido com Quartzo e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 55443,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "silk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_019",
+    "name": "Vestes de Batalha de Couro Endurecido do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 442,
+    "attack": 97,
+    "defense": 345,
+    "description": "Vestes de Batalha produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 56012,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_020",
+    "name": "Armadura Reforçada de Aço do Guardião",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 444,
+    "attack": 98,
+    "defense": 346,
+    "description": "Armadura Reforçada criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 56582,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "silk",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_021",
+    "name": "Armadura de Seda da Montanha",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 447,
+    "attack": 98,
+    "defense": 349,
+    "description": "Armadura produzido com Seda e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 57151,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "silk",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 3
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_022",
+    "name": "Couraça de Prata da Montanha",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 449,
+    "attack": 99,
+    "defense": 350,
+    "description": "Couraça criado com Prata e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 57721,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_silver",
+        "quantity": 5
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 3
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_023",
+    "name": "Cota de Casco de Tartaruga da Montanha",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 452,
+    "attack": 99,
+    "defense": 353,
+    "description": "Cota criado com Casco de Tartaruga e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 58291,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 4
+      },
+      {
+        "material_id": "quartz",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_024",
+    "name": "Brunea de Quartzo da Montanha",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 454,
+    "attack": 100,
+    "defense": 354,
+    "description": "Brunea produzido com Quartzo e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 58860,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "quartz",
+        "quantity": 5
+      },
+      {
+        "material_id": "hardened_leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "silk",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_025",
+    "name": "Peitoral de Couro Endurecido da Montanha",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 457,
+    "attack": 101,
+    "defense": 356,
+    "description": "Peitoral produzido com Couro Endurecido e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 59430,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "hardened_leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_steel",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_silver",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": "rare_armor_026",
+    "name": "Armadura Laminar de Aço da Montanha",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "power": 460,
+    "attack": 101,
+    "defense": 359,
+    "description": "Armadura Laminar criado com Aço e troféus obtidos de criaturas perigosas.",
+    "origin": "Forja de Troféus",
+    "value": 60000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_steel",
+        "quantity": 5
+      },
+      {
+        "material_id": "silk",
+        "quantity": 3
+      },
+      {
+        "material_id": "giant_turtle_shell",
+        "quantity": 2
+      }
+    ]
+  }
+]

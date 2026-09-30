@@ -101,34 +101,23 @@ func handleLotteryStatus(
 	}
 
 	response := fmt.Sprintf(
-		"🎟️ *LOTERIA DO GRUPO*\n\n"+
-			"🔢 Rodada: *#%d*\n"+
-			"🏆 Jackpot atual: *%d Gold*\n\n"+
-			"🎫 Bilhetes vendidos: *%d/%d*\n"+
-			"🎫 Bilhetes restantes: *%d*\n\n"+
-			"👤 Seus bilhetes: *%d*\n"+
-			"🍀 Sua chance atual: *%.0f%%*\n\n"+
-			"💰 Preço por bilhete: *%d Gold*\n"+
-			"🎟️ Limite por jogador: *%d bilhetes*\n"+
-			"🛒 Você ainda pode comprar: *%d*\n\n"+
-			"🔥 *%d%%* das vendas vão para o Jackpot.\n"+
-			"🔥 *%d%%* são removidos da economia.\n\n"+
-			"Para comprar:\n"+
-			"*!loteria <quantidade>*\n\n"+
-			"Exemplo:\n"+
-			"*!loteria 5*",
+		"🎟️ *LOTERIA #%d*\n"+
+			"🏆 %s\n"+
+			"🎫 %d/%d bilhetes\n"+
+			"👤 Você: %d • %.0f%%\n"+
+			"💰 %s cada\n\n"+
+			"Use: *!loteria <qtd>*",
 		status.Round.RoundNumber,
-		status.Round.Jackpot,
+		formatGold(
+			status.Round.Jackpot,
+		),
 		status.Round.TicketsSold,
 		lottery.MaxTickets,
-		status.RemainingTickets,
 		status.UserTickets,
 		status.ChancePercent,
-		lottery.TicketPrice,
-		lottery.MaxTicketsPerPlayer,
-		status.UserCanBuy,
-		lottery.JackpotPercent,
-		100-lottery.JackpotPercent,
+		formatGold(
+			lottery.TicketPrice,
+		),
 	)
 
 	_ = whatsapp.SendText(
@@ -246,25 +235,23 @@ func handleLotteryPurchase(
 
 	response := fmt.Sprintf(
 		"@%s\n\n"+
-			"🎟️ *BILHETES COMPRADOS!*\n\n"+
-			"🎫 Bilhetes recebidos: *%s*\n"+
-			"🎫 Quantidade: *%d*\n"+
-			"💰 Custo: *%d Gold*\n\n"+
-			"👤 Seus bilhetes nesta rodada: *%d*\n"+
-			"🍀 Sua chance atual: *%.0f%%*\n\n"+
-			"🏆 Jackpot: *%d Gold*\n"+
-			"🎟️ Rodada: *%d/%d*\n"+
-			"💰 Seu saldo: *%d Gold*",
+			"🎟️ *%d bilhete(s) comprado(s)*\n"+
+			"🎫 %s\n"+
+			"💸 %s\n"+
+			"🏆 Jackpot: *%s*\n"+
+			"💰 Saldo: *%s*",
 		name,
-		ticketText,
 		result.Quantity,
-		result.Cost,
-		result.UserTickets,
-		result.ChancePercent,
-		result.Jackpot,
-		result.TicketsSold,
-		lottery.MaxTickets,
-		result.Balance,
+		ticketText,
+		formatGold(
+			result.Cost,
+		),
+		formatGold(
+			result.Jackpot,
+		),
+		formatGold(
+			result.Balance,
+		),
 	)
 
 	mentions :=
@@ -527,6 +514,14 @@ func renderLotteryDraw(
 		result.NextRoundNumber,
 		lottery.MaxTickets,
 	)
+
+	if result.ChaosBonus > 0 {
+		text +=
+			formatChaosGoldBonus(
+				result.ChaosBonus,
+				result.ChaosBonusPercent,
+			)
+	}
 
 	return text, mentions
 }

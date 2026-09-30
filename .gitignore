@@ -51,3 +51,6 @@ storage/*.db-journal
 
 # Backups temporarios de patches
 *.before-*
+
+# Auditorias locais
+/auditoria_gold_corrompido.csv

@@ -6,6 +6,7 @@ import (
 	"whatsapp-sticker-bot/internal/logger"
 	"whatsapp-sticker-bot/internal/profile"
 	"whatsapp-sticker-bot/internal/quiz"
+	"whatsapp-sticker-bot/internal/rpg"
 )
 
 func recordQuizProgress(
@@ -106,11 +107,28 @@ func progressionSuffix(
 
 	if result.After.Level >
 		result.Before.Level {
+
+		pcBefore :=
+			rpg.LevelCombatPowerBonus(
+				result.Before.Level,
+			)
+
+		pcAfter :=
+			rpg.LevelCombatPowerBonus(
+				result.After.Level,
+			)
+
+		pcGained :=
+			pcAfter - pcBefore
+
 		return fmt.Sprintf(
-			"\n\n✨ *+%d XP*\n🎉 *LEVEL UP!* Nível *%d → %d*",
+			"\n\n✨ *+%d XP*\n"+
+				"🎉 *LEVEL UP!* Nível *%d → %d*\n"+
+				"⚡ *+%d PC permanente*",
 			result.Gained,
 			result.Before.Level,
 			result.After.Level,
+			pcGained,
 		)
 	}
 

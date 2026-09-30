@@ -1,0 +1,2522 @@
+[
+  {
+    "id": "common_weapon_001",
+    "name": "Espada de Bronze do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 120,
+    "attack": 104,
+    "defense": 16,
+    "description": "Espada produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 3500,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_002",
+    "name": "Machado de Ferro do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 121,
+    "attack": 105,
+    "defense": 16,
+    "description": "Machado produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 3595,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_003",
+    "name": "Lança de Pinheiro do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 122,
+    "attack": 106,
+    "defense": 16,
+    "description": "Lança produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 3691,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_004",
+    "name": "Adaga de Granito do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 124,
+    "attack": 108,
+    "defense": 16,
+    "description": "Adaga produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 3786,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 4
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_005",
+    "name": "Maça de Carvão Mineral do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 125,
+    "attack": 109,
+    "defense": 16,
+    "description": "Maça produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 3882,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_006",
+    "name": "Martelo de Bronze do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 126,
+    "attack": 110,
+    "defense": 16,
+    "description": "Martelo produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 3977,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_007",
+    "name": "Arco de Ferro do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 128,
+    "attack": 111,
+    "defense": 17,
+    "description": "Arco produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4073,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_008",
+    "name": "Foice de Pinheiro do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 129,
+    "attack": 112,
+    "defense": 17,
+    "description": "Foice produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4168,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_009",
+    "name": "Sabre de Granito do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 130,
+    "attack": 113,
+    "defense": 17,
+    "description": "Sabre produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4264,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 3
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_010",
+    "name": "Gládio de Carvão Mineral do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 132,
+    "attack": 115,
+    "defense": 17,
+    "description": "Gládio produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4359,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_011",
+    "name": "Alabarda de Bronze do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 133,
+    "attack": 116,
+    "defense": 17,
+    "description": "Alabarda produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4455,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_012",
+    "name": "Clava de Ferro do Soldado",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 134,
+    "attack": 117,
+    "defense": 17,
+    "description": "Clava produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4550,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_013",
+    "name": "Espada de Pinheiro do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 136,
+    "attack": 118,
+    "defense": 18,
+    "description": "Espada produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4646,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_014",
+    "name": "Machado de Granito do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 137,
+    "attack": 119,
+    "defense": 18,
+    "description": "Machado produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4741,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 4
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_015",
+    "name": "Lança de Carvão Mineral do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 138,
+    "attack": 120,
+    "defense": 18,
+    "description": "Lança produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4837,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_016",
+    "name": "Adaga de Bronze do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 140,
+    "attack": 122,
+    "defense": 18,
+    "description": "Adaga produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 4932,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_017",
+    "name": "Maça de Ferro do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 141,
+    "attack": 123,
+    "defense": 18,
+    "description": "Maça produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5028,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_018",
+    "name": "Martelo de Pinheiro do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 142,
+    "attack": 124,
+    "defense": 18,
+    "description": "Martelo produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5123,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_019",
+    "name": "Arco de Granito do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 144,
+    "attack": 125,
+    "defense": 19,
+    "description": "Arco produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5219,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 3
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_020",
+    "name": "Foice de Carvão Mineral do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 145,
+    "attack": 126,
+    "defense": 19,
+    "description": "Foice produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5314,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_021",
+    "name": "Sabre de Bronze do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 146,
+    "attack": 127,
+    "defense": 19,
+    "description": "Sabre produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5410,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_022",
+    "name": "Gládio de Ferro do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 148,
+    "attack": 129,
+    "defense": 19,
+    "description": "Gládio produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5505,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_023",
+    "name": "Alabarda de Pinheiro do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 149,
+    "attack": 130,
+    "defense": 19,
+    "description": "Alabarda produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5601,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_024",
+    "name": "Clava de Granito do Ferreiro",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 151,
+    "attack": 131,
+    "defense": 20,
+    "description": "Clava produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5696,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 4
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_025",
+    "name": "Espada de Carvão Mineral do Guarda",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 152,
+    "attack": 132,
+    "defense": 20,
+    "description": "Espada produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5792,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_026",
+    "name": "Machado de Bronze do Guarda",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 153,
+    "attack": 133,
+    "defense": 20,
+    "description": "Machado produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5887,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_027",
+    "name": "Lança de Ferro do Guarda",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 155,
+    "attack": 135,
+    "defense": 20,
+    "description": "Lança produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 5983,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_028",
+    "name": "Adaga de Pinheiro do Guarda",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 156,
+    "attack": 136,
+    "defense": 20,
+    "description": "Adaga produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6078,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_029",
+    "name": "Maça de Granito do Guarda",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 157,
+    "attack": 137,
+    "defense": 20,
+    "description": "Maça produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6174,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 3
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_weapon_030",
+    "name": "Martelo de Carvão Mineral do Guarda",
+    "type": "WEAPON",
+    "rarity": "COMMON",
+    "power": 159,
+    "attack": 138,
+    "defense": 21,
+    "description": "Martelo produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6269,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_001",
+    "name": "Escudo de Pinheiro do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 160,
+    "attack": 19,
+    "defense": 141,
+    "description": "Escudo produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6365,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_002",
+    "name": "Broquel de Bronze do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 161,
+    "attack": 19,
+    "defense": 142,
+    "description": "Broquel produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6460,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_003",
+    "name": "Pavês de Ferro do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 163,
+    "attack": 20,
+    "defense": 143,
+    "description": "Pavês produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6556,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_004",
+    "name": "Égide de Granito do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 164,
+    "attack": 20,
+    "defense": 144,
+    "description": "Égide produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6651,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 4
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_005",
+    "name": "Escudo-Torre de Couro do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 165,
+    "attack": 20,
+    "defense": 145,
+    "description": "Escudo-Torre produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6747,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_006",
+    "name": "Escudo Redondo de Pinheiro do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 167,
+    "attack": 20,
+    "defense": 147,
+    "description": "Escudo Redondo produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6842,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_007",
+    "name": "Baluarte de Bronze do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 168,
+    "attack": 20,
+    "defense": 148,
+    "description": "Baluarte produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 6938,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_008",
+    "name": "Escudo de Guerra de Ferro do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 169,
+    "attack": 20,
+    "defense": 149,
+    "description": "Escudo de Guerra produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7033,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_009",
+    "name": "Escudo de Braço de Granito do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 171,
+    "attack": 21,
+    "defense": 150,
+    "description": "Escudo de Braço produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7129,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_010",
+    "name": "Escudo Reforçado de Couro do Soldado",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 172,
+    "attack": 21,
+    "defense": 151,
+    "description": "Escudo Reforçado produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7224,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_011",
+    "name": "Escudo de Pinheiro do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 173,
+    "attack": 21,
+    "defense": 152,
+    "description": "Escudo produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7320,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_012",
+    "name": "Broquel de Bronze do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 175,
+    "attack": 21,
+    "defense": 154,
+    "description": "Broquel produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7415,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_013",
+    "name": "Pavês de Ferro do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 176,
+    "attack": 21,
+    "defense": 155,
+    "description": "Pavês produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7511,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_014",
+    "name": "Égide de Granito do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 177,
+    "attack": 21,
+    "defense": 156,
+    "description": "Égide produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7606,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 4
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_015",
+    "name": "Escudo-Torre de Couro do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 179,
+    "attack": 21,
+    "defense": 158,
+    "description": "Escudo-Torre produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7702,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_016",
+    "name": "Escudo Redondo de Pinheiro do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 180,
+    "attack": 22,
+    "defense": 158,
+    "description": "Escudo Redondo produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7797,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_017",
+    "name": "Baluarte de Bronze do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 182,
+    "attack": 22,
+    "defense": 160,
+    "description": "Baluarte produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7893,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_018",
+    "name": "Escudo de Guerra de Ferro do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 183,
+    "attack": 22,
+    "defense": 161,
+    "description": "Escudo de Guerra produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 7988,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_019",
+    "name": "Escudo de Braço de Granito do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 184,
+    "attack": 22,
+    "defense": 162,
+    "description": "Escudo de Braço produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8084,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_020",
+    "name": "Escudo Reforçado de Couro do Ferreiro",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 186,
+    "attack": 22,
+    "defense": 164,
+    "description": "Escudo Reforçado produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8179,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_021",
+    "name": "Escudo de Pinheiro do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 187,
+    "attack": 22,
+    "defense": 165,
+    "description": "Escudo produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8275,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_022",
+    "name": "Broquel de Bronze do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 188,
+    "attack": 23,
+    "defense": 165,
+    "description": "Broquel produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8370,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_023",
+    "name": "Pavês de Ferro do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 190,
+    "attack": 23,
+    "defense": 167,
+    "description": "Pavês produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8466,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_024",
+    "name": "Égide de Granito do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 191,
+    "attack": 23,
+    "defense": 168,
+    "description": "Égide produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8561,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 4
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_025",
+    "name": "Escudo-Torre de Couro do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 192,
+    "attack": 23,
+    "defense": 169,
+    "description": "Escudo-Torre produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8657,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_026",
+    "name": "Escudo Redondo de Pinheiro do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 194,
+    "attack": 23,
+    "defense": 171,
+    "description": "Escudo Redondo produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8752,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "granite",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_027",
+    "name": "Baluarte de Bronze do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 195,
+    "attack": 23,
+    "defense": 172,
+    "description": "Baluarte produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8848,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_028",
+    "name": "Escudo de Guerra de Ferro do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 196,
+    "attack": 24,
+    "defense": 172,
+    "description": "Escudo de Guerra produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 8943,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "granite",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_029",
+    "name": "Escudo de Braço de Granito do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 198,
+    "attack": 24,
+    "defense": 174,
+    "description": "Escudo de Braço produzido com Granito e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9039,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "granite",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_shield_030",
+    "name": "Escudo Reforçado de Couro do Guarda",
+    "type": "SHIELD",
+    "rarity": "COMMON",
+    "power": 199,
+    "attack": 24,
+    "defense": 175,
+    "description": "Escudo Reforçado produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9134,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_001",
+    "name": "Armadura de Couro do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 200,
+    "attack": 44,
+    "defense": 156,
+    "description": "Armadura produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9230,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_002",
+    "name": "Couraça de Bronze do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 202,
+    "attack": 44,
+    "defense": 158,
+    "description": "Couraça produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9325,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_003",
+    "name": "Cota de Ferro do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 203,
+    "attack": 45,
+    "defense": 158,
+    "description": "Cota produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9421,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_004",
+    "name": "Brunea de Pinheiro do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 204,
+    "attack": 45,
+    "defense": 159,
+    "description": "Brunea produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9516,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_005",
+    "name": "Peitoral de Carvão Mineral do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 206,
+    "attack": 45,
+    "defense": 161,
+    "description": "Peitoral produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9612,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_006",
+    "name": "Armadura Laminar de Couro do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 207,
+    "attack": 46,
+    "defense": 161,
+    "description": "Armadura Laminar produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9707,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_007",
+    "name": "Armadura de Placas de Bronze do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 208,
+    "attack": 46,
+    "defense": 162,
+    "description": "Armadura de Placas produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9803,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_008",
+    "name": "Gibão de Guerra de Ferro do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 210,
+    "attack": 46,
+    "defense": 164,
+    "description": "Gibão de Guerra produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9898,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_009",
+    "name": "Vestes de Batalha de Pinheiro do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 211,
+    "attack": 46,
+    "defense": 165,
+    "description": "Vestes de Batalha produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 9994,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_010",
+    "name": "Armadura Reforçada de Carvão Mineral do Soldado",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 213,
+    "attack": 47,
+    "defense": 166,
+    "description": "Armadura Reforçada produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10089,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 4
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_011",
+    "name": "Armadura de Couro do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 214,
+    "attack": 47,
+    "defense": 167,
+    "description": "Armadura produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10185,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_012",
+    "name": "Couraça de Bronze do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 215,
+    "attack": 47,
+    "defense": 168,
+    "description": "Couraça produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10280,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_013",
+    "name": "Cota de Ferro do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 217,
+    "attack": 48,
+    "defense": 169,
+    "description": "Cota produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10376,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_014",
+    "name": "Brunea de Pinheiro do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 218,
+    "attack": 48,
+    "defense": 170,
+    "description": "Brunea produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10471,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_015",
+    "name": "Peitoral de Carvão Mineral do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 219,
+    "attack": 48,
+    "defense": 171,
+    "description": "Peitoral produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10567,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_016",
+    "name": "Armadura Laminar de Couro do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 221,
+    "attack": 49,
+    "defense": 172,
+    "description": "Armadura Laminar produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10662,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_017",
+    "name": "Armadura de Placas de Bronze do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 222,
+    "attack": 49,
+    "defense": 173,
+    "description": "Armadura de Placas produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10758,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_018",
+    "name": "Gibão de Guerra de Ferro do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 223,
+    "attack": 49,
+    "defense": 174,
+    "description": "Gibão de Guerra produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10853,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_019",
+    "name": "Vestes de Batalha de Pinheiro do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 225,
+    "attack": 50,
+    "defense": 175,
+    "description": "Vestes de Batalha produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 10949,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_020",
+    "name": "Armadura Reforçada de Carvão Mineral do Ferreiro",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 226,
+    "attack": 50,
+    "defense": 176,
+    "description": "Armadura Reforçada produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11044,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 4
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_021",
+    "name": "Armadura de Couro do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 227,
+    "attack": 50,
+    "defense": 177,
+    "description": "Armadura produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11140,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_022",
+    "name": "Couraça de Bronze do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 229,
+    "attack": 50,
+    "defense": 179,
+    "description": "Couraça produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11235,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_023",
+    "name": "Cota de Ferro do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 230,
+    "attack": 51,
+    "defense": 179,
+    "description": "Cota produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11331,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_024",
+    "name": "Brunea de Pinheiro do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 231,
+    "attack": 51,
+    "defense": 180,
+    "description": "Brunea produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11426,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 4
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_025",
+    "name": "Peitoral de Carvão Mineral do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 233,
+    "attack": 51,
+    "defense": 182,
+    "description": "Peitoral produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11522,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_026",
+    "name": "Armadura Laminar de Couro do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 234,
+    "attack": 51,
+    "defense": 183,
+    "description": "Armadura Laminar produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11617,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 4
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_027",
+    "name": "Armadura de Placas de Bronze do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 235,
+    "attack": 52,
+    "defense": 183,
+    "description": "Armadura de Placas produzido com Bronze e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11713,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 3
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 2
+      },
+      {
+        "material_id": "coal",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_028",
+    "name": "Gibão de Guerra de Ferro do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 237,
+    "attack": 52,
+    "defense": 185,
+    "description": "Gibão de Guerra produzido com Ferro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11808,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "ingot_iron",
+        "quantity": 4
+      },
+      {
+        "material_id": "wood_pine",
+        "quantity": 2
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_029",
+    "name": "Vestes de Batalha de Pinheiro do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 238,
+    "attack": 52,
+    "defense": 186,
+    "description": "Vestes de Batalha produzido com Pinheiro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 11904,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_pine",
+        "quantity": 3
+      },
+      {
+        "material_id": "coal",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_bronze",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "common_armor_030",
+    "name": "Armadura Reforçada de Carvão Mineral do Guarda",
+    "type": "ARMOR",
+    "rarity": "COMMON",
+    "power": 240,
+    "attack": 53,
+    "defense": 187,
+    "description": "Armadura Reforçada produzido com Carvão Mineral e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 12000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "coal",
+        "quantity": 4
+      },
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "ingot_iron",
+        "quantity": 1
+      }
+    ]
+  }
+]

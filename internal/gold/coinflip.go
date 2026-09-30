@@ -8,6 +8,7 @@ import (
 	"math/big"
 	"strings"
 
+	"whatsapp-sticker-bot/internal/chaos"
 	"whatsapp-sticker-bot/internal/database"
 )
 
@@ -37,6 +38,10 @@ type CoinflipResult struct {
 	Prize     int
 	NetResult int
 	Balance   int
+
+	ChaosBonus int
+
+	ChaosBonusPercent int
 }
 
 func PlayCoinflip(
@@ -106,15 +111,39 @@ func PlayCoinflip(
 
 	prize := 0
 
+	chaosBonus := 0
+	chaosBonusPercent := 0
+
 	if won {
-		// Retorno de 1,98x.
-		//
-		// Exemplo:
-		// aposta 1000
-		// retorno 1980
-		// lucro líquido 980
-		prize =
+		// Retorno base de 1,98x.
+		basePrize :=
 			amount * 198 / 100
+
+		baseProfit :=
+			basePrize - amount
+
+		prize =
+			basePrize
+
+		totalProfit,
+			bonus,
+			bonusPercent,
+			active :=
+			chaos.ApplyGoldReward(
+				baseProfit,
+			)
+
+		if active {
+			chaosBonus =
+				bonus
+
+			chaosBonusPercent =
+				bonusPercent
+
+			prize =
+				amount +
+					totalProfit
+		}
 	}
 
 	netResult :=
@@ -228,6 +257,10 @@ func PlayCoinflip(
 		Prize:     prize,
 		NetResult: netResult,
 		Balance:   newBalance,
+
+		ChaosBonus: chaosBonus,
+
+		ChaosBonusPercent: chaosBonusPercent,
 	}, nil
 }
 

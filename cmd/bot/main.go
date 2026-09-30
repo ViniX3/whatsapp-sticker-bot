@@ -130,6 +130,10 @@ func main() {
 		logger.Success(
 			"Sincronização concluída. Bot pronto.",
 		)
+
+		handler.StartChaosScheduler(
+			client,
+		)
 	}()
 
 	// ==========================================================

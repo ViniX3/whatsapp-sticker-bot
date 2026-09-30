@@ -15,6 +15,10 @@ const (
 	// Cooldown entre duas utilizações válidas do !sorte
 	// no mesmo grupo.
 	LuckCooldown = 24 * time.Hour
+
+	// LuckMaximumReward define o maior prêmio possível
+	// em uma única utilização do !sorte.
+	LuckMaximumReward = 500000
 )
 
 var (
@@ -99,6 +103,17 @@ type luckTierConfig struct {
 // 👑 MÍTICO
 // 0,2%
 //
+// Faixas de prêmio:
+//
+//	⚪ COMUM       5.000 - 20.000 Gold
+//	🟢 ESPECIAL   20.000 - 50.000 Gold
+//	🔵 RARO       50.000 - 100.000 Gold
+//	🟣 SUPER RARO 100.000 - 200.000 Gold
+//	🟡 LENDÁRIO   200.000 - 350.000 Gold
+//	👑 MÍTICO     350.000 - 500.000 Gold
+//
+// O prêmio máximo absoluto é de 500.000 Gold.
+//
 // O sorteio utiliza uma escala de 0 a 9999.
 func drawLuckTier() (luckTierConfig, error) {
 	n, err := rand.Int(
@@ -122,8 +137,8 @@ func drawLuckTier() (luckTierConfig, error) {
 		return luckTierConfig{
 			Name:    "COMUM",
 			Emoji:   "⚪",
-			MinGold: 300,
-			MaxGold: 700,
+			MinGold: 5000,
+			MaxGold: 20000,
 		}, nil
 
 	// 5500 - 7999
@@ -132,8 +147,8 @@ func drawLuckTier() (luckTierConfig, error) {
 		return luckTierConfig{
 			Name:    "ESPECIAL",
 			Emoji:   "🟢",
-			MinGold: 800,
-			MaxGold: 1500,
+			MinGold: 20000,
+			MaxGold: 50000,
 		}, nil
 
 	// 8000 - 9199
@@ -142,8 +157,8 @@ func drawLuckTier() (luckTierConfig, error) {
 		return luckTierConfig{
 			Name:    "RARO",
 			Emoji:   "🔵",
-			MinGold: 1800,
-			MaxGold: 3000,
+			MinGold: 50000,
+			MaxGold: 100000,
 		}, nil
 
 	// 9200 - 9799
@@ -152,8 +167,8 @@ func drawLuckTier() (luckTierConfig, error) {
 		return luckTierConfig{
 			Name:    "SUPER RARO",
 			Emoji:   "🟣",
-			MinGold: 3500,
-			MaxGold: 6000,
+			MinGold: 100000,
+			MaxGold: 200000,
 		}, nil
 
 	// 9800 - 9979
@@ -162,8 +177,8 @@ func drawLuckTier() (luckTierConfig, error) {
 		return luckTierConfig{
 			Name:    "LENDÁRIO",
 			Emoji:   "🟡",
-			MinGold: 8000,
-			MaxGold: 12000,
+			MinGold: 200000,
+			MaxGold: 350000,
 		}, nil
 
 	// 9980 - 9999
@@ -172,8 +187,8 @@ func drawLuckTier() (luckTierConfig, error) {
 		return luckTierConfig{
 			Name:    "MÍTICO",
 			Emoji:   "👑",
-			MinGold: 20000,
-			MaxGold: 30000,
+			MinGold: 350000,
+			MaxGold: LuckMaximumReward,
 		}, nil
 	}
 }

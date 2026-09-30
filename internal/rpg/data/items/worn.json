@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "starter_recruit_weapon",
+    "name": "Espada do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 50,
+    "attack": 45,
+    "defense": 5,
+    "description": "Uma espada simples entregue aos aventureiros que iniciam sua jornada.",
+    "origin": "Kit inicial do aventureiro",
+    "value": 500,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_002",
+    "name": "Machado de Madeira Rústica do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 35,
+    "attack": 30,
+    "defense": 5,
+    "description": "Machado produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 525,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_003",
+    "name": "Lança de Couro do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 36,
+    "attack": 31,
+    "defense": 5,
+    "description": "Lança produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 550,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_004",
+    "name": "Adaga de Argila do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 37,
+    "attack": 32,
+    "defense": 5,
+    "description": "Adaga produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 575,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_005",
+    "name": "Maça de Pedra do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 38,
+    "attack": 33,
+    "defense": 5,
+    "description": "Maça produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 601,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_006",
+    "name": "Martelo de Madeira Rústica do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 38,
+    "attack": 33,
+    "defense": 5,
+    "description": "Martelo produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 626,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_007",
+    "name": "Arco de Couro do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 39,
+    "attack": 34,
+    "defense": 5,
+    "description": "Arco produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 651,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_008",
+    "name": "Foice de Argila do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 40,
+    "attack": 35,
+    "defense": 5,
+    "description": "Foice produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 676,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_009",
+    "name": "Sabre de Pedra do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 41,
+    "attack": 36,
+    "defense": 5,
+    "description": "Sabre produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 702,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_010",
+    "name": "Gládio de Madeira Rústica do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 41,
+    "attack": 36,
+    "defense": 5,
+    "description": "Gládio produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 727,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_011",
+    "name": "Alabarda de Couro do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 42,
+    "attack": 37,
+    "defense": 5,
+    "description": "Alabarda produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 752,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_012",
+    "name": "Clava de Argila do Recruta",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 43,
+    "attack": 37,
+    "defense": 6,
+    "description": "Clava produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 777,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_013",
+    "name": "Espada de Pedra da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 44,
+    "attack": 38,
+    "defense": 6,
+    "description": "Espada produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 803,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_014",
+    "name": "Machado de Madeira Rústica da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 44,
+    "attack": 38,
+    "defense": 6,
+    "description": "Machado produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 828,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_015",
+    "name": "Lança de Couro da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 45,
+    "attack": 39,
+    "defense": 6,
+    "description": "Lança produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 853,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_016",
+    "name": "Adaga de Argila da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 46,
+    "attack": 40,
+    "defense": 6,
+    "description": "Adaga produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 878,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_017",
+    "name": "Maça de Pedra da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 47,
+    "attack": 41,
+    "defense": 6,
+    "description": "Maça produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 904,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_018",
+    "name": "Martelo de Madeira Rústica da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 47,
+    "attack": 41,
+    "defense": 6,
+    "description": "Martelo produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 929,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_019",
+    "name": "Arco de Couro da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 48,
+    "attack": 42,
+    "defense": 6,
+    "description": "Arco produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 954,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_020",
+    "name": "Foice de Argila da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 49,
+    "attack": 43,
+    "defense": 6,
+    "description": "Foice produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 979,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_021",
+    "name": "Sabre de Pedra da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 50,
+    "attack": 44,
+    "defense": 6,
+    "description": "Sabre produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1005,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_022",
+    "name": "Gládio de Madeira Rústica da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 50,
+    "attack": 44,
+    "defense": 6,
+    "description": "Gládio produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1030,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_023",
+    "name": "Alabarda de Couro da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 51,
+    "attack": 44,
+    "defense": 7,
+    "description": "Alabarda produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1055,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_024",
+    "name": "Clava de Argila da Fronteira",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 52,
+    "attack": 45,
+    "defense": 7,
+    "description": "Clava produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1080,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_025",
+    "name": "Espada de Pedra do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 53,
+    "attack": 46,
+    "defense": 7,
+    "description": "Espada produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1106,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_026",
+    "name": "Machado de Madeira Rústica do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 53,
+    "attack": 46,
+    "defense": 7,
+    "description": "Machado produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1131,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_027",
+    "name": "Lança de Couro do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 54,
+    "attack": 47,
+    "defense": 7,
+    "description": "Lança produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1156,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_028",
+    "name": "Adaga de Argila do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 55,
+    "attack": 48,
+    "defense": 7,
+    "description": "Adaga produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1181,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_029",
+    "name": "Maça de Pedra do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 56,
+    "attack": 49,
+    "defense": 7,
+    "description": "Maça produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1207,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_030",
+    "name": "Martelo de Madeira Rústica do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 56,
+    "attack": 49,
+    "defense": 7,
+    "description": "Martelo produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1232,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_031",
+    "name": "Arco de Couro do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 57,
+    "attack": 50,
+    "defense": 7,
+    "description": "Arco produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1257,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_032",
+    "name": "Foice de Argila do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 58,
+    "attack": 50,
+    "defense": 8,
+    "description": "Foice produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1282,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_033",
+    "name": "Sabre de Pedra do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 59,
+    "attack": 51,
+    "defense": 8,
+    "description": "Sabre produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1308,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_weapon_034",
+    "name": "Gládio de Madeira Rústica do Sobrevivente",
+    "type": "WEAPON",
+    "rarity": "WORN",
+    "power": 60,
+    "attack": 52,
+    "defense": 8,
+    "description": "Gládio produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1333,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "starter_recruit_shield",
+    "name": "Escudo do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 45,
+    "attack": 5,
+    "defense": 40,
+    "description": "Um escudo simples usado pelos aventureiros em seus primeiros desafios.",
+    "origin": "Kit inicial do aventureiro",
+    "value": 1358,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_002",
+    "name": "Broquel de Pedra do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 61,
+    "attack": 7,
+    "defense": 54,
+    "description": "Broquel produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1383,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_003",
+    "name": "Pavês de Couro do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 62,
+    "attack": 7,
+    "defense": 55,
+    "description": "Pavês produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1409,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_004",
+    "name": "Égide de Argila do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 63,
+    "attack": 8,
+    "defense": 55,
+    "description": "Égide produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1434,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_005",
+    "name": "Escudo-Torre de Madeira Rústica do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 63,
+    "attack": 8,
+    "defense": 55,
+    "description": "Escudo-Torre produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1459,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_006",
+    "name": "Escudo Redondo de Pedra do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 64,
+    "attack": 8,
+    "defense": 56,
+    "description": "Escudo Redondo produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1484,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_007",
+    "name": "Baluarte de Couro do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 65,
+    "attack": 8,
+    "defense": 57,
+    "description": "Baluarte produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1510,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_008",
+    "name": "Escudo de Guerra de Argila do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 66,
+    "attack": 8,
+    "defense": 58,
+    "description": "Escudo de Guerra produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1535,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_009",
+    "name": "Escudo de Braço de Madeira Rústica do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 66,
+    "attack": 8,
+    "defense": 58,
+    "description": "Escudo de Braço produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1560,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_010",
+    "name": "Escudo Reforçado de Pedra do Recruta",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 67,
+    "attack": 8,
+    "defense": 59,
+    "description": "Escudo Reforçado produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1585,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_011",
+    "name": "Escudo de Couro da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 68,
+    "attack": 8,
+    "defense": 60,
+    "description": "Escudo produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1611,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_012",
+    "name": "Broquel de Argila da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 69,
+    "attack": 8,
+    "defense": 61,
+    "description": "Broquel produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1636,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_013",
+    "name": "Pavês de Madeira Rústica da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 69,
+    "attack": 8,
+    "defense": 61,
+    "description": "Pavês produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1661,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_014",
+    "name": "Égide de Pedra da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 70,
+    "attack": 8,
+    "defense": 62,
+    "description": "Égide produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1686,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_015",
+    "name": "Escudo-Torre de Couro da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 71,
+    "attack": 9,
+    "defense": 62,
+    "description": "Escudo-Torre produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1712,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_016",
+    "name": "Escudo Redondo de Argila da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 72,
+    "attack": 9,
+    "defense": 63,
+    "description": "Escudo Redondo produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1737,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_017",
+    "name": "Baluarte de Madeira Rústica da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 72,
+    "attack": 9,
+    "defense": 63,
+    "description": "Baluarte produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1762,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_018",
+    "name": "Escudo de Guerra de Pedra da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 73,
+    "attack": 9,
+    "defense": 64,
+    "description": "Escudo de Guerra produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1787,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_019",
+    "name": "Escudo de Braço de Couro da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 74,
+    "attack": 9,
+    "defense": 65,
+    "description": "Escudo de Braço produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1813,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_020",
+    "name": "Escudo Reforçado de Argila da Fronteira",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 75,
+    "attack": 9,
+    "defense": 66,
+    "description": "Escudo Reforçado produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1838,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_021",
+    "name": "Escudo de Madeira Rústica do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 75,
+    "attack": 9,
+    "defense": 66,
+    "description": "Escudo produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1863,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_022",
+    "name": "Broquel de Pedra do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 76,
+    "attack": 9,
+    "defense": 67,
+    "description": "Broquel produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1888,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_023",
+    "name": "Pavês de Couro do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 77,
+    "attack": 9,
+    "defense": 68,
+    "description": "Pavês produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1914,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_024",
+    "name": "Égide de Argila do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 78,
+    "attack": 9,
+    "defense": 69,
+    "description": "Égide produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1939,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_025",
+    "name": "Escudo-Torre de Madeira Rústica do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 78,
+    "attack": 9,
+    "defense": 69,
+    "description": "Escudo-Torre produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1964,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_026",
+    "name": "Escudo Redondo de Pedra do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 79,
+    "attack": 9,
+    "defense": 70,
+    "description": "Escudo Redondo produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 1989,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_027",
+    "name": "Baluarte de Couro do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 80,
+    "attack": 10,
+    "defense": 70,
+    "description": "Baluarte produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2015,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_028",
+    "name": "Escudo de Guerra de Argila do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 81,
+    "attack": 10,
+    "defense": 71,
+    "description": "Escudo de Guerra produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2040,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_029",
+    "name": "Escudo de Braço de Madeira Rústica do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 81,
+    "attack": 10,
+    "defense": 71,
+    "description": "Escudo de Braço produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2065,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_030",
+    "name": "Escudo Reforçado de Pedra do Sobrevivente",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 82,
+    "attack": 10,
+    "defense": 72,
+    "description": "Escudo Reforçado produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2090,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_031",
+    "name": "Escudo de Couro do Camponês",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 83,
+    "attack": 10,
+    "defense": 73,
+    "description": "Escudo produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2116,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_032",
+    "name": "Broquel de Argila do Camponês",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 84,
+    "attack": 10,
+    "defense": 74,
+    "description": "Broquel produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2141,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 3
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_shield_033",
+    "name": "Pavês de Madeira Rústica do Camponês",
+    "type": "SHIELD",
+    "rarity": "WORN",
+    "power": 85,
+    "attack": 10,
+    "defense": 75,
+    "description": "Pavês produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2166,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "starter_recruit_armor",
+    "name": "Armadura do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 60,
+    "attack": 5,
+    "defense": 55,
+    "description": "Uma armadura simples preparada para quem está começando sua jornada.",
+    "origin": "Kit inicial do aventureiro",
+    "value": 2191,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_002",
+    "name": "Couraça de Madeira Rústica do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 86,
+    "attack": 19,
+    "defense": 67,
+    "description": "Couraça produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2217,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_003",
+    "name": "Cota de Argila do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 87,
+    "attack": 19,
+    "defense": 68,
+    "description": "Cota produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2242,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_004",
+    "name": "Brunea de Pedra do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 88,
+    "attack": 19,
+    "defense": 69,
+    "description": "Brunea produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2267,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_005",
+    "name": "Peitoral de Couro do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 88,
+    "attack": 19,
+    "defense": 69,
+    "description": "Peitoral produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2292,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_006",
+    "name": "Armadura Laminar de Madeira Rústica do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 89,
+    "attack": 20,
+    "defense": 69,
+    "description": "Armadura Laminar produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2318,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_007",
+    "name": "Armadura de Placas de Argila do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 90,
+    "attack": 20,
+    "defense": 70,
+    "description": "Armadura de Placas produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2343,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_008",
+    "name": "Gibão de Guerra de Pedra do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 91,
+    "attack": 20,
+    "defense": 71,
+    "description": "Gibão de Guerra produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2368,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_009",
+    "name": "Vestes de Batalha de Couro do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 91,
+    "attack": 20,
+    "defense": 71,
+    "description": "Vestes de Batalha produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2393,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_010",
+    "name": "Armadura Reforçada de Madeira Rústica do Recruta",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 92,
+    "attack": 20,
+    "defense": 72,
+    "description": "Armadura Reforçada produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2419,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_011",
+    "name": "Armadura de Argila da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 93,
+    "attack": 20,
+    "defense": 73,
+    "description": "Armadura produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2444,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_012",
+    "name": "Couraça de Pedra da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 94,
+    "attack": 21,
+    "defense": 73,
+    "description": "Couraça produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2469,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_013",
+    "name": "Cota de Couro da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 94,
+    "attack": 21,
+    "defense": 73,
+    "description": "Cota produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2494,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_014",
+    "name": "Brunea de Madeira Rústica da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 95,
+    "attack": 21,
+    "defense": 74,
+    "description": "Brunea produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2520,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_015",
+    "name": "Peitoral de Argila da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 96,
+    "attack": 21,
+    "defense": 75,
+    "description": "Peitoral produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2545,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_016",
+    "name": "Armadura Laminar de Pedra da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 97,
+    "attack": 21,
+    "defense": 76,
+    "description": "Armadura Laminar produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2570,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_017",
+    "name": "Armadura de Placas de Couro da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 97,
+    "attack": 21,
+    "defense": 76,
+    "description": "Armadura de Placas produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2595,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_018",
+    "name": "Gibão de Guerra de Madeira Rústica da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 98,
+    "attack": 22,
+    "defense": 76,
+    "description": "Gibão de Guerra produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2621,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_019",
+    "name": "Vestes de Batalha de Argila da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 99,
+    "attack": 22,
+    "defense": 77,
+    "description": "Vestes de Batalha produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2646,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_020",
+    "name": "Armadura Reforçada de Pedra da Fronteira",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 100,
+    "attack": 22,
+    "defense": 78,
+    "description": "Armadura Reforçada produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2671,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_021",
+    "name": "Armadura de Couro do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 100,
+    "attack": 22,
+    "defense": 78,
+    "description": "Armadura produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2696,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_022",
+    "name": "Couraça de Madeira Rústica do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 101,
+    "attack": 22,
+    "defense": 79,
+    "description": "Couraça produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2722,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_023",
+    "name": "Cota de Argila do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 102,
+    "attack": 22,
+    "defense": 80,
+    "description": "Cota produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2747,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_024",
+    "name": "Brunea de Pedra do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 103,
+    "attack": 23,
+    "defense": 80,
+    "description": "Brunea produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2772,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_025",
+    "name": "Peitoral de Couro do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 103,
+    "attack": 23,
+    "defense": 80,
+    "description": "Peitoral produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2797,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_026",
+    "name": "Armadura Laminar de Madeira Rústica do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 104,
+    "attack": 23,
+    "defense": 81,
+    "description": "Armadura Laminar produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2823,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_027",
+    "name": "Armadura de Placas de Argila do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 105,
+    "attack": 23,
+    "defense": 82,
+    "description": "Armadura de Placas produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2848,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_028",
+    "name": "Gibão de Guerra de Pedra do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 106,
+    "attack": 23,
+    "defense": 83,
+    "description": "Gibão de Guerra produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2873,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_029",
+    "name": "Vestes de Batalha de Couro do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 106,
+    "attack": 23,
+    "defense": 83,
+    "description": "Vestes de Batalha produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2898,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_030",
+    "name": "Armadura Reforçada de Madeira Rústica do Sobrevivente",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 107,
+    "attack": 24,
+    "defense": 83,
+    "description": "Armadura Reforçada produzido com Madeira Rústica e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2924,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "wood_branch",
+        "quantity": 3
+      },
+      {
+        "material_id": "clay",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_031",
+    "name": "Armadura de Argila do Camponês",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 108,
+    "attack": 24,
+    "defense": 84,
+    "description": "Armadura produzido com Argila e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2949,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "clay",
+        "quantity": 2
+      },
+      {
+        "material_id": "stone",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_032",
+    "name": "Couraça de Pedra do Camponês",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 109,
+    "attack": 24,
+    "defense": 85,
+    "description": "Couraça produzido com Pedra e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 2974,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "stone",
+        "quantity": 3
+      },
+      {
+        "material_id": "leather",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "worn_armor_033",
+    "name": "Cota de Couro do Camponês",
+    "type": "ARMOR",
+    "rarity": "WORN",
+    "power": 110,
+    "attack": 24,
+    "defense": 86,
+    "description": "Cota produzido com Couro e recursos extraídos das terras do reino.",
+    "origin": "Forja do Reino",
+    "value": 3000,
+    "currency": "GOLD",
+    "source": "CRAFT",
+    "craft_materials": [
+      {
+        "material_id": "leather",
+        "quantity": 2
+      },
+      {
+        "material_id": "wood_branch",
+        "quantity": 1
+      }
+    ]
+  }
+]

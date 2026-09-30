@@ -6,7 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"math/big"
-	"strconv"
 	"strings"
 
 	"whatsapp-sticker-bot/internal/duel"
@@ -119,13 +118,24 @@ func handleDuelChallenge(
 		return
 	}
 
-	amount, err :=
-		strconv.Atoi(
+	amount,
+		err :=
+		resolveFlexibleGameGoldAmount(
+			msgEvent,
 			parts[len(parts)-1],
 		)
 
-	if err != nil ||
-		amount < gold.DuelMinBet {
+	if err != nil {
+		sendFlexibleGameGoldAmountError(
+			client,
+			msgEvent,
+			err,
+		)
+
+		return
+	}
+
+	if amount < gold.DuelMinBet {
 
 		_ = whatsapp.SendText(
 			client,
@@ -368,12 +378,72 @@ func handleDuelAccept(
 		return
 	}
 
+	combat, err :=
+		prepareDuelCombat(
+			groupJID,
+			challenge.ChallengerJID,
+			challenge.TargetJID,
+		)
+
+	if err != nil {
+		switch {
+		case errors.Is(
+			err,
+			errDuelChallengerWalletMissing,
+		):
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ O duelo foi cancelado porque o desafiante não possui mais uma carteira Gold neste grupo.",
+			)
+
+		case errors.Is(
+			err,
+			errDuelTargetWalletMissing,
+		):
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ O duelo foi cancelado porque o desafiado não possui mais uma carteira Gold neste grupo.",
+			)
+
+		default:
+			logger.Error(
+				"Erro preparando combate RPG do duelo:",
+				err,
+			)
+
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ Não foi possível preparar o combate RPG do duelo.",
+			)
+		}
+
+		return
+	}
+
+	logger.Info(
+		"Combate RPG do !duelo:",
+		"Desafiante PC:",
+		combat.ChallengerPower,
+		"Desafiado PC:",
+		combat.TargetPower,
+		"Chance desafiante:",
+		combat.ChallengerChance,
+		"%",
+		"Chance desafiado:",
+		combat.TargetChance,
+		"%",
+	)
+
 	result, err :=
 		gold.ResolveDuel(
 			groupJID,
 			challenge.ChallengerJID,
 			challenge.TargetJID,
 			challenge.Amount,
+			combat.ChallengerChance,
 		)
 
 	if err != nil {
@@ -402,21 +472,19 @@ func handleDuelAccept(
 			challenge.ChallengerName
 	}
 
-	winnerProgress :=
-		recordDuelProgress(
-			groupJID,
-			result.WinnerJID,
-			winnerName,
-			true,
-		)
+	_ = recordDuelProgress(
+		groupJID,
+		result.WinnerJID,
+		winnerName,
+		true,
+	)
 
-	loserProgress :=
-		recordDuelProgress(
-			groupJID,
-			result.LoserJID,
-			loserName,
-			false,
-		)
+	_ = recordDuelProgress(
+		groupJID,
+		result.LoserJID,
+		loserName,
+		false,
+	)
 
 	challengerMention, challengerErr :=
 		types.ParseJID(
@@ -447,17 +515,9 @@ func handleDuelAccept(
 		)
 
 	response := fmt.Sprintf(
-		"⚔️ *DUELO FINALIZADO!*\n\n@%s ⚔️ @%s\n\n%s\n\n🏆 Vencedor: *@%s*\n💰 Pote: *%d Gold*\n📈 Lucro líquido: *+%d Gold*\n\n💰 Saldo do vencedor: *%d Gold*\n💸 Saldo do perdedor: *%d Gold*%s%s",
-		challenge.ChallengerName,
-		challenge.TargetName,
+		"%s\n\n🏆 Vencedor: *@%s*",
 		battleText,
 		winnerName,
-		result.Pot,
-		result.BetAmount,
-		result.WinnerBalance,
-		result.LoserBalance,
-		winnerProgress,
-		loserProgress,
 	)
 
 	_ = whatsapp.SendMentionedText(

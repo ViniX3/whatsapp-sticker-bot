@@ -12,63 +12,112 @@ import (
 	"go.mau.fi/whatsmeow/types/events"
 )
 
-// handleUnknownCommand verifica se a mensagem parece ser
-// um comando, mas não foi reconhecida pelos handlers anteriores.
+// handleUnknownCommand verifica mensagens que parecem comandos,
+// mas não foram reconhecidas pelos handlers anteriores.
 //
-// Exemplos:
+// IMPORTANTE:
 //
-// !roubo
-// !roubargold
-// !teste
-// !qualquercoisa
+// Uma sugestão nunca é executada automaticamente.
+// O usuário precisa enviar o comando correto.
 //
-// Mensagens normais sem "!" são ignoradas.
+// Isso evita ações acidentais principalmente em comandos como:
+//
+// !bet
+// !pix
+// !comprar
+// !forjar
 func handleUnknownCommand(
 	client *whatsmeow.Client,
 	msgEvent *events.Message,
 	text string,
 ) bool {
-	parts := strings.Fields(text)
+
+	parts :=
+		strings.Fields(
+			text,
+		)
 
 	if len(parts) == 0 {
 		return false
 	}
 
-	command := strings.TrimSpace(parts[0])
+	command :=
+		strings.TrimSpace(
+			parts[0],
+		)
 
-	if !strings.HasPrefix(command, "!") {
+	if !strings.HasPrefix(
+		command,
+		"!",
+	) {
 		return false
 	}
 
-	senderJID := msgEvent.Info.Sender.ToNonAD()
+	senderJID :=
+		msgEvent.Info.Sender.ToNonAD()
 
-	senderName := strings.TrimSpace(
-		msgEvent.Info.PushName,
-	)
-
-	if senderName == "" {
-		senderName = strings.TrimSpace(
-			senderJID.User,
+	senderName :=
+		strings.TrimSpace(
+			msgEvent.Info.PushName,
 		)
+
+	if senderName == "" {
+		senderName =
+			strings.TrimSpace(
+				senderJID.User,
+			)
 	}
 
 	if senderName == "" {
-		senderName = "usuário"
+		senderName =
+			"usuário"
 	}
 
-	response := fmt.Sprintf(
-		"@%s esse comando não existe, use !menu para verificar os comandos que existem!",
-		senderName,
-	)
+	normalizedCommand :=
+		normalizeCommandToken(
+			command,
+		)
 
-	err := whatsapp.SendMentionedText(
-		client,
-		msgEvent.Info.Chat,
-		response,
-		[]types.JID{
-			senderJID,
-		},
-	)
+	suggestion,
+		hasSuggestion :=
+		suggestCommand(
+			command,
+		)
+
+	var response string
+
+	if hasSuggestion {
+
+		response =
+			fmt.Sprintf(
+				"@%s não encontrei o comando *%s*.\n\n"+
+					"💡 Você quis dizer *%s*?\n\n"+
+					"📖 Use *!menu* para consultar todos os comandos.",
+				senderName,
+				command,
+				suggestion,
+			)
+
+	} else {
+
+		response =
+			fmt.Sprintf(
+				"@%s não encontrei o comando *%s*.\n\n"+
+					"📖 Use *!menu* para consultar os comandos disponíveis.",
+				senderName,
+				command,
+			)
+	}
+
+	err :=
+		whatsapp.SendMentionedText(
+			client,
+			msgEvent.Info.Chat,
+			response,
+			[]types.JID{
+				senderJID,
+			},
+		)
 
 	if err != nil {
 		logger.Error(
@@ -79,12 +128,33 @@ func handleUnknownCommand(
 		return true
 	}
 
-	logger.Info(
-		"Comando desconhecido recebido:",
-		command,
-		"de:",
-		senderJID.String(),
-	)
+	if hasSuggestion {
+
+		logger.Info(
+			"UNKNOWN_COMMAND:",
+			"original=",
+			command,
+			"normalized=",
+			normalizedCommand,
+			"suggestion=",
+			suggestion,
+			"user=",
+			senderJID.String(),
+		)
+
+	} else {
+
+		logger.Info(
+			"UNKNOWN_COMMAND:",
+			"original=",
+			command,
+			"normalized=",
+			normalizedCommand,
+			"suggestion=none",
+			"user=",
+			senderJID.String(),
+		)
+	}
 
 	return true
 }

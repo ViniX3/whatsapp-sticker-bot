@@ -15,6 +15,7 @@ import (
 	"whatsapp-sticker-bot/internal/media"
 	"whatsapp-sticker-bot/internal/processor"
 	"whatsapp-sticker-bot/internal/quiz"
+	"whatsapp-sticker-bot/internal/rpg"
 	"whatsapp-sticker-bot/internal/whatsapp"
 
 	"go.mau.fi/whatsmeow"
@@ -58,12 +59,26 @@ func ProcessMessage(
 		)
 	}
 
-	text := extractText(msgEvent)
+	rawText := extractText(msgEvent)
+
+	text :=
+		normalizeCommandText(
+			rawText,
+		)
 
 	logger.Info(
 		"Texto recebido:",
-		text,
+		rawText,
 	)
+
+	if rawText != text {
+		logger.Info(
+			"Comando normalizado:",
+			rawText,
+			"->",
+			text,
+		)
+	}
 
 	parts := strings.Fields(text)
 
@@ -76,7 +91,42 @@ func ProcessMessage(
 		return
 	}
 
-	command := strings.ToLower(parts[0])
+	command := canonicalCommand(parts[0])
+
+	// ==========================================================
+	// SINCRONIZAÇÃO DE IDENTIDADE
+	// ==========================================================
+	//
+	// Se o usuário já possuir identidade no banco,
+	// atualizamos seu nome usando o PushName atual.
+	//
+	// Isso NÃO cria carteira e NÃO concede Gold.
+	// ==========================================================
+
+	if msgEvent.Info.IsGroup {
+		senderJID :=
+			canonicalSenderJID(
+				msgEvent,
+			)
+
+		senderName :=
+			strings.TrimSpace(
+				msgEvent.Info.PushName,
+			)
+
+		if err :=
+			database.UpdateUserNameIfExists(
+				senderJID,
+				senderName,
+			); err != nil {
+
+			logger.Warn(
+				"Não foi possível sincronizar nome do usuário:",
+				senderJID,
+				err,
+			)
+		}
+	}
 
 	// ==========================================================
 	// RESPOSTA DE QUIZ
@@ -201,6 +251,32 @@ func ProcessMessage(
 	}
 
 	// ==========================================================
+	// !pressagio
+	// ==========================================================
+
+	if handleChaosCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
+	// !cofre
+	// ==========================================================
+
+	if handleVaultCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
 	// !conquistas
 	// ==========================================================
 
@@ -214,6 +290,19 @@ func ProcessMessage(
 	}
 
 	if handleProfileCommand(
+		client,
+		msgEvent,
+		text,
+	) {
+		logger.Info("==============================")
+		return
+	}
+
+	// ==========================================================
+	// RPG
+	// ==========================================================
+
+	if handleRPGCommand(
 		client,
 		msgEvent,
 		text,
@@ -262,14 +351,6 @@ func ProcessMessage(
 	// ==========================================================
 
 	if command == "!gold" {
-		if !requireGoldGroup(
-			client,
-			msgEvent,
-			"!gold",
-		) {
-			return
-		}
-
 		if len(parts) != 1 {
 			_ = whatsapp.SendText(
 				client,
@@ -281,108 +362,14 @@ func ProcessMessage(
 			return
 		}
 
-		groupJID :=
-			msgEvent.Info.Chat.String()
-
-		jid :=
-			canonicalSenderJID(msgEvent)
-
-		name :=
-			msgEvent.Info.PushName
-
 		logger.Info(
 			"Comando !gold recebido de:",
-			jid,
+			canonicalSenderJID(msgEvent),
 		)
 
-		wallet, claimed, err :=
-			gold.ClaimInitialGold(
-				groupJID,
-				jid,
-				name,
-			)
-
-		if err != nil {
-			logger.Error(
-				"Erro ao acessar/conceder Gold inicial:",
-				err,
-			)
-
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ Erro ao acessar sua carteira Gold.",
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		if wallet == nil {
-			logger.Error(
-				"Carteira Gold não encontrada após operação:",
-				jid,
-			)
-
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ Erro ao consultar sua carteira Gold.",
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		senderMention :=
-			msgEvent.Info.Sender.ToNonAD()
-
-		if claimed {
-			response := fmt.Sprintf(
-				"🪙 *@%s*\n\n*Carteira Gold ativada neste grupo!*\n\nVocê recebeu *%d Gold* iniciais.\n\n💰 Saldo atual: *%d Gold*",
-				name,
-				gold.InitialGold,
-				wallet.Gold,
-			)
-
-			_ = whatsapp.SendMentionedText(
-				client,
-				msgEvent.Info.Chat,
-				response,
-				[]types.JID{
-					senderMention,
-				},
-			)
-
-			logger.Success(
-				"Gold inicial concedido no grupo:",
-				groupJID,
-				"Usuário:",
-				jid,
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		response := fmt.Sprintf(
-			"🪙 *@%s*\n\n*Carteira Gold deste grupo*\n\n💰 Saldo atual: *%d Gold*",
-			name,
-			wallet.Gold,
-		)
-
-		_ = whatsapp.SendMentionedText(
+		handleGoldStarterCommand(
 			client,
-			msgEvent.Info.Chat,
-			response,
-			[]types.JID{
-				senderMention,
-			},
-		)
-
-		logger.Info(
-			"Carteira Gold consultada:",
-			jid,
+			msgEvent,
 		)
 
 		logger.Info("==============================")
@@ -390,8 +377,38 @@ func ProcessMessage(
 	}
 
 	// ==========================================================
-	// !saldo
+
 	// ==========================================================
+	// COMANDOS LEGADOS DE EQUIPAMENTO RPG
+	// ==========================================================
+
+	if command == "!espada" ||
+		command == "!escudo" ||
+		command == "!armadura" {
+
+		if len(parts) != 1 {
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				fmt.Sprintf(
+					"Uso correto: *%s*",
+					command,
+				),
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		handleLegacyRPGEquipmentCommand(
+			client,
+			msgEvent,
+			command,
+		)
+
+		logger.Info("==============================")
+		return
+	}
 
 	if command == "!saldo" {
 		if !requireGoldGroup(
@@ -458,10 +475,39 @@ func ProcessMessage(
 			return
 		}
 
+		playerState, err :=
+			rpg.GetPlayer(
+				groupJID,
+				jid,
+			)
+
+		if err != nil {
+			logger.Error(
+				"Erro ao consultar Cristais para !saldo:",
+				err,
+			)
+
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ Erro ao consultar seus Cristais.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
 		response := fmt.Sprintf(
-			"💰 *@%s*\n\n*Seu saldo neste grupo*\n\n*%d Gold*",
+			"💰 *@%s*\n"+
+				"💰 *%s*\n"+
+				"💎 *%s Cristais*",
 			name,
-			wallet.Gold,
+			formatGold(
+				wallet.Gold,
+			),
+			formatRPGNumber(
+				playerState.MagicCrystals,
+			),
 		)
 
 		_ = whatsapp.SendMentionedText(
@@ -476,176 +522,6 @@ func ProcessMessage(
 		logger.Info(
 			"Saldo consultado:",
 			jid,
-		)
-
-		logger.Info("==============================")
-		return
-	}
-
-	// ==========================================================
-	// !escudo
-	// ==========================================================
-
-	if command == "!escudo" {
-		if !requireGoldGroup(
-			client,
-			msgEvent,
-			"!escudo",
-		) {
-			return
-		}
-
-		if len(parts) != 1 {
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"Uso correto: *!escudo*",
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		groupJID :=
-			msgEvent.Info.Chat.String()
-
-		jid :=
-			canonicalSenderJID(msgEvent)
-
-		name :=
-			msgEvent.Info.PushName
-
-		result, err :=
-			gold.BuyShield(
-				groupJID,
-				jid,
-			)
-
-		if err != nil {
-			switch {
-			case errors.Is(
-				err,
-				gold.ErrWalletNotFound,
-			):
-				_ = whatsapp.SendText(
-					client,
-					msgEvent.Info.Chat,
-					fmt.Sprintf(
-						"❌ Você ainda não possui uma carteira Gold neste grupo.\n\nUse *!gold* para receber seus *%d Gold* iniciais.",
-						gold.InitialGold,
-					),
-				)
-
-			case errors.Is(
-				err,
-				gold.ErrInsufficientGold,
-			):
-				_ = whatsapp.SendText(
-					client,
-					msgEvent.Info.Chat,
-					fmt.Sprintf(
-						"💸 Você precisa de *%d Gold* para comprar um escudo.",
-						gold.ShieldPrice,
-					),
-				)
-
-			case errors.Is(
-				err,
-				gold.ErrShieldAlreadyActive,
-			):
-				status, statusErr :=
-					gold.GetShieldStatus(
-						groupJID,
-						jid,
-					)
-
-				if statusErr != nil {
-					logger.Error(
-						"Erro ao consultar escudo ativo:",
-						statusErr,
-					)
-
-					_ = whatsapp.SendText(
-						client,
-						msgEvent.Info.Chat,
-						"🛡️ Você já possui um escudo ativo neste grupo.",
-					)
-
-					logger.Info("==============================")
-					return
-				}
-
-				if status != nil &&
-					status.Active {
-
-					response := fmt.Sprintf(
-						"🛡️ @%s, você já possui um escudo ativo!\n\n⏳ Tempo restante: *%s*\n⚔️ Ataques recebidos: *%d*\n\nUm novo escudo só poderá ser comprado quando este quebrar ou expirar.",
-						name,
-						formatDuration(
-							status.Remaining,
-						),
-						status.AttacksReceived,
-					)
-
-					_ = whatsapp.SendMentionedText(
-						client,
-						msgEvent.Info.Chat,
-						response,
-						[]types.JID{
-							msgEvent.Info.Sender.ToNonAD(),
-						},
-					)
-
-					logger.Info("==============================")
-					return
-				}
-
-				_ = whatsapp.SendText(
-					client,
-					msgEvent.Info.Chat,
-					"🛡️ Você já possui um escudo ativo neste grupo.",
-				)
-
-			default:
-				logger.Error(
-					"Erro ao comprar escudo:",
-					err,
-				)
-
-				_ = whatsapp.SendText(
-					client,
-					msgEvent.Info.Chat,
-					"❌ Não foi possível comprar o escudo.",
-				)
-			}
-
-			logger.Info("==============================")
-			return
-		}
-
-		response := fmt.Sprintf(
-			"🛡️ *ESCUDO ATIVADO!*\n\n*@%s* agora está protegido contra roubos.\n\n💰 Custo: *%d Gold*\n⏳ Duração máxima: *12 horas*\n💰 Saldo atual: *%d Gold*\n\n⚔️ Cada tentativa de roubo desgasta o escudo e existe uma pequena chance de ele quebrar.",
-			name,
-			result.Price,
-			result.Balance,
-		)
-
-		_ = whatsapp.SendMentionedText(
-			client,
-			msgEvent.Info.Chat,
-			response,
-			[]types.JID{
-				msgEvent.Info.Sender.ToNonAD(),
-			},
-		)
-
-		logger.Success(
-			"Escudo comprado:",
-			jid,
-			"Grupo:",
-			groupJID,
-			"Expira:",
-			result.ExpiresAt,
 		)
 
 		logger.Info("==============================")
@@ -769,13 +645,21 @@ func ProcessMessage(
 			)
 
 		response := fmt.Sprintf(
-			"%s\n\n🍀 *@%s* tirou:\n\n%s *%s*\n\n💰 Prêmio: *+%d Gold*\n💰 Saldo atual: *%d Gold*\n\n⏳ Você poderá tentar novamente em *24 horas*.",
+			"%s\n"+
+				"%s *@%s* • *%s*\n"+
+				"💰 +%s\n"+
+				"Saldo: *%s*\n"+
+				"⏳ 24h",
 			headline,
-			name,
 			result.Emoji,
+			name,
 			result.Tier,
-			result.Amount,
-			result.Balance,
+			formatGold(
+				result.Amount,
+			),
+			formatGold(
+				result.Balance,
+			),
 		)
 
 		response += progressText
@@ -1004,11 +888,13 @@ func ProcessMessage(
 					)
 
 				timeoutResponse := fmt.Sprintf(
-					"⏰ *TEMPO ESGOTADO!*\n\n@%s não respondeu a tempo.\n\n✅ Resposta correta:\n*%s)* %s\n\n💰 Prêmio perdido: *%d Gold*",
+					"⏰ *TEMPO ESGOTADO!*\n\n@%s não respondeu.\n✅ Correta: *%s)* %s\n💰 Prêmio perdido: *%s Gold*",
 					ownerName,
 					correctLetter,
 					correctOption,
-					reward,
+					formatRPGNumber(
+						reward,
+					),
 				)
 
 				parsedOwner,
@@ -1120,7 +1006,7 @@ func ProcessMessage(
 		var builder strings.Builder
 
 		builder.WriteString(
-			"🏆 *RANKING GOLD DO GRUPO*\n\n",
+			"🏆 *MAIS RICOS*\n\n",
 		)
 
 		for position, entry := range ranking {
@@ -1149,10 +1035,12 @@ func ProcessMessage(
 
 			builder.WriteString(
 				fmt.Sprintf(
-					"%s *%s* — %d Gold\n",
+					"%s *%s* — %s\n",
 					prefix,
 					name,
-					entry.Gold,
+					formatGold(
+						entry.Gold,
+					),
 				),
 			)
 		}
@@ -1366,12 +1254,11 @@ func ProcessMessage(
 			msgEvent.Info.PushName
 
 		response := fmt.Sprintf(
-			"💸 *PIX GOLD REALIZADO!*\n\n*@%s* enviou *%d Gold* para *@%s*.\n\n💰 Saldo de @%s: *%d Gold*",
+			"💸 *@%s → @%s*\n💰 %s\nSaldo: *%s*",
 			senderName,
-			result.Amount,
 			targetName,
-			senderName,
-			result.SenderBalance,
+			formatGold(result.Amount),
+			formatGold(result.SenderBalance),
 		)
 
 		_ = whatsapp.SendMentionedText(
@@ -1414,32 +1301,17 @@ func ProcessMessage(
 			_ = whatsapp.SendText(
 				client,
 				msgEvent.Info.Chat,
-				"Uso correto: *!bet <quantidade>*\n\nExemplo: *!bet 100*",
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		betAmount, err :=
-			strconv.Atoi(parts[1])
-
-		if err != nil {
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ A quantidade precisa ser um número inteiro.\n\nExemplo: *!bet 100*",
-			)
-
-			logger.Info("==============================")
-			return
-		}
-
-		if betAmount <= 0 {
-			_ = whatsapp.SendText(
-				client,
-				msgEvent.Info.Chat,
-				"❌ A aposta precisa ser maior que *0 Gold*.",
+				"🎲 *APOSTA*\n\n"+
+					"Use:\n"+
+					"*!bet <valor>*\n"+
+					"*!bet <percentual>%*\n"+
+					"*!bet metade*\n"+
+					"*!bet all*\n\n"+
+					"Exemplos:\n"+
+					"*!bet 100000*\n"+
+					"*!bet 20%*\n"+
+					"*!bet metade*\n"+
+					"*!bet all*",
 			)
 
 			logger.Info("==============================")
@@ -1450,7 +1322,80 @@ func ProcessMessage(
 			msgEvent.Info.Chat.String()
 
 		jid :=
-			canonicalSenderJID(msgEvent)
+			canonicalSenderJID(
+				msgEvent,
+			)
+
+		currentBalance,
+			balanceErr :=
+			gold.GetBalance(
+				groupJID,
+				jid,
+			)
+
+		if balanceErr != nil {
+			logger.Error(
+				"Erro consultando saldo para !bet:",
+				balanceErr,
+			)
+
+			_ = whatsapp.SendText(
+				client,
+				msgEvent.Info.Chat,
+				"❌ Não foi possível consultar seu saldo Gold.",
+			)
+
+			logger.Info("==============================")
+			return
+		}
+
+		betAmount,
+			err :=
+			parseFlexibleGoldAmount(
+				parts[1],
+				currentBalance,
+			)
+
+		if err != nil {
+			switch {
+			case errors.Is(
+				err,
+				errFlexibleAmountPercentRange,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ O percentual da aposta precisa estar entre *1% e 100%*.\n\n"+
+						"Exemplo: *!bet 20%*",
+				)
+
+			case errors.Is(
+				err,
+				errFlexibleAmountNoBalance,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ Você não possui Gold disponível para essa aposta.\n\n"+
+						"Use *!saldo* para consultar sua carteira.",
+				)
+
+			default:
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ Valor de aposta inválido.\n\n"+
+						"Use, por exemplo:\n"+
+						"*!bet 100000*\n"+
+						"*!bet 20%*\n"+
+						"*!bet metade*\n"+
+						"*!bet all*",
+				)
+			}
+
+			logger.Info("==============================")
+			return
+		}
 
 		name :=
 			msgEvent.Info.PushName
@@ -1513,65 +1458,44 @@ func ProcessMessage(
 
 		var response string
 
-		switch result.Multiplier {
-		case 0:
+		if result.NetResult < 0 {
 			response = fmt.Sprintf(
-				"💀 *PERDEU*\n\nAposta: *%d Gold*\nPrêmio: *0 Gold*\n\n💰 Saldo: *%d Gold*",
-				result.BetAmount,
-				result.Balance,
+				"💀 *Perdeu*\n"+
+					"💸 %s\n"+
+					"💰 *%s*",
+				formatSignedGold(
+					result.NetResult,
+				),
+				formatGold(
+					result.Balance,
+				),
 			)
 
-		case 1:
+		} else if result.NetResult == 0 {
 			response = fmt.Sprintf(
-				"😐 *RECUPEROU*\n\nAposta: *%d Gold*\nPrêmio: *%d Gold*\n\n💰 Saldo: *%d Gold*",
-				result.BetAmount,
-				result.Prize,
-				result.Balance,
+				"😐 *Empate*\n"+
+					"↩️ %s\n"+
+					"💰 *%s*",
+				formatGold(
+					result.Prize,
+				),
+				formatGold(
+					result.Balance,
+				),
 			)
 
-		case 2:
+		} else {
 			response = fmt.Sprintf(
-				"🍀 *PEQUENO PRÊMIO*\n\nAposta: *%d Gold*\nPrêmio: *%d Gold*\nLucro: *+%d Gold*\n\n💰 Saldo: *%d Gold*",
-				result.BetAmount,
-				result.Prize,
-				result.NetResult,
-				result.Balance,
-			)
-
-		case 5:
-			response = fmt.Sprintf(
-				"💰 *GRANDE PRÊMIO!*\n\nAposta: *%d Gold*\nPrêmio: *%d Gold*\nLucro: *+%d Gold*\n\n💰 Saldo: *%d Gold*",
-				result.BetAmount,
-				result.Prize,
-				result.NetResult,
-				result.Balance,
-			)
-
-		case 10:
-			response = fmt.Sprintf(
-				"🔥 *JACKPOT!*\n\nAposta: *%d Gold*\nPrêmio: *%d Gold*\nLucro: *+%d Gold*\n\n💰 Saldo: *%d Gold*",
-				result.BetAmount,
-				result.Prize,
-				result.NetResult,
-				result.Balance,
-			)
-
-		case 50:
-			response = fmt.Sprintf(
-				"👑 *MEGA JACKPOT!!!*\n\nAposta: *%d Gold*\nPrêmio: *%d Gold*\nLucro: *+%d Gold*\n\n💰 Saldo: *%d Gold*",
-				result.BetAmount,
-				result.Prize,
-				result.NetResult,
-				result.Balance,
-			)
-
-		default:
-			response = fmt.Sprintf(
-				"🎲 Resultado: *%dx*\n\nAposta: *%d Gold*\nPrêmio: *%d Gold*\n\n💰 Saldo: *%d Gold*",
-				result.Multiplier,
-				result.BetAmount,
-				result.Prize,
-				result.Balance,
+				"🎉 *%s*\n"+
+					"🏆 %s\n"+
+					"💰 *%s*",
+				result.Result,
+				formatSignedGold(
+					result.NetResult,
+				),
+				formatGold(
+					result.Balance,
+				),
 			)
 		}
 
@@ -1744,11 +1668,80 @@ func ProcessMessage(
 			return
 		}
 
+		combat, err :=
+			prepareRobberyCombat(
+				groupJID,
+				jid,
+				targetJID,
+			)
+
+		if err != nil {
+			switch {
+			case errors.Is(
+				err,
+				errRobberyRobberWalletMissing,
+			):
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					fmt.Sprintf(
+						"❌ Você ainda não possui uma carteira Gold neste grupo.\\n\\nUse *!gold* para receber seus *%d Gold* iniciais e iniciar sua jornada RPG.",
+						gold.InitialGold,
+					),
+				)
+
+			case errors.Is(
+				err,
+				errRobberyTargetWalletMissing,
+			):
+				response := fmt.Sprintf(
+					"💸 *@%s* ainda não possui carteira Gold neste grupo e não pode ser roubado.",
+					targetName,
+				)
+
+				_ = whatsapp.SendMentionedText(
+					client,
+					msgEvent.Info.Chat,
+					response,
+					[]types.JID{
+						targetJIDParsed.ToNonAD(),
+					},
+				)
+
+			default:
+				logger.Error(
+					"Erro ao preparar combate RPG do roubo:",
+					err,
+				)
+
+				_ = whatsapp.SendText(
+					client,
+					msgEvent.Info.Chat,
+					"❌ Não foi possível preparar o combate RPG.",
+				)
+			}
+
+			logger.Info("==============================")
+			return
+		}
+
+		logger.Info(
+			"Combate RPG do !roubar:",
+			"Ladrão PC:",
+			combat.RobberPower,
+			"Alvo PC:",
+			combat.TargetPower,
+			"Chance:",
+			combat.SuccessChance,
+			"%",
+		)
+
 		result, err :=
 			gold.Rob(
 				groupJID,
 				jid,
 				targetJID,
+				combat.SuccessChance,
 			)
 
 		if err != nil {
@@ -1831,96 +1824,38 @@ func ProcessMessage(
 			recordRobberyProgress(
 				groupJID,
 				jid,
-				result.Success &&
-					!result.ShieldBlocked,
+				result.Success,
 			)
-
-		if result.ShieldBlocked {
-			if result.ShieldBroken {
-				response := fmt.Sprintf(
-					"💥 *ESCUDO QUEBRADO!*\n\nO ataque de *@%s* destruiu o escudo de *@%s*!\n\n⚔️ O escudo quebrou no ataque nº *%d*.\n\n💰 Nenhum Gold foi roubado nesta tentativa.\n\n🛡️ @%s pode comprar outro escudo imediatamente usando *!escudo*.",
-					robberName,
-					targetName,
-					result.ShieldAttackNumber,
-					targetName,
-				)
-
-				_ = whatsapp.SendMentionedText(
-					client,
-					msgEvent.Info.Chat,
-					response,
-					[]types.JID{
-						msgEvent.Info.Sender.ToNonAD(),
-						targetJIDParsed.ToNonAD(),
-					},
-				)
-
-				logger.Warn(
-					"Escudo quebrado:",
-					"Alvo:",
-					targetJID,
-					"Ataque:",
-					result.ShieldAttackNumber,
-					"Chance:",
-					result.ShieldBreakChance,
-					"%",
-				)
-
-				logger.Info("==============================")
-				return
-			}
-
-			response := fmt.Sprintf(
-				"🛡️ *ATAQUE BLOQUEADO!*\n\nO escudo de *@%s* resistiu ao ataque de *@%s*.\n\n⚔️ Ataques recebidos por este escudo: *%d*\n💰 Nenhum Gold foi roubado.",
-				targetName,
-				robberName,
-				result.ShieldAttackNumber,
-			)
-
-			_ = whatsapp.SendMentionedText(
-				client,
-				msgEvent.Info.Chat,
-				response,
-				[]types.JID{
-					msgEvent.Info.Sender.ToNonAD(),
-					targetJIDParsed.ToNonAD(),
-				},
-			)
-
-			logger.Info(
-				"Escudo bloqueou roubo:",
-				"Alvo:",
-				targetJID,
-				"Ataque:",
-				result.ShieldAttackNumber,
-				"Chance quebra:",
-				result.ShieldBreakChance,
-				"%",
-			)
-
-			logger.Info("==============================")
-			return
-		}
 
 		var response string
 
 		if result.Success {
 			response = fmt.Sprintf(
-				"🦹 *@%s* roubou *%d Gold* de *@%s*! 💰\n\n💰 Saldo de @%s: *%d Gold*",
+				"🦹 *@%s roubou @%s*\n"+
+					"💰 +%s\n"+
+					"💼 *%s*",
 				robberName,
-				result.Amount,
 				targetName,
-				robberName,
-				result.RobberBalance,
+				formatGold(
+					result.Amount,
+				),
+				formatGold(
+					result.RobberBalance,
+				),
 			)
 		} else {
 			response = fmt.Sprintf(
-				"🚨 *@%s* tentou roubar *@%s*, mas falhou! 💸\n\nPerdeu *%d Gold*.\n\n💰 Saldo de @%s: *%d Gold*",
+				"🚨 *@%s falhou contra @%s*\n"+
+					"💸 -%s\n"+
+					"💼 *%s*",
 				robberName,
 				targetName,
-				result.Penalty,
-				robberName,
-				result.RobberBalance,
+				formatGold(
+					result.Penalty,
+				),
+				formatGold(
+					result.RobberBalance,
+				),
 			)
 		}
 
@@ -2132,11 +2067,18 @@ func handleQuizAnswer(
 	// ======================================================
 
 	if result.Correct {
+		quizReward,
+			quizChaosBonus,
+			quizChaosPercent :=
+			applyChaosGameReward(
+				result.Reward,
+			)
+
 		rewardResult, rewardErr :=
 			gold.RewardQuiz(
 				groupJID,
 				jid,
-				result.Reward,
+				quizReward,
 				string(
 					result.Difficulty,
 				),
@@ -2166,13 +2108,25 @@ func handleQuizAnswer(
 			)
 
 		response := fmt.Sprintf(
-			"✅ *RESPOSTA CORRETA!*\n\n@%s acertou!\n\n✅ *%s)* %s\n\n💰 Prêmio: *+%d Gold*\n💰 Saldo atual: *%d Gold*",
+			"✅ *RESPOSTA CORRETA!*\n\n@%s • *%s)* %s\n💰 *+%s Gold* • Saldo: *%s Gold*",
 			name,
 			result.CorrectAnswer,
 			correctOption,
-			rewardResult.Amount,
-			rewardResult.Balance,
+			formatRPGNumber(
+				rewardResult.Amount,
+			),
+			formatRPGNumber(
+				rewardResult.Balance,
+			),
 		)
+
+		if quizChaosBonus > 0 {
+			response +=
+				formatChaosGoldBonus(
+					quizChaosBonus,
+					quizChaosPercent,
+				)
+		}
 
 		response += progressText
 
@@ -2210,13 +2164,15 @@ func handleQuizAnswer(
 	)
 
 	response := fmt.Sprintf(
-		"❌ *RESPOSTA ERRADA!*\n\n@%s respondeu:\n*%s)* %s\n\n✅ Resposta correta:\n*%s)* %s\n\n💰 Prêmio perdido: *%d Gold*",
+		"❌ *RESPOSTA ERRADA!*\n\n@%s • marcou *%s)* %s\n✅ Correta: *%s)* %s\n💰 Prêmio perdido: *%s Gold*",
 		name,
 		result.SelectedAnswer,
 		selectedOption,
 		result.CorrectAnswer,
 		correctOption,
-		result.Reward,
+		formatRPGNumber(
+			result.Reward,
+		),
 	)
 
 	_ = whatsapp.SendMentionedText(
@@ -2259,7 +2215,7 @@ func formatQuizQuestion(
 
 	title :=
 		fmt.Sprintf(
-			"🧠 *QUIZ — %s*",
+			"🧠 *QUIZ • %s*",
 			session.Difficulty,
 		)
 
@@ -2271,7 +2227,7 @@ func formatQuizQuestion(
 	}
 
 	response := fmt.Sprintf(
-		"%s\n\n@%s, sua pergunta é:\n\n*%s*\n\n*A)* %s\n*B)* %s\n*C)* %s\n*D)* %s\n\n💰 Prêmio: *%d Gold*\n⏳ Você tem *%d segundos*!\n\nResponda apenas com *A*, *B*, *C* ou *D*.",
+		"%s\n\n@%s\n*%s*\n\n*A)* %s\n*B)* %s\n*C)* %s\n*D)* %s\n\n💰 *%s Gold* • ⏳ *%ds*\n📝 Responda com *A, B, C ou D*.",
 		title,
 		name,
 		session.Question.Text,
@@ -2279,7 +2235,7 @@ func formatQuizQuestion(
 		session.Question.Options[1],
 		session.Question.Options[2],
 		session.Question.Options[3],
-		session.Reward,
+		formatRPGNumber(session.Reward),
 		seconds,
 	)
 
@@ -2287,7 +2243,7 @@ func formatQuizQuestion(
 		quiz.DifficultyInsane {
 
 		response = fmt.Sprintf(
-			"%s\n\n@%s, você encontrou uma pergunta *INSANA*!\n\n*%s*\n\n*A)* %s\n*B)* %s\n*C)* %s\n*D)* %s\n\n👑 Prêmio: *%d Gold*\n⏳ VOCÊ TEM APENAS *%d SEGUNDOS*!\n\nResponda apenas com *A*, *B*, *C* ou *D*.",
+			"%s\n\n@%s\n*%s*\n\n*A)* %s\n*B)* %s\n*C)* %s\n*D)* %s\n\n👑 *%s Gold* • ⏳ *%ds*\n📝 Responda com *A, B, C ou D*.",
 			title,
 			name,
 			session.Question.Text,
@@ -2295,7 +2251,7 @@ func formatQuizQuestion(
 			session.Question.Options[1],
 			session.Question.Options[2],
 			session.Question.Options[3],
-			session.Reward,
+			formatRPGNumber(session.Reward),
 			seconds,
 		)
 	}
@@ -2576,28 +2532,56 @@ func robTargetName(
 	return name
 }
 
+func formatBetPayout(
+	percent int,
+) string {
+	if percent <= 0 {
+		return "0x"
+	}
+
+	whole :=
+		percent / 100
+
+	decimal :=
+		percent % 100
+
+	if decimal == 0 {
+		return fmt.Sprintf(
+			"%dx",
+			whole,
+		)
+	}
+
+	if decimal%10 == 0 {
+		return fmt.Sprintf(
+			"%d,%dx",
+			whole,
+			decimal/10,
+		)
+	}
+
+	return fmt.Sprintf(
+		"%d,%02dx",
+		whole,
+		decimal,
+	)
+}
+
 func rankingDisplayName(
 	name string,
 	jid string,
 ) string {
-
 	name =
-		strings.TrimSpace(name)
+		database.NormalizeUserDisplayName(
+			jid,
+			name,
+		)
 
 	if name != "" {
 		return name
 	}
 
-	if index :=
-		strings.Index(
-			jid,
-			"@",
-		); index > 0 {
-
-		return jid[:index]
-	}
-
-	return jid
+	return "Aventureiro"
 }
 
 // ==========================================================

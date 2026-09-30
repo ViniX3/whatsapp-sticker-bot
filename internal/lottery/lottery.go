@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"math/big"
 
+	"whatsapp-sticker-bot/internal/chaos"
 	"whatsapp-sticker-bot/internal/database"
 )
 
@@ -96,6 +97,10 @@ type PurchaseResult struct {
 
 	Prize         int
 	WinnerBalance int
+
+	ChaosBonus int
+
+	ChaosBonusPercent int
 
 	NextRoundNumber int
 }
@@ -507,6 +512,12 @@ func BuyTickets(
 		purchase.WinnerBalance =
 			drawResult.WinnerBalance
 
+		purchase.ChaosBonus =
+			drawResult.ChaosBonus
+
+		purchase.ChaosBonusPercent =
+			drawResult.ChaosBonusPercent
+
 		purchase.NextRoundNumber =
 			drawResult.NextRoundNumber
 
@@ -535,6 +546,10 @@ type drawResult struct {
 
 	Prize         int
 	WinnerBalance int
+
+	ChaosBonus int
+
+	ChaosBonusPercent int
 
 	NextRoundNumber int
 }
@@ -589,6 +604,31 @@ func drawTx(
 			)
 	}
 
+	prize :=
+		jackpot
+
+	chaosBonus := 0
+	chaosBonusPercent := 0
+
+	adjustedPrize,
+		bonus,
+		bonusPercent,
+		active :=
+		chaos.ApplyGoldReward(
+			jackpot,
+		)
+
+	if active {
+		prize =
+			adjustedPrize
+
+		chaosBonus =
+			bonus
+
+		chaosBonusPercent =
+			bonusPercent
+	}
+
 	result, err :=
 		tx.Exec(`
 			UPDATE group_wallets
@@ -598,7 +638,7 @@ func drawTx(
 			WHERE group_jid = ?
 			  AND jid = ?
 		`,
-			jackpot,
+			prize,
 			groupJID,
 			winnerJID,
 		)
@@ -650,7 +690,7 @@ func drawTx(
 		`,
 			groupJID,
 			winnerJID,
-			jackpot,
+			prize,
 			"LOTTERY_WIN",
 			description,
 		)
@@ -729,9 +769,13 @@ func drawTx(
 
 		WinnerJID: winnerJID,
 
-		Prize: jackpot,
+		Prize: prize,
 
 		WinnerBalance: winnerBalance,
+
+		ChaosBonus: chaosBonus,
+
+		ChaosBonusPercent: chaosBonusPercent,
 
 		NextRoundNumber: nextRound.RoundNumber,
 	}, nil

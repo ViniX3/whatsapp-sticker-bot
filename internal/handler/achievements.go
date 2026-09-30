@@ -38,16 +38,65 @@ func handleAchievementsCommand(
 
 	mentioned := funMentionedJIDs(msgEvent)
 
+	mode := "active"
+	invalidArgument := false
+
+	for _, raw := range parts[1:] {
+		arg :=
+			strings.ToLower(
+				strings.TrimSpace(
+					raw,
+				),
+			)
+
+		if arg == "" ||
+			strings.HasPrefix(
+				arg,
+				"@",
+			) {
+
+			continue
+		}
+
+		switch arg {
+
+		case "ativas",
+			"ativos",
+			"andamento":
+
+			mode = "active"
+
+		case "finalizadas",
+			"terminadas",
+			"concluidas",
+			"concluídas":
+
+			mode = "finished"
+
+		case "bloqueadas",
+			"bloqueados":
+
+			mode = "locked"
+
+		default:
+			invalidArgument = true
+		}
+	}
+
 	if len(mentioned) > 1 ||
-		(len(mentioned) == 0 && len(parts) != 1) {
+		invalidArgument {
+
 		_ = whatsapp.SendText(
 			client,
 			msgEvent.Info.Chat,
-			"🏆 Use *!conquistas* ou *!conquistas @pessoa*.",
+			"🏆 *CONQUISTAS*\n"+
+				"*!conquistas*\n"+
+				"*!conquistas finalizadas*\n"+
+				"*!conquistas bloqueadas*",
 		)
+
 		return true
 	}
-
 	groupJID := msgEvent.Info.Chat.String()
 	targetJID := canonicalSenderJID(msgEvent)
 	targetMention := msgEvent.Info.Sender.ToNonAD()
@@ -202,56 +251,145 @@ func handleAchievementsCommand(
 			player,
 		)
 
-	unlocked :=
-		profile.CountUnlockedAchievements(
-			achievements,
-		)
-
 	var builder strings.Builder
 
-	fmt.Fprintf(
-		&builder,
-		"🏆 *CONQUISTAS DE @%s*\n\n"+
-			"✅ *%d/%d desbloqueadas*\n\n",
-		targetName,
-		unlocked,
-		len(achievements),
-	)
+	switch mode {
 
-	for _, achievement := range achievements {
-
-		if achievement.Unlocked {
-			fmt.Fprintf(
-				&builder,
-				"✅ %s *%s*\n   %s\n",
-				achievement.Icon,
-				achievement.Name,
-				achievement.Description,
-			)
-
-			continue
-		}
-
-		progress :=
-			achievement.Progress
-
-		if progress >
-			achievement.Target {
-
-			progress =
-				achievement.Target
-		}
-
+	case "finished":
 		fmt.Fprintf(
 			&builder,
-			"🔒 %s *%s* — %d/%d\n",
-			achievement.Icon,
-			achievement.Name,
-			progress,
-			achievement.Target,
+			"✅ *FINALIZADAS DE @%s*\n\n",
+			targetName,
 		)
-	}
 
+		count := 0
+
+		for _, achievement := range achievements {
+
+			if !achievement.Unlocked {
+				continue
+			}
+
+			count++
+
+			fmt.Fprintf(
+				&builder,
+				"%s *%s*\n",
+				achievement.Icon,
+				achievement.Name,
+			)
+
+			description :=
+				strings.TrimSpace(
+					achievement.Description,
+				)
+
+			if description != "" {
+				fmt.Fprintf(
+					&builder,
+					"%s\n\n",
+					description,
+				)
+			}
+		}
+
+		if count == 0 {
+			builder.WriteString(
+				"✨ Nenhuma conquista finalizada.",
+			)
+		}
+
+	case "locked":
+		fmt.Fprintf(
+			&builder,
+			"🔒 *BLOQUEADAS DE @%s*\n\n",
+			targetName,
+		)
+
+		count := 0
+
+		for _, achievement := range achievements {
+
+			if achievement.Unlocked ||
+				achievement.Progress > 0 {
+
+				continue
+			}
+
+			count++
+
+			fmt.Fprintf(
+				&builder,
+				"🔒 %s *%s*\n",
+				achievement.Icon,
+				achievement.Name,
+			)
+		}
+
+		if count == 0 {
+			builder.WriteString(
+				"✨ Nenhuma conquista bloqueada.",
+			)
+		}
+
+	default:
+		fmt.Fprintf(
+			&builder,
+			"🏆 *CONQUISTAS ATIVAS DE @%s*\n\n",
+			targetName,
+		)
+
+		count := 0
+
+		for _, achievement := range achievements {
+
+			if achievement.Unlocked ||
+				achievement.Progress <= 0 {
+
+				continue
+			}
+
+			progress :=
+				achievement.Progress
+
+			if progress >
+				achievement.Target {
+
+				progress =
+					achievement.Target
+			}
+
+			count++
+
+			fmt.Fprintf(
+				&builder,
+				"%s *%s* • %d/%d\n",
+				achievement.Icon,
+				achievement.Name,
+				progress,
+				achievement.Target,
+			)
+
+			description :=
+				strings.TrimSpace(
+					achievement.Description,
+				)
+
+			if description != "" {
+				fmt.Fprintf(
+					&builder,
+					"%s\n\n",
+					description,
+				)
+			}
+		}
+
+		if count == 0 {
+			builder.WriteString(
+				"✨ Nenhuma conquista em andamento.",
+			)
+		}
+	}
 	err =
 		whatsapp.SendMentionedText(
 			client,

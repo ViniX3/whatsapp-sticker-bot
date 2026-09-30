@@ -9,13 +9,13 @@ import (
 	"sync"
 	"time"
 
+	"whatsapp-sticker-bot/internal/chaos"
 	"whatsapp-sticker-bot/internal/database"
 )
 
 const InitialGold = 3000
 
 const (
-	RobSuccessChance  = 60
 	RobStealPercent   = 20
 	RobFailurePenalty = 10
 	RobCooldown       = 60 * time.Second
@@ -34,14 +34,6 @@ var (
 		"alvo não possui Gold disponível para ser roubado",
 	)
 
-	// Mantemos declarado por compatibilidade com o handler.
-	//
-	// A lógica nova do escudo utiliza RobResult para informar
-	// se ele resistiu ou quebrou.
-	ErrTargetShielded = errors.New(
-		"alvo possui escudo ativo",
-	)
-
 	ErrRobCooldown = errors.New(
 		"roubo em cooldown",
 	)
@@ -56,12 +48,23 @@ var (
 // ==========================================================
 
 type BetResult struct {
-	Result     string
+	Result string
+
+	// Mantido inteiro para compatibilidade com
+	// perfil, XP e conquistas.
 	Multiplier int
-	BetAmount  int
-	Prize      int
-	NetResult  int
-	Balance    int
+
+	// 150 = 1,5x; 300 = 3x etc.
+	PayoutPercent int
+
+	ChaosBonus int
+
+	ChaosBonusPercent int
+
+	BetAmount int
+	Prize     int
+	NetResult int
+	Balance   int
 }
 
 type RobResult struct {
@@ -72,23 +75,6 @@ type RobResult struct {
 
 	RobberBalance int
 	TargetBalance int
-
-	// ShieldBlocked informa que havia um escudo ativo
-	// e esta tentativa não chegou ao roubo financeiro.
-	ShieldBlocked bool
-
-	// ShieldBroken informa que ESTE ataque conseguiu
-	// destruir o escudo.
-	//
-	// Mesmo assim, nenhum Gold é roubado nesta tentativa.
-	ShieldBroken bool
-
-	// Número do ataque recebido pelo escudo atual.
-	ShieldAttackNumber int
-
-	// Probabilidade percentual de quebra usada
-	// nesta tentativa.
-	ShieldBreakChance int
 }
 
 type PixResult struct {
@@ -225,6 +211,11 @@ func upsertUserTx(
 	jid string,
 	name string,
 ) error {
+	name =
+		database.NormalizeUserDisplayName(
+			jid,
+			name,
+		)
 
 	_, err := tx.Exec(`
 		INSERT INTO users (
@@ -517,31 +508,64 @@ func Bet(
 
 	var result string
 	var multiplier int
+	var payoutPercent int
+
+	// Probabilidades:
+	//
+	// 50,0% -> derrota
+	// 35,0% -> 1,5x
+	//  9,0% -> 3x
+	//  3,0% -> 5x
+	//  1,5% -> 10x
+	//  0,8% -> 20x
+	//  0,5% -> 50x
+	//  0,2% -> 100x
+	//
+	// BET 100X
 
 	switch {
 	case draw < 5000:
 		result = "💀 PERDEU"
 		multiplier = 0
+		payoutPercent = 0
 
-	case draw < 7500:
-		result = "😐 RECUPEROU"
-		multiplier = 1
+	case draw < 8500:
+		result = "🍀 VITÓRIA 1,5X"
 
-	case draw < 9500:
-		result = "🍀 PEQUENO PRÊMIO"
+		// Mantemos 2 internamente para que perfil,
+		// XP e conquistas reconheçam como vitória.
 		multiplier = 2
+		payoutPercent = 150
 
-	case draw < 9900:
-		result = "💰 GRANDE PRÊMIO"
+	case draw < 9400:
+		result = "💰 VITÓRIA 3X"
+		multiplier = 3
+		payoutPercent = 300
+
+	case draw < 9700:
+		result = "🔥 GRANDE PRÊMIO 5X"
 		multiplier = 5
+		payoutPercent = 500
 
-	case draw < 9990:
-		result = "🔥 JACKPOT"
+	case draw < 9850:
+		result = "⚡ SUPER PRÊMIO 10X"
 		multiplier = 10
+		payoutPercent = 1000
+
+	case draw < 9930:
+		result = "💎 JACKPOT 20X"
+		multiplier = 20
+		payoutPercent = 2000
+
+	case draw < 9980:
+		result = "👑 MEGA JACKPOT 50X"
+		multiplier = 50
+		payoutPercent = 5000
 
 	default:
-		result = "👑 MEGA JACKPOT"
-		multiplier = 50
+		result = "🌟 JACKPOT SUPREMO 100X"
+		multiplier = 100
+		payoutPercent = 10000
 	}
 
 	tx, err := database.DB.Begin()
@@ -583,14 +607,86 @@ func Bet(
 		return nil, ErrInsufficientGold
 	}
 
+	basePrize, err :=
+		safeGoldPercent(
+			amount,
+			payoutPercent,
+		)
+
+	if err != nil {
+		return nil,
+			fmt.Errorf(
+				"resultado financeiro excede o limite suportado: %w",
+				err,
+			)
+	}
+
+	baseNetResult :=
+		basePrize - amount
+
 	prize :=
-		amount * multiplier
+		basePrize
+
+	chaosBonus := 0
+	chaosBonusPercent := 0
+
+	// Presságio: somente o lucro real recebe bônus.
+	if baseNetResult > 0 {
+		totalProfit,
+			bonus,
+			bonusPercent,
+			active :=
+			chaos.ApplyGoldReward(
+				baseNetResult,
+			)
+
+		if active {
+			chaosBonus =
+				bonus
+
+			chaosBonusPercent =
+				bonusPercent
+
+			if totalProfit < baseNetResult ||
+				bonus < 0 {
+
+				return nil,
+					ErrGoldLimitExceeded
+			}
+
+			prize,
+				err =
+				safeGoldAdd(
+					amount,
+					totalProfit,
+				)
+
+			if err != nil {
+				return nil,
+					fmt.Errorf(
+						"prêmio com bônus do Caos excede o limite: %w",
+						err,
+					)
+			}
+		}
+	}
 
 	netResult :=
 		prize - amount
 
-	newBalance :=
-		balance + netResult
+	newBalance, err :=
+		safeGoldAdd(
+			balance,
+			netResult,
+		)
+
+	if err != nil {
+		return nil,
+			fmt.Errorf(
+				"saldo final excede o limite suportado: %w",
+				err,
+			)
+	}
 
 	updateResult, err := tx.Exec(`
 		UPDATE group_wallets
@@ -628,6 +724,29 @@ func Bet(
 		return nil, ErrInsufficientGold
 	}
 
+	// Consulta novamente o saldo dentro da mesma transação.
+	// Isso evita exibir um saldo calculado a partir de uma
+	// leitura antiga quando existem comandos concorrentes.
+	err = tx.QueryRow(`
+		SELECT gold
+		FROM group_wallets
+		WHERE group_jid = ?
+		  AND jid = ?
+	`,
+		groupJID,
+		jid,
+	).Scan(
+		&newBalance,
+	)
+
+	if err != nil {
+		return nil,
+			fmt.Errorf(
+				"erro consultando saldo após atualização: %w",
+				err,
+			)
+	}
+
 	transactionType := "BET_LOSS"
 
 	if netResult >= 0 {
@@ -635,10 +754,10 @@ func Bet(
 	}
 
 	description := fmt.Sprintf(
-		"Aposta de %d Gold - %s - multiplicador %dx",
+		"Aposta de %d Gold - %s - pagamento %d%%",
 		amount,
 		result,
-		multiplier,
+		payoutPercent,
 	)
 
 	if err := recordTransactionTx(
@@ -664,10 +783,17 @@ func Bet(
 	return &BetResult{
 		Result:     result,
 		Multiplier: multiplier,
-		BetAmount:  amount,
-		Prize:      prize,
-		NetResult:  netResult,
-		Balance:    newBalance,
+
+		PayoutPercent: payoutPercent,
+
+		ChaosBonus: chaosBonus,
+
+		ChaosBonusPercent: chaosBonusPercent,
+
+		BetAmount: amount,
+		Prize:     prize,
+		NetResult: netResult,
+		Balance:   newBalance,
 	}, nil
 }
 
@@ -897,23 +1023,23 @@ func Pix(
 //
 //  1. valida carteira do ladrão;
 //  2. valida carteira da vítima;
-//  3. verifica escudo;
-//  4. se houver escudo, processa desgaste/quebra;
-//  5. somente sem escudo ocorre o sorteio do roubo.
-//
-// Se o escudo quebrar:
-//
-//   - nenhum Gold é roubado;
-//   - o ataque é considerado concluído;
-//   - o ladrão entra em cooldown;
-//   - o próximo ataque poderá roubar normalmente.
+//  3. valida se a vítima possui Gold;
+//  4. realiza o sorteio do roubo.
 //
 // Usuários com saldo 0 podem tentar roubar.
 func Rob(
 	groupJID string,
 	robberJID string,
 	targetJID string,
+	successChance int,
 ) (*RobResult, error) {
+
+	if successChance < 0 || successChance > 100 {
+		return nil, fmt.Errorf(
+			"chance de roubo inválida: %d",
+			successChance,
+		)
+	}
 
 	if robberJID == targetJID {
 		return nil, fmt.Errorf(
@@ -1006,60 +1132,6 @@ func Rob(
 		)
 	}
 
-	// ======================================================
-	// ESCUDO
-	// ======================================================
-	//
-	// O escudo é verificado antes da validação de saldo 0.
-	//
-	// Portanto, uma pessoa com escudo ativo continua
-	// protegida e o ataque desgasta o escudo mesmo que
-	// naquele momento esteja sem Gold.
-	//
-	shieldResult, err :=
-		processShieldAttackTx(
-			tx,
-			groupJID,
-			targetJID,
-		)
-
-	if err != nil {
-		return nil, fmt.Errorf(
-			"erro ao processar escudo: %w",
-			err,
-		)
-	}
-
-	if shieldResult.Protected {
-		if err := tx.Commit(); err != nil {
-			return nil, fmt.Errorf(
-				"erro ao confirmar ataque contra escudo: %w",
-				err,
-			)
-		}
-
-		robCompleted = true
-
-		return &RobResult{
-			Success: false,
-
-			Amount:  0,
-			Penalty: 0,
-
-			RobberBalance: robberBalance,
-			TargetBalance: targetBalance,
-
-			ShieldBlocked: true,
-			ShieldBroken:  shieldResult.Broken,
-
-			ShieldAttackNumber: shieldResult.AttackNumber,
-			ShieldBreakChance:  shieldResult.BreakChance,
-		}, nil
-	}
-
-	// Não havia escudo ativo.
-	//
-	// Agora verificamos se existe Gold para ser roubado.
 	if targetBalance <= 0 {
 		return nil, ErrTargetNoGold
 	}
@@ -1081,7 +1153,7 @@ func Rob(
 	}
 
 	success :=
-		n.Int64() < RobSuccessChance
+		n.Int64() < int64(successChance)
 
 	// ======================================================
 	// ROUBO BEM-SUCEDIDO
@@ -1226,9 +1298,6 @@ func Rob(
 			Penalty:       0,
 			RobberBalance: newRobberBalance,
 			TargetBalance: newTargetBalance,
-
-			ShieldBlocked: false,
-			ShieldBroken:  false,
 		}, nil
 	}
 
@@ -1330,8 +1399,5 @@ func Rob(
 		Penalty:       penalty,
 		RobberBalance: newRobberBalance,
 		TargetBalance: targetBalance,
-
-		ShieldBlocked: false,
-		ShieldBroken:  false,
 	}, nil
 }

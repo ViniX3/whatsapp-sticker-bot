@@ -1,0 +1,489 @@
+[
+  {
+    "id": "wood_branch",
+    "name": "Galho Resistente",
+    "kind": "WOOD",
+    "rarity": "WORN",
+    "source": "GATHERING",
+    "value": 10,
+    "description": "Um galho simples que ainda pode servir para armas e escudos improvisados."
+  },
+  {
+    "id": "wood_pine",
+    "name": "Madeira de Pinheiro",
+    "kind": "WOOD",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 25,
+    "description": "Madeira leve e comum utilizada por artesãos iniciantes."
+  },
+  {
+    "id": "wood_oak",
+    "name": "Madeira de Carvalho",
+    "kind": "WOOD",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 70,
+    "description": "Madeira densa e resistente, adequada para escudos e cabos de armas."
+  },
+  {
+    "id": "wood_ancient",
+    "name": "Madeira Ancestral",
+    "kind": "WOOD",
+    "rarity": "EPIC",
+    "source": "GATHERING",
+    "value": 250,
+    "description": "Madeira retirada de árvores que sobreviveram por séculos."
+  },
+  {
+    "id": "stone",
+    "name": "Pedra",
+    "kind": "MINERAL",
+    "rarity": "WORN",
+    "source": "GATHERING",
+    "value": 8,
+    "description": "Uma pedra comum utilizada em equipamentos rudimentares."
+  },
+  {
+    "id": "granite",
+    "name": "Granito",
+    "kind": "MINERAL",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 30,
+    "description": "Rocha pesada capaz de reforçar equipamentos."
+  },
+  {
+    "id": "coal",
+    "name": "Carvão Mineral",
+    "kind": "MINERAL",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 20,
+    "description": "Combustível essencial para fundição e trabalho em forjas."
+  },
+  {
+    "id": "clay",
+    "name": "Argila",
+    "kind": "MINERAL",
+    "rarity": "WORN",
+    "source": "GATHERING",
+    "value": 10,
+    "description": "Material simples utilizado em processos artesanais."
+  },
+  {
+    "id": "ore_copper",
+    "name": "Minério de Cobre",
+    "kind": "METAL",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 35,
+    "description": "Minério básico encontrado em minas rasas."
+  },
+  {
+    "id": "ore_tin",
+    "name": "Minério de Estanho",
+    "kind": "METAL",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 35,
+    "description": "Minério utilizado principalmente na produção de bronze."
+  },
+  {
+    "id": "ingot_bronze",
+    "name": "Lingote de Bronze",
+    "kind": "METAL",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 90,
+    "description": "Liga metálica resistente produzida a partir de cobre e estanho."
+  },
+  {
+    "id": "ore_iron",
+    "name": "Minério de Ferro",
+    "kind": "METAL",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 55,
+    "description": "Um dos recursos mais importantes para a fabricação de equipamentos."
+  },
+  {
+    "id": "ingot_iron",
+    "name": "Lingote de Ferro",
+    "kind": "METAL",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 120,
+    "description": "Ferro refinado e pronto para ser trabalhado na forja."
+  },
+  {
+    "id": "ingot_steel",
+    "name": "Lingote de Aço",
+    "kind": "METAL",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 280,
+    "description": "Liga superior ao ferro utilizada por guerreiros experientes."
+  },
+  {
+    "id": "ore_silver",
+    "name": "Minério de Prata",
+    "kind": "METAL",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 160,
+    "description": "Metal precioso valorizado também por suas propriedades místicas."
+  },
+  {
+    "id": "ingot_silver",
+    "name": "Lingote de Prata",
+    "kind": "METAL",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 350,
+    "description": "Prata refinada utilizada em equipamentos especiais."
+  },
+  {
+    "id": "ore_gold",
+    "name": "Minério de Ouro",
+    "kind": "METAL",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 220,
+    "description": "Minério precioso encontrado em regiões profundas."
+  },
+  {
+    "id": "ingot_gold",
+    "name": "Lingote de Ouro",
+    "kind": "METAL",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 480,
+    "description": "Ouro refinado utilizado em equipamentos ornamentais e mágicos."
+  },
+  {
+    "id": "obsidian",
+    "name": "Obsidiana",
+    "kind": "MINERAL",
+    "rarity": "EPIC",
+    "source": "GATHERING",
+    "value": 650,
+    "description": "Vidro vulcânico extremamente afiado quando trabalhado corretamente."
+  },
+  {
+    "id": "quartz",
+    "name": "Cristal de Quartzo",
+    "kind": "GEM",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 180,
+    "description": "Cristal utilizado em diversos artefatos mágicos."
+  },
+  {
+    "id": "sapphire",
+    "name": "Safira",
+    "kind": "GEM",
+    "rarity": "EPIC",
+    "source": "GATHERING",
+    "value": 900,
+    "description": "Gema azul associada a proteção e energia arcana."
+  },
+  {
+    "id": "ruby",
+    "name": "Rubi",
+    "kind": "GEM",
+    "rarity": "EPIC",
+    "source": "GATHERING",
+    "value": 900,
+    "description": "Gema vermelha associada a poder ofensivo."
+  },
+  {
+    "id": "emerald",
+    "name": "Esmeralda",
+    "kind": "GEM",
+    "rarity": "EPIC",
+    "source": "GATHERING",
+    "value": 900,
+    "description": "Gema rara associada a vitalidade e natureza."
+  },
+  {
+    "id": "diamond",
+    "name": "Diamante",
+    "kind": "GEM",
+    "rarity": "LEGENDARY",
+    "source": "GATHERING",
+    "value": 2500,
+    "description": "Uma das substâncias naturais mais resistentes do reino."
+  },
+  {
+    "id": "ore_mithril",
+    "name": "Minério de Mithril",
+    "kind": "METAL",
+    "rarity": "EPIC",
+    "source": "GATHERING",
+    "value": 1200,
+    "description": "Metal lendário extremamente leve e resistente."
+  },
+  {
+    "id": "ingot_mithril",
+    "name": "Lingote de Mithril",
+    "kind": "METAL",
+    "rarity": "LEGENDARY",
+    "source": "GATHERING",
+    "value": 3000,
+    "description": "Mithril refinado por mestres ferreiros."
+  },
+  {
+    "id": "ore_adamantite",
+    "name": "Minério de Adamantita",
+    "kind": "METAL",
+    "rarity": "LEGENDARY",
+    "source": "GATHERING",
+    "value": 2500,
+    "description": "Metal excepcionalmente raro encontrado apenas nas regiões mais perigosas."
+  },
+  {
+    "id": "ingot_adamantite",
+    "name": "Lingote de Adamantita",
+    "kind": "METAL",
+    "rarity": "MYTHIC",
+    "source": "GATHERING",
+    "value": 6000,
+    "description": "Adamantita purificada capaz de suportar forças monstruosas."
+  },
+  {
+    "id": "leather",
+    "name": "Couro",
+    "kind": "HIDE",
+    "rarity": "COMMON",
+    "source": "GATHERING",
+    "value": 40,
+    "description": "Couro simples utilizado em armaduras leves."
+  },
+  {
+    "id": "hardened_leather",
+    "name": "Couro Endurecido",
+    "kind": "HIDE",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 180,
+    "description": "Couro tratado para suportar impactos muito maiores."
+  },
+  {
+    "id": "silk",
+    "name": "Seda",
+    "kind": "TEXTILE",
+    "rarity": "RARE",
+    "source": "GATHERING",
+    "value": 140,
+    "description": "Tecido refinado utilizado em equipamentos leves."
+  },
+  {
+    "id": "arcane_fiber",
+    "name": "Fibra Arcana",
+    "kind": "TEXTILE",
+    "rarity": "EPIC",
+    "source": "GATHERING",
+    "value": 700,
+    "description": "Fibra impregnada por energia mágica."
+  },
+
+  {
+    "id": "wolf_fang",
+    "name": "Presa de Lobo",
+    "kind": "MONSTER_PART",
+    "rarity": "COMMON",
+    "source": "MONSTER_DROP",
+    "value": 45,
+    "monster_id": "wolf",
+    "description": "Presa retirada de um lobo selvagem."
+  },
+  {
+    "id": "boar_tusk",
+    "name": "Presa de Javali",
+    "kind": "MONSTER_PART",
+    "rarity": "COMMON",
+    "source": "MONSTER_DROP",
+    "value": 55,
+    "monster_id": "wild_boar",
+    "description": "Uma presa robusta de javali."
+  },
+  {
+    "id": "troll_bone",
+    "name": "Osso de Troll",
+    "kind": "MONSTER_PART",
+    "rarity": "RARE",
+    "source": "MONSTER_DROP",
+    "value": 180,
+    "monster_id": "troll",
+    "description": "Osso extremamente resistente retirado de um troll."
+  },
+  {
+    "id": "basilisk_eye",
+    "name": "Olho de Basilisco",
+    "kind": "MONSTER_PART",
+    "rarity": "EPIC",
+    "source": "MONSTER_DROP",
+    "value": 850,
+    "monster_id": "basilisk",
+    "description": "Um olho ainda carregado pela energia petrificante do Basilisco."
+  },
+  {
+    "id": "ice_wyvern_claw",
+    "name": "Garra de Wyvern Gélido",
+    "kind": "MONSTER_PART",
+    "rarity": "EPIC",
+    "source": "MONSTER_DROP",
+    "value": 950,
+    "monster_id": "ice_wyvern",
+    "description": "Garra cristalizada pelo frio extremo de um Wyvern Gélido."
+  },
+  {
+    "id": "dragon_scale",
+    "name": "Escama de Dragão",
+    "kind": "MONSTER_PART",
+    "rarity": "EPIC",
+    "source": "MONSTER_DROP",
+    "value": 1100,
+    "monster_id": "dragon",
+    "description": "Escama extremamente resistente retirada de um dragão."
+  },
+  {
+    "id": "black_dragon_scale",
+    "name": "Escama do Dragão Negro",
+    "kind": "BOSS_PART",
+    "rarity": "LEGENDARY",
+    "source": "BOSS_DROP",
+    "value": 4000,
+    "boss_id": "black_dragon",
+    "description": "Escama negra carregada por uma aura destrutiva."
+  },
+  {
+    "id": "giant_turtle_shell",
+    "name": "Casco de Tartaruga Gigante",
+    "kind": "MONSTER_PART",
+    "rarity": "RARE",
+    "source": "MONSTER_DROP",
+    "value": 500,
+    "monster_id": "giant_turtle",
+    "description": "Fragmento espesso do casco de uma tartaruga monstruosa."
+  },
+  {
+    "id": "leviathan_fang",
+    "name": "Presa do Leviatã",
+    "kind": "BOSS_PART",
+    "rarity": "LEGENDARY",
+    "source": "BOSS_DROP",
+    "value": 4500,
+    "boss_id": "leviathan",
+    "description": "Presa gigantesca retirada das profundezas do oceano."
+  },
+  {
+    "id": "hydra_venom",
+    "name": "Veneno de Hidra",
+    "kind": "MONSTER_PART",
+    "rarity": "EPIC",
+    "source": "MONSTER_DROP",
+    "value": 900,
+    "monster_id": "hydra",
+    "description": "Veneno extremamente corrosivo extraído de uma Hidra."
+  },
+  {
+    "id": "griffin_feather",
+    "name": "Pena de Grifo",
+    "kind": "MONSTER_PART",
+    "rarity": "EPIC",
+    "source": "MONSTER_DROP",
+    "value": 750,
+    "monster_id": "griffin",
+    "description": "Pena de um poderoso Grifo das montanhas."
+  },
+  {
+    "id": "golem_core",
+    "name": "Núcleo de Golem",
+    "kind": "MONSTER_PART",
+    "rarity": "EPIC",
+    "source": "MONSTER_DROP",
+    "value": 1000,
+    "monster_id": "ancient_golem",
+    "description": "Núcleo mágico responsável por manter um Golem em movimento."
+  },
+  {
+    "id": "demon_horn",
+    "name": "Chifre Demoníaco",
+    "kind": "MONSTER_PART",
+    "rarity": "EPIC",
+    "source": "MONSTER_DROP",
+    "value": 1200,
+    "monster_id": "demon",
+    "description": "Chifre carregado pela energia de uma criatura demoníaca."
+  },
+  {
+    "id": "ancient_demon_horn",
+    "name": "Chifre do Demônio Ancestral",
+    "kind": "BOSS_PART",
+    "rarity": "LEGENDARY",
+    "source": "BOSS_DROP",
+    "value": 5000,
+    "boss_id": "ancient_demon",
+    "description": "Um chifre que ainda emana energia sombria ancestral."
+  },
+  {
+    "id": "behemoth_shell",
+    "name": "Carapaça de Behemoth",
+    "kind": "BOSS_PART",
+    "rarity": "LEGENDARY",
+    "source": "BOSS_DROP",
+    "value": 5500,
+    "boss_id": "behemoth",
+    "description": "Um fragmento da couraça praticamente impenetrável do Behemoth."
+  },
+  {
+    "id": "titan_heart",
+    "name": "Coração de Titã",
+    "kind": "BOSS_PART",
+    "rarity": "MYTHIC",
+    "source": "BOSS_DROP",
+    "value": 12000,
+    "boss_id": "ancient_titan",
+    "description": "Um coração colossal que ainda pulsa com poder primordial."
+  },
+  {
+    "id": "phoenix_feather",
+    "name": "Pena da Fênix",
+    "kind": "BOSS_PART",
+    "rarity": "MYTHIC",
+    "source": "BOSS_DROP",
+    "value": 15000,
+    "boss_id": "phoenix",
+    "description": "Uma pena que continua queimando sem jamais ser consumida."
+  },
+
+  {
+    "id": "void_shard",
+    "name": "Fragmento do Vazio",
+    "kind": "OTHERWORLD",
+    "rarity": "LEGENDARY",
+    "source": "OTHERWORLD_MERCHANT",
+    "value": 8,
+    "description": "Fragmento de matéria proveniente de uma dimensão vazia."
+  },
+  {
+    "id": "astral_alloy",
+    "name": "Liga Astral",
+    "kind": "OTHERWORLD",
+    "rarity": "LEGENDARY",
+    "source": "OTHERWORLD_MERCHANT",
+    "value": 10,
+    "description": "Metal impossível utilizado por viajantes interdimensionais."
+  },
+  {
+    "id": "supernova_core",
+    "name": "Núcleo de Supernova",
+    "kind": "OTHERWORLD",
+    "rarity": "MYTHIC",
+    "source": "OTHERWORLD_MERCHANT",
+    "value": 20,
+    "description": "Matéria condensada obtida dos restos de uma estrela destruída."
+  }
+]

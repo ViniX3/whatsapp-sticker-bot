@@ -10,148 +10,97 @@ import (
 	"go.mau.fi/whatsmeow/types/events"
 )
 
-const menuMessage = `╔════════════════════╗
-⚔️ *GRIMÓRIO DO AVENTUREIRO*
-🏰 *VERSÃO 3.3.0*
-╚════════════════════╝
+const menuMessage = `⚔️ *GRIMÓRIO DO AVENTUREIRO*
+🏰 *v3.5.0*
 
-📜 *Saudações, aventureiro!*
-Aqui estão os caminhos disponíveis neste reino.
+👑 *AVENTUREIRO*
+👤 !perfil
+↳ !ficha • !personagem
+🏆 !conquistas
+✅ !conquistas finalizadas
+🔒 !conquistas bloqueadas
+💰 !ranking
 
-━━━━━━━━━━━━━━━━━━━━
-👑 *CRÔNICAS DO HERÓI*
-━━━━━━━━━━━━━━━━━━━━
+💰 *ECONOMIA*
+🪙 !gold • 💰 !saldo
+🤝 !pix @pessoa <valor>
+🏦 !cofre
+↳ guardar/depositar/colocar
+↳ retirar/sacar/pegar
+🦹 !roubar @pessoa
+🛡️ !escudo
+🌪️ !pressagio
 
-👤 *!perfil*
-Veja seu nível, XP, Gold e estatísticas.
+🎲 *JOGOS*
+🎲 !bet <valor>
+🎰 !slots <valor>
+🪙 !caraoucoroa <valor> <cara|coroa>
+⚔️ !duelo @pessoa <valor>
+🍀 !sorte
+🎟️ !loteria <quantidade>
+📚 !quiz
+🎯 !forca
 
-🏆 *!conquistas*
-Consulte suas conquistas e progresso.
+💡 Valores flexíveis nas apostas:
+20% • metade • all • tudo • 1.000.000
 
-🏆 *!conquistas @pessoa*
-Veja as conquistas de outro aventureiro.
+🗺️ *RPG*
+⚔️ !rpg
 
-💰 *!ranking*
-Conheça os mais ricos do reino.
+🎒 !inventario [filtro] [página]
+↳ !inv • !mochila • !bolsa
+↳ equipamentos • materiais • equipado
+↳ arma • escudo • armadura
+↳ comum • raro • épico • lendário...
 
-━━━━━━━━━━━━━━━━━━━━
-💰 *TESOURO DO REINO*
-━━━━━━━━━━━━━━━━━━━━
+🛡️ !equipamentos
+↳ !arsenal • !gear
 
-🪙 *!gold*
-Crie sua carteira e receba o Gold inicial.
+🌲 !coletar [região]
+↳ !coleta • !recolher
 
-💰 *!saldo*
-Consulte suas riquezas.
+🐺 !pve [região]
+↳ !caçar • !lutar • !combater
 
-🤝 *!pix @pessoa <valor>*
-Transfira Gold para outro aventureiro.
+🗺️ Regiões:
+floresta/mata/bosque
+pedreira/rocha
+mina/mineração
 
-━━━━━━━━━━━━━━━━━━━━
-🎲 *JOGOS DA TAVERNA*
-━━━━━━━━━━━━━━━━━━━━
+🏚️ !dungeons
+↳ !dungeon • !masmorra
+↳ !entrar <dungeon>
 
-🎲 *!bet <valor>*
-Arrisque seu Gold em uma aposta.
+💎 !cristais
 
-🎰 *!slots <valor>*
-Tente a sorte no caça-níquel.
+🛒 *EQUIPAMENTOS*
+🏪 !loja
+🛒 !comprar <código>
+↳ !adquirir <código>
 
-🪙 *!caraoucoroa <valor> <cara|coroa>*
-Desafie a sorte em um lançamento de moeda.
+⚒️ !forja
+🔥 !forjar <código>
+↳ !fabricar • !criar
 
-🍀 *!sorte*
-Receba sua recompensa diária.
+⚔️ !equipar <código>
+↳ !vestir <código>
 
-🎟️ *!loteria*
-Veja a rodada atual da Loteria.
+📦 !desequipar <slot>
+↳ !tirar • !desvestir
+Slots: arma • escudo • armadura
 
-🎟️ *!loteria <quantidade>*
-Compre bilhetes para disputar o Jackpot.
-
-━━━━━━━━━━━━━━━━━━━━
-⚔️ *ARENA DOS GUERREIROS*
-━━━━━━━━━━━━━━━━━━━━
-
-⚔️ *!duelo @pessoa <valor>*
-Desafie outro guerreiro valendo Gold.
-
-✅ *!aceitar*
-Aceite um duelo pendente.
-
-❌ *!recusar*
-Recuse o desafio.
-
-━━━━━━━━━━━━━━━━━━━━
-🧠 *PROVAS DO SÁBIO*
-━━━━━━━━━━━━━━━━━━━━
-
-📚 *!quiz*
-Enfrente uma das *1.000 perguntas* do reino.
-
-🎯 *!forca*
-Inicie uma partida coletiva de Forca.
-
-🔤 *!letra <letra>*
-Tente revelar uma letra.
-
-📜 *!palavra <resposta>*
-Arrisque a palavra completa.
-
-━━━━━━━━━━━━━━━━━━━━
-🦹 *SUBMUNDO DO REINO*
-━━━━━━━━━━━━━━━━━━━━
-
-🗡️ *!roubar @pessoa*
-Tente roubar Gold de outro aventureiro.
-
-🛡️ *!escudo*
-Proteja suas riquezas contra ladrões.
+🍻 *DIVERSÃO*
+💘 !ship
+💋 !beijo @pessoa
+🤗 !abraco @pessoa
+👋 !tapa @pessoa
+🦷 !morder @pessoa
+🎨 !f
 
 ━━━━━━━━━━━━━━━━━━━━
-🍻 *TAVERNA DOS VIAJANTES*
-━━━━━━━━━━━━━━━━━━━━
-
-💘 *!ship*
-Descubra a compatibilidade entre aventureiros.
-
-💋 *!beijo @pessoa*
-🤗 *!abraco @pessoa*
-👋 *!tapa @pessoa*
-🦷 *!morder @pessoa*
-
-Os comandos também funcionam sem marcação,
-escolhendo alguém aleatoriamente.
-
-━━━━━━━━━━━━━━━━━━━━
-🔨 *OFICINA DO ARTÍFICE*
-━━━━━━━━━━━━━━━━━━━━
-
-🎨 *!f*
-Transforme imagem, vídeo ou GIF em figurinha.
-
-━━━━━━━━━━━━━━━━━━━━
-🏰 *PORTÕES DO REINO RPG*
-━━━━━━━━━━━━━━━━━━━━
-
-🔒 *O Reino ainda está sendo preparado...*
-
-Em breve, aventureiros poderão acessar:
-
-🏪 Mercado Real
-🔮 Mercado Arcano
-🎒 Inventário
-⚔️ Equipamentos
-🐺 Caçadas PvE
-🏚️ Dungeons
-🐉 Bosses e Raids
-
-━━━━━━━━━━━━━━━━━━━━
-
-⚜️ *Que a sorte acompanhe sua jornada.*
-
-📖 Use *!menu* sempre que precisar
-consultar este grimório.`
+📖 Use *!menu* sempre que precisar.
+💡 Os aliases são opcionais: os comandos
+originais continuam funcionando normalmente.`
 
 // handleMenuCommand processa o comando !menu.
 //

@@ -55,6 +55,8 @@ type XPResult struct {
 	Gained int
 }
 
+const MaxPlayerLevel = 200
+
 func Init() error {
 	if database.DB == nil {
 		return fmt.Errorf("banco de dados não inicializado")
@@ -373,8 +375,21 @@ func LevelFromXP(
 
 	level := 1
 
-	for xp >= levelThreshold(level+1) {
+	for level < MaxPlayerLevel &&
+		xp >= levelThreshold(level+1) {
+
 		level++
+	}
+
+	if level >= MaxPlayerLevel {
+
+		return LevelInfo{
+			Level:           MaxPlayerLevel,
+			TotalXP:         xp,
+			CurrentLevelXP:  0,
+			RequiredLevelXP: 0,
+			ProgressPercent: 100,
+		}
 	}
 
 	currentThreshold :=

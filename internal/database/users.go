@@ -3,6 +3,7 @@ package database
 import (
 	"database/sql"
 	"fmt"
+	"strings"
 	"time"
 )
 
@@ -77,6 +78,119 @@ func GetUser(jid string) (*User, error) {
 	return &user, nil
 }
 
+// NormalizeUserDisplayName valida um nome antes de
+// persistir a identidade global do usuário.
+//
+// Evita que números de telefone, LIDs e JIDs provenientes
+// de menções do WhatsApp substituam um nome real.
+func NormalizeUserDisplayName(
+	jid string,
+	name string,
+) string {
+	name = strings.TrimSpace(name)
+	jid = strings.TrimSpace(jid)
+
+	if name == "" {
+		return ""
+	}
+
+	if strings.EqualFold(
+		name,
+		jid,
+	) {
+		return ""
+	}
+
+	if index := strings.Index(
+		jid,
+		"@",
+	); index > 0 {
+		jidUser :=
+			jid[:index]
+
+		if name == jidUser {
+			return ""
+		}
+	}
+
+	if strings.Contains(
+		name,
+		"@",
+	) {
+		return ""
+	}
+
+	numericCandidate :=
+		strings.TrimPrefix(
+			name,
+			"+",
+		)
+
+	if len(numericCandidate) >= 8 {
+		onlyDigits := true
+
+		for _, value := range numericCandidate {
+
+			if value < '0' ||
+				value > '9' {
+
+				onlyDigits = false
+				break
+			}
+		}
+
+		if onlyDigits {
+			return ""
+		}
+	}
+
+	return name
+}
+
+// UpdateUserNameIfExists atualiza somente usuários que já
+// existem.
+//
+// IMPORTANTE:
+//
+// Esta função NÃO cria usuário e NÃO cria carteira.
+// Ela serve apenas para manter o PushName sincronizado.
+func UpdateUserNameIfExists(
+	jid string,
+	name string,
+) error {
+	name =
+		NormalizeUserDisplayName(
+			jid,
+			name,
+		)
+
+	if name == "" {
+		return nil
+	}
+
+	_, err := DB.Exec(`
+		UPDATE users
+		SET
+			name = ?,
+			updated_at = CURRENT_TIMESTAMP
+		WHERE jid = ?
+		  AND name <> ?
+	`,
+		name,
+		jid,
+		name,
+	)
+
+	if err != nil {
+		return fmt.Errorf(
+			"erro atualizando nome do usuário: %w",
+			err,
+		)
+	}
+
+	return nil
+}
+
 // UpsertUser cria a identidade do usuário caso ela ainda
 // não exista.
 //
@@ -85,6 +199,12 @@ func GetUser(jid string) (*User, error) {
 // Se o nome recebido estiver vazio, o nome existente
 // é preservado.
 func UpsertUser(jid, name string) error {
+	name =
+		NormalizeUserDisplayName(
+			jid,
+			name,
+		)
+
 	_, err := DB.Exec(`
 		INSERT INTO users (
 			jid,

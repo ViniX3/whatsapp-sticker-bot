@@ -3,6 +3,7 @@ package auth
 import (
 	"encoding/json"
 	"os"
+	"sort"
 	"strings"
 
 	"whatsapp-sticker-bot/internal/logger"
@@ -41,4 +42,30 @@ func LoadGroups(path string) error {
 
 func IsGroupAllowed(groupID string) bool {
 	return allowedGroups[normalizeJID(groupID)]
+}
+
+// AllowedGroupIDs retorna uma cópia dos grupos autorizados.
+//
+// O mapa interno não é exposto diretamente para impedir
+// alterações acidentais fora do pacote auth.
+func AllowedGroupIDs() []string {
+	groups :=
+		make(
+			[]string,
+			0,
+			len(allowedGroups),
+		)
+
+	for group := range allowedGroups {
+
+		groups =
+			append(
+				groups,
+				group,
+			)
+	}
+
+	sort.Strings(groups)
+
+	return groups
 }

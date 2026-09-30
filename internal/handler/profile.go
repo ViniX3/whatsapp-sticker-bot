@@ -9,6 +9,7 @@ import (
 	"whatsapp-sticker-bot/internal/gold"
 	"whatsapp-sticker-bot/internal/logger"
 	"whatsapp-sticker-bot/internal/profile"
+	"whatsapp-sticker-bot/internal/rpg"
 	"whatsapp-sticker-bot/internal/whatsapp"
 
 	"go.mau.fi/whatsmeow"
@@ -280,49 +281,61 @@ func handleProfileCommand(
 			&profile.LotteryStats{}
 	}
 
+	rpgState, err :=
+		rpg.GetPlayer(
+			groupJID,
+			targetJID,
+		)
+
+	if err != nil {
+		logger.Error(
+			"Erro ao consultar Cristais para !perfil:",
+			err,
+		)
+
+		_ = whatsapp.SendText(
+			client,
+			msgEvent.Info.Chat,
+			"❌ Não foi possível consultar os Cristais deste perfil.",
+		)
+
+		return true
+	}
+
 	response := fmt.Sprintf(
-		"👤 *PERFIL DO JOGADOR*\n\n"+
-			"@%s\n\n"+
-			"⭐ Nível: *%d*\n"+
-			"✨ XP total: *%d*\n"+
-			"📈 Próximo nível: *%d / %d XP*\n"+
-			"%s *%d%%*\n\n"+
-			"💰 Gold: *%d*\n"+
-			"🏆 Ranking Gold: *#%d de %d*\n\n"+
-			"📊 *ESTATÍSTICAS*\n\n"+
-			"🧠 Quiz: *%d* acertos • *%d* erros\n"+
-			"💀 Quiz Insano: *%d* acertos\n"+
-			"🎲 Apostas: *%d* vitórias / *%d* partidas\n"+
-			"🎰 Slots: *%d* vitórias / *%d* partidas\n"+
-			"💎 Maior prêmio no Slots: *%d Gold*\n"+
-			"🪙 Cara ou Coroa: *%d* vitórias / *%d* partidas\n"+
-			"🎟️ Loteria: *%d* vitórias • *%d* bilhetes\n"+
-			"🏆 Gold ganho na Loteria: *%d Gold*\n"+
-			"⚔️ Duelos: *%d* vitórias • *%d* derrotas\n"+
-			"🦹 Roubos: *%d* sucessos • *%d* falhas",
+		"👤 *@%s*\n"+
+			"⭐ Nv. *%d* • %s %d%%\n"+
+			"⚡ Nível: *+%s PC*\n"+
+			"💰 *%s*\n"+
+			"💎 *%s Cristais*\n"+
+			"🏆 Ranking *#%d/%d*\n\n"+
+			"🎲 %d/%d • 🎰 %d/%d\n"+
+			"🪙 %d/%d • 🎟️ %d vitórias\n"+
+			"⚔️ %d/%d • 🦹 %d/%d",
 		name,
 		level.Level,
-		level.TotalXP,
-		level.CurrentLevelXP,
-		level.RequiredLevelXP,
 		progressBar,
 		level.ProgressPercent,
-		player.Gold,
+		formatRPGNumber(
+			rpg.LevelCombatPowerBonus(
+				level.Level,
+			),
+		),
+		formatGold(
+			player.Gold,
+		),
+		formatRPGNumber(
+			rpgState.MagicCrystals,
+		),
 		player.GoldRank,
 		player.Players,
-		player.QuizCorrect,
-		player.QuizWrong,
-		player.QuizInsaneWins,
 		player.BetsWon,
 		player.BetsPlayed,
 		player.SlotsWon,
 		player.SlotsPlayed,
-		player.SlotsBiggestPrize,
 		coinflipStats.Won,
 		coinflipStats.Played,
 		lotteryStats.Wins,
-		lotteryStats.TicketsBought,
-		lotteryStats.GoldWon,
 		player.DuelsWon,
 		player.DuelsLost,
 		player.RobberiesSuccess,

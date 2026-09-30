@@ -118,7 +118,17 @@ func ResolveDuel(
 	challengerJID string,
 	targetJID string,
 	amount int,
+	challengerChance int,
 ) (*DuelResult, error) {
+	if challengerChance < 0 ||
+		challengerChance > 100 {
+
+		return nil, fmt.Errorf(
+			"chance de duelo inválida: %d",
+			challengerChance,
+		)
+	}
+
 	if amount < DuelMinBet {
 		return nil, ErrDuelInvalidBet
 	}
@@ -187,7 +197,7 @@ func ResolveDuel(
 
 	draw, err := rand.Int(
 		rand.Reader,
-		big.NewInt(2),
+		big.NewInt(100),
 	)
 
 	if err != nil {
@@ -200,7 +210,7 @@ func ResolveDuel(
 	winnerJID := challengerJID
 	loserJID := targetJID
 
-	if draw.Int64() == 1 {
+	if draw.Int64() >= int64(challengerChance) {
 		winnerJID = targetJID
 		loserJID = challengerJID
 	}

@@ -350,13 +350,37 @@ func finishForcaWin(
 			session,
 		)
 
-	reward :=
-		1000
-
-	if remaining > 1 {
-		reward +=
-			(remaining - 1) * 120
+	// Recompensa exponencial conforme a quantidade
+	// de tentativas restantes.
+	//
+	// 1 =   5.000
+	// 2 =  10.000
+	// 3 =  20.000
+	// 4 =  40.000
+	// 5 =  80.000
+	// 6 = 160.000
+	if remaining < 1 {
+		remaining = 1
 	}
+
+	if remaining > forca.MaxErrors {
+		remaining =
+			forca.MaxErrors
+	}
+
+	reward :=
+		5000
+
+	for step := 1; step < remaining; step++ {
+		reward *= 2
+	}
+
+	reward,
+		forcaChaosBonus,
+		forcaChaosPercent :=
+		applyChaosGameReward(
+			reward,
+		)
 
 	balance, goldErr :=
 		gold.RewardForca(
@@ -409,6 +433,14 @@ func finishForcaWin(
 			reward,
 			balance,
 		)
+
+		if forcaChaosBonus > 0 {
+			response +=
+				formatChaosGoldBonus(
+					forcaChaosBonus,
+					forcaChaosPercent,
+				)
+		}
 	} else {
 		response +=
 			"⚠️ Não foi possível creditar a recompensa em Gold."
