@@ -15,28 +15,45 @@ import (
 	"go.mau.fi/whatsmeow/types"
 )
 
-const currentReleaseAnnouncementID = "2026-09-30-rpg-qol-v1"
+const currentReleaseAnnouncementID = "2026-09-30-rpg-rebalance-v1"
 
 const currentReleaseAnnouncementMessage = `🤖 *BOT ATUALIZADO!*
 
-✨ *NOVIDADES DO RPG*
+⚔️ *GRANDE REBALANCEAMENTO DO RPG*
 
-⚔️ *PvE em lote*
-• Use *!pve 100* para realizar várias batalhas de uma vez.
-• É possível realizar até *1.000 batalhas*.
-• Também funciona por região, por exemplo: *!pve mina 500*.
-• Derrotas geram recuperação apenas para novas expedições em lote.
-• O *!pve* comum continua disponível para batalhas rápidas.
+📈 *Novo sistema de Poder de Combate (PC)*
+• O PC de todos os jogadores foi recalculado para uma nova escala.
+• O *nível do personagem* agora possui uma participação muito maior no seu poder.
+• Armas, escudos e armaduras foram rebalanceados.
+• Equipamentos de raridades maiores agora possuem diferenças de poder mais significativas.
+• Seu PC poderá estar *bem diferente do valor anterior*. Isso é esperado.
+• *Nenhum equipamento ou progresso foi perdido.*
 
-👹 *Raid Boss*
-• Raid Bosses agora podem surgir automaticamente.
-• Novos Bosses foram adicionados ao mundo.
-• Até *10 jogadores* podem participar de uma Raid.
-• O combate começa após a entrada do primeiro aventureiro.
+🏰 *Dungeons*
+• As Dungeons foram rebalanceadas para acompanhar a nova progressão de PC.
+• Quanto mais avançada a Dungeon, maior será o poder necessário para enfrentá-la.
 
-🔧 Mais melhorias estão chegando!
+👹 *PvE*
+• Os inimigos também foram adaptados à nova escala.
+• A progressão agora acompanha melhor a evolução dos jogadores e equipamentos.
 
-Use *!menu* para consultar os comandos.`
+🐉 *Raid Boss*
+• O sistema de Raid recebeu uma grande expansão.
+• Bosses *Legendary, Mythic e Sacred* fazem parte da progressão.
+• O poder dos Bosses se adapta aos jogadores mais fortes do grupo.
+• Até *10 jogadores* podem lutar juntos.
+• Raids possuem recompensas próprias e rotação automática de Bosses.
+
+⚒️ *Progressão*
+A progressão de equipamentos agora segue uma escala mais definida:
+
+*PvE → Forja → Dungeons → Mercado Arcano → Raid*
+
+✨ Esta nova escala também prepara o RPG para conteúdos ainda maiores e para a futura progressão *pós-Presságio*.
+
+Use *!perfil* para conferir seu novo Poder de Combate.
+
+⚔️ *Uma nova escala de poder começou.*`
 
 func StartReleaseAnnouncement(
 	client *whatsmeow.Client,
