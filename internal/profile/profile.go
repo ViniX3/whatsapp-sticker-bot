@@ -55,7 +55,7 @@ type XPResult struct {
 	Gained int
 }
 
-const MaxPlayerLevel = 200
+const MaxPlayerLevel = 1000
 
 func Init() error {
 	if database.DB == nil {
@@ -433,7 +433,59 @@ func levelThreshold(
 		return 0
 	}
 
-	return 25 *
-		(level - 1) *
-		(level + 2)
+	// A progressão original é preservada integralmente
+	// até o nível 200.
+	if level <= 200 {
+		return 25 *
+			(level - 1) *
+			(level + 2)
+	}
+
+	// A partir do nível 200, o custo de cada novo nível
+	// cresce progressivamente conforme a faixa.
+	//
+	// O primeiro avanço continua exatamente de onde
+	// a progressão antiga parou:
+	//
+	// 200 -> 201 = 10.050 XP
+	//
+	// Depois disso, o custo do próximo nível aumenta
+	// conforme a faixa de progressão.
+	totalXP :=
+		25 *
+			(200 - 1) *
+			(200 + 2)
+
+	currentLevel := 200
+	nextLevelCost := 10050
+
+	for currentLevel < level {
+		totalXP += nextLevelCost
+		currentLevel++
+
+		switch {
+		case currentLevel < 250:
+			nextLevelCost += 100
+
+		case currentLevel < 400:
+			nextLevelCost += 150
+
+		case currentLevel < 600:
+			nextLevelCost += 200
+
+		case currentLevel < 750:
+			nextLevelCost += 250
+
+		case currentLevel < 850:
+			nextLevelCost += 300
+
+		case currentLevel < 950:
+			nextLevelCost += 400
+
+		default:
+			nextLevelCost += 500
+		}
+	}
+
+	return totalXP
 }
